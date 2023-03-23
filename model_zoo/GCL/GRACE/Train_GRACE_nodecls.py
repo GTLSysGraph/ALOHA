@@ -1,16 +1,13 @@
-import argparse
 import os.path as osp
 from torch_geometric.nn import GCNConv
-
 
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
-from torch_geometric.utils import dropout_adj, degree, to_undirected
+from torch_geometric.utils import dropout_adj
+import torch_geometric.transforms as T
 
 from datasets_pyg.data_pyg import get_dataset
-import yaml
-from yaml import SafeLoader
 from model_zoo.GCL.GRACE.GRACE import *
 from time import perf_counter as t
 from model_zoo.GCL.GRACE.eval import label_classification
@@ -88,37 +85,45 @@ def test_inductive(model, subgraph_loader,  val_mask, test_mask, y, device):
     
 
 
-
 def test_transductive(model: Model, x, edge_index, y, final=False):
     model.eval()
     z = model(x, edge_index)
-
     label_classification(z, y, ratio=0.1, shuffle = True)
 
 
 
 
+def Train_GRACE_nodecls(margs):
+    if margs.gpu_id < 0:
+        device = "cpu"
+    else:
+        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
 
-def Train_Grace(args):
-    dataset_name = args.dataset
+    dataset_name = margs.dataset
+    path = osp.expanduser('/home/songsh/GCL/datasets_pyg')
+    if dataset_name.split('-')[0] == 'Attack':
+        attackmethod = margs.attack.split('-')[0]
+        attackptb    = margs.attack.split('-')[1]
+        path = osp.expanduser('/home/songsh/GCL/datasets_pyg/Attack_data')
+        dataset = get_dataset(path, dataset_name, attackmethod, attackptb)
+    else:
+        path = osp.join(path, dataset_name)
+        dataset = get_dataset(path, dataset_name)
+
+    transform = T.Compose([
+        T.ToUndirected(),
+        T.ToDevice(device),
+    ])
+
+    data = transform(dataset[0])
+
     MDT = build_easydict()
-    config         = MDT['MODEL']['PARAM']
+    config     = MDT['MODEL']['PARAM']
     if config.use_cfg:
-        config = load_best_configs(config, dataset_name, "./model_zoo/GRACE/config.yaml")
-
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('--dataset', type=str, default= 'Cora') #['Cora', 'CiteSeer', 'PubMed', 'DBLP', 'WikiCS', 'Coauthor-CS', 'Coauthor-Phy','Amazon-Computers', 'Amazon-Photo', 'ogbn-arxiv','Reddit','Flickr','Yelp']
-    # parser.add_argument('--gpu_id', type=int, default=0)
-    # parser.add_argument('--config', type=str, default='config.yaml')
-    # args = parser.parse_args()
-
-    # torch.cuda.set_device(args.gpu_id)
+        config = load_best_configs(config, dataset_name.split('-')[1], "/home/songsh/GCL/model_zoo/GCL/GRACE/config.yaml")
 
 
-    # load config
-    # config = yaml.load(open(args.config), Loader=SafeLoader)[args.dataset]
     torch.manual_seed(config['seed'])
-    
     inductive_task = config['inductive']
     learning_rate = config['learning_rate']
     num_hidden = config['num_hidden']
@@ -126,7 +131,6 @@ def Train_Grace(args):
     activation = ({'relu': F.relu, 'prelu': nn.PReLU()})[config['activation']]
     base_model = ({'GCNConv': GCNConv})[config['base_model']]
     num_layers = config['num_layers']
-
     drop_edge_rate_1 = config['drop_edge_rate_1']
     drop_edge_rate_2 = config['drop_edge_rate_2']
     drop_feature_rate_1 = config['drop_feature_rate_1']
@@ -135,13 +139,6 @@ def Train_Grace(args):
     num_epochs = config['num_epochs']
     weight_decay = config['weight_decay']
 
-    # data
-    path = osp.expanduser('/home/songsh/GCL/datasets')
-    path = osp.join(path, args.dataset)
-    dataset = get_dataset(path, args.dataset)
-    data = dataset[0]
-    device = torch.device('cuda:{}'.format(args.gpu_id) if torch.cuda.is_available() else 'cpu')
-    data = data.to(device)
 
     # https://www.cnblogs.com/mercurysun/p/16869877.html 参考graphsage的代码自己改编的inductive
     if inductive_task:

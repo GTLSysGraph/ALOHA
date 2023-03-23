@@ -12,7 +12,7 @@ if __name__ == '__main__':
     margs = parser.parse_args()
 
     if margs.model_name == 'GRACE':
-        Train_Grace(margs)
+        Train_GRACE_nodecls(margs)
     elif margs.model_name == 'S2GAE':
         Train_S2GAE_nodecls(margs)
     elif margs.model_name == 'MaskGAE':
@@ -20,9 +20,11 @@ if __name__ == '__main__':
     elif margs.model_name == 'GraphMAE':
         Train_GraphMAE_nodecls(margs)
     elif margs.model_name == 'VGAE':
-        if margs.task == 'link':
+        if   margs.task == 'link':
             Train_VGAE_linkcls(margs)
         elif margs.task == 'node':
             Train_VGAE_nodecls(margs)
+    elif margs.model_name == 'STABLE':
+        Train_STABLE_nodecls(margs)
 
     

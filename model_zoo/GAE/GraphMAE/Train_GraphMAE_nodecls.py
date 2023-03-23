@@ -43,6 +43,7 @@ def pretrain(model, graph, feat, optimizer, max_epoch, device, scheduler, num_cl
 
 
 def Train_GraphMAE_nodecls(margs):
+    #########################
     if margs.gpu_id < 0:
         device = "cpu"
     else:
@@ -67,11 +68,10 @@ def Train_GraphMAE_nodecls(margs):
     # num_features = args.in_dim_V
 
     graph = dataset.graph
-
-
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
-
+    #######################
+    
     MDT = build_easydict_nodecls()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
