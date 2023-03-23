@@ -8,12 +8,12 @@ Hello, I'll talk more about that later.
 ## 🌵 Dependencies
 We recommend using ALOHA on Linux systems (e.g. Ubuntu and CentOS). Other systems (e.g., Windows and macOS) have not been tested.
 
-### **Pytorch**
+### 🔧 **Pytorch**
 ALOHA is built based on PyTorch. You can install PyTorch following the instruction in PyTorch. For example:
 ```
 pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0
 ```
-### **PyG**
+### 🔧 **PyG**
 PyG (PyTorch Geometric) is a library built upon  PyTorch to easily write and train Graph Neural Networks (GNNs) for a wide range of applications related to structured data.
 
 Select supported libraries based on your cuda version and python version,you can download from 
@@ -28,7 +28,7 @@ pip install torch_sparse-0.6.12-cp37-cp37m-linux_x86_64.whl
 pip install torch_spline_conv-1.2.1-cp37-cp37m-linux_x86_64.whl
 pip install torch-geometric
 ```
-### **DGL**
+### 🔧 **DGL**
 DGL is an easy-to-use, high performance and scalable Python package for deep learning on graphs.
 
 you can install DGL via:
