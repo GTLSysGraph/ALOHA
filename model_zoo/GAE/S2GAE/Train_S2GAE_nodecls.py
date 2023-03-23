@@ -1,7 +1,7 @@
 import torch
 import time
 from torch.utils.data import DataLoader
-from model_zoo.GAE.S2GAE.build_easydict_nodecls import *
+from model_zoo.GAE.S2GAE.build_easydict import *
 import os.path as osp
 import os
 from datasets_pyg.data_pyg import get_dataset

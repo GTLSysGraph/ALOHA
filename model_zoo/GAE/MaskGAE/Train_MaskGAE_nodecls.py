@@ -3,7 +3,7 @@ import time
 import argparse
 
 from datasets_pyg.data_pyg import get_dataset
-from model_zoo.GAE.MaskGAE.build_easydict_nodecls import *
+from model_zoo.GAE.MaskGAE.build_easydict import *
 
 import torch
 from torch.utils.data import DataLoader

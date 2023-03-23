@@ -2,7 +2,7 @@
 from     easydict        import EasyDict
 import   torch
 from     model_zoo.GAE.GraphMAE.utils          import *
-from     model_zoo.GAE.GraphMAE.build_easydict_nodecls import *
+from     model_zoo.GAE.GraphMAE.build_easydict import *
 from     model_zoo.GAE.GraphMAE.evaluation     import * 
 from     datasets_dgl.data_dgl import *
 
@@ -72,7 +72,7 @@ def Train_GraphMAE_nodecls(margs):
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
 
-    MDT = build_easydict()
+    MDT = build_easydict_nodecls()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
         param = load_best_configs(param, dataset_name.lower(), "./model_zoo/GAE/GraphMAE/configs.yml")
