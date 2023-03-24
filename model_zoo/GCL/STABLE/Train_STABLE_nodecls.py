@@ -18,21 +18,25 @@ def Train_STABLE_nodecls(margs):
     dataset_name = margs.dataset
     DATASET = EasyDict()
     if dataset_name.split('-')[0] == 'Attack':
-        dataset_name = dataset_name.split('-')[1]
+        # dataset_name = dataset_name.split('-')[1]
         DATASET.ATTACK = EasyDict()
         DATASET.ATTACK.PARAM = {
             "data":dataset_name,
             "attack":margs.attack.split('-')[0],
             "ptb_rate":margs.attack.split('-')[1]
         }
-
         # now just attack use
         dataset  = load_data(DATASET['ATTACK']['PARAM'])
+        graph = dataset.graph
     else:
-        raise Exception('Only Attack data now!') 
-    graph = dataset.graph
-    feat = graph.ndata['feat']
+        DATASET.PARAM = {
+            "data":dataset_name,
+        }
+        dataset  = load_data(DATASET['PARAM'])
+        graph = dataset[0]
 
+        
+    feat = graph.ndata['feat']
     MDT = build_easydict_nodecls()
     args   =  MDT['MODEL']['PARAM']
     #######################################################################

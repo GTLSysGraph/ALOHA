@@ -68,7 +68,7 @@ def create_optimizer(opt, model, lr, weight_decay, get_num_layer=None, get_layer
     return optimizer
 
 class TBLogger(object):
-    def __init__(self, log_path="./logging_data", name="run"):
+    def __init__(self, log_path="./model_zoo/GAE/GraphMAE/logging_data", name="run"):
         super(TBLogger, self).__init__()
 
         if not os.path.exists(log_path):

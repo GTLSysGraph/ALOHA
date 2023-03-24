@@ -155,14 +155,6 @@ def Train_S2GAE_nodecls(margs):
     dataset_name = margs.dataset
     device = torch.device('cuda:{}'.format(margs.gpu_id) if torch.cuda.is_available() else 'cpu')
 
-    MDT = build_easydict_nodecls()
-    config         = MDT['MODEL']['PARAM']
-    
-    # path = osp.expanduser('/home/songsh/GCL/datasets_pyg')
-    # path = osp.join(path, dataset_name)
-    # dataset = get_dataset(path, dataset_name)
-    # data = dataset[0]
-
     path = osp.expanduser('/home/songsh/GCL/datasets_pyg')
     if dataset_name.split('-')[0] == 'Attack':
         attackmethod = margs.attack.split('-')[0]
@@ -174,6 +166,10 @@ def Train_S2GAE_nodecls(margs):
         dataset = get_dataset(path, dataset_name)
 
     data = dataset[0]
+
+    MDT = build_easydict_nodecls()
+    config         = MDT['MODEL']['PARAM']
+
 
     if data.is_undirected():
         edge_index = data.edge_index

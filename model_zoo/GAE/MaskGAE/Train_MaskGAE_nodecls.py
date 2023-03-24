@@ -217,6 +217,7 @@ def Train_MaskGAE_nodecls(margs):
         dataset = get_dataset(path, dataset_name)
 
 
+
     if dataset_name == 'ogbn-arxiv':
         data = transform(dataset[0])
         split_idx = dataset.get_idx_split()

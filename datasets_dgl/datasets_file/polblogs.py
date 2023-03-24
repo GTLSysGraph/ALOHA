@@ -10,7 +10,7 @@ class PolblogsDGL(torch.utils.data.Dataset):
     def __init__(self,args):
 
 
-        data_name = args.data.lower()
+        data_name = args.data.split('-')[1].lower()
         adj = torch.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_%s_%s.pt' % (args.attack, data_name, args.attack, data_name, args.ptb_rate),map_location= 'cuda')
         g = dgl.from_scipy(to_scipy(adj))
         
@@ -58,7 +58,7 @@ class PolblogsDataset(torch.utils.data.Dataset):
         """
         start = time.time()
         print("[I] Loading dataset %s..." % (args.data))
-        self.name  = args.data
+        self.name  = args.data.split('-')[1]
         base_graph = PolblogsDGL(args)
         self.graph = base_graph.graph
 

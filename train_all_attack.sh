@@ -14,7 +14,7 @@ do
     then
         for ptb in 0.0 0.05 0.1 0.15 0.2 0.25
         do
-            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1_"$i"_$2_$ptb.file" &
+            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
@@ -25,7 +25,7 @@ do
     then
         for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
         do
-            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1_"$i"_$2_$ptb.file" &
+            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
@@ -36,7 +36,7 @@ do
     then
         for ptb in 0.0 1.0 2.0 3.0 4.0 5.0
         do
-            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1_"$i"_$2_$ptb.file" &
+            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
@@ -47,7 +47,7 @@ do
     then
         for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
         do
-            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1_"$i"_$2_$ptb.file" &
+            python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
             n=`expr $n + 1`
             n=`expr $n % $num`
         done

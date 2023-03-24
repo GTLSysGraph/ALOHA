@@ -52,22 +52,28 @@ def Train_GraphMAE_nodecls(margs):
     dataset_name = margs.dataset
     DATASET = EasyDict()
     if dataset_name.split('-')[0] == 'Attack':
-        dataset_name = dataset_name.split('-')[1]
+        # dataset_name = dataset_name.split('-')[1]
         DATASET.ATTACK = EasyDict()
         DATASET.ATTACK.PARAM = {
             "data":dataset_name,
             "attack":margs.attack.split('-')[0],
             "ptb_rate":margs.attack.split('-')[1]
         }
-
         # now just attack use
         dataset  = load_data(DATASET['ATTACK']['PARAM'])
+        graph = dataset.graph
     else:
-        raise Exception('Only Attack data now!') 
+        DATASET.PARAM = {
+            "data":dataset_name,
+        }
+        dataset  = load_data(DATASET['PARAM'])
+        graph = dataset[0]
+
+
     # num_classes  = args.nb_classes
     # num_features = args.in_dim_V
 
-    graph = dataset.graph
+    
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
     #######################
@@ -75,7 +81,7 @@ def Train_GraphMAE_nodecls(margs):
     MDT = build_easydict_nodecls()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dataset_name.lower(), "./model_zoo/GAE/GraphMAE/configs.yml")
+        param = load_best_configs(param, dataset_name.split('-')[1].lower(), "./model_zoo/GAE/GraphMAE/configs.yml")
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -98,7 +104,6 @@ def Train_GraphMAE_nodecls(margs):
     save_model     = param.save_model
     logs           = param.logging
     use_scheduler  = param.scheduler
-
     param.num_features = num_features
 
     acc_list = []

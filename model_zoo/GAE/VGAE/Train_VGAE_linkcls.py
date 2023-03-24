@@ -25,24 +25,25 @@ def Train_VGAE_linkcls(margs):
     dataset_name = margs.dataset
     DATASET = EasyDict()
     if dataset_name.split('-')[0] == 'Attack':
-        dataset_name = dataset_name.split('-')[1]
+        # dataset_name = dataset_name.split('-')[1]
         DATASET.ATTACK = EasyDict()
         DATASET.ATTACK.PARAM = {
             "data":dataset_name,
             "attack":margs.attack.split('-')[0],
             "ptb_rate":margs.attack.split('-')[1]
         }
-
         # now just attack use
         dataset  = load_data(DATASET['ATTACK']['PARAM'])
+        graph = dataset.graph
     else:
-        raise Exception('Only Attack data now!') 
-    graph = dataset.graph
+        DATASET.PARAM = {
+            "data":dataset_name,
+        }
+        dataset  = load_data(DATASET['PARAM'])
+        graph = dataset[0]
+
+
     num_features = graph.ndata['feat'].shape[1]
-    #######################
-    # cora raw 在这个数据集下的表现反而不如meta 0.2好 ，链接预测 why？
-    # dataset = CoraGraphDataset()
-    # graph = dataset[0]
 
     MDT = build_easydict()
     args  = MDT['MODEL']['PARAM']

@@ -6,7 +6,7 @@ def build_easydict_nodecls():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'GraphMAE'
     MDT.MODEL.PARAM = {
-        'seeds'         : [65756],
+        'seeds'         : [12,34,6,7],
         "device"        : -1 ,
         "max_epoch"     : 200,             
         "warmup_steps"  : -1,
@@ -38,7 +38,7 @@ def build_easydict_nodecls():
         "load_model"    : False,
         "save_model"    : False,
         "use_cfg"       : True,
-        "logging"       : True,
+        "logging"       : False,
         "scheduler"     : False,
         "concat_hidden" : False,
 

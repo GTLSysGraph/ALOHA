@@ -1,9 +1,9 @@
-from    model_zoo.GAE.VGAE.Train_VGAE_linkcls import Train_VGAE_linkcls_usemd
+from     model_zoo.GAE.VGAE.Train_VGAE_linkcls import Train_VGAE_linkcls_usemd
 from     model_zoo.GAE.VGAE.model import *
 from     model_zoo.GAE.VGAE.build_easydict import *
 from     easydict        import EasyDict
 from     datasets_dgl.data_dgl import *
-from .utils import create_optimizer, accuracy
+from    .utils import create_optimizer, accuracy
 from     tqdm import tqdm
 import copy
 
@@ -18,19 +18,23 @@ def Train_VGAE_nodecls(margs):
     dataset_name = margs.dataset
     DATASET = EasyDict()
     if dataset_name.split('-')[0] == 'Attack':
-        dataset_name = dataset_name.split('-')[1]
+        # dataset_name = dataset_name.split('-')[1]
         DATASET.ATTACK = EasyDict()
         DATASET.ATTACK.PARAM = {
             "data":dataset_name,
             "attack":margs.attack.split('-')[0],
             "ptb_rate":margs.attack.split('-')[1]
         }
-
         # now just attack use
         dataset  = load_data(DATASET['ATTACK']['PARAM'])
+        graph = dataset.graph
     else:
-        raise Exception('Only Attack data now!') 
-    graph = dataset.graph
+        DATASET.PARAM = {
+            "data":dataset_name,
+        }
+        dataset  = load_data(DATASET['PARAM'])
+        graph = dataset[0]
+    
     feat = graph.ndata['feat']
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
