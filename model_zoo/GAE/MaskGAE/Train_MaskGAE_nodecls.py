@@ -187,8 +187,8 @@ def Train_MaskGAE_nodecls(margs):
     # if not args.save_path.endswith('.pth'):
     #     args.save_path += '.pth'
     if dataset_name.split('-')[0] == 'Attack':
-        # args.save_path = 'model_nodeclas'
-        args.save_path = "./model_zoo/MaskGAE/model_save/model_nodeclas_{}_{}_{}".format(dataset_name.split('-')[1].lower(),margs.attack.split('-')[0],margs.attack.split('-')[1])
+        args.save_path = 'model_nodeclas'
+        # args.save_path = "./model_zoo/MaskGAE/model_save/model_nodeclas_{}_{}_{}".format(dataset_name.split('-')[1].lower(),margs.attack.split('-')[0],margs.attack.split('-')[1])
     else:
         args.save_path =  "./model_zoo/MaskGAE/model_save/model_nodeclas_{}".format(dataset_name.lower())
     
@@ -234,7 +234,12 @@ def Train_MaskGAE_nodecls(margs):
                                                     is_undirected=True,
                                                     split_labels=True,
                                                     add_negative_train_samples=True)(data)
-    # phy example Data(x=[34493, 8415], edge_index=[2, 421536], y=[34493], train_mask=[34493], val_mask=[34493], test_mask=[34493], pos_edge_label=[210768], pos_edge_label_index=[2, 210768], neg_edge_label=[210768], neg_edge_label_index=[2, 210768]
+
+    # Data(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708]) 原始数据
+    # Data(x=[2708, 1433], edge_index=[2, 8976], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], pos_edge_label=[4488], pos_edge_label_index=[2, 4488], neg_edge_label=[4488], neg_edge_label_index=[2, 4488])
+    # Data(x=[2708, 1433], edge_index=[2, 8976], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], pos_edge_label=[527], pos_edge_label_index=[2, 527], neg_edge_label=[527], neg_edge_label_index=[2, 527])
+    # Data(x=[2708, 1433], edge_index=[2, 10030], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], pos_edge_label=[263], pos_edge_label_index=[2, 263], neg_edge_label=[263], neg_edge_label_index=[2, 263])
+    # Cora为例 验证集用的边和训练集一样，测试集用的边是训练集和验证集的和也就是 8976 + 527 *2
 
     splits = dict(train=train_data, valid=val_data, test=test_data)
 

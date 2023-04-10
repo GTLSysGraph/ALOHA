@@ -1,28 +1,31 @@
 
 from     easydict        import EasyDict
 import   torch
-from     model_zoo.GAE.GraphMAE.utils          import *
-from     model_zoo.GAE.GraphMAE.build_easydict import *
-from     model_zoo.GAE.GraphMAE.evaluation     import * 
+from     model_zoo.GAE.RobustGAE.utils          import *
+from     model_zoo.GAE.RobustGAE.build_easydict import *
+from     model_zoo.GAE.RobustGAE.evaluation     import * 
 from     datasets_dgl.data_dgl import *
+from     datasets_dgl.utils import *
+
 
 import   logging
 from     tqdm import tqdm
-from     model_zoo.GAE.GraphMAE.models import build_model
+from     model_zoo.GAE.RobustGAE.models import build_model
 import  ipdb
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
-def pretrain(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+def pretrain(model, graph, graph_processed, adj_delete, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
     logging.info("start training..")
-    graph = graph.to(device)
+    graph_processed = graph_processed.to(device)
     x = feat.to(device)
+
 
     epoch_iter = tqdm(range(max_epoch))
     for epoch in epoch_iter:
         model.train()
 
-        loss, loss_dict = model(graph, x)
+        loss, loss_dict = model(graph_processed, adj_delete, x, epoch)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -42,7 +45,7 @@ def pretrain(model, graph, feat, optimizer, max_epoch, device, scheduler, num_cl
 
 
 
-def Train_GraphMAE_nodecls(margs):
+def Train_RobustGAE_nodecls(margs):
     #########################
     if margs.gpu_id < 0:
         device = "cpu"
@@ -69,11 +72,7 @@ def Train_GraphMAE_nodecls(margs):
         dataset  = load_data(DATASET['PARAM'])
         graph = dataset[0]
 
-
-    # num_classes  = args.nb_classes
-    # num_features = args.in_dim_V
-
-    
+    dstname =  dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower()
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
     #######################
@@ -81,7 +80,7 @@ def Train_GraphMAE_nodecls(margs):
     MDT = build_easydict_nodecls()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/GraphMAE/configs.yml")
+        param = load_best_configs(param, dstname , "./model_zoo/GAE/RobustGAE/configs.yml")
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -106,6 +105,21 @@ def Train_GraphMAE_nodecls(margs):
     use_scheduler  = param.scheduler
     param.num_features = num_features
 
+
+    ###################
+
+    perturbed_adj_sparse = to_scipy(graph.adj())
+    
+    print('===get perturbed edges===')
+    jt = 0.03
+    if dstname == 'polblogs':
+        jt = 0
+    adj_pre = preprocess_adj(graph.ndata['feat'], perturbed_adj_sparse,  threshold=jt)
+    adj_delete = perturbed_adj_sparse - adj_pre
+    adj_delete = torch.tensor(adj_delete.todense())
+    graph_processed = dgl.from_scipy(adj_pre)
+    ##################
+
     acc_list = []
     estp_acc_list = []
 
@@ -120,6 +134,7 @@ def Train_GraphMAE_nodecls(margs):
 
         model = build_model(param)
         model.to(device)
+        model.register()
         optimizer = create_optimizer(optim_type, model, lr, weight_decay)
 
         if use_scheduler:
@@ -135,7 +150,7 @@ def Train_GraphMAE_nodecls(margs):
         x = graph.ndata["feat"]
 
         if not load_model:
-            model = pretrain(model, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            model = pretrain(model, graph, graph_processed,adj_delete, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             # model = model.cpu()
 
         if load_model:

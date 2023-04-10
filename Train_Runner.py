@@ -26,5 +26,7 @@ if __name__ == '__main__':
             Train_VGAE_nodecls(margs)
     elif margs.model_name == 'STABLE':
         Train_STABLE_nodecls(margs)
+    elif margs.model_name == 'RobustGAE':
+        Train_RobustGAE_nodecls(margs)
 
     

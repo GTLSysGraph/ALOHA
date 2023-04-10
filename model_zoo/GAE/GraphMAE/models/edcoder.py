@@ -205,6 +205,8 @@ class PreModel(nn.Module):
         keep_nodes = perm[num_mask_nodes: ]
 
         if self._replace_rate > 0:
+            # 这里利用的BERT中的思想 BERT建议不总是用实际的[MASK]令牌替换“掩码”单词，而是用小概率(即15%或更小)保持不变或用另一个随机令牌替换它。
+            # 对mask的节点一部分保持 一部分随机替换 一部分特征mask为0
             num_noise_nodes = int(self._replace_rate * num_mask_nodes)
             perm_mask = torch.randperm(num_mask_nodes, device=x.device)
             token_nodes = mask_nodes[perm_mask[: int(self._mask_token_rate * num_mask_nodes)]]
@@ -219,7 +221,8 @@ class PreModel(nn.Module):
             token_nodes = mask_nodes
             out_x[mask_nodes] = 0.0
 
-        out_x[token_nodes] += self.enc_mask_token
+        # 这里为啥不扩展啊 这里不加效果确实不如加了好，为啥啊，感觉没道理啊
+        out_x[token_nodes] +=  self.enc_mask_token
         use_g = g.clone()
 
         return use_g, out_x, (mask_nodes, keep_nodes)
