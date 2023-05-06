@@ -260,6 +260,7 @@ class PreModel(nn.Module):
         x_init = x[mask_nodes]
         x_rec = recon[mask_nodes]
 
+
         loss = self.criterion(x_rec, x_init)
         return loss
 

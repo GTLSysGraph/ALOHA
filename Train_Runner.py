@@ -9,6 +9,7 @@ if __name__ == '__main__':
     parser.add_argument('--gpu_id',         type=int,               default=  1) 
     parser.add_argument('--model_name',     type = str,             default = 'MaskGAE')
     parser.add_argument('--task',           type = str,             default = 'node') # 'link' 'graph'
+    parser.add_argument('--mode',           type = str,             default = 'tranductive') # 'link' 'graph'
     margs = parser.parse_args()
 
     if margs.model_name == 'GRACE':
@@ -28,5 +29,7 @@ if __name__ == '__main__':
         Train_STABLE_nodecls(margs)
     elif margs.model_name == 'RobustGAE':
         Train_RobustGAE_nodecls(margs)
+    elif margs.model_name == 'DiffGMAE':
+        Train_DiffGMAE_nodecls(margs)
 
     

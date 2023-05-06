@@ -187,8 +187,8 @@ def Train_MaskGAE_nodecls(margs):
     # if not args.save_path.endswith('.pth'):
     #     args.save_path += '.pth'
     if dataset_name.split('-')[0] == 'Attack':
-        args.save_path = 'model_nodeclas'
-        # args.save_path = "./model_zoo/MaskGAE/model_save/model_nodeclas_{}_{}_{}".format(dataset_name.split('-')[1].lower(),margs.attack.split('-')[0],margs.attack.split('-')[1])
+        # args.save_path = 'model_nodeclas'
+        args.save_path = "./model_zoo/GAE/MaskGAE/model_save/model_nodeclas_{}_{}_{}".format(dataset_name.split('-')[1].lower(),margs.attack.split('-')[0],margs.attack.split('-')[1])
     else:
         args.save_path =  "./model_zoo/MaskGAE/model_save/model_nodeclas_{}".format(dataset_name.lower())
     

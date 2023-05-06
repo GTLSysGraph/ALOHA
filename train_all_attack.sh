@@ -1,7 +1,7 @@
 MODEL_NAME=$1
 DATASET_NAME=$2
 
-CUDA_USE=(0 1 3)
+CUDA_USE=(0 1 2)
  
 # sh train_all_attack.sh MaskGAE Cora &
 

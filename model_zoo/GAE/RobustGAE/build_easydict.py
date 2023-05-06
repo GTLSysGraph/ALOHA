@@ -6,7 +6,7 @@ def build_easydict_nodecls():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'RobustGAE'
     MDT.MODEL.PARAM = {
-        'seeds'         : [12,34,6,7],
+        'seeds'         : [213,89,1234,74],
         "device"        : -1 ,
         "max_epoch"     : 200,             
         "warmup_steps"  : -1,

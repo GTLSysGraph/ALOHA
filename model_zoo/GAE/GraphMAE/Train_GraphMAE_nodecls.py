@@ -69,7 +69,8 @@ def Train_GraphMAE_nodecls(margs):
         dataset  = load_data(DATASET['PARAM'])
         graph = dataset[0]
 
-
+    graph = dgl.remove_self_loop(graph)
+    graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
     # num_classes  = args.nb_classes
     # num_features = args.in_dim_V
 

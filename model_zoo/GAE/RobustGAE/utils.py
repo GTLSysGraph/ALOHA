@@ -11,9 +11,36 @@ import dgl
 import yaml
 import scipy.sparse as sp
 import torch.nn.functional as F
+from sklearn.metrics.pairwise import cosine_similarity
+
+
+# GENERAL CONSTANTS:
+VERY_SMALL_NUMBER = 1e-12
+INF = 1e20
+
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
+def kl_categorical(p_logit, q_logit):
+    p = F.softmax(p_logit, dim=-1)
+    _kl = torch.sum(p * (F.log_softmax(p_logit, dim=-1)
+                                  - F.log_softmax(q_logit, dim=-1)), 1)
+    return torch.mean(_kl)
+
+
+def normalize_adj(mx):
+    """Row-normalize matrix: symmetric normalized Laplacian"""
+    rowsum = mx.sum(1)
+    r_inv_sqrt = torch.pow(rowsum, -0.5).flatten()
+    r_inv_sqrt[torch.isinf(r_inv_sqrt)] = 0.
+    r_mat_inv_sqrt = torch.diag(r_inv_sqrt)
+    return torch.mm(torch.mm(mx, r_mat_inv_sqrt).transpose(-1, -2), r_mat_inv_sqrt)
+
+
+def to_cuda(x, device=None):
+    if device:
+        x = x.to(device)
+    return x
 
 
 def set_random_seed(seed):
@@ -217,7 +244,18 @@ class NormLayer(nn.Module):
         return self.weight * sub / std + self.bias
     
 
-
+def get_reliable_neighbors(adj, features, k, degree_threshold, device):
+    degree = adj.sum(dim=1)
+    degree_mask = degree > degree_threshold
+    assert degree_mask.sum().item() >= k
+    sim = cosine_similarity(features.to('cpu'))
+    sim = torch.FloatTensor(sim).to(device)
+    sim[:, degree_mask == False] = 0
+    _, top_k_indices = sim.topk(k=k, dim=1)
+    for i in range(adj.shape[0]):
+        adj[i][top_k_indices[i]] = 1
+        adj[i][i] = 0
+    return adj
 
 
 
@@ -241,9 +279,10 @@ def preprocess_adj(features, adj, metric='similarity', threshold=0.03, jaccard=T
         else:
             removed_cnt = dropedge_cosine(adj_triu.data, adj_triu.indptr, adj_triu.indices, features,
                                           threshold=threshold)
-    print('removed %s edges in the original graph' % removed_cnt)
+    # print('removed %s edges in the original graph' % removed_cnt)
+
     modified_adj = adj_triu + adj_triu.transpose() - sp.eye(adj.shape[0])
-    return modified_adj
+    return modified_adj, removed_cnt
 
 
 def dropedge_dis(A, iA, jA, features, threshold):

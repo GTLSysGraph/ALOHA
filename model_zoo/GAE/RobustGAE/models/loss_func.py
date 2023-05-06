@@ -28,3 +28,7 @@ def sig_loss(x, y):
     loss = torch.sigmoid(-loss)
     loss = loss.mean()
     return loss
+
+def l2_loss(x, y):
+    return torch.mean(torch.pow((x - y), 2))
+     

@@ -15,7 +15,76 @@ import  ipdb
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
-def pretrain(model, graph, graph_processed, adj_delete, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+def pretrain_inductive(model, dstname ,graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+
+    sampler = dgl.dataloading.MultiLayerFullNeighborSampler(2)
+    dataloader = dgl.dataloading.NodeDataLoader(
+            graph, torch.arange(0, graph.num_nodes()), sampler,
+            batch_size=2048,
+            shuffle=True,
+            drop_last=False,
+            num_workers=1)
+
+    logging.info("start training..")
+
+    epoch_iter = tqdm(range(max_epoch))
+    for epoch in epoch_iter:
+        model.train()
+        loss_list = []
+
+        dl = tqdm(dataloader)
+        for input_nodes, output_nodes, blocks in dl:
+            subgraph = dgl.node_subgraph(graph, input_nodes,store_ids=True)
+            perturbed_adj_sparse = to_scipy(subgraph.adj())
+            # print('===get perturbed edges===')
+            jt = 0.03
+            if dstname == 'polblogs':
+                jt = 0
+            adj_pre, removed_cnt = preprocess_adj(feat[subgraph.ndata[dgl.NID]], perturbed_adj_sparse,  threshold=jt)
+            dl.set_description('removed %s edges in the original graph' % removed_cnt)
+            adj_delete = perturbed_adj_sparse - adj_pre
+            adj_delete = torch.tensor(adj_delete.todense())
+            graph_processed = dgl.from_scipy(adj_pre).to(device)
+            x = feat[subgraph.ndata[dgl.NID]].to(device)
+            ##################
+
+            loss, loss_dict = model(graph_processed, adj_delete, x, epoch)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            loss_list.append(loss.item())
+
+        if scheduler is not None:
+            scheduler.step()
+
+        train_loss = np.mean(loss_list)
+        epoch_iter.set_description(f"# Epoch {epoch}: train_loss: {train_loss.item():.4f}")
+        if logger is not None:
+            loss_dict["lr"] = get_current_lr(optimizer)
+            logger.note(loss_dict, step=epoch)
+
+        if (epoch + 1) % 1 == 0:
+            node_classification_evaluation(model, graph, feat, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob, mute=True)
+
+    # return best_model
+    return model
+
+
+def pretrain_tranductive(model, dstname ,graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+
+    ###################
+    perturbed_adj_sparse = to_scipy(graph.adj())
+    print('===get perturbed edges===')
+    jt = 0.03
+    if dstname == 'polblogs':
+        jt = 0
+    adj_pre,removed_cnt = preprocess_adj(feat, perturbed_adj_sparse,  threshold=jt)
+    print('removed %s edges in the original graph' % removed_cnt)
+    adj_delete = perturbed_adj_sparse - adj_pre
+    adj_delete = torch.tensor(adj_delete.todense())
+    graph_processed = dgl.from_scipy(adj_pre)
+    ##################
+    
     logging.info("start training..")
     graph_processed = graph_processed.to(device)
     x = feat.to(device)
@@ -52,7 +121,9 @@ def Train_RobustGAE_nodecls(margs):
     else:
         device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
 
+    mode = margs.mode
     dataset_name = margs.dataset
+
     DATASET = EasyDict()
     if dataset_name.split('-')[0] == 'Attack':
         # dataset_name = dataset_name.split('-')[1]
@@ -71,6 +142,11 @@ def Train_RobustGAE_nodecls(margs):
         }
         dataset  = load_data(DATASET['PARAM'])
         graph = dataset[0]
+        # 注意 有的数据集没有加自环
+
+    graph = dgl.remove_self_loop(graph)
+    graph = dgl.add_self_loop(graph)
+    
 
     dstname =  dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower()
     num_classes = dataset.num_classes
@@ -106,19 +182,19 @@ def Train_RobustGAE_nodecls(margs):
     param.num_features = num_features
 
 
-    ###################
+    # ###################
 
-    perturbed_adj_sparse = to_scipy(graph.adj())
+    # perturbed_adj_sparse = to_scipy(graph.adj())
     
-    print('===get perturbed edges===')
-    jt = 0.03
-    if dstname == 'polblogs':
-        jt = 0
-    adj_pre = preprocess_adj(graph.ndata['feat'], perturbed_adj_sparse,  threshold=jt)
-    adj_delete = perturbed_adj_sparse - adj_pre
-    adj_delete = torch.tensor(adj_delete.todense())
-    graph_processed = dgl.from_scipy(adj_pre)
-    ##################
+    # print('===get perturbed edges===')
+    # jt = 0.03
+    # if dstname == 'polblogs':
+    #     jt = 0
+    # adj_pre = preprocess_adj(graph.ndata['feat'], perturbed_adj_sparse,  threshold=jt)
+    # adj_delete = perturbed_adj_sparse - adj_pre
+    # adj_delete = torch.tensor(adj_delete.todense())
+    # graph_processed = dgl.from_scipy(adj_pre)
+    # ##################
 
     acc_list = []
     estp_acc_list = []
@@ -150,7 +226,10 @@ def Train_RobustGAE_nodecls(margs):
         x = graph.ndata["feat"]
 
         if not load_model:
-            model = pretrain(model, graph, graph_processed,adj_delete, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            if mode == 'tranductive':
+                model = pretrain_tranductive(model, dstname, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            else:
+                model = pretrain_inductive(model, dstname, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             # model = model.cpu()
 
         if load_model:

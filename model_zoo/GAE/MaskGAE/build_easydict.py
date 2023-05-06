@@ -38,9 +38,9 @@ def build_easydict_nodecls():
         'decoder_channels':32, #help='Channels of decoder layers. (default: 128)')
         'encoder_layers':2, #help='Number of layers for encoder. (default: 2)')
         'decoder_layers':2,# help='Number of layers for decoders. (default: 2)')
-        'encoder_dropout':0.8,# help='Dropout probability of encoder. (default: 0.8)')
-        'decoder_dropout':0.2, #help='Dropout probability of decoder. (default: 0.2)')
-        'alpha':0.004, #help='loss weight for degree prediction. (default: 0.)')
+        'encoder_dropout':0.5,# help='Dropout probability of encoder. (default: 0.8)')
+        'decoder_dropout':0.5, #help='Dropout probability of decoder. (default: 0.2)')
+        'alpha':0.001, #help='loss weight for degree prediction. (default: 0.)')
 
         'lr':0.01, #help='Learning rate for training. (default: 0.01)')
         'weight_decay':5e-5, #help='weight_decay for link prediction training. (default: 5e-5)')
