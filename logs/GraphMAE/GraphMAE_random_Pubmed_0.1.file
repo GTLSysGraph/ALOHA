@@ -1,0 +1,39 @@
+[I] Loading dataset Attack-Pubmed...
+train_mask, test_mask, val_mask sizes : tensor(1971) tensor(1972) tensor(15774)
+[I] Finished loading.
+[I] Data load time: 4.0520s
+------ Use best configs ------
+####### Run 0 for seed 12
+# IGNORE: --- TestAcc: 0.8332, early-stopping-TestAcc: 0.8332, Best ValAcc: 0.8261 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8338, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8296 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8338, Best ValAcc: 0.8322 in epoch 273 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8311 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8322 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8316 in epoch 299 --- 
+####### Run 1 for seed 34
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8271 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8261 in epoch 221 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8256 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8339, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8301 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8271 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8331, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8276 in epoch 246 --- 
+####### Run 2 for seed 6
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8286 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8346, early-stopping-TestAcc: 0.8346, Best ValAcc: 0.8286 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8281 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8339, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8271 in epoch 241 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8266 in epoch 287 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8335, early-stopping-TestAcc: 0.8334, Best ValAcc: 0.8266 in epoch 293 --- 
+####### Run 3 for seed 7
+# IGNORE: --- TestAcc: 0.8317, early-stopping-TestAcc: 0.8302, Best ValAcc: 0.8276 in epoch 228 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8339, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8286 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8301 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8344, early-stopping-TestAcc: 0.8344, Best ValAcc: 0.8301 in epoch 299 --- 
+# final_acc: 0.8338±0.0005
+# early-stopping_acc: 0.8336±0.0008

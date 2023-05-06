@@ -1,0 +1,37 @@
+[I] Loading dataset Attack-Cora...
+train_mask, test_mask, val_mask sizes : tensor(247) tensor(249) tensor(1988)
+[I] Finished loading.
+[I] Data load time: 3.8846s
+------ Use best configs ------
+####### Run 0 for seed 12
+# IGNORE: --- TestAcc: 0.8244, early-stopping-TestAcc: 0.8244, Best ValAcc: 0.8112 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8184, early-stopping-TestAcc: 0.8179, Best ValAcc: 0.8153 in epoch 156 --- 
+# IGNORE: --- TestAcc: 0.8179, early-stopping-TestAcc: 0.8159, Best ValAcc: 0.8072 in epoch 252 --- 
+# IGNORE: --- TestAcc: 0.8124, early-stopping-TestAcc: 0.8124, Best ValAcc: 0.8233 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8038, early-stopping-TestAcc: 0.8038, Best ValAcc: 0.8193 in epoch 239 --- 
+# IGNORE: --- TestAcc: 0.8033, early-stopping-TestAcc: 0.7988, Best ValAcc: 0.8153 in epoch 215 --- 
+# IGNORE: --- TestAcc: 0.8053, early-stopping-TestAcc: 0.8053, Best ValAcc: 0.8153 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8053, early-stopping-TestAcc: 0.7998, Best ValAcc: 0.8193 in epoch 158 --- 
+####### Run 1 for seed 34
+# IGNORE: --- TestAcc: 0.8058, early-stopping-TestAcc: 0.8164, Best ValAcc: 0.8032 in epoch 126 --- 
+# IGNORE: --- TestAcc: 0.8104, early-stopping-TestAcc: 0.8063, Best ValAcc: 0.8193 in epoch 205 --- 
+# IGNORE: --- TestAcc: 0.8013, early-stopping-TestAcc: 0.7973, Best ValAcc: 0.8112 in epoch 213 --- 
+# IGNORE: --- TestAcc: 0.7958, early-stopping-TestAcc: 0.7958, Best ValAcc: 0.8072 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.7973, early-stopping-TestAcc: 0.7968, Best ValAcc: 0.8193 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8013, early-stopping-TestAcc: 0.8013, Best ValAcc: 0.8153 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.7983, early-stopping-TestAcc: 0.7983, Best ValAcc: 0.8112 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7983, early-stopping-TestAcc: 0.7983, Best ValAcc: 0.8112 in epoch 299 --- 
+####### Run 2 for seed 6
+# IGNORE: --- TestAcc: 0.8084, early-stopping-TestAcc: 0.7933, Best ValAcc: 0.8273 in epoch 49 --- 
+# IGNORE: --- TestAcc: 0.8139, early-stopping-TestAcc: 0.8144, Best ValAcc: 0.8233 in epoch 240 --- 
+# IGNORE: --- TestAcc: 0.8068, early-stopping-TestAcc: 0.7968, Best ValAcc: 0.8153 in epoch 149 --- 
+# IGNORE: --- TestAcc: 0.8018, early-stopping-TestAcc: 0.8043, Best ValAcc: 0.8032 in epoch 226 --- 
+# IGNORE: --- TestAcc: 0.8089, early-stopping-TestAcc: 0.8048, Best ValAcc: 0.7992 in epoch 166 --- 
+# IGNORE: --- TestAcc: 0.8058, early-stopping-TestAcc: 0.8043, Best ValAcc: 0.7992 in epoch 195 --- 
+# IGNORE: --- TestAcc: 0.8078, early-stopping-TestAcc: 0.8038, Best ValAcc: 0.7952 in epoch 199 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8078, early-stopping-TestAcc: 0.8058, Best ValAcc: 0.7952 in epoch 211 --- 
+# final_acc: 0.8038±0.0040
+# early-stopping_acc: 0.8013±0.0033
