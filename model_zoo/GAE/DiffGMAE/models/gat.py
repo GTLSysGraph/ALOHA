@@ -419,8 +419,8 @@ class GATDecoderConv(nn.Module):
             # save [Wh_i || Wh_j] on edges, which is not memory-efficient. Plus,
             # addition could be optimized with DGL's built-in function u_add_v,
             # which further speeds up computation and saves memory footprint.
-            el = (feat_src * self.attn_l).sum(dim=-1).unsqueeze(-1)
-            er = (feat_dst * self.attn_r).sum(dim=-1).unsqueeze(-1)
+            el = (feat_src).sum(dim=-1).unsqueeze(-1)
+            er = (feat_dst).sum(dim=-1).unsqueeze(-1)
             graph.srcdata.update({'ft': feat_src, 'el': el})
             graph.dstdata.update({'er': er})
             # compute edge attention, el and er are a_l Wh_i and a_r Wh_j respectively.

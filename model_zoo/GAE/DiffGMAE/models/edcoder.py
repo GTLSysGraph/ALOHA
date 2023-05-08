@@ -220,8 +220,8 @@ class PreModel(nn.Module):
 
         #### add by ssh
         self.predict_noises = False
-        self.timestep = 10000
-        self.beta_schedule = 'quadratic'
+        self.timestep = 1000
+        self.beta_schedule = 'linear'
         self.gaussian_diffusion = GaussianDiffusion(self.timestep, self.beta_schedule)
         self.position_encoding =  PositionalEncoding(in_dim)
 
@@ -230,12 +230,13 @@ class PreModel(nn.Module):
         self.graphformer_heads  = 1 
         self.last_state_only = True
         self.num_decoder_layers = 1
-        self.cross_attention_input_dim = []
-        # self.cross_attention_input_dim = [self.graphformer_hidden, dec_in_dim, dec_in_dim]
+        # self.cross_attention_input_dim = []
+        self.cross_attention_input_dim = [self.graphformer_hidden, dec_in_dim, dec_in_dim]
         self.graphformer_decoder = GraphDecoder(
                                                 in_dim,
                                                 self.graphformer_hidden,
                                                 self.graphformer_heads,
+                                                dec_in_dim_final,
                                                 self.last_state_only,
                                                 self.cross_attention_input_dim,
                                                 self.num_decoder_layers
@@ -303,13 +304,13 @@ class PreModel(nn.Module):
         # add noise
         timestep_size = out_diffusion_x[mask_nodes].shape[0]
         # 注意初始值不为0，会做分母
-        mask_nodes_t = torch.randint(1, n_steps, size=(timestep_size,)).long().to(out_diffusion_x.device)
+        mask_nodes_t = torch.randint(800, n_steps, size=(timestep_size,)).long().to(out_diffusion_x.device)
         
         out_diffusion_x[mask_nodes] = self.gaussian_diffusion.q_sample(out_diffusion_x[mask_nodes],mask_nodes_t)
 
         mask_positon_encoding = self.position_encoding(mask_nodes_t)
         mask_positon_encoding = mask_positon_encoding.to(out_diffusion_x.device)
-        # out_diffusion_x[mask_nodes] += mask_positon_encoding
+        out_diffusion_x[mask_nodes] += mask_positon_encoding
 
         out_diffusion_x[mask_nodes] +=  self.enc_mask_token
 
@@ -324,7 +325,7 @@ class PreModel(nn.Module):
         return loss, loss_item
     
     def mask_attr_prediction(self, g, x, epoch):
-        pre_use_g, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes, remask_nodes,keep_nodes) = self.encoding_mask_noise(g, x, self.timestep,self._mask_rate)
+        pre_use_g, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes, remask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self.timestep,self._mask_rate)
 
         if self._drop_edge_rate > 0:
             use_g, masked_edges = drop_edge(pre_use_g, self._drop_edge_rate, return_edges=True)
@@ -344,19 +345,24 @@ class PreModel(nn.Module):
         # rep = torch.cat((rep,torch.zeros(rep.shape[0],out_diffusion_x.shape[-1]-rep.shape[-1]).to(out_diffusion_x.device)),dim = -1)
 
         if self.use_graphformer_decoder == True:
-            rep[mask_nodes] = out_diffusion_x[mask_nodes]
-            # test
-            rep[mask_nodes] = 0
-            #
-            self_whole_mask = pre_use_g.adj().to_dense().to(rep.device)
-            # self_mask = pre_use_g.adj().to_dense()[mask_nodes,:][:,mask_nodes].to(rep.device)
+            noise_feature =   out_diffusion_x[mask_nodes]  #* (1 /mask_nodes_t.unsqueeze(-1)) + self.enc_mask_token 
+            # self_whole_mask = pre_use_g.adj().to_dense().to(rep.device)
+            self_mask = pre_use_g.adj().to_dense()[mask_nodes,:][:,mask_nodes].to(rep.device)
             cross_mask = pre_use_g.adj().to_dense()[mask_nodes,:][:,keep_nodes].to(rep.device)
-            recon = self.graphformer_decoder(rep, rep[keep_nodes], self_whole_mask, cross_mask) # graph, noise_feature, resist_enc_embed
+            recon = self.graphformer_decoder(noise_feature, rep[keep_nodes], self_mask, cross_mask) # graph, noise_feature, resist_enc_embed
+        
+            x_rec = recon
+    
         else:   
             # out_diffusion_x  = self.noise_linear(out_diffusion_x)
+            # self_mask = pre_use_g.adj().to_dense()[mask_nodes,:][:,mask_nodes].to(rep.device)
+            # cross_mask = pre_use_g.adj().to_dense()[mask_nodes,:][:,keep_nodes].to(rep.device)
+            # rep_dec = self.graphformer_decoder(out_diffusion_x[mask_nodes], rep[keep_nodes], self_mask, cross_mask)
+            # rep = torch.zeros(x.shape[0],rep_dec.shape[1]).to(rep.device)
+            # rep[mask_nodes] = rep_dec
 
             rep[keep_nodes] = rep[keep_nodes]  # 给一定的缩放比例貌似能提升效果，更好的关注生成部分 0.0的时候不能重建，这就证明需要encoder提供的信息，但是直接用效果又不太好，得缩放简单提供
-            rep[mask_nodes] = out_diffusion_x[mask_nodes] * (1 /mask_nodes_t.unsqueeze(-1)) + self.enc_mask_token  # 这里重新用enc_mask_token比再重新用一个re_enc_mask_token要好很多
+            rep[mask_nodes] =  out_diffusion_x[mask_nodes] * (1 /mask_nodes_t.unsqueeze(-1)) + self.enc_mask_token  # 这里重新用enc_mask_token比再重新用一个re_enc_mask_token要好很多
             #  
             # # ######### 看一下是不是mask不为0就会影响结果
             if self._decoder_type not in ("mlp", "linear"):
@@ -364,16 +370,23 @@ class PreModel(nn.Module):
                 rep[remask_nodes] = 0
             ###############################################
 
+            # rep_use_for_against = rep.clone()
+            # rep_use_for_against[keep_nodes] == 0
+
             if self._decoder_type in ("mlp", "liear") :
                 recon = self.decoder(rep)
             else:
                 recon = self.decoder(pre_use_g, rep)
+                # rep[keep_nodes] = 0
+                # recon_against = self.decoder(pre_use_g, rep)
 
+            x_rec =  recon[mask_nodes]
         x_init = x[mask_nodes]
-        x_rec =  recon[mask_nodes]
         
-        # 希望decoder输出的keep node特征之间具有很好的同质性
-        # keep_nodes_adj = pre_use_g.adj().to_dense()[keep_nodes,:][:,keep_nodes].to(rep.device)
+
+        # x_against = recon_against[mask_nodes]
+        # # 希望decoder输出的keep node特征之间具有很好的同质性
+        # keep_nodes_adj = pre_use_g.adj().to_dense()[mask_nodes,:][:,mask_nodes].to(rep.device)
 
 
         # 如果用gat做扩散模型感觉太简单了，这里试一下模仿transformer或者Unet
@@ -381,9 +394,10 @@ class PreModel(nn.Module):
             # generate random noise
             noise = torch.randn_like(x_init)
             # get x_t
-            loss = F.mse_loss(noise, x_rec)
+            loss = self.criterion(noise, x_rec)
         else:
-            loss = self.criterion(x_rec, x_init)
+
+            loss = self.criterion(x_rec, x_init)  #+  0.05* torch.log(1 - self.criterion(recon_against[mask_nodes], x_init))
         return loss
 
     def embed(self, g, x):

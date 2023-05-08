@@ -3,17 +3,63 @@ from     easydict        import EasyDict
 import   torch
 from     model_zoo.GAE.GraphMAE.utils          import *
 from     model_zoo.GAE.GraphMAE.build_easydict import *
-from     model_zoo.GAE.GraphMAE.evaluation     import * 
+from     model_zoo.GAE.GraphMAE.evaluation_tranductive     import * 
+from     model_zoo.GAE.GraphMAE.evaluation_inductive       import * 
 from     datasets_dgl.data_dgl import *
 
 import   logging
 from     tqdm import tqdm
 from     model_zoo.GAE.GraphMAE.models import build_model
-import  ipdb
+
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
-def pretrain(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+
+
+def pretrain_inductive(model, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+    logging.info("start training..")
+    train_loader, val_loader, test_loader, eval_train_loader = dataloaders
+
+    epoch_iter = tqdm(range(max_epoch))
+
+    if isinstance(train_loader, list) and len(train_loader) ==1:
+        train_loader = [train_loader[0].to(device)]
+        eval_train_loader = train_loader
+    if isinstance(val_loader, list) and len(val_loader) == 1:
+        val_loader = [val_loader[0].to(device)]
+        test_loader = val_loader
+
+    for epoch in epoch_iter:
+        model.train()
+        loss_list = []
+
+        for subgraph in train_loader:
+            subgraph = subgraph.to(device)
+            loss, loss_dict = model(subgraph, subgraph.ndata["feat"])
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            loss_list.append(loss.item())
+
+        if scheduler is not None:
+            scheduler.step()
+
+        train_loss = np.mean(loss_list)
+        epoch_iter.set_description(f"# Epoch {epoch} | train_loss: {train_loss:.4f}")
+        if logger is not None:
+            loss_dict["lr"] = get_current_lr(optimizer)
+            logger.note(loss_dict, step=epoch)
+        
+        if epoch == (max_epoch//2):
+            evaluete(model, (eval_train_loader, val_loader, test_loader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob, mute=True)
+    return model
+
+
+
+
+
+def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
     logging.info("start training..")
     graph = graph.to(device)
     x = feat.to(device)
@@ -51,33 +97,47 @@ def Train_GraphMAE_nodecls(margs):
 
     dataset_name = margs.dataset
     DATASET = EasyDict()
-    if dataset_name.split('-')[0] == 'Attack':
-        # dataset_name = dataset_name.split('-')[1]
-        DATASET.ATTACK = EasyDict()
-        DATASET.ATTACK.PARAM = {
-            "data":dataset_name,
-            "attack":margs.attack.split('-')[0],
-            "ptb_rate":margs.attack.split('-')[1]
-        }
-        # now just attack use
-        dataset  = load_data(DATASET['ATTACK']['PARAM'])
-        graph = dataset.graph
-    else:
-        DATASET.PARAM = {
-            "data":dataset_name,
-        }
-        dataset  = load_data(DATASET['PARAM'])
-        graph = dataset[0]
+    if margs.mode == 'tranductive':
+        if dataset_name.split('-')[0] == 'Attack':
+            # dataset_name = dataset_name.split('-')[1]
+            DATASET.ATTACK = EasyDict()
+            DATASET.ATTACK.PARAM = {
+                "data":dataset_name,
+                "attack":margs.attack.split('-')[0],
+                "ptb_rate":margs.attack.split('-')[1]
+            }
+            # now just attack use
+            dataset  = load_data(DATASET['ATTACK']['PARAM'])
+            graph = dataset.graph
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
 
-    graph = dgl.remove_self_loop(graph)
-    graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
-    # num_classes  = args.nb_classes
-    # num_features = args.in_dim_V
+        else:
+            DATASET.PARAM = {
+                "data":dataset_name,
+            }
+            dataset  = load_data(DATASET['PARAM'])
+            if dataset_name == 'ogbn-arxiv':
+                graph = process_OGB(dataset)
+            else:   
+                graph = dataset[0]
+                graph = dgl.remove_self_loop(graph)
+                graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
 
+        num_classes = dataset.num_classes
+        num_features = graph.ndata['feat'].shape[1]
+
+    elif margs.mode == 'inductive':
+            (
+                train_dataloader,
+                valid_dataloader, 
+                test_dataloader, 
+                eval_train_dataloader, 
+                num_features, 
+                num_classes
+            ) = load_inductive_dataset(dataset_name)
     
-    num_classes = dataset.num_classes
-    num_features = graph.ndata['feat'].shape[1]
-    #######################
+    ##########################
     
     MDT = build_easydict_nodecls()
     param         = MDT['MODEL']['PARAM']
@@ -133,10 +193,12 @@ def Train_GraphMAE_nodecls(margs):
             scheduler = None
 
 
-        x = graph.ndata["feat"]
-
         if not load_model:
-            model = pretrain(model, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            if margs.mode == 'tranductive':
+                x = graph.ndata["feat"]
+                model = pretrain_tranductive(model, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            elif margs.mode == 'inductive':
+                model = pretrain_inductive(model, (train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             # model = model.cpu()
 
         if load_model:
@@ -149,7 +211,11 @@ def Train_GraphMAE_nodecls(margs):
         model = model.to(device)
         model.eval()
 
-        final_acc, estp_acc = node_classification_evaluation(model, graph, x, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        if margs.mode == 'tranductive':
+            final_acc, estp_acc = node_classification_evaluation(model, graph, x, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        elif margs.mode == 'inductive':
+            final_acc, estp_acc = evaluete(model, (eval_train_dataloader, valid_dataloader, test_dataloader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        
         acc_list.append(final_acc)
         estp_acc_list.append(estp_acc)
 

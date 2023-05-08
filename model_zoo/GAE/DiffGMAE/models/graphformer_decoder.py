@@ -9,6 +9,7 @@ class GraphDecoder(nn.Module):
                 in_dim: int,
                 embedding_dim,
                 num_heads:int,
+                out_dim:int,
                 last_state_only:bool,
                 cross_attention_input_dim:list,
                 num_decoder_layers: int
@@ -25,14 +26,14 @@ class GraphDecoder(nn.Module):
                                 cross_attention_input_dim,
                                 num_decoder_layers
                             )
-        self.rebuild_in_dim = nn.Linear(embedding_dim,in_dim)
+        self.rebuild_in_dim = nn.Linear(embedding_dim,out_dim)
 
     def forward(self, noise_feature, resist_enc_embed,self_mask,cross_mask):
         noise_dec_feat = self.in_dim_to_emb_dim(noise_feature)
         inner_states = self.graph_decoder(noise_dec_feat, resist_enc_embed ,self_mask, cross_mask,self.last_state_only)
         x = inner_states[-1]
-        # rebuild_x = self.rebuild_in_dim(x)
-        return x
+        rebuild_x = self.rebuild_in_dim(x)
+        return rebuild_x
     
 
 class GraphFormerDecoder(nn.Module):
@@ -120,7 +121,7 @@ class GraphormerGraphDecoderLayer(nn.Module):
             attn_final.append(attn_self)
 
             # 这里对self attention和 cross_attention进行融合
-            x = x_self + x_cross
+            x =  x_cross
             
 
         # x = self.dropout(x)
@@ -172,11 +173,9 @@ class MultiHeadAttention(nn.Module):
         k_attn = (K * self.attn_k).sum(dim=-1).unsqueeze(-1)
         q_attn = q_attn.unsqueeze(-2).expand(-1,-1,K.shape[-2],-1)
         scores = (q_attn + k_attn).squeeze(-1)
-        scores = self.leaky_relu(scores * mask) * 1000000
-
-        print(scores)
+        scores = self.leaky_relu(scores * mask)
         # self attention的score方法，效果很差
-        # scores = torch.matmul(Q, K.transpose(1,2)) * mask # (n_heads, q_length, k_length)
+        # scores = self.leaky_relu(torch.matmul(Q, K.transpose(1,2))) # (n_heads, q_length, k_length)
 
 
         A =F.softmax(scores,dim=-1)  # (n_heads, q_length, k_length)
