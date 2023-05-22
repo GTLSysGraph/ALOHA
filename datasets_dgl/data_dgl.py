@@ -14,7 +14,7 @@ from datasets_dgl.datasets_file.polblogs import PolblogsDataset
 from dgl.data     import CoraGraphDataset
 from dgl.data     import CiteseerGraphDataset
 from dgl.data     import PubmedGraphDataset
-
+from dgl.data     import RedditDataset
 # inductive 
 from ogb.nodeproppred import DglNodePropPredDataset
 from dgl.data.ppi import PPIDataset
@@ -23,7 +23,7 @@ from dgl.data.ppi import PPIDataset
 from dgl.data import TUDataset
 
 
-def load_data(args):
+def load_attack_data(args):
     if args.data in ['Attack-Cora']:
         return CoraDataset(args)
     elif args.data in ['Attack-Citeseer']:
@@ -32,16 +32,23 @@ def load_data(args):
         return PubmedDataset(args)
     elif args.data in ['Attack-Polblogs']:
         return PolblogsDataset(args)
-    elif args.data in ['Cora']:
-        return CoraGraphDataset()
-    elif args.data in ['Citeseer']:
-        return CiteseerGraphDataset()
-    elif args.data in ['Pubmed']:
-        return PubmedGraphDataset()
-    elif args.data in ['ogbn-arxiv']:
-        return DglNodePropPredDataset('ogbn-arxiv',root = 'datasets_dgl/OGB')
     else:
         raise Exception('Unknown dataset!')
+
+def load_data(dataname):
+    if dataname in ['Cora']:
+        return CoraGraphDataset()
+    elif dataname in ['Citeseer']:
+        return CiteseerGraphDataset()
+    elif dataname in ['Pubmed']:
+        return PubmedGraphDataset()
+    elif dataname in ['ogbn-arxiv']:
+        return DglNodePropPredDataset('ogbn-arxiv',root = '/home/songsh/.dgl')
+    elif dataname in ['Reddit']:
+        return RedditDataset()
+    else:
+        raise Exception('Unknown dataset!')
+
 
 
 def load_graph_data(dataset_name):
@@ -65,7 +72,26 @@ def load_inductive_dataset(dataset_name):
         num_classes = train_dataset.num_labels
         num_features = g.ndata['feat'].shape[1]
     else:
-        print("wait..")
+        batch_size = 1
+        dataset = load_data(dataset_name)
+        num_classes = dataset.num_classes
+        g = dataset[0] 
+        num_features = g.ndata["feat"].shape[1]
+
+        train_mask = g.ndata['train_mask']
+        feat = g.ndata["feat"]
+        feat = scale_feats(feat)
+        g.ndata["feat"] = feat
+
+        g = g.remove_self_loop()
+        g = g.add_self_loop()
+
+        train_nid = np.nonzero(train_mask.data.numpy())[0].astype(np.int64)
+        train_g = dgl.node_subgraph(g, train_nid)
+        train_dataloader = [train_g]
+        valid_dataloader = [g]
+        test_dataloader = valid_dataloader
+        eval_train_dataloader = [train_g]
         
     return train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader, num_features, num_classes
 

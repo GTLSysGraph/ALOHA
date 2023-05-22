@@ -24,6 +24,7 @@ from .utils import (
     TBLogger,
     get_current_lr,
     load_best_configs,
+    load_graph_classification_dataset
 )
 
 def graph_classification_evaluation(model, pooler, dataloader, num_classes, lr_f, weight_decay_f, max_epoch_f, device, mute=False):
@@ -176,6 +177,7 @@ def Train_GraphMAE_graphcls(margs):
 
     train_loader = GraphDataLoader(graphs, sampler=train_sampler, collate_fn=collate_fn, batch_size=batch_size, pin_memory=True)
     eval_loader = GraphDataLoader(graphs, collate_fn=collate_fn, batch_size=batch_size, shuffle=False)
+
 
     if pooling == "mean":
         pooler = AvgPooling()

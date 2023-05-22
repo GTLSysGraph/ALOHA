@@ -215,7 +215,9 @@ class PreModel(nn.Module):
 
             out_x = x.clone()
             out_x[token_nodes] = 0.0
-            out_x[noise_nodes] = x[noise_to_be_chosen]
+            # 注意如果为0 ，noise_nodes里面是-0,和0一样，就包含了所有的mask_modes，格式不匹配
+            if num_noise_nodes != 0:
+                out_x[noise_nodes] = x[noise_to_be_chosen]
         else:
             out_x = x.clone()
             token_nodes = mask_nodes

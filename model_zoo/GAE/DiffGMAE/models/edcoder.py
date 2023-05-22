@@ -220,7 +220,7 @@ class PreModel(nn.Module):
 
         #### add by ssh
         self.predict_noises = False
-        self.timestep = 1000
+        self.timestep = 10000
         self.beta_schedule = 'linear'
         self.gaussian_diffusion = GaussianDiffusion(self.timestep, self.beta_schedule)
         self.position_encoding =  PositionalEncoding(in_dim)
@@ -275,7 +275,7 @@ class PreModel(nn.Module):
 
 
         # 只从mask里面挑一部分remask
-        remask_rate = 0.6
+        remask_rate = 0.5
         perm_index = torch.randperm(num_mask_nodes, device=x.device)
         num_remask_nodes = int(remask_rate * num_mask_nodes)
         remask_nodes = mask_nodes[perm_index[: num_remask_nodes]]
@@ -304,7 +304,7 @@ class PreModel(nn.Module):
         # add noise
         timestep_size = out_diffusion_x[mask_nodes].shape[0]
         # 注意初始值不为0，会做分母
-        mask_nodes_t = torch.randint(800, n_steps, size=(timestep_size,)).long().to(out_diffusion_x.device)
+        mask_nodes_t = torch.randint(8000, n_steps, size=(timestep_size,)).long().to(out_diffusion_x.device)
         
         out_diffusion_x[mask_nodes] = self.gaussian_diffusion.q_sample(out_diffusion_x[mask_nodes],mask_nodes_t)
 
@@ -316,7 +316,7 @@ class PreModel(nn.Module):
 
         use_g = g.clone()
 
-        return use_g, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes,remask_nodes,keep_nodes)
+        return use_g, perm, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes,remask_nodes,keep_nodes)
 
     def forward(self, g, x, epoch):
         # ---- attribute reconstruction ----
@@ -325,7 +325,7 @@ class PreModel(nn.Module):
         return loss, loss_item
     
     def mask_attr_prediction(self, g, x, epoch):
-        pre_use_g, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes, remask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self.timestep,self._mask_rate)
+        pre_use_g, perm, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes, remask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self.timestep,self._mask_rate)
 
         if self._drop_edge_rate > 0:
             use_g, masked_edges = drop_edge(pre_use_g, self._drop_edge_rate, return_edges=True)
@@ -377,8 +377,8 @@ class PreModel(nn.Module):
                 recon = self.decoder(rep)
             else:
                 recon = self.decoder(pre_use_g, rep)
-                # rep[keep_nodes] = 0
-                # recon_against = self.decoder(pre_use_g, rep)
+                rep[keep_nodes] = 0
+                recon_against = self.decoder(pre_use_g, rep)
 
             x_rec =  recon[mask_nodes]
         x_init = x[mask_nodes]
@@ -397,7 +397,7 @@ class PreModel(nn.Module):
             loss = self.criterion(noise, x_rec)
         else:
 
-            loss = self.criterion(x_rec, x_init)  #+  0.05* torch.log(1 - self.criterion(recon_against[mask_nodes], x_init))
+            loss = self.criterion(x_rec, x_init)  +  0.1 * self.criterion(recon_against[mask_nodes], -5 * x[perm][mask_nodes])
         return loss
 
     def embed(self, g, x):

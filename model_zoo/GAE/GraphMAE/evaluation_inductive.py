@@ -4,7 +4,7 @@ from .utils import create_optimizer, accuracy
 from tqdm import tqdm
 from sklearn.metrics import f1_score
 import numpy as np
-from copy import copy
+import copy
 
 def evaluete(model, loaders, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob=True, mute=False):
     model.eval()
@@ -196,13 +196,3 @@ class LogisticRegression(nn.Module):
         logits = self.linear(x)
         return logits
 
-
-
-class LogisticRegression(nn.Module):
-    def __init__(self, num_dim, num_class):
-        super().__init__()
-        self.linear = nn.Linear(num_dim, num_class)
-
-    def forward(self, g, x, *args):
-        logits = self.linear(x)
-        return logits

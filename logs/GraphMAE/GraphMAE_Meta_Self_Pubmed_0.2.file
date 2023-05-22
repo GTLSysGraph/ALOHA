@@ -1,7 +1,7 @@
 [I] Loading dataset Attack-Pubmed...
 train_mask, test_mask, val_mask sizes : tensor(1971) tensor(1972) tensor(15774)
 [I] Finished loading.
-[I] Data load time: 3.8966s
+[I] Data load time: 5.4426s
 ------ Use best configs ------
 ####### Run 0 for seed 12
 # IGNORE: --- TestAcc: 0.7263, early-stopping-TestAcc: 0.7263, Best ValAcc: 0.7373 in epoch 299 --- 

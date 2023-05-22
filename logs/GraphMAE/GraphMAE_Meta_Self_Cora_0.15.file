@@ -1,7 +1,7 @@
 [I] Loading dataset Attack-Cora...
 train_mask, test_mask, val_mask sizes : tensor(247) tensor(249) tensor(1988)
 [I] Finished loading.
-[I] Data load time: 3.6294s
+[I] Data load time: 3.9713s
 ------ Use best configs ------
 ####### Run 0 for seed 12
 # IGNORE: --- TestAcc: 0.6318, early-stopping-TestAcc: 0.6906, Best ValAcc: 0.7390 in epoch 43 --- 
@@ -33,5 +33,15 @@ num parameters for finetuning: 3591
 # IGNORE: --- TestAcc: 0.6419, early-stopping-TestAcc: 0.6806, Best ValAcc: 0.7229 in epoch 97 --- 
 num parameters for finetuning: 3591
 --- TestAcc: 0.6424, early-stopping-TestAcc: 0.6806, Best ValAcc: 0.7189 in epoch 103 --- 
-# final_acc: 0.6516±0.0068
-# early-stopping_acc: 0.6819±0.0042
+####### Run 3 for seed 7
+# IGNORE: --- TestAcc: 0.6167, early-stopping-TestAcc: 0.6932, Best ValAcc: 0.7349 in epoch 38 --- 
+# IGNORE: --- TestAcc: 0.6484, early-stopping-TestAcc: 0.6896, Best ValAcc: 0.7269 in epoch 57 --- 
+# IGNORE: --- TestAcc: 0.6585, early-stopping-TestAcc: 0.6871, Best ValAcc: 0.7189 in epoch 62 --- 
+# IGNORE: --- TestAcc: 0.6559, early-stopping-TestAcc: 0.6856, Best ValAcc: 0.7108 in epoch 79 --- 
+# IGNORE: --- TestAcc: 0.6564, early-stopping-TestAcc: 0.6831, Best ValAcc: 0.6988 in epoch 96 --- 
+# IGNORE: --- TestAcc: 0.6590, early-stopping-TestAcc: 0.6821, Best ValAcc: 0.7028 in epoch 87 --- 
+# IGNORE: --- TestAcc: 0.6579, early-stopping-TestAcc: 0.6816, Best ValAcc: 0.7108 in epoch 85 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.6559, early-stopping-TestAcc: 0.6806, Best ValAcc: 0.7108 in epoch 82 --- 
+# final_acc: 0.6527±0.0062
+# early-stopping_acc: 0.6816±0.0037
