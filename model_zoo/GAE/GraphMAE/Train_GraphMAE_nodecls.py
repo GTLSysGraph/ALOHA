@@ -51,7 +51,7 @@ def pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size,device, s
 
     # sampler文件里的 SAINTSampler
     train_nid = graph.ndata['train_mask'].nonzero().squeeze()
-    subg_iter = SAINTNodeSampler(6000, 'cora', graph,
+    subg_iter = SAINTNodeSampler(6000, 'Reddit', graph,
                                     train_nid, 50)
     
     logging.info("start mini batch training..")
@@ -199,7 +199,6 @@ def Train_GraphMAE_nodecls(margs):
             ) = load_inductive_dataset(dataset_name)
     else:
         raise Exception('Unknown mode!')
-
 
     ##########################
     

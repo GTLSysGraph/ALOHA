@@ -6,7 +6,10 @@ import torch
 import random
 import numpy as np
 from texttable import Texttable
-
+import yaml
+import logging
+from typing import Optional
+from torch import Tensor
 
 def set_seed(seed):
     random.seed(seed)
@@ -18,6 +21,32 @@ def set_seed(seed):
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.enabled = False
+
+
+def index_to_mask(index: Tensor, size: Optional[int] = None) -> Tensor:
+    r"""Converts indices to a mask representation.
+
+    Args:
+        idx (Tensor): The indices.
+        size (int, optional). The size of the mask. If set to :obj:`None`, a
+            minimal sized output mask is returned.
+
+    Example:
+
+        >>> index = torch.tensor([1, 3, 5])
+        >>> index_to_mask(index)
+        tensor([False,  True, False,  True, False,  True])
+
+        >>> index_to_mask(index, size=7)
+        tensor([False,  True, False,  True, False,  True, False])
+    """
+    index = index.view(-1)
+    size = int(index.max()) + 1 if size is None else size
+    mask = index.new_zeros(size, dtype=torch.bool)
+    mask[index] = True
+    return mask
+
+
 
 
 def tab_printer(args):
@@ -81,6 +110,28 @@ class Logger(object):
             print(f'Highest Valid: {r.mean():.2f} ± {r.std():.2f}', file=f)
             r = best_result[:, 1]
             print(f'   Final Test: {r.mean():.2f} ± {r.std():.2f}', file=f)
+
+
+def load_best_configs(param, dataset_name, path):
+    with open(path, "r") as f:
+        configs = yaml.load(f, yaml.FullLoader)
+
+    if dataset_name not in configs:
+        logging.info("Best args not found")
+        return param
+
+    logging.info("Using best configs")
+    configs = configs[dataset_name]
+
+    for k, v in configs.items():
+        if "lr" in k or "weight_decay" in k:
+            v = float(v)
+        setattr(param, k, v)
+    print("------ Use best configs ------")
+    return param
+
+
+
 
 
 def generate_split(num_samples: int, train_ratio: float, val_ratio: float):

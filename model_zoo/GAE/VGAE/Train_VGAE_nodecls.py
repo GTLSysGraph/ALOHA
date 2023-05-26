@@ -16,25 +16,45 @@ def Train_VGAE_nodecls(margs):
         device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
 
     dataset_name = margs.dataset
-    DATASET = EasyDict()
-    if dataset_name.split('-')[0] == 'Attack':
-        # dataset_name = dataset_name.split('-')[1]
-        DATASET.ATTACK = EasyDict()
-        DATASET.ATTACK.PARAM = {
-            "data":dataset_name,
-            "attack":margs.attack.split('-')[0],
-            "ptb_rate":margs.attack.split('-')[1]
-        }
-        # now just attack use
-        dataset  = load_data(DATASET['ATTACK']['PARAM'])
-        graph = dataset.graph
+    if margs.mode in ['tranductive' , 'mini_batch']:
+        if dataset_name.split('-')[0] == 'Attack':
+            # dataset_name = dataset_name.split('-')[1]
+            DATASET = EasyDict()
+            DATASET.ATTACK = {
+                "data":dataset_name,
+                "attack":margs.attack.split('-')[0],
+                "ptb_rate":margs.attack.split('-')[1]
+            }
+            # now just attack use
+            dataset  = load_attack_data(DATASET['ATTACK'])
+            graph = dataset.graph    
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph) 
+        else:
+            dataset  = load_data(dataset_name)
+            if dataset_name == 'ogbn-arxiv':
+                graph = process_OGB(dataset)
+            else:   
+                graph = dataset[0]
+                graph = dgl.remove_self_loop(graph)
+                graph = dgl.add_self_loop(graph) 
+
+        num_classes = dataset.num_classes
+        num_features = graph.ndata['feat'].shape[1]
+        
+    elif margs.mode in ['inductive']:
+            (
+                train_dataloader,
+                valid_dataloader, 
+                test_dataloader, 
+                eval_train_dataloader, 
+                num_features, 
+                num_classes
+            ) = load_inductive_dataset(dataset_name)
     else:
-        DATASET.PARAM = {
-            "data":dataset_name,
-        }
-        dataset  = load_data(DATASET['PARAM'])
-        graph = dataset[0]
+        raise Exception('Unknown mode!')
     
+
     feat = graph.ndata['feat']
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]

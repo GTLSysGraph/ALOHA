@@ -1,13 +1,13 @@
 import os.path as osp
-from torch_geometric.datasets import Planetoid, CitationFull, WikiCS, Coauthor, Amazon,Flickr,Reddit,Yelp
+from torch_geometric.datasets import Planetoid, CitationFull, WikiCS, Coauthor, Amazon,Flickr,Reddit,Yelp, PPI
 import torch_geometric.transforms as T
 from ogb.nodeproppred import PygNodePropPredDataset # 会卡住 pip uninstall setuptools 解决
 from datasets_pyg.Attack_data.attackdata import AttackDataset
-
+from datasets_pyg.Reddit_small.Reddit_small import Reddit_small
 
 def get_dataset(path, name, attackmethod= None, attackptb = None):
     assert name in ['Cora', 'CiteSeer', 'PubMed', 'DBLP', 'WikiCS', 'Coauthor-CS', 'Coauthor-Phy',
-                    'Amazon-Computers', 'Amazon-Photo', 'ogbn-arxiv','Flickr','Yelp','Reddit','Attack-Cora','Attack-Citeseer','Attack-Pubmed','Attack-polblogs']
+                    'Amazon-Computers', 'Amazon-Photo', 'ogbn-arxiv','Flickr','Yelp','Reddit','Attack-Cora','Attack-Citeseer','Attack-Pubmed','Attack-polblogs','PPI','Reddit_small']
     
     name = 'dblp' if name == 'DBLP' else name
     root_path = osp.expanduser('/home/songsh/GCL/datasets_pyg')
@@ -28,6 +28,9 @@ def get_dataset(path, name, attackmethod= None, attackptb = None):
     if name == 'Reddit':
         return Reddit(root=path, transform=T.NormalizeFeatures())
 
+    if name == 'Reddit_small':
+        return Reddit_small(root=path, transform=T.NormalizeFeatures())
+
     if name == 'WikiCS':
         return WikiCS(root=path, transform=T.NormalizeFeatures())
 
@@ -37,6 +40,9 @@ def get_dataset(path, name, attackmethod= None, attackptb = None):
     if name == 'Amazon-Photo':
         return Amazon(root=path, name='photo', transform=T.NormalizeFeatures())
     
+    if name == 'PPI':
+        return [PPI(root=path, split='train'),PPI(root=path, split='val'),PPI(root=path, split='test')]
+
     if name.startswith('Attack'):
         return AttackDataset(root = path, name = name, attackmethod = attackmethod, ptb_rate=attackptb, transform=T.NormalizeFeatures())
 

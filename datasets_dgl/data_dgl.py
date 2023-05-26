@@ -46,6 +46,8 @@ def load_data(dataname):
         return DglNodePropPredDataset('ogbn-arxiv',root = '/home/songsh/.dgl')
     elif dataname in ['Reddit']:
         return RedditDataset()
+    elif dataname in ['PPI']:
+        return PPIDataset()
     else:
         raise Exception('Unknown dataset!')
 

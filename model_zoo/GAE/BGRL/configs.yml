@@ -1,0 +1,152 @@
+WikiCS:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [512,256]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.2
+  drop_feat_p_1: 0.2
+  drop_edge_p_2: 0.3
+  drop_feat_p_2: 0.1
+  # Training
+  lr: 5e-4
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/WikiCS
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/WikiCS/bgrl-WikiCS.pt
+
+Amazon-Computers:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [256,128]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.5
+  drop_feat_p_1: 0.2
+  drop_edge_p_2: 0.4
+  drop_feat_p_2: 0.1
+  # Training
+  lr: 5e-4
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/Amazon-Computers
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/Amazon-Computers/bgrl-Amazon-Computers.pt
+
+
+Amazon-Photo:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [256,128]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.4
+  drop_feat_p_1: 0.1
+  drop_edge_p_2: 0.1
+  drop_feat_p_2: 0.2
+  # Training
+  lr: 1e-4
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/Amazon-Photo
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/Amazon-Photo/bgrl-Amazon-Photo.pt
+
+
+Coauthor-CS:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [512,256]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.3
+  drop_feat_p_1: 0.3
+  drop_edge_p_2: 0.2
+  drop_feat_p_2: 0.4
+  # Training
+  lr: 1e-5
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/Coauthor-CS
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/Coauthor-CS/bgrl-Coauthor-CS.pt
+
+
+Coauthor-Phy:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [256,128]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.4
+  drop_feat_p_1: 0.1
+  drop_edge_p_2: 0.1
+  drop_feat_p_2: 0.4
+  # Training
+  lr: 1e-5
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/Coauthor-Phy
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/Coauthor-Phy/bgrl-Coauthor-Phy.pt
+
+PPI:
+  steps: 10000
+  batch_size: 22
+  # Architecture
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.3
+  drop_feat_p_1: 0.25
+  drop_edge_p_2: 0.25
+  drop_feat_p_2: 0.
+  # Training
+  lr: 1e-3
+  mm: 0.99
+  lr_warmup_steps: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/PPI
+  eval_steps: 1000
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/PPI/bgrl-PPI.pt
+
+
+
+
+ogbn-arxiv:
+  epochs: 10000
+  # Architecture
+  graph_encoder_layer: [256,128]
+  predictor_hidden_size: 512
+  # Augmentations
+  drop_edge_p_1: 0.4
+  drop_feat_p_1: 0.1
+  drop_edge_p_2: 0.1
+  drop_feat_p_2: 0.4
+  # Training
+  lr: 1e-5
+  mm: 0.99
+  lr_warmup_epochs: 1000
+  weight_decay: 1e-5
+  # Other
+  logdir: ./model_zoo/GAE/BGRL/logdir/ogbn-arxiv
+  eval_epochs: 250
+  # eval
+  ckpt_path: ./model_zoo/GAE/BGRL/logdir/ogbn-arxiv/bgrl-ogbn-arxiv.pt

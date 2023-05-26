@@ -1,5 +1,5 @@
 Cora:
-  inductive: False
+  batch_size: 512
   seed: 39788
   learning_rate: 0.0005
   num_hidden: 128
@@ -15,7 +15,6 @@ Cora:
   num_epochs: 200
   weight_decay: 0.00001
 CiteSeer:
-  inductive: False
   seed: 38108
   learning_rate: 0.001
   num_hidden: 256
@@ -31,7 +30,6 @@ CiteSeer:
   num_epochs: 200
   weight_decay: 0.00001
 PubMed:
-  inductive: False
   seed: 23344
   learning_rate: 0.001
   num_hidden: 256
@@ -47,7 +45,6 @@ PubMed:
   num_epochs: 1500
   weight_decay: 0.00001
 DBLP:
-  inductive: False
   seed: 83521
   learning_rate: 0.001
   num_hidden: 256
@@ -62,9 +59,26 @@ DBLP:
   tau: 0.7
   num_epochs: 1000
   weight_decay: 0.00001
+  
 ogbn-arxiv:
-  inductive: True
   batch_size: 1024
+  seed: 83521
+  learning_rate: 0.001
+  num_hidden: 256
+  num_proj_hidden: 256
+  activation: 'relu'
+  base_model: 'GCNConv'
+  num_layers: 2
+  drop_edge_rate_1: 0.1
+  drop_edge_rate_2: 0.4
+  drop_feature_rate_1: 0.1
+  drop_feature_rate_2: 0.0
+  tau: 0.7
+  num_epochs: 200
+  weight_decay: 0.00001
+
+Reddit_small:
+  batch_size: 1
   seed: 83521
   learning_rate: 0.001
   num_hidden: 256
