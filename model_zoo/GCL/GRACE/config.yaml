@@ -59,7 +59,7 @@ DBLP:
   tau: 0.7
   num_epochs: 1000
   weight_decay: 0.00001
-  
+
 ogbn-arxiv:
   batch_size: 1024
   seed: 83521
@@ -74,11 +74,11 @@ ogbn-arxiv:
   drop_feature_rate_1: 0.1
   drop_feature_rate_2: 0.0
   tau: 0.7
-  num_epochs: 200
+  num_epochs: 1
   weight_decay: 0.00001
 
 Reddit_small:
-  batch_size: 1
+  batch_size: 1024
   seed: 83521
   learning_rate: 0.001
   num_hidden: 256
@@ -91,5 +91,5 @@ Reddit_small:
   drop_feature_rate_1: 0.1
   drop_feature_rate_2: 0.0
   tau: 0.7
-  num_epochs: 200
+  num_epochs: 1
   weight_decay: 0.00001

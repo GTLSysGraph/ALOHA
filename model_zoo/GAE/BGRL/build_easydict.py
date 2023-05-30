@@ -5,7 +5,7 @@ def build_easydict_nodecls():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'BGRL'
     MDT.MODEL.PARAM = {
-        'model_seed': 1,
+        'model_seed': 8675,
         'data_seed': 1,
         'num_eval_splits': 3,
         'graph_encoder_layer': [512, 256, 128],

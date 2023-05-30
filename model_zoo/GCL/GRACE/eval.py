@@ -77,3 +77,37 @@ def label_classification(embeddings, y, ratio,shuffle):
         'F1Mi': micro,
         'F1Ma': macro
     }
+
+
+
+def label_classification_no_repeat(embeddings, y, ratio,shuffle):
+    X = embeddings.detach().cpu().numpy()
+    Y = y.detach().cpu().numpy()
+    Y = Y.reshape(-1, 1)
+    onehot_encoder = OneHotEncoder(categories='auto').fit(Y)
+    Y = onehot_encoder.transform(Y).toarray().astype(np.bool)
+
+    X = normalize(X, norm='l2')
+
+    X_train, X_test, y_train, y_test = train_test_split(X, Y,
+                                                        test_size=1 - ratio,shuffle= shuffle)
+    
+    logreg = LogisticRegression(solver='liblinear')
+    c = 2.0 ** np.arange(-10, 10)
+    
+    clf = GridSearchCV(estimator=OneVsRestClassifier(logreg),
+                       param_grid=dict(estimator__C=c), n_jobs=8, cv=5,
+                       verbose=0)
+    
+    clf.fit(X_train, y_train)
+    
+    y_pred = clf.predict_proba(X_test)
+    y_pred = prob_to_one_hot(y_pred)
+
+    micro = f1_score(y_test, y_pred, average="micro")
+    macro = f1_score(y_test, y_pred, average="macro")
+    
+    return {
+        'F1Mi': micro,
+        'F1Ma': macro
+    }

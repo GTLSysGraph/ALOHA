@@ -1,7 +1,7 @@
 
 from easydict import EasyDict
 
-def build_easydict_nodecls():
+def build_easydict():
     MDT = EasyDict()
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'GraphMAE'

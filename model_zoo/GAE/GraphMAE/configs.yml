@@ -125,7 +125,7 @@ reddit:
   num_heads: 2
   weight_decay: 2e-4
   weight_decay_f: 0
-  max_epoch: 500
+  max_epoch: 1
   max_epoch_f: 500
   mask_rate: 0.75
   num_layers: 4

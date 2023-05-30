@@ -53,11 +53,12 @@ def graph_classification_evaluation(model, pooler, dataloader, num_classes, lr_f
 # for train_index, test_index in skf.split(X, y):
 #     print("TRAIN:", train_index, "TEST:", test_index)
 
+# 注意是十次不同的划分，但每次都是包含了全部的数据集
 #TRAIN: [1 2 4 5] TEST: [0 3]
 #TRAIN: [0 2 3 5] TEST: [1 4]
 #TRAIN: [0 1 3 4] TEST: [2 5]
 
-# 所有的val组成最后的acc结果
+# 所有的test组成最后的acc结果
 
 
 def evaluate_graph_embeddings_using_svm(embeddings, labels):
@@ -135,7 +136,7 @@ def Train_GraphMAE_graphcls(margs):
     if margs.task == 'graph':
         assert dataset_name in ['IMDB-B' ,'IMDB-M' ,'PROTEINS', 'COLLAB', 'MUTAG', 'REDDIT-B', 'NCI1']
 
-    MDT = build_easydict_nodecls()
+    MDT = build_easydict()
     args         = MDT['MODEL']['PARAM']
     if args.use_cfg:
         args = load_best_configs(args, dataset_name, "./model_zoo/GAE/GraphMAE/configs.yml")

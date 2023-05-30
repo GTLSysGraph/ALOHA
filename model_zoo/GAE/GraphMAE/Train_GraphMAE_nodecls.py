@@ -6,7 +6,7 @@ from     model_zoo.GAE.GraphMAE.build_easydict import *
 from     model_zoo.GAE.GraphMAE.evaluation_tranductive     import * 
 from     model_zoo.GAE.GraphMAE.evaluation_inductive       import * 
 from     model_zoo.GAE.GraphMAE.evaluation_mini_batch       import * 
-
+from     datasets_graphsaint.data_graphsaint import *
 from     datasets_dgl.data_dgl import *
 
 import   logging
@@ -78,7 +78,6 @@ def pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size,device, s
             loss_dict["lr"] = get_current_lr(optimizer)
             logger.note(loss_dict, step=epoch)
     return model
-
 
 
 
@@ -179,13 +178,19 @@ def Train_GraphMAE_nodecls(margs):
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
         else:
-            dataset  = load_data(dataset_name)
-            if dataset_name == 'ogbn-arxiv':
-                graph = process_OGB(dataset)
-            else:   
+            if dataset_name in ['Cora','Pubmed','Citeseer']:
+                dataset  = load_data(dataset_name)
                 graph = dataset[0]
-                graph = dgl.remove_self_loop(graph)
-                graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
+            elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
+                multilabel_data = set(['ppi', 'yelp', 'amazon'])
+                multilabel = dataset_name in multilabel_data
+
+                dataset  = load_GraphSAINT_data(dataset_name, multilabel)
+                graph = dataset.g
+
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph)
+        
         num_classes = dataset.num_classes
         num_features = graph.ndata['feat'].shape[1]
     elif margs.mode in ['inductive']:
@@ -200,9 +205,10 @@ def Train_GraphMAE_nodecls(margs):
     else:
         raise Exception('Unknown mode!')
 
+
     ##########################
     
-    MDT = build_easydict_nodecls()
+    MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
         param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/GraphMAE/configs.yml")

@@ -10,7 +10,7 @@ import torch_geometric.transforms as T
 from datasets_pyg.data_pyg import get_dataset
 from model_zoo.GCL.GRACE.GRACE import *
 from time import perf_counter as t
-from model_zoo.GCL.GRACE.eval import label_classification
+from model_zoo.GCL.GRACE.eval import label_classification,label_classification_no_repeat
 from torch_geometric.loader import NeighborLoader
 from torch_geometric.utils import add_self_loops
 
@@ -64,25 +64,47 @@ def train_transductive(model:Model,optimizer, drop_edge_rate_1,drop_edge_rate_2,
     return loss.item()
 
 
-def test_inductive(model, subgraph_loader, val_mask, test_mask, y, device):
+
+# 有问题的代码，需要重新实现，摆脱label_classification
+def test_inductive(model, val_loader, test_loader, val_mask, test_mask, y, device):
     model.eval()
-    pbar = tqdm(total=int(len(subgraph_loader.dataset)))
-    pbar.set_description('Evaluating')
+    # val 太大了，cat会内存不足
+    for loader in [val_loader, test_loader]:
+        pbar = tqdm(total=int(len(loader.dataset)))
+        pbar.set_description('Evaluating val' if loader == val_loader else 'Evaluting test')
+        ys = []
+        nid = []
+        F1Mi = []
+        F1Ma =[]
+        num_record = 0
+        for batch in loader:
+            z = model(batch.x.to(device), batch.edge_index.to(device))
+            ys.append(z[:batch.batch_size])
+            nid.append(batch.input_id.unsqueeze(-1))
+            num_record += z.shape[0]
 
-    accs = []
-    ys = []
-    for batch in subgraph_loader:
-        z = model(batch.x.to(device), batch.edge_index.to(device))
-        ys.append(z[:batch.batch_size])
-        pbar.update(batch.batch_size)
-    pbar.close()
-    ys = torch.cat(ys, dim=0)
-    ys = ys.argmax(dim=-1)
+            if num_record > 4000:
+                ys  = torch.cat(ys, dim=0)
+                nid = torch.cat(nid, dim=0)
+                # 这样是不行的，因为只有部分的标签，按时在label classfication里要onehot，必须要全部的标签才可以
+                res_mid = label_classification_no_repeat(ys, y[nid], ratio=0.1, shuffle = False)
+                F1Mi.append(res_mid['F1Mi'])
+                F1Ma.append(res_mid['F1Ma'])
+                ys  = []
+                nid = []
+                num_record = 0
 
-    for mask in [val_mask, test_mask]:
-        accs.append(int((ys[mask] == y[mask]).sum()) / int(mask.sum()))
-    print('val_acc : {}, test_acc: {}'.format(accs[0],accs[1]))
-    # label_classification(ys, y, ratio=0.1, shuffle = False)
+            pbar.update(batch.batch_size)
+        pbar.close()
+
+        final_f1mi = np.mean(F1Mi)
+        final_f1ma = np.mean(F1Ma)
+
+        if loader == val_loader:
+            print('val F1Mi : {}, val F1Ma : {}'.format(final_f1mi,final_f1ma))
+        else:
+            print('test F1Mi : {}, test F1Ma : {}'.format(final_f1mi,final_f1ma))
+
     
 
 
@@ -112,7 +134,7 @@ def Train_GRACE_nodecls(margs):
 
     data = dataset[0]
     data = data.to(device)
-
+    print(data)
 
     inductive_task = (margs.mode == 'inductive')
 
@@ -173,8 +195,10 @@ def Train_GRACE_nodecls(margs):
         # 如果用小图做inductive任务 肯定比用transductive差 因为训练集的数据太小 其他点不可见，但transductive中全部节点可见
         kwargs = {'batch_size': batch_size}
         train_loader = NeighborLoader(data, input_nodes=train_mask,
-                                    num_neighbors=[25,10], shuffle=True, **kwargs)
-        subgraph_loader = NeighborLoader(copy.copy(data), input_nodes=None,
+                                    num_neighbors=[25], shuffle=True, **kwargs)
+        val_loader = NeighborLoader(copy.copy(data), input_nodes=val_mask,
+                                    num_neighbors=[-1], shuffle=False, **kwargs)
+        test_loader = NeighborLoader(copy.copy(data), input_nodes=test_mask,
                                     num_neighbors=[-1], shuffle=False, **kwargs)
         
 
@@ -202,7 +226,7 @@ def Train_GRACE_nodecls(margs):
     # test
     print("=== Final ===")
     if inductive_task:
-        test_inductive(model, subgraph_loader, val_mask, test_mask, data.y,device)
+        test_inductive(model, val_loader, test_loader, val_mask, test_mask, data.y,device)
     else:
         test_transductive(model, data.x, data.edge_index, data.y, final=True)
 

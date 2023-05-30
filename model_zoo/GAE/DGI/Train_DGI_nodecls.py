@@ -49,7 +49,6 @@ def Train_DGI_nodecls(margs):
         
         num_classes = dataset.num_classes
         num_features = graph.ndata['feat'].shape[1]
-
     else:
         raise Exception('Unknown mode!')
 
