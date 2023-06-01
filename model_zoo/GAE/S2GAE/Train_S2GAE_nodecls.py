@@ -19,6 +19,7 @@ from sklearn import svm
 from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
 from tqdm import tqdm
+from .evaluation_linear_probe import *
 
 def random_edge_mask(args, edge_index, device, num_nodes):
     num_edge = len(edge_index)
@@ -152,6 +153,7 @@ def test_classify(feature, labels, args):
 
 
 
+
 def Train_S2GAE_nodecls(margs):
     dataset_name = margs.dataset
     device = torch.device('cuda:{}'.format(margs.gpu_id) if torch.cuda.is_available() else 'cpu')
@@ -264,13 +266,34 @@ def Train_S2GAE_nodecls(margs):
         
         feature_list = extract_feature_list_layer2(feature)
     
+    #     for i, feature_tmp in enumerate(feature_list):
+    #         # 改成只用测试集的结果而不是用全图 评估方式好像也要改一下
+    #         f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp[data.test_mask].data.cpu().numpy(), labels[data.test_mask].data.cpu().numpy(),
+    #                                                         margs)
+    #         svm_result_final[run, i] = acc_svm
+    #         print('**** SVM test acc on Run {}/{} for {} is F1-mic={} F1-mac={} acc={}'
+    #               .format(run + 1, config['runs'], result_dict[i], f1_mic_svm, f1_mac_svm, acc_svm))
+
+    # svm_result_final = np.array(svm_result_final)
+
+    # if osp.exists(save_path_model):
+    #     os.remove(save_path_model)
+    #     os.remove(save_path_predictor)
+    #     print('Successfully delete the saved models')
+
+    # print('\n------- Print final result for SVM')
+    # for i in range(len(out2_dict)):
+    #     temp_resullt = svm_result_final[:, i]
+    #     print('#### Final svm test result on {} is mean={} std={}'.format(result_dict[i], np.mean(temp_resullt),
+    #                                                                       np.std(temp_resullt)))
+
+
         for i, feature_tmp in enumerate(feature_list):
-            # 改成只用测试集的结果而不是用全图
-            f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp[data.test_mask].data.cpu().numpy(), labels[data.test_mask].data.cpu().numpy(),
-                                                            margs)
-            svm_result_final[run, i] = acc_svm
-            print('**** SVM test acc on Run {}/{} for {} is F1-mic={} F1-mac={} acc={}'
-                  .format(run + 1, config['runs'], result_dict[i], f1_mic_svm, f1_mac_svm, acc_svm))
+            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, 1e-4, 300, device)
+            svm_result_final[run, i] = final_acc
+            print('**** Linear probe test acc on Run {}/{} for {} is acc={} estp_acc={}'
+                  .format(run + 1, config['runs'], result_dict[i], final_acc, estp_acc))
+
 
     svm_result_final = np.array(svm_result_final)
 
@@ -282,5 +305,5 @@ def Train_S2GAE_nodecls(margs):
     print('\n------- Print final result for SVM')
     for i in range(len(out2_dict)):
         temp_resullt = svm_result_final[:, i]
-        print('#### Final svm test result on {} is mean={} std={}'.format(result_dict[i], np.mean(temp_resullt),
+        print('#### Final Linear probe test result on {} is mean={} std={}'.format(result_dict[i], np.mean(temp_resullt),
                                                                           np.std(temp_resullt)))

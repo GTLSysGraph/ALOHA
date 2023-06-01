@@ -35,7 +35,7 @@ def build_easydict_nodecls():
         'hidden_channels':128,
         'decode_channels':256,
         'dropout':0.5,
-        'batch_size':8192,
+        'batch_size':1024,
         'lr':0.001,
         'epochs':400,
         'seed':42,
