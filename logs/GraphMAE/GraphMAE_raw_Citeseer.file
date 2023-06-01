@@ -1,0 +1,27 @@
+  NumNodes: 3327
+  NumEdges: 9228
+  NumFeats: 3703
+  NumClasses: 6
+  NumTrainingSamples: 120
+  NumValidationSamples: 500
+  NumTestSamples: 1000
+Done loading data from cached files.
+------ Use best configs ------
+####### Run 0 for seed 12
+# IGNORE: --- TestAcc: 0.7330, early-stopping-TestAcc: 0.7330, Best ValAcc: 0.7260 in epoch 13 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.7330, early-stopping-TestAcc: 0.7310, Best ValAcc: 0.7240 in epoch 16 --- 
+####### Run 1 for seed 34
+# IGNORE: --- TestAcc: 0.7370, early-stopping-TestAcc: 0.7350, Best ValAcc: 0.7140 in epoch 41 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.7370, early-stopping-TestAcc: 0.7360, Best ValAcc: 0.7160 in epoch 45 --- 
+####### Run 2 for seed 6
+# IGNORE: --- TestAcc: 0.7360, early-stopping-TestAcc: 0.7200, Best ValAcc: 0.7260 in epoch 3 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.7360, early-stopping-TestAcc: 0.7260, Best ValAcc: 0.7200 in epoch 10 --- 
+####### Run 3 for seed 7
+# IGNORE: --- TestAcc: 0.7280, early-stopping-TestAcc: 0.7260, Best ValAcc: 0.7160 in epoch 17 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.7340, early-stopping-TestAcc: 0.7360, Best ValAcc: 0.7140 in epoch 14 --- 
+# final_acc: 0.7350±0.0016
+# early-stopping_acc: 0.7323±0.0041

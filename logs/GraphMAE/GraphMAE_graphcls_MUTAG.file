@@ -1,0 +1,12 @@
+------ Use best configs ------
+Use node label as node features
+******** # Num Graphs: 188, # Num Feat: 7, # Num Classes: 2 ********
+####### Run 0 for seed 12
+#Test_f1: 0.8728±0.0413
+####### Run 1 for seed 34
+#Test_f1: 0.8675±0.0532
+####### Run 2 for seed 6
+#Test_f1: 0.8936±0.0471
+####### Run 3 for seed 7
+#Test_f1: 0.8462±0.0589
+# final_acc: 0.8700±0.0169

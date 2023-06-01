@@ -1,0 +1,23 @@
+------ Use best configs ------
+####### Run 0 for seed 12
+The number of subgraphs is:  1364
+The size of subgraphs is about:  5605
+num parameters for finetuning: 21033
+--- TestAcc: 0.9297, early-stopping-TestAcc: 0.9296, Best ValAcc: 0.9291 in epoch 497 --- 
+####### Run 1 for seed 34
+The number of subgraphs is:  1364
+The size of subgraphs is about:  5589
+num parameters for finetuning: 21033
+--- TestAcc: 0.9275, early-stopping-TestAcc: 0.9274, Best ValAcc: 0.9283 in epoch 497 --- 
+####### Run 2 for seed 6
+The number of subgraphs is:  1364
+The size of subgraphs is about:  5609
+num parameters for finetuning: 21033
+--- TestAcc: 0.9285, early-stopping-TestAcc: 0.9285, Best ValAcc: 0.9289 in epoch 499 --- 
+####### Run 3 for seed 7
+The number of subgraphs is:  1364
+The size of subgraphs is about:  5614
+num parameters for finetuning: 21033
+--- TestAcc: 0.9202, early-stopping-TestAcc: 0.9202, Best ValAcc: 0.9194 in epoch 499 --- 
+# final_acc: 0.9265±0.0037
+# early-stopping_acc: 0.9264±0.0037

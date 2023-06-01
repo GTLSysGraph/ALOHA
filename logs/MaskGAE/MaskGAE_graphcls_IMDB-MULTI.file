@@ -1,0 +1,65 @@
+MaskGAE(
+  (encoder): GNNEncoder(
+    (convs): ModuleList(
+      (0): GINConv(nn=Linear(89, 128, bias=True))
+      (1): GINConv(nn=Linear(128, 64, bias=True))
+    )
+    (bns): ModuleList(
+      (0): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (dropout): Dropout(p=0.8, inplace=False)
+    (activation): ELU(alpha=1.0)
+  )
+  (edge_decoder): EdgeDecoder(
+    (mlps): ModuleList(
+      (0): Linear(in_features=64, out_features=32, bias=True)
+      (1): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (dropout): Dropout(p=0.2, inplace=False)
+    (activation): ReLU()
+  )
+  (degree_decoder): DegreeDecoder(
+    (mlps): ModuleList(
+      (0): Linear(in_features=64, out_features=32, bias=True)
+      (1): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (dropout): Dropout(p=0.2, inplace=False)
+    (activation): ReLU()
+  )
+  (mask): MaskPath(
+    p=0.7, walks_per_node=1, walk_length=3, 
+    start=node, undirected=True
+  )
+)
+Start Training (Link Prediction Pretext Training)...
+Early stopping!
+##### Testing on 1/10
+AUC
+**** Testing on Run: 01, Best Epoch: 80, Valid: 97.71%, Test: 97.41%
+AP
+**** Testing on Run: 01, Best Epoch: 80, Valid: 97.33%, Test: 96.89%
+##### Final Testing result (Link Prediction Pretext Training)
+AUC
+All runs:
+Highest Valid: 97.71 ± nan
+   Final Test: 97.41 ± nan
+AP
+All runs:
+Highest Valid: 97.33 ± nan
+   Final Test: 96.89 ± nan
+Start Training (Graph Classification)...
+Run 1: Best test accuray 50.27%.
+Run 2: Best test accuray 50.27%.
+Run 3: Best test accuray 50.27%.
+Run 4: Best test accuray 50.27%.
+Run 5: Best test accuray 50.27%.
+Run 6: Best test accuray 50.27%.
+Run 7: Best test accuray 50.27%.
+Run 8: Best test accuray 50.27%.
+Run 9: Best test accuray 50.27%.
+Run 10: Best test accuray 50.27%.
+##### Final Testing result (Graph Classification)
+All runs:
+Highest Valid: 50.27 ± 0.00
+   Final Test: 50.27 ± 0.00

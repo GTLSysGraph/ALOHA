@@ -1,0 +1,12 @@
+------ Use best configs ------
+Using degree as node features
+******** # Num Graphs: 1500, # Num Feat: 177, # Num Classes: 3 ********
+####### Run 0 for seed 12
+#Test_f1: 0.5273±0.0299
+####### Run 1 for seed 34
+#Test_f1: 0.5047±0.0237
+####### Run 2 for seed 6
+#Test_f1: 0.5247±0.0260
+####### Run 3 for seed 7
+#Test_f1: 0.5220±0.0244
+# final_acc: 0.5197±0.0089
