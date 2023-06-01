@@ -9,6 +9,9 @@ from tensorboardX import SummaryWriter
 from functools import partial
 import dgl
 import yaml
+from datasets_dgl.data_dgl import load_graph_data
+from collections import namedtuple, Counter
+import torch.nn.functional as F
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -217,3 +220,57 @@ class NormLayer(nn.Module):
         std = ((std.T / batch_list).T + 1e-6).sqrt()
         std = std.repeat_interleave(batch_list, dim=0)
         return self.weight * sub / std + self.bias
+
+
+def load_graph_classification_dataset(dataset_name, deg4feat=False):
+    dataset_name = dataset_name.upper()
+    dataset = load_graph_data(dataset_name)
+    graph, _ = dataset[0]
+
+    if "attr" not in graph.ndata:
+        if "node_labels" in graph.ndata and not deg4feat:
+            print("Use node label as node features")
+            feature_dim = 0
+            for g, _ in dataset:
+                feature_dim = max(feature_dim, g.ndata["node_labels"].max().item())
+            
+            feature_dim += 1
+            for g, l in dataset:
+                node_label = g.ndata["node_labels"].view(-1)
+                feat = F.one_hot(node_label, num_classes=feature_dim).float()
+                g.ndata["attr"] = feat
+        else:
+            print("Using degree as node features")
+            feature_dim = 0
+            degrees = []
+            for g, _ in dataset:
+                feature_dim = max(feature_dim, g.in_degrees().max().item())
+                degrees.extend(g.in_degrees().tolist())
+            MAX_DEGREES = 400
+
+            oversize = 0
+            for d, n in Counter(degrees).items():
+                if d > MAX_DEGREES:
+                    oversize += n
+            # print(f"N > {MAX_DEGREES}, #NUM: {oversize}, ratio: {oversize/sum(degrees):.8f}")
+            feature_dim = min(feature_dim, MAX_DEGREES)
+
+            feature_dim += 1
+            for g, l in dataset:
+                degrees = g.in_degrees()
+                degrees[degrees > MAX_DEGREES] = MAX_DEGREES
+                
+                feat = F.one_hot(degrees, num_classes=feature_dim).float()
+                g.ndata["attr"] = feat
+    else:
+        print("******** Use `attr` as node features ********")
+        feature_dim = graph.ndata["attr"].shape[1]
+
+    labels = torch.tensor([x[1] for x in dataset])
+    
+    num_classes = torch.max(labels).item() + 1
+    dataset = [(g.remove_self_loop().add_self_loop(), y) for g, y in dataset]
+
+    print(f"******** # Num Graphs: {len(dataset)}, # Num Feat: {feature_dim}, # Num Classes: {num_classes} ********")
+
+    return dataset, (feature_dim, num_classes)

@@ -25,7 +25,7 @@ def collate(samples):
 
     return batched_graph, batched_labels
 
-
+from torch_geometric.datasets import TUDataset
 def Train_InfoGraph_graphcls(margs):
     #############################################################################################
     if margs.gpu_id < 0:

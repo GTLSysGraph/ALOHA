@@ -7,12 +7,14 @@ from model_zoo.GCL.MVGRL.Train_MVGRL_nodecls import Train_MVGRL_nodecls
 
 from model_zoo.GAE.S2GAE.Train_S2GAE_nodecls import Train_S2GAE_nodecls
 from model_zoo.GAE.MaskGAE.Train_MaskGAE_nodecls import Train_MaskGAE_nodecls
+from model_zoo.GAE.MaskGAE.Train_MaskGAE_graphcls import Train_MaskGAE_graphcls
 from model_zoo.GAE.GraphMAE.Train_GraphMAE_nodecls import Train_GraphMAE_nodecls
 from model_zoo.GAE.GraphMAE.Train_GraphMAE_graphcls import Train_GraphMAE_graphcls
 from model_zoo.GAE.VGAE.Train_VGAE_linkcls import Train_VGAE_linkcls
 from model_zoo.GAE.VGAE.Train_VGAE_nodecls import Train_VGAE_nodecls
 from model_zoo.GAE.RobustGAE.Train_RobustGAE_nodecls import Train_RobustGAE_nodecls
-from model_zoo.GAE.DiffGMAE.Train_DiffGMAE_nodecls import Train_DiffGMAE_nodecls
+from model_zoo.GAE.DiffMGAE.Train_DiffMGAE_nodecls import Train_DiffMGAE_nodecls
+from model_zoo.GAE.DiffMGAE.Train_DiffMGAE_graphcls import Train_DiffMGAE_graphcls
 from model_zoo.GAE.DGI.Train_DGI_nodecls import Train_DGI_nodecls
 from model_zoo.GAE.BGRL.Train_BGRL_nodecls import Train_BGRL_nodecls
 from model_zoo.Supervised.GIN.Train_GIN_graphcls import Train_GIN_graphcls
@@ -20,11 +22,11 @@ from model_zoo.Supervised.GIN.Train_GIN_graphcls import Train_GIN_graphcls
 __all__ = ['Train_GRACE_nodecls',
             'Train_STABLE_nodecls',
             'Train_S2GAE_nodecls',
-            'Train_MaskGAE_nodecls',
+            'Train_MaskGAE_nodecls','Train_MaskGAE_graphcls',
             'Train_GraphMAE_nodecls','Train_GraphMAE_graphcls',
             'Train_VGAE_linkcls','Train_VGAE_nodecls',
             'Train_RobustGAE_nodecls',
-            'Train_DiffGMAE_nodecls',
+            'Train_DiffMGAE_nodecls','Train_DiffMGAE_graphcls',
             'Train_DGI_nodecls',
             'Train_BGRL_nodecls',
             'Train_GIN_graphcls',

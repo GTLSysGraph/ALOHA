@@ -155,6 +155,7 @@ def Train_VGAE_linkcls_usemd(args, model, graph, device):
     )
 
 
+
 def compute_loss_para(adj,device):
     pos_weight = (adj.shape[0] * adj.shape[0] - adj.sum()) / adj.sum()
     norm = (

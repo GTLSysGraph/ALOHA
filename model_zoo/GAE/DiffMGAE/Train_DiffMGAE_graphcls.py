@@ -6,9 +6,11 @@ import dgl
 from   dgl.nn.pytorch.glob import SumPooling, AvgPooling, MaxPooling
 from   dgl.dataloading import GraphDataLoader
 
+from   model_zoo.GAE.DiffMGAE.build_easydict import *
+from   model_zoo.GAE.DiffMGAE.models import build_model
 
 import torch
-from torch.utils.data.sampler import SubsetRandomSampler
+from   torch.utils.data.sampler import SubsetRandomSampler
 
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.svm import SVC
@@ -85,6 +87,7 @@ def evaluate_graph_embeddings_using_svm(embeddings, labels):
 
 
 def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob=True, logger=None):
+    logging.info("start training DiffGMAE graph classification..")
     train_loader, eval_loader = dataloaders
 
     epoch_iter = tqdm(range(max_epoch))
@@ -125,7 +128,7 @@ def collate_fn(batch):
 
 
 
-def Train_GraphMAE_graphcls(margs):
+def Train_DiffMGAE_graphcls(margs):
     #############################################################################################
     if margs.gpu_id < 0:
         device = "cpu"
@@ -138,8 +141,9 @@ def Train_GraphMAE_graphcls(margs):
 
     MDT = build_easydict()
     args         = MDT['MODEL']['PARAM']
+
     if args.use_cfg:
-        args = load_best_configs(args, dataset_name, "./model_zoo/GAE/GraphMAE/configs.yml")
+        args = load_best_configs(args, dataset_name, "./model_zoo/GAE/DiffMGAE/configs.yml")
     #############################################################################################
 
 
@@ -169,7 +173,6 @@ def Train_GraphMAE_graphcls(margs):
     batch_size = args.batch_size
 
     graphs, (num_features, num_classes) = load_graph_classification_dataset(dataset_name, deg4feat=deg4feat)
-
     args.num_features = num_features
 
     train_idx = torch.arange(len(graphs))

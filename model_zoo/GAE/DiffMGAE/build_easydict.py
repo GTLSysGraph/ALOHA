@@ -1,7 +1,7 @@
 
 from easydict import EasyDict
 
-def build_easydict_nodecls():
+def build_easydict():
     MDT = EasyDict()
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'DiffGMAE'
@@ -41,6 +41,14 @@ def build_easydict_nodecls():
         "logging"       : False,
         "scheduler"     : False,
         "concat_hidden" : False,
+
+        # add by ssh
+        'remask_rate'     : 0.6,  
+        'timestep'        : 10000,
+        'beta_schedule'   : 'linear',
+        'start_t'         : 9000,
+        'lamda_loss'      : 0.1,
+        'lamda_neg_ratio' : 0.0,
 
         # for graph classification
         "pooling"    : "mean",

@@ -35,12 +35,12 @@ def build_easydict_nodecls():
         'hidden_channels':128,
         'decode_channels':256,
         'dropout':0.5,
-        'batch_size':1024,
+        'batch_size':8192,
         'lr':0.001,
-        'epochs':20,
+        'epochs':400,
         'seed':42,
         'eval_steps':1,
-        'runs':1,
+        'runs':3,
         'mask_type' :'dm',  # help='dm | um')  # whether to use mask features    
         'patience'  : 50,       # help='Use attribute or not'                      
         'mask_ratio': 0.8

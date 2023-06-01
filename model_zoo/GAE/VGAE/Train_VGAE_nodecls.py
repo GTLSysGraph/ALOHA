@@ -69,8 +69,9 @@ def Train_VGAE_nodecls(margs):
     # pretrain
     Train_VGAE_linkcls_usemd(args1, vgae_model, graph, device)
     # nodecls
+    model = vgae_model.to(device)
     args2=  MDT['MODEL']['NODECLS']
-    Train_VGAE_nodeclas_usemd(args2, vgae_model , graph, feat, num_classes, device)
+    Train_VGAE_nodeclas_usemd(args2, model , graph, feat, num_classes, device)
 
 
 
@@ -91,10 +92,11 @@ def Train_VGAE_nodeclas_usemd(args2, model, graph, x, num_classes, device, mute=
             in_feat = x.shape[1]
         encoder = LogisticRegression(in_feat, num_classes)
     else:
+        raise Exception('not support finetune!')
         # 这里要注意和GraphMAE不一样的地方，GraphMAE里的encoder是一个类，而这里不是，是bound method，所以并不能deepcopy，无法求导，所以VGAE这里只用linear验证吧，linear_prob不可用
         # 注意这里改变了encoder的结构encoder和model.encoder应该是分开的，但是这里是关联的，encoder变了，model.encoder也变，应该deepcopy新的模型分开形成独立个体，原始代码写的有点问题
-        encoder = copy.deepcopy(model.encoder)
-        encoder.reset_classifier(num_classes)
+        # encoder = copy.deepcopy(model.encoder)
+        # encoder.reset_classifier(num_classes)
 
     num_finetune_params = [p.numel() for p in encoder.parameters() if  p.requires_grad]
     if not mute:

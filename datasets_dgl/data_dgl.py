@@ -54,8 +54,8 @@ def load_data(dataname):
 
 
 def load_graph_data(dataset_name):
-    if dataset_name in ['IMDB-B' ,'IMDB-M' ,'PROTEINS', 'COLLAB', 'MUTAG', 'REDDIT-B', 'NCI1']:
-        return TUDataset(dataset_name)
+    assert dataset_name in ['IMDB-BINARY' ,'IMDB-MULTI' ,'PROTEINS', 'COLLAB', 'MUTAG', 'REDDIT-BINARY', 'NCI1']
+    return TUDataset(dataset_name)
 
 
 def load_inductive_dataset(dataset_name):

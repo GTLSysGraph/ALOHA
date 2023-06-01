@@ -1,20 +1,21 @@
 
 from     easydict        import EasyDict
 import   torch
-from     model_zoo.GAE.DiffGMAE.utils          import *
-from     model_zoo.GAE.DiffGMAE.build_easydict import *
-from     model_zoo.GAE.DiffGMAE.evaluation     import * 
+from     model_zoo.GAE.DiffMGAE.utils          import *
+from     model_zoo.GAE.DiffMGAE.build_easydict import *
+from     model_zoo.GAE.DiffMGAE.evaluation     import * 
 from     datasets_dgl.data_dgl import *
+from     datasets_graphsaint.data_graphsaint import *
 
 import   logging
 from     tqdm import tqdm
-from     model_zoo.GAE.DiffGMAE.models import build_model
+from     model_zoo.GAE.DiffMGAE.models import build_model
 import  ipdb
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
-    logging.info("start training DiffGMAE..")
+    logging.info("start training DiffGMAE node classification..")
     graph = graph.to(device)
     x = feat.to(device)
 
@@ -22,7 +23,7 @@ def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, sched
     for epoch in epoch_iter:
         model.train()
 
-        loss, loss_dict = model(graph, x,epoch)
+        loss, loss_dict = model(graph, x)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -42,46 +43,53 @@ def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, sched
 
 
 
-def Train_DiffGMAE_nodecls(margs):
+def Train_DiffMGAE_nodecls(margs):
     #########################
     if margs.gpu_id < 0:
         device = "cpu"
     else:
         device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
 
+
     mode = margs.mode
     dataset_name = margs.dataset
-    DATASET = EasyDict()
-    if dataset_name.split('-')[0] == 'Attack':
-        # dataset_name = dataset_name.split('-')[1]
-        DATASET.ATTACK = EasyDict()
-        DATASET.ATTACK.PARAM = {
-            "data":dataset_name,
-            "attack":margs.attack.split('-')[0],
-            "ptb_rate":margs.attack.split('-')[1]
-        }
-        # now just attack use
-        dataset  = load_data(DATASET['ATTACK']['PARAM'])
-        graph = dataset.graph
-    else:
-        DATASET.PARAM = {
-            "data":dataset_name,
-        }
-        dataset  = load_data(DATASET['PARAM'])
-        graph = dataset[0]
+    if margs.mode in ['tranductive' , 'mini_batch']:
+        if dataset_name.split('-')[0] == 'Attack':
+            # dataset_name = dataset_name.split('-')[1]
+            DATASET = EasyDict()
+            DATASET.ATTACK = {
+                "data":dataset_name,
+                "attack":margs.attack.split('-')[0],
+                "ptb_rate":margs.attack.split('-')[1]
+            }
+            # now just attack use
+            dataset  = load_attack_data(DATASET['ATTACK'])
+            graph = dataset.graph    
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
+        else:
+            if dataset_name in ['Cora','Pubmed','Citeseer']:
+                dataset  = load_data(dataset_name)
+                graph = dataset[0]
+            elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
+                multilabel_data = set(['ppi', 'yelp', 'amazon'])
+                multilabel = dataset_name in multilabel_data
 
-    graph = dgl.remove_self_loop(graph)
-    graph = dgl.add_self_loop(graph) # 不添加self loop貌似有更好的结果，因为减少了自身节点的影响 DICE中含有0 degree顶点需要加上
+                dataset  = load_GraphSAINT_data(dataset_name, multilabel)
+                graph = dataset.g
+
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph)
     
     dstname =  dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower()
     num_classes = dataset.num_classes
     num_features = graph.ndata['feat'].shape[1]
     #######################
     
-    MDT = build_easydict_nodecls()
+    MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dstname , "./model_zoo/GAE/DiffGMAE/configs.yml")
+        param = load_best_configs(param, dstname , "./model_zoo/GAE/DiffMGAE/configs.yml")
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -104,6 +112,7 @@ def Train_DiffGMAE_nodecls(margs):
     save_model     = param.save_model
     logs           = param.logging
     use_scheduler  = param.scheduler
+    
     param.num_features = num_features
     param.num_nodes    = graph.num_nodes()
 

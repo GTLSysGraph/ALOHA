@@ -2,26 +2,37 @@ cora:
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512
+  batch_size: 500
   num_heads: 4
-  num_out_heads : 1
   num_layers: 2
   weight_decay: 2e-4
   weight_decay_f: 1e-4
   max_epoch: 1500
   max_epoch_f: 300
   mask_rate: 0.5
+  num_layers: 2
   encoder: gat
   decoder: gat
   activation: prelu
   in_drop: 0.2
   attn_drop: 0.1
   linear_prob: True
-  loss_fn: sce
+  loss_fn: sce 
   drop_edge_rate: 0.0
   optimizer: adam
   replace_rate: 0.05
   alpha_l: 3
   scheduler: True
+  #
+  remask_rate     : 0.6 
+  timestep        : 10000
+  beta_schedule   : 'linear'
+  start_t         : 9000
+  lamda_loss      : 0.0
+  lamda_neg_ratio : 0.0
+  #
+
+
 citeseer:
   lr: 0.001
   lr_f: 0.01
@@ -30,7 +41,7 @@ citeseer:
   num_layers: 2
   weight_decay: 2e-5
   weight_decay_f: 0.01
-  max_epoch: 1000
+  max_epoch: 300
   max_epoch_f: 300
   mask_rate: 0.5
   num_layers: 2
@@ -46,6 +57,8 @@ citeseer:
   replace_rate: 0.05
   alpha_l: 1 # or 3 
   scheduler: True
+
+  
 pubmed:
   lr: 0.001
   lr_f: 0.01
@@ -56,7 +69,7 @@ pubmed:
   weight_decay_f: 1e-4
   max_epoch: 1000
   max_epoch_f: 300
-  mask_rate: 0.6
+  mask_rate: 0.75
   num_layers: 2
   encoder: gat
   decoder: gat
@@ -67,7 +80,7 @@ pubmed:
   loss_fn: sce
   drop_edge_rate: 0.0
   optimizer: adam
-  replace_rate: 0.3
+  replace_rate: 0.0
   alpha_l: 3
   scheduler: True
 ogbn-arxiv:
@@ -124,7 +137,7 @@ reddit:
   num_heads: 2
   weight_decay: 2e-4
   weight_decay_f: 0
-  max_epoch: 500
+  max_epoch: 1
   max_epoch_f: 500
   mask_rate: 0.75
   num_layers: 4
@@ -141,6 +154,7 @@ reddit:
   residual: True
   scheduler: True
   linear_prob: True
+  
 IMDB-BINARY:
   lr: 0.00015
   lr_f: 0.005
@@ -168,6 +182,17 @@ IMDB-BINARY:
   pooling: mean
   batch_size: 32
   alpha_l: 1
+  #
+  remask_rate     : 0.5 
+  timestep        : 10000
+  beta_schedule   : 'linear'
+  start_t         : 9000
+  lamda_loss      : 0.1
+  lamda_neg_ratio : 0.0
+  #
+
+
+
 IMDB-MULTI:
   lr: 0.00015
   num_hidden: 512

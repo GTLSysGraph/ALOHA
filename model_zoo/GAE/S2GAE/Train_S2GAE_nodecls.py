@@ -18,6 +18,7 @@ from sklearn.model_selection import KFold
 from sklearn import svm
 from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
+from tqdm import tqdm
 
 def random_edge_mask(args, edge_index, device, num_nodes):
     num_edge = len(edge_index)
@@ -44,8 +45,8 @@ def train(model, predictor, data, edge_index, optimizer, args):
         adj, _, pos_train_edge = edgemask_dm(args.mask_ratio, edge_index, data.x.device, data.x.shape[0])
     adj = adj.to(data.x.device)
 
-    for perm in DataLoader(range(pos_train_edge.size(0)), args.batch_size,
-                           shuffle=True):
+    for perm in tqdm(DataLoader(range(pos_train_edge.size(0)), args.batch_size,
+                           shuffle=True)):
         optimizer.zero_grad()
 
         h = model(data.x, adj)
@@ -170,7 +171,6 @@ def Train_S2GAE_nodecls(margs):
     MDT = build_easydict_nodecls()
     config         = MDT['MODEL']['PARAM']
 
-
     if data.is_undirected():
         edge_index = data.edge_index
     else:
@@ -263,9 +263,10 @@ def Train_S2GAE_nodecls(margs):
         feature = [feature_.detach() for feature_ in feature]
         
         feature_list = extract_feature_list_layer2(feature)
-
+    
         for i, feature_tmp in enumerate(feature_list):
-            f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp.data.cpu().numpy(), labels.data.cpu().numpy(),
+            # 改成只用测试集的结果而不是用全图
+            f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp[data.test_mask].data.cpu().numpy(), labels[data.test_mask].data.cpu().numpy(),
                                                             margs)
             svm_result_final[run, i] = acc_svm
             print('**** SVM test acc on Run {}/{} for {} is F1-mic={} F1-mac={} acc={}'
