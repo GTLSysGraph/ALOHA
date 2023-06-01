@@ -1,6 +1,8 @@
 from easydict import EasyDict
 
 # 节点分类任务主要是"lr_f" 和"weight_decay_f"的设置，非常关键！！！！！！！！！！！！
+# Cora       lr_f "hidden1":512 hidden2":8 0.01 w_f 0.0     0.7540
+# Citeseer   lr_f "hidden1":512 hidden2":8 0.01 w_f 0.01     0.6470
 
 def build_easydict():
     MDT = EasyDict()
@@ -15,7 +17,7 @@ def build_easydict():
     MDT.MODEL.NODECLS = {
         "max_epoch_f"   : 300,
         "lr_f"          : 0.01,
-        "weight_decay_f": 0.0,
+        "weight_decay_f": 0.01,
         "linear_prob"   : True,
     }
 
