@@ -3,11 +3,8 @@ __pycache__
 model_zoo/GAE/BGRL/logdir
 model_zoo/GAE/MaskGAE/model_save
 model_zoo/GAE/S2GAE/weight
+model_zoo/GCL/MVGRL/graph/data
 subgraphs
 datasets_dgl
+datasets_graphsaint
 datasets_pyg
-logs
-train_all_attack.sh
-train_all_graph.sh
-Train_Runner.py
-train.sh
