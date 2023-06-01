@@ -1,7 +1,7 @@
 MODEL_NAME=$1
 DATASET_NAME=$2
 
-CUDA_USE=(0 1 2)
+CUDA_USE=(0)
  
 # sh train_all_attack.sh MaskGAE Cora &
 
@@ -15,10 +15,11 @@ do
         for ptb in 0.0 0.05 0.1 0.15 0.2 0.25
         do
             python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
+            wait
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
-        wait
+        
         echo "All Metattack Train Done!"
         echo "###########################################################################################"
     elif [ $i == 'DICE' ]
@@ -26,10 +27,10 @@ do
         for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
         do
             python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
+            wait
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
-        wait
         echo "All DICE attack Train Done!"
         echo "###########################################################################################"
     elif [ $i == 'nettack' ]
@@ -37,10 +38,10 @@ do
         for ptb in 0.0 1.0 2.0 3.0 4.0 5.0
         do
             python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
+            wait
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
-        wait
         echo "All nettack Train Done!"
         echo "###########################################################################################"        
     elif [ $i == 'random' ]
@@ -48,10 +49,10 @@ do
         for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
         do
             python Train_Runner.py --dataset "Attack-$2"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_"$i"_$2_$ptb.file" &
+            wait
             n=`expr $n + 1`
             n=`expr $n % $num`
         done
-        wait
         echo "All random Train Done!"
         echo "###########################################################################################" 
     fi

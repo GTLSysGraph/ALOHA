@@ -3,5 +3,5 @@ python Train_Runner.py \
 --attack  'Meta_Self-0.25' \
 --task 'node' \
 --mode 'tranductive' \
---gpu_id 0 \
---model_name 'DiffGMAE'
+--gpu_id 1 \
+--model_name 'VGAE'
