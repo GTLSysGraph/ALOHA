@@ -288,8 +288,13 @@ def Train_S2GAE_nodecls(margs):
     #                                                                       np.std(temp_resullt)))
 
 
+        if dataset_name.split('-')[1] in ['Cora','Pubmed']:
+            weight_decay_f =  1e-4
+        elif dataset_name.split('-')[1] in ['Citeseer']:
+            weight_decay_f = 0.01
+
         for i, feature_tmp in enumerate(feature_list):
-            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, 1e-4, 300, device)
+            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, weight_decay_f, 300, device)
             svm_result_final[run, i] = final_acc
             print('**** Linear probe test acc on Run {}/{} for {} is acc={} estp_acc={}'
                   .format(run + 1, config['runs'], result_dict[i], final_acc, estp_acc))

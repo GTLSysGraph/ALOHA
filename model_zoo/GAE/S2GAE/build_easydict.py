@@ -37,7 +37,7 @@ def build_easydict_nodecls():
         'dropout':0.5,
         'batch_size':1024,
         'lr':0.001,
-        'epochs':400,
+        'epochs':1,
         'seed':42,
         'eval_steps':1,
         'runs':3,
