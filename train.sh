@@ -1,7 +1,7 @@
 python Train_Runner.py \
---dataset  'Cora' \
+--dataset  'MUTAG' \
 --attack  'Meta_Self-0.25' \
---task 'node' \
+--task 'graph' \
 --mode 'tranductive' \
 --gpu_id 1 \
---model_name 'VGAE'
+--model_name 'MVGRL'

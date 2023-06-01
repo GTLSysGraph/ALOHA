@@ -1,5 +1,5 @@
 __pycache__
-model_zoo/GCL/MVGRL/graph/data
+
 model_zoo/GAE/BGRL/logdir
 model_zoo/GAE/MaskGAE/model_save
 model_zoo/GAE/S2GAE/weight
