@@ -1,0 +1,2406 @@
+Start training with mask ratio=0.8 # optimization edges=2641 / 3302
+Run: 01, Epoch: 01, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3872, 
+***************
+Run: 01, Epoch: 02, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3866, 
+***************
+Run: 01, Epoch: 03, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3864, 
+***************
+Run: 01, Epoch: 04, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3859, 
+***************
+Run: 01, Epoch: 05, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3842, 
+***************
+Run: 01, Epoch: 06, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3797, 
+***************
+Run: 01, Epoch: 07, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3677, 
+***************
+Run: 01, Epoch: 08, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.3393, 
+***************
+Run: 01, Epoch: 09, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.2993, 
+***************
+Run: 01, Epoch: 10, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.2712, 
+***************
+Run: 01, Epoch: 11, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.2555, 
+***************
+Run: 01, Epoch: 12, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.2339, 
+***************
+Run: 01, Epoch: 13, Best_epoch: 01, Best_valid: 76.55%, Loss: 1.2382, 
+***************
+Run: 01, Epoch: 14, Best_epoch: 14, Best_valid: 79.61%, Loss: 1.2169, 
+***************
+Run: 01, Epoch: 15, Best_epoch: 15, Best_valid: 80.89%, Loss: 1.2111, 
+***************
+Run: 01, Epoch: 16, Best_epoch: 16, Best_valid: 84.04%, Loss: 1.1953, 
+***************
+Run: 01, Epoch: 17, Best_epoch: 16, Best_valid: 84.04%, Loss: 1.1705, 
+***************
+Run: 01, Epoch: 18, Best_epoch: 18, Best_valid: 84.22%, Loss: 1.1427, 
+***************
+Run: 01, Epoch: 19, Best_epoch: 19, Best_valid: 84.97%, Loss: 1.1154, 
+***************
+Run: 01, Epoch: 20, Best_epoch: 20, Best_valid: 85.29%, Loss: 1.0817, 
+***************
+Run: 01, Epoch: 21, Best_epoch: 21, Best_valid: 85.82%, Loss: 1.0694, 
+***************
+Run: 01, Epoch: 22, Best_epoch: 22, Best_valid: 86.09%, Loss: 1.0567, 
+***************
+Run: 01, Epoch: 23, Best_epoch: 23, Best_valid: 86.33%, Loss: 1.0121, 
+***************
+Run: 01, Epoch: 24, Best_epoch: 24, Best_valid: 86.50%, Loss: 0.9975, 
+***************
+Run: 01, Epoch: 25, Best_epoch: 25, Best_valid: 87.31%, Loss: 0.9939, 
+***************
+Run: 01, Epoch: 26, Best_epoch: 26, Best_valid: 88.02%, Loss: 0.9688, 
+***************
+Run: 01, Epoch: 27, Best_epoch: 26, Best_valid: 88.02%, Loss: 0.9716, 
+***************
+Run: 01, Epoch: 28, Best_epoch: 28, Best_valid: 88.21%, Loss: 0.9414, 
+***************
+Run: 01, Epoch: 29, Best_epoch: 29, Best_valid: 89.11%, Loss: 0.9262, 
+***************
+Run: 01, Epoch: 30, Best_epoch: 30, Best_valid: 89.34%, Loss: 0.9048, 
+***************
+Run: 01, Epoch: 31, Best_epoch: 30, Best_valid: 89.34%, Loss: 0.9036, 
+***************
+Run: 01, Epoch: 32, Best_epoch: 30, Best_valid: 89.34%, Loss: 0.8864, 
+***************
+Run: 01, Epoch: 33, Best_epoch: 33, Best_valid: 89.68%, Loss: 0.8784, 
+***************
+Run: 01, Epoch: 34, Best_epoch: 33, Best_valid: 89.68%, Loss: 0.8672, 
+***************
+Run: 01, Epoch: 35, Best_epoch: 33, Best_valid: 89.68%, Loss: 0.8453, 
+***************
+Run: 01, Epoch: 36, Best_epoch: 36, Best_valid: 90.20%, Loss: 0.8309, 
+***************
+Run: 01, Epoch: 37, Best_epoch: 36, Best_valid: 90.20%, Loss: 0.8123, 
+***************
+Run: 01, Epoch: 38, Best_epoch: 38, Best_valid: 90.42%, Loss: 0.8327, 
+***************
+Run: 01, Epoch: 39, Best_epoch: 39, Best_valid: 90.44%, Loss: 0.7930, 
+***************
+Run: 01, Epoch: 40, Best_epoch: 39, Best_valid: 90.44%, Loss: 0.7875, 
+***************
+Run: 01, Epoch: 41, Best_epoch: 41, Best_valid: 90.88%, Loss: 0.7531, 
+***************
+Run: 01, Epoch: 42, Best_epoch: 42, Best_valid: 91.40%, Loss: 0.7601, 
+***************
+Run: 01, Epoch: 43, Best_epoch: 42, Best_valid: 91.40%, Loss: 0.7498, 
+***************
+Run: 01, Epoch: 44, Best_epoch: 44, Best_valid: 91.87%, Loss: 0.7430, 
+***************
+Run: 01, Epoch: 45, Best_epoch: 45, Best_valid: 91.89%, Loss: 0.7646, 
+***************
+Run: 01, Epoch: 46, Best_epoch: 46, Best_valid: 92.30%, Loss: 0.7267, 
+***************
+Run: 01, Epoch: 47, Best_epoch: 47, Best_valid: 92.34%, Loss: 0.7134, 
+***************
+Run: 01, Epoch: 48, Best_epoch: 47, Best_valid: 92.34%, Loss: 0.7045, 
+***************
+Run: 01, Epoch: 49, Best_epoch: 49, Best_valid: 92.97%, Loss: 0.7190, 
+***************
+Run: 01, Epoch: 50, Best_epoch: 49, Best_valid: 92.97%, Loss: 0.7078, 
+***************
+Run: 01, Epoch: 51, Best_epoch: 51, Best_valid: 92.98%, Loss: 0.6678, 
+***************
+Run: 01, Epoch: 52, Best_epoch: 51, Best_valid: 92.98%, Loss: 0.6660, 
+***************
+Run: 01, Epoch: 53, Best_epoch: 53, Best_valid: 93.44%, Loss: 0.6419, 
+***************
+Run: 01, Epoch: 54, Best_epoch: 53, Best_valid: 93.44%, Loss: 0.6514, 
+***************
+Run: 01, Epoch: 55, Best_epoch: 55, Best_valid: 93.47%, Loss: 0.6400, 
+***************
+Run: 01, Epoch: 56, Best_epoch: 56, Best_valid: 93.70%, Loss: 0.6340, 
+***************
+Run: 01, Epoch: 57, Best_epoch: 57, Best_valid: 93.83%, Loss: 0.6419, 
+***************
+Run: 01, Epoch: 58, Best_epoch: 58, Best_valid: 93.96%, Loss: 0.6026, 
+***************
+Run: 01, Epoch: 59, Best_epoch: 59, Best_valid: 94.34%, Loss: 0.5999, 
+***************
+Run: 01, Epoch: 60, Best_epoch: 59, Best_valid: 94.34%, Loss: 0.6090, 
+***************
+Run: 01, Epoch: 61, Best_epoch: 61, Best_valid: 94.79%, Loss: 0.6074, 
+***************
+Run: 01, Epoch: 62, Best_epoch: 61, Best_valid: 94.79%, Loss: 0.5988, 
+***************
+Run: 01, Epoch: 63, Best_epoch: 63, Best_valid: 95.02%, Loss: 0.5918, 
+***************
+Run: 01, Epoch: 64, Best_epoch: 63, Best_valid: 95.02%, Loss: 0.5644, 
+***************
+Run: 01, Epoch: 65, Best_epoch: 65, Best_valid: 95.05%, Loss: 0.5718, 
+***************
+Run: 01, Epoch: 66, Best_epoch: 66, Best_valid: 95.06%, Loss: 0.5674, 
+***************
+Run: 01, Epoch: 67, Best_epoch: 67, Best_valid: 95.38%, Loss: 0.5484, 
+***************
+Run: 01, Epoch: 68, Best_epoch: 67, Best_valid: 95.38%, Loss: 0.5451, 
+***************
+Run: 01, Epoch: 69, Best_epoch: 69, Best_valid: 95.46%, Loss: 0.5553, 
+***************
+Run: 01, Epoch: 70, Best_epoch: 69, Best_valid: 95.46%, Loss: 0.5282, 
+***************
+Run: 01, Epoch: 71, Best_epoch: 69, Best_valid: 95.46%, Loss: 0.5417, 
+***************
+Run: 01, Epoch: 72, Best_epoch: 69, Best_valid: 95.46%, Loss: 0.5135, 
+***************
+Run: 01, Epoch: 73, Best_epoch: 73, Best_valid: 95.67%, Loss: 0.5294, 
+***************
+Run: 01, Epoch: 74, Best_epoch: 73, Best_valid: 95.67%, Loss: 0.4985, 
+***************
+Run: 01, Epoch: 75, Best_epoch: 75, Best_valid: 95.86%, Loss: 0.5079, 
+***************
+Run: 01, Epoch: 76, Best_epoch: 75, Best_valid: 95.86%, Loss: 0.5139, 
+***************
+Run: 01, Epoch: 77, Best_epoch: 77, Best_valid: 95.95%, Loss: 0.4951, 
+***************
+Run: 01, Epoch: 78, Best_epoch: 78, Best_valid: 96.11%, Loss: 0.4856, 
+***************
+Run: 01, Epoch: 79, Best_epoch: 78, Best_valid: 96.11%, Loss: 0.4951, 
+***************
+Run: 01, Epoch: 80, Best_epoch: 80, Best_valid: 96.16%, Loss: 0.5088, 
+***************
+Run: 01, Epoch: 81, Best_epoch: 80, Best_valid: 96.16%, Loss: 0.5000, 
+***************
+Run: 01, Epoch: 82, Best_epoch: 80, Best_valid: 96.16%, Loss: 0.4725, 
+***************
+Run: 01, Epoch: 83, Best_epoch: 80, Best_valid: 96.16%, Loss: 0.4493, 
+***************
+Run: 01, Epoch: 84, Best_epoch: 80, Best_valid: 96.16%, Loss: 0.4881, 
+***************
+Run: 01, Epoch: 85, Best_epoch: 85, Best_valid: 96.20%, Loss: 0.4614, 
+***************
+Run: 01, Epoch: 86, Best_epoch: 85, Best_valid: 96.20%, Loss: 0.4683, 
+***************
+Run: 01, Epoch: 87, Best_epoch: 87, Best_valid: 96.33%, Loss: 0.4759, 
+***************
+Run: 01, Epoch: 88, Best_epoch: 87, Best_valid: 96.33%, Loss: 0.4364, 
+***************
+Run: 01, Epoch: 89, Best_epoch: 87, Best_valid: 96.33%, Loss: 0.4446, 
+***************
+Run: 01, Epoch: 90, Best_epoch: 90, Best_valid: 96.37%, Loss: 0.4575, 
+***************
+Run: 01, Epoch: 91, Best_epoch: 91, Best_valid: 96.44%, Loss: 0.4568, 
+***************
+Run: 01, Epoch: 92, Best_epoch: 91, Best_valid: 96.44%, Loss: 0.4491, 
+***************
+Run: 01, Epoch: 93, Best_epoch: 93, Best_valid: 96.54%, Loss: 0.4542, 
+***************
+Run: 01, Epoch: 94, Best_epoch: 93, Best_valid: 96.54%, Loss: 0.4350, 
+***************
+Run: 01, Epoch: 95, Best_epoch: 93, Best_valid: 96.54%, Loss: 0.4573, 
+***************
+Run: 01, Epoch: 96, Best_epoch: 93, Best_valid: 96.54%, Loss: 0.4333, 
+***************
+Run: 01, Epoch: 97, Best_epoch: 97, Best_valid: 96.54%, Loss: 0.4288, 
+***************
+Run: 01, Epoch: 98, Best_epoch: 97, Best_valid: 96.54%, Loss: 0.4166, 
+***************
+Run: 01, Epoch: 99, Best_epoch: 99, Best_valid: 96.60%, Loss: 0.4143, 
+***************
+Run: 01, Epoch: 100, Best_epoch: 100, Best_valid: 96.61%, Loss: 0.4217, 
+***************
+Run: 01, Epoch: 101, Best_epoch: 100, Best_valid: 96.61%, Loss: 0.4181, 
+***************
+Run: 01, Epoch: 102, Best_epoch: 102, Best_valid: 96.73%, Loss: 0.3990, 
+***************
+Run: 01, Epoch: 103, Best_epoch: 102, Best_valid: 96.73%, Loss: 0.4179, 
+***************
+Run: 01, Epoch: 104, Best_epoch: 102, Best_valid: 96.73%, Loss: 0.4120, 
+***************
+Run: 01, Epoch: 105, Best_epoch: 102, Best_valid: 96.73%, Loss: 0.4168, 
+***************
+Run: 01, Epoch: 106, Best_epoch: 102, Best_valid: 96.73%, Loss: 0.4091, 
+***************
+Run: 01, Epoch: 107, Best_epoch: 107, Best_valid: 96.81%, Loss: 0.4024, 
+***************
+Run: 01, Epoch: 108, Best_epoch: 107, Best_valid: 96.81%, Loss: 0.3905, 
+***************
+Run: 01, Epoch: 109, Best_epoch: 107, Best_valid: 96.81%, Loss: 0.3998, 
+***************
+Run: 01, Epoch: 110, Best_epoch: 110, Best_valid: 96.87%, Loss: 0.3884, 
+***************
+Run: 01, Epoch: 111, Best_epoch: 110, Best_valid: 96.87%, Loss: 0.3844, 
+***************
+Run: 01, Epoch: 112, Best_epoch: 112, Best_valid: 97.01%, Loss: 0.3822, 
+***************
+Run: 01, Epoch: 113, Best_epoch: 112, Best_valid: 97.01%, Loss: 0.3882, 
+***************
+Run: 01, Epoch: 114, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3614, 
+***************
+Run: 01, Epoch: 115, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3753, 
+***************
+Run: 01, Epoch: 116, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3711, 
+***************
+Run: 01, Epoch: 117, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3878, 
+***************
+Run: 01, Epoch: 118, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3873, 
+***************
+Run: 01, Epoch: 119, Best_epoch: 114, Best_valid: 97.18%, Loss: 0.3686, 
+***************
+Run: 01, Epoch: 120, Best_epoch: 120, Best_valid: 97.18%, Loss: 0.3571, 
+***************
+Run: 01, Epoch: 121, Best_epoch: 120, Best_valid: 97.18%, Loss: 0.3499, 
+***************
+Run: 01, Epoch: 122, Best_epoch: 122, Best_valid: 97.25%, Loss: 0.3500, 
+***************
+Run: 01, Epoch: 123, Best_epoch: 122, Best_valid: 97.25%, Loss: 0.3544, 
+***************
+Run: 01, Epoch: 124, Best_epoch: 124, Best_valid: 97.32%, Loss: 0.3529, 
+***************
+Run: 01, Epoch: 125, Best_epoch: 124, Best_valid: 97.32%, Loss: 0.3666, 
+***************
+Run: 01, Epoch: 126, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3362, 
+***************
+Run: 01, Epoch: 127, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3577, 
+***************
+Run: 01, Epoch: 128, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3498, 
+***************
+Run: 01, Epoch: 129, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3440, 
+***************
+Run: 01, Epoch: 130, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3290, 
+***************
+Run: 01, Epoch: 131, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3495, 
+***************
+Run: 01, Epoch: 132, Best_epoch: 126, Best_valid: 97.40%, Loss: 0.3469, 
+***************
+Run: 01, Epoch: 133, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3311, 
+***************
+Run: 01, Epoch: 134, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3378, 
+***************
+Run: 01, Epoch: 135, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3268, 
+***************
+Run: 01, Epoch: 136, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3232, 
+***************
+Run: 01, Epoch: 137, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3136, 
+***************
+Run: 01, Epoch: 138, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3358, 
+***************
+Run: 01, Epoch: 139, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3164, 
+***************
+Run: 01, Epoch: 140, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3222, 
+***************
+Run: 01, Epoch: 141, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3484, 
+***************
+Run: 01, Epoch: 142, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3222, 
+***************
+Run: 01, Epoch: 143, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3148, 
+***************
+Run: 01, Epoch: 144, Best_epoch: 133, Best_valid: 97.54%, Loss: 0.3144, 
+***************
+Run: 01, Epoch: 145, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3186, 
+***************
+Run: 01, Epoch: 146, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3441, 
+***************
+Run: 01, Epoch: 147, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3195, 
+***************
+Run: 01, Epoch: 148, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3089, 
+***************
+Run: 01, Epoch: 149, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.2892, 
+***************
+Run: 01, Epoch: 150, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3347, 
+***************
+Run: 01, Epoch: 151, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.2916, 
+***************
+Run: 01, Epoch: 152, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3093, 
+***************
+Run: 01, Epoch: 153, Best_epoch: 145, Best_valid: 97.63%, Loss: 0.3181, 
+***************
+Run: 01, Epoch: 154, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.3178, 
+***************
+Run: 01, Epoch: 155, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.2980, 
+***************
+Run: 01, Epoch: 156, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.3030, 
+***************
+Run: 01, Epoch: 157, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.3199, 
+***************
+Run: 01, Epoch: 158, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.2967, 
+***************
+Run: 01, Epoch: 159, Best_epoch: 154, Best_valid: 97.75%, Loss: 0.2907, 
+***************
+Run: 01, Epoch: 160, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.3061, 
+***************
+Run: 01, Epoch: 161, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2994, 
+***************
+Run: 01, Epoch: 162, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2956, 
+***************
+Run: 01, Epoch: 163, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2799, 
+***************
+Run: 01, Epoch: 164, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2935, 
+***************
+Run: 01, Epoch: 165, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2897, 
+***************
+Run: 01, Epoch: 166, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2851, 
+***************
+Run: 01, Epoch: 167, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2854, 
+***************
+Run: 01, Epoch: 168, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2950, 
+***************
+Run: 01, Epoch: 169, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.3012, 
+***************
+Run: 01, Epoch: 170, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2829, 
+***************
+Run: 01, Epoch: 171, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.3044, 
+***************
+Run: 01, Epoch: 172, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.3049, 
+***************
+Run: 01, Epoch: 173, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2741, 
+***************
+Run: 01, Epoch: 174, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2941, 
+***************
+Run: 01, Epoch: 175, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2846, 
+***************
+Run: 01, Epoch: 176, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2742, 
+***************
+Run: 01, Epoch: 177, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2769, 
+***************
+Run: 01, Epoch: 178, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2773, 
+***************
+Run: 01, Epoch: 179, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2748, 
+***************
+Run: 01, Epoch: 180, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2886, 
+***************
+Run: 01, Epoch: 181, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2791, 
+***************
+Run: 01, Epoch: 182, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.3010, 
+***************
+Run: 01, Epoch: 183, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2812, 
+***************
+Run: 01, Epoch: 184, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2940, 
+***************
+Run: 01, Epoch: 185, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2874, 
+***************
+Run: 01, Epoch: 186, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2596, 
+***************
+Run: 01, Epoch: 187, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2670, 
+***************
+Run: 01, Epoch: 188, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2635, 
+***************
+Run: 01, Epoch: 189, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2807, 
+***************
+Run: 01, Epoch: 190, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2731, 
+***************
+Run: 01, Epoch: 191, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2506, 
+***************
+Run: 01, Epoch: 192, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2506, 
+***************
+Run: 01, Epoch: 193, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2628, 
+***************
+Run: 01, Epoch: 194, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2553, 
+***************
+Run: 01, Epoch: 195, Best_epoch: 160, Best_valid: 97.86%, Loss: 0.2762, 
+***************
+Run: 01, Epoch: 196, Best_epoch: 196, Best_valid: 97.87%, Loss: 0.2747, 
+***************
+Run: 01, Epoch: 197, Best_epoch: 196, Best_valid: 97.87%, Loss: 0.2527, 
+***************
+Run: 01, Epoch: 198, Best_epoch: 196, Best_valid: 97.87%, Loss: 0.2498, 
+***************
+Run: 01, Epoch: 199, Best_epoch: 199, Best_valid: 98.00%, Loss: 0.2427, 
+***************
+Run: 01, Epoch: 200, Best_epoch: 199, Best_valid: 98.00%, Loss: 0.2458, 
+***************
+Run: 01, Epoch: 201, Best_epoch: 199, Best_valid: 98.00%, Loss: 0.2619, 
+***************
+Run: 01, Epoch: 202, Best_epoch: 199, Best_valid: 98.00%, Loss: 0.2566, 
+***************
+Run: 01, Epoch: 203, Best_epoch: 203, Best_valid: 98.00%, Loss: 0.2582, 
+***************
+Run: 01, Epoch: 204, Best_epoch: 203, Best_valid: 98.00%, Loss: 0.2495, 
+***************
+Run: 01, Epoch: 205, Best_epoch: 205, Best_valid: 98.01%, Loss: 0.2564, 
+***************
+Run: 01, Epoch: 206, Best_epoch: 206, Best_valid: 98.04%, Loss: 0.2521, 
+***************
+Run: 01, Epoch: 207, Best_epoch: 206, Best_valid: 98.04%, Loss: 0.2631, 
+***************
+Run: 01, Epoch: 208, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2415, 
+***************
+Run: 01, Epoch: 209, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2419, 
+***************
+Run: 01, Epoch: 210, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2545, 
+***************
+Run: 01, Epoch: 211, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2340, 
+***************
+Run: 01, Epoch: 212, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2468, 
+***************
+Run: 01, Epoch: 213, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2536, 
+***************
+Run: 01, Epoch: 214, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2221, 
+***************
+Run: 01, Epoch: 215, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2472, 
+***************
+Run: 01, Epoch: 216, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2443, 
+***************
+Run: 01, Epoch: 217, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2523, 
+***************
+Run: 01, Epoch: 218, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2480, 
+***************
+Run: 01, Epoch: 219, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2440, 
+***************
+Run: 01, Epoch: 220, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2351, 
+***************
+Run: 01, Epoch: 221, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2309, 
+***************
+Run: 01, Epoch: 222, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2474, 
+***************
+Run: 01, Epoch: 223, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2432, 
+***************
+Run: 01, Epoch: 224, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2436, 
+***************
+Run: 01, Epoch: 225, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2434, 
+***************
+Run: 01, Epoch: 226, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2454, 
+***************
+Run: 01, Epoch: 227, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2370, 
+***************
+Run: 01, Epoch: 228, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2366, 
+***************
+Run: 01, Epoch: 229, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2583, 
+***************
+Run: 01, Epoch: 230, Best_epoch: 208, Best_valid: 98.11%, Loss: 0.2309, 
+***************
+Run: 01, Epoch: 231, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2251, 
+***************
+Run: 01, Epoch: 232, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2299, 
+***************
+Run: 01, Epoch: 233, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2504, 
+***************
+Run: 01, Epoch: 234, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2286, 
+***************
+Run: 01, Epoch: 235, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2488, 
+***************
+Run: 01, Epoch: 236, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2019, 
+***************
+Run: 01, Epoch: 237, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2403, 
+***************
+Run: 01, Epoch: 238, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2234, 
+***************
+Run: 01, Epoch: 239, Best_epoch: 231, Best_valid: 98.14%, Loss: 0.2346, 
+***************
+Run: 01, Epoch: 240, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2287, 
+***************
+Run: 01, Epoch: 241, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2355, 
+***************
+Run: 01, Epoch: 242, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2414, 
+***************
+Run: 01, Epoch: 243, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2441, 
+***************
+Run: 01, Epoch: 244, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2350, 
+***************
+Run: 01, Epoch: 245, Best_epoch: 240, Best_valid: 98.21%, Loss: 0.2294, 
+***************
+Run: 01, Epoch: 246, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2224, 
+***************
+Run: 01, Epoch: 247, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2209, 
+***************
+Run: 01, Epoch: 248, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2249, 
+***************
+Run: 01, Epoch: 249, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2076, 
+***************
+Run: 01, Epoch: 250, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2339, 
+***************
+Run: 01, Epoch: 251, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2330, 
+***************
+Run: 01, Epoch: 252, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2105, 
+***************
+Run: 01, Epoch: 253, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2322, 
+***************
+Run: 01, Epoch: 254, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2258, 
+***************
+Run: 01, Epoch: 255, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2322, 
+***************
+Run: 01, Epoch: 256, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2151, 
+***************
+Run: 01, Epoch: 257, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2081, 
+***************
+Run: 01, Epoch: 258, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2311, 
+***************
+Run: 01, Epoch: 259, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2247, 
+***************
+Run: 01, Epoch: 260, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2300, 
+***************
+Run: 01, Epoch: 261, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2227, 
+***************
+Run: 01, Epoch: 262, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2231, 
+***************
+Run: 01, Epoch: 263, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2118, 
+***************
+Run: 01, Epoch: 264, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2094, 
+***************
+Run: 01, Epoch: 265, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2142, 
+***************
+Run: 01, Epoch: 266, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2149, 
+***************
+Run: 01, Epoch: 267, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2199, 
+***************
+Run: 01, Epoch: 268, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2210, 
+***************
+Run: 01, Epoch: 269, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2185, 
+***************
+Run: 01, Epoch: 270, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2228, 
+***************
+Run: 01, Epoch: 271, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2323, 
+***************
+Run: 01, Epoch: 272, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2097, 
+***************
+Run: 01, Epoch: 273, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2209, 
+***************
+Run: 01, Epoch: 274, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2341, 
+***************
+Run: 01, Epoch: 275, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2134, 
+***************
+Run: 01, Epoch: 276, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2022, 
+***************
+Run: 01, Epoch: 277, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.1925, 
+***************
+Run: 01, Epoch: 278, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2112, 
+***************
+Run: 01, Epoch: 279, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2373, 
+***************
+Run: 01, Epoch: 280, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2331, 
+***************
+Run: 01, Epoch: 281, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.2047, 
+***************
+Run: 01, Epoch: 282, Best_epoch: 246, Best_valid: 98.28%, Loss: 0.1929, 
+***************
+Run: 01, Epoch: 283, Best_epoch: 283, Best_valid: 98.29%, Loss: 0.2123, 
+***************
+Run: 01, Epoch: 284, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2110, 
+***************
+Run: 01, Epoch: 285, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2219, 
+***************
+Run: 01, Epoch: 286, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2155, 
+***************
+Run: 01, Epoch: 287, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2036, 
+***************
+Run: 01, Epoch: 288, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2093, 
+***************
+Run: 01, Epoch: 289, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2061, 
+***************
+Run: 01, Epoch: 290, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2134, 
+***************
+Run: 01, Epoch: 291, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2070, 
+***************
+Run: 01, Epoch: 292, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2138, 
+***************
+Run: 01, Epoch: 293, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2187, 
+***************
+Run: 01, Epoch: 294, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.2060, 
+***************
+Run: 01, Epoch: 295, Best_epoch: 284, Best_valid: 98.33%, Loss: 0.1999, 
+***************
+Run: 01, Epoch: 296, Best_epoch: 296, Best_valid: 98.37%, Loss: 0.2033, 
+***************
+Run: 01, Epoch: 297, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1931, 
+***************
+Run: 01, Epoch: 298, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1982, 
+***************
+Run: 01, Epoch: 299, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2027, 
+***************
+Run: 01, Epoch: 300, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1989, 
+***************
+Run: 01, Epoch: 301, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2132, 
+***************
+Run: 01, Epoch: 302, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2062, 
+***************
+Run: 01, Epoch: 303, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2029, 
+***************
+Run: 01, Epoch: 304, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1953, 
+***************
+Run: 01, Epoch: 305, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2139, 
+***************
+Run: 01, Epoch: 306, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1899, 
+***************
+Run: 01, Epoch: 307, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1935, 
+***************
+Run: 01, Epoch: 308, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1952, 
+***************
+Run: 01, Epoch: 309, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2124, 
+***************
+Run: 01, Epoch: 310, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2033, 
+***************
+Run: 01, Epoch: 311, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2051, 
+***************
+Run: 01, Epoch: 312, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1925, 
+***************
+Run: 01, Epoch: 313, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1884, 
+***************
+Run: 01, Epoch: 314, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1940, 
+***************
+Run: 01, Epoch: 315, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2064, 
+***************
+Run: 01, Epoch: 316, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2028, 
+***************
+Run: 01, Epoch: 317, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.2032, 
+***************
+Run: 01, Epoch: 318, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1976, 
+***************
+Run: 01, Epoch: 319, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1993, 
+***************
+Run: 01, Epoch: 320, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1991, 
+***************
+Run: 01, Epoch: 321, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1971, 
+***************
+Run: 01, Epoch: 322, Best_epoch: 297, Best_valid: 98.38%, Loss: 0.1950, 
+***************
+Run: 01, Epoch: 323, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1866, 
+***************
+Run: 01, Epoch: 324, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1974, 
+***************
+Run: 01, Epoch: 325, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1820, 
+***************
+Run: 01, Epoch: 326, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.2080, 
+***************
+Run: 01, Epoch: 327, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1868, 
+***************
+Run: 01, Epoch: 328, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1849, 
+***************
+Run: 01, Epoch: 329, Best_epoch: 323, Best_valid: 98.41%, Loss: 0.1799, 
+***************
+Run: 01, Epoch: 330, Best_epoch: 330, Best_valid: 98.45%, Loss: 0.1925, 
+***************
+Run: 01, Epoch: 331, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1831, 
+***************
+Run: 01, Epoch: 332, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1896, 
+***************
+Run: 01, Epoch: 333, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1803, 
+***************
+Run: 01, Epoch: 334, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1904, 
+***************
+Run: 01, Epoch: 335, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.2025, 
+***************
+Run: 01, Epoch: 336, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1825, 
+***************
+Run: 01, Epoch: 337, Best_epoch: 331, Best_valid: 98.47%, Loss: 0.1955, 
+***************
+Run: 01, Epoch: 338, Best_epoch: 338, Best_valid: 98.49%, Loss: 0.1998, 
+***************
+Run: 01, Epoch: 339, Best_epoch: 339, Best_valid: 98.54%, Loss: 0.1868, 
+***************
+Run: 01, Epoch: 340, Best_epoch: 339, Best_valid: 98.54%, Loss: 0.1900, 
+***************
+Run: 01, Epoch: 341, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1991, 
+***************
+Run: 01, Epoch: 342, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1763, 
+***************
+Run: 01, Epoch: 343, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1779, 
+***************
+Run: 01, Epoch: 344, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1928, 
+***************
+Run: 01, Epoch: 345, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.2091, 
+***************
+Run: 01, Epoch: 346, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1807, 
+***************
+Run: 01, Epoch: 347, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1932, 
+***************
+Run: 01, Epoch: 348, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1948, 
+***************
+Run: 01, Epoch: 349, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1972, 
+***************
+Run: 01, Epoch: 350, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1955, 
+***************
+Run: 01, Epoch: 351, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1835, 
+***************
+Run: 01, Epoch: 352, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1841, 
+***************
+Run: 01, Epoch: 353, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1947, 
+***************
+Run: 01, Epoch: 354, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1737, 
+***************
+Run: 01, Epoch: 355, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1926, 
+***************
+Run: 01, Epoch: 356, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1854, 
+***************
+Run: 01, Epoch: 357, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1945, 
+***************
+Run: 01, Epoch: 358, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1950, 
+***************
+Run: 01, Epoch: 359, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1740, 
+***************
+Run: 01, Epoch: 360, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1854, 
+***************
+Run: 01, Epoch: 361, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1932, 
+***************
+Run: 01, Epoch: 362, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1751, 
+***************
+Run: 01, Epoch: 363, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1851, 
+***************
+Run: 01, Epoch: 364, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1845, 
+***************
+Run: 01, Epoch: 365, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1925, 
+***************
+Run: 01, Epoch: 366, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1749, 
+***************
+Run: 01, Epoch: 367, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1772, 
+***************
+Run: 01, Epoch: 368, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1777, 
+***************
+Run: 01, Epoch: 369, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1693, 
+***************
+Run: 01, Epoch: 370, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1770, 
+***************
+Run: 01, Epoch: 371, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1817, 
+***************
+Run: 01, Epoch: 372, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1810, 
+***************
+Run: 01, Epoch: 373, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.2040, 
+***************
+Run: 01, Epoch: 374, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1946, 
+***************
+Run: 01, Epoch: 375, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1909, 
+***************
+Run: 01, Epoch: 376, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1741, 
+***************
+Run: 01, Epoch: 377, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1653, 
+***************
+Run: 01, Epoch: 378, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1821, 
+***************
+Run: 01, Epoch: 379, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1778, 
+***************
+Run: 01, Epoch: 380, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1805, 
+***************
+Run: 01, Epoch: 381, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1774, 
+***************
+Run: 01, Epoch: 382, Best_epoch: 341, Best_valid: 98.58%, Loss: 0.1654, 
+***************
+Run: 01, Epoch: 383, Best_epoch: 383, Best_valid: 98.61%, Loss: 0.1761, 
+***************
+Run: 01, Epoch: 384, Best_epoch: 384, Best_valid: 98.62%, Loss: 0.1721, 
+***************
+Run: 01, Epoch: 385, Best_epoch: 384, Best_valid: 98.62%, Loss: 0.1857, 
+***************
+Run: 01, Epoch: 386, Best_epoch: 384, Best_valid: 98.62%, Loss: 0.1689, 
+***************
+Run: 01, Epoch: 387, Best_epoch: 387, Best_valid: 98.65%, Loss: 0.1539, 
+***************
+Run: 01, Epoch: 388, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1735, 
+***************
+Run: 01, Epoch: 389, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1936, 
+***************
+Run: 01, Epoch: 390, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1765, 
+***************
+Run: 01, Epoch: 391, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1700, 
+***************
+Run: 01, Epoch: 392, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1664, 
+***************
+Run: 01, Epoch: 393, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1731, 
+***************
+Run: 01, Epoch: 394, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1702, 
+***************
+Run: 01, Epoch: 395, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1739, 
+***************
+Run: 01, Epoch: 396, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1868, 
+***************
+Run: 01, Epoch: 397, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1699, 
+***************
+Run: 01, Epoch: 398, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1718, 
+***************
+Run: 01, Epoch: 399, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1797, 
+***************
+Run: 01, Epoch: 400, Best_epoch: 388, Best_valid: 98.66%, Loss: 0.1650, 
+***************
+##### Testing on 0/3
+num parameters for finetuning: 774
+--- TestAcc: 0.7020, early-stopping-TestAcc: 0.6955, Best ValAcc: 0.6730 in epoch 41 --- 
+**** Linear probe test acc on Run 1/3 for last is acc=0.7020142180094787 estp_acc=0.6954976303317536
+num parameters for finetuning: 1542
+--- TestAcc: 0.7073, early-stopping-TestAcc: 0.7091, Best ValAcc: 0.7014 in epoch 44 --- 
+**** Linear probe test acc on Run 1/3 for combine is acc=0.707345971563981 estp_acc=0.7091232227488151
+Run: 02, Epoch: 01, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3865, 
+***************
+Run: 02, Epoch: 02, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3864, 
+***************
+Run: 02, Epoch: 03, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3863, 
+***************
+Run: 02, Epoch: 04, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3856, 
+***************
+Run: 02, Epoch: 05, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3834, 
+***************
+Run: 02, Epoch: 06, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3777, 
+***************
+Run: 02, Epoch: 07, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3557, 
+***************
+Run: 02, Epoch: 08, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.3174, 
+***************
+Run: 02, Epoch: 09, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2758, 
+***************
+Run: 02, Epoch: 10, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2725, 
+***************
+Run: 02, Epoch: 11, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2492, 
+***************
+Run: 02, Epoch: 12, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2446, 
+***************
+Run: 02, Epoch: 13, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2336, 
+***************
+Run: 02, Epoch: 14, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2207, 
+***************
+Run: 02, Epoch: 15, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2328, 
+***************
+Run: 02, Epoch: 16, Best_epoch: 01, Best_valid: 77.94%, Loss: 1.2201, 
+***************
+Run: 02, Epoch: 17, Best_epoch: 17, Best_valid: 79.33%, Loss: 1.2182, 
+***************
+Run: 02, Epoch: 18, Best_epoch: 18, Best_valid: 81.30%, Loss: 1.2027, 
+***************
+Run: 02, Epoch: 19, Best_epoch: 19, Best_valid: 82.06%, Loss: 1.1765, 
+***************
+Run: 02, Epoch: 20, Best_epoch: 19, Best_valid: 82.06%, Loss: 1.1485, 
+***************
+Run: 02, Epoch: 21, Best_epoch: 21, Best_valid: 82.21%, Loss: 1.1214, 
+***************
+Run: 02, Epoch: 22, Best_epoch: 22, Best_valid: 82.80%, Loss: 1.1059, 
+***************
+Run: 02, Epoch: 23, Best_epoch: 23, Best_valid: 82.93%, Loss: 1.0913, 
+***************
+Run: 02, Epoch: 24, Best_epoch: 24, Best_valid: 83.65%, Loss: 1.0819, 
+***************
+Run: 02, Epoch: 25, Best_epoch: 24, Best_valid: 83.65%, Loss: 1.0696, 
+***************
+Run: 02, Epoch: 26, Best_epoch: 26, Best_valid: 84.08%, Loss: 1.0419, 
+***************
+Run: 02, Epoch: 27, Best_epoch: 26, Best_valid: 84.08%, Loss: 1.0284, 
+***************
+Run: 02, Epoch: 28, Best_epoch: 28, Best_valid: 84.65%, Loss: 1.0305, 
+***************
+Run: 02, Epoch: 29, Best_epoch: 29, Best_valid: 84.71%, Loss: 1.0304, 
+***************
+Run: 02, Epoch: 30, Best_epoch: 30, Best_valid: 85.22%, Loss: 0.9958, 
+***************
+Run: 02, Epoch: 31, Best_epoch: 31, Best_valid: 85.43%, Loss: 0.9802, 
+***************
+Run: 02, Epoch: 32, Best_epoch: 32, Best_valid: 85.87%, Loss: 0.9898, 
+***************
+Run: 02, Epoch: 33, Best_epoch: 33, Best_valid: 86.33%, Loss: 0.9603, 
+***************
+Run: 02, Epoch: 34, Best_epoch: 34, Best_valid: 86.56%, Loss: 0.9683, 
+***************
+Run: 02, Epoch: 35, Best_epoch: 34, Best_valid: 86.56%, Loss: 0.9510, 
+***************
+Run: 02, Epoch: 36, Best_epoch: 36, Best_valid: 87.44%, Loss: 0.9399, 
+***************
+Run: 02, Epoch: 37, Best_epoch: 37, Best_valid: 87.52%, Loss: 0.9155, 
+***************
+Run: 02, Epoch: 38, Best_epoch: 38, Best_valid: 87.70%, Loss: 0.9178, 
+***************
+Run: 02, Epoch: 39, Best_epoch: 39, Best_valid: 88.06%, Loss: 0.9088, 
+***************
+Run: 02, Epoch: 40, Best_epoch: 40, Best_valid: 88.38%, Loss: 0.9036, 
+***************
+Run: 02, Epoch: 41, Best_epoch: 40, Best_valid: 88.38%, Loss: 0.8819, 
+***************
+Run: 02, Epoch: 42, Best_epoch: 42, Best_valid: 88.68%, Loss: 0.8771, 
+***************
+Run: 02, Epoch: 43, Best_epoch: 43, Best_valid: 88.69%, Loss: 0.8493, 
+***************
+Run: 02, Epoch: 44, Best_epoch: 44, Best_valid: 89.37%, Loss: 0.8613, 
+***************
+Run: 02, Epoch: 45, Best_epoch: 44, Best_valid: 89.37%, Loss: 0.8513, 
+***************
+Run: 02, Epoch: 46, Best_epoch: 44, Best_valid: 89.37%, Loss: 0.8348, 
+***************
+Run: 02, Epoch: 47, Best_epoch: 47, Best_valid: 89.40%, Loss: 0.8348, 
+***************
+Run: 02, Epoch: 48, Best_epoch: 47, Best_valid: 89.40%, Loss: 0.8338, 
+***************
+Run: 02, Epoch: 49, Best_epoch: 47, Best_valid: 89.40%, Loss: 0.8194, 
+***************
+Run: 02, Epoch: 50, Best_epoch: 47, Best_valid: 89.40%, Loss: 0.8124, 
+***************
+Run: 02, Epoch: 51, Best_epoch: 51, Best_valid: 89.93%, Loss: 0.7913, 
+***************
+Run: 02, Epoch: 52, Best_epoch: 51, Best_valid: 89.93%, Loss: 0.8064, 
+***************
+Run: 02, Epoch: 53, Best_epoch: 51, Best_valid: 89.93%, Loss: 0.7853, 
+***************
+Run: 02, Epoch: 54, Best_epoch: 54, Best_valid: 89.95%, Loss: 0.7864, 
+***************
+Run: 02, Epoch: 55, Best_epoch: 55, Best_valid: 90.57%, Loss: 0.7762, 
+***************
+Run: 02, Epoch: 56, Best_epoch: 55, Best_valid: 90.57%, Loss: 0.7741, 
+***************
+Run: 02, Epoch: 57, Best_epoch: 57, Best_valid: 90.81%, Loss: 0.7511, 
+***************
+Run: 02, Epoch: 58, Best_epoch: 58, Best_valid: 90.82%, Loss: 0.7508, 
+***************
+Run: 02, Epoch: 59, Best_epoch: 59, Best_valid: 91.46%, Loss: 0.7313, 
+***************
+Run: 02, Epoch: 60, Best_epoch: 60, Best_valid: 92.17%, Loss: 0.7167, 
+***************
+Run: 02, Epoch: 61, Best_epoch: 60, Best_valid: 92.17%, Loss: 0.7060, 
+***************
+Run: 02, Epoch: 62, Best_epoch: 62, Best_valid: 92.41%, Loss: 0.7027, 
+***************
+Run: 02, Epoch: 63, Best_epoch: 63, Best_valid: 92.52%, Loss: 0.6813, 
+***************
+Run: 02, Epoch: 64, Best_epoch: 64, Best_valid: 92.58%, Loss: 0.6898, 
+***************
+Run: 02, Epoch: 65, Best_epoch: 64, Best_valid: 92.58%, Loss: 0.6675, 
+***************
+Run: 02, Epoch: 66, Best_epoch: 66, Best_valid: 93.12%, Loss: 0.6553, 
+***************
+Run: 02, Epoch: 67, Best_epoch: 66, Best_valid: 93.12%, Loss: 0.6505, 
+***************
+Run: 02, Epoch: 68, Best_epoch: 66, Best_valid: 93.12%, Loss: 0.6491, 
+***************
+Run: 02, Epoch: 69, Best_epoch: 69, Best_valid: 93.30%, Loss: 0.6406, 
+***************
+Run: 02, Epoch: 70, Best_epoch: 70, Best_valid: 93.54%, Loss: 0.6301, 
+***************
+Run: 02, Epoch: 71, Best_epoch: 70, Best_valid: 93.54%, Loss: 0.6332, 
+***************
+Run: 02, Epoch: 72, Best_epoch: 72, Best_valid: 93.80%, Loss: 0.6199, 
+***************
+Run: 02, Epoch: 73, Best_epoch: 72, Best_valid: 93.80%, Loss: 0.6393, 
+***************
+Run: 02, Epoch: 74, Best_epoch: 74, Best_valid: 94.00%, Loss: 0.6166, 
+***************
+Run: 02, Epoch: 75, Best_epoch: 74, Best_valid: 94.00%, Loss: 0.6077, 
+***************
+Run: 02, Epoch: 76, Best_epoch: 74, Best_valid: 94.00%, Loss: 0.6018, 
+***************
+Run: 02, Epoch: 77, Best_epoch: 77, Best_valid: 94.21%, Loss: 0.5819, 
+***************
+Run: 02, Epoch: 78, Best_epoch: 78, Best_valid: 94.25%, Loss: 0.5810, 
+***************
+Run: 02, Epoch: 79, Best_epoch: 78, Best_valid: 94.25%, Loss: 0.5825, 
+***************
+Run: 02, Epoch: 80, Best_epoch: 80, Best_valid: 94.71%, Loss: 0.5819, 
+***************
+Run: 02, Epoch: 81, Best_epoch: 80, Best_valid: 94.71%, Loss: 0.5789, 
+***************
+Run: 02, Epoch: 82, Best_epoch: 80, Best_valid: 94.71%, Loss: 0.5500, 
+***************
+Run: 02, Epoch: 83, Best_epoch: 80, Best_valid: 94.71%, Loss: 0.5574, 
+***************
+Run: 02, Epoch: 84, Best_epoch: 84, Best_valid: 94.85%, Loss: 0.5431, 
+***************
+Run: 02, Epoch: 85, Best_epoch: 84, Best_valid: 94.85%, Loss: 0.5475, 
+***************
+Run: 02, Epoch: 86, Best_epoch: 86, Best_valid: 95.15%, Loss: 0.5429, 
+***************
+Run: 02, Epoch: 87, Best_epoch: 86, Best_valid: 95.15%, Loss: 0.5420, 
+***************
+Run: 02, Epoch: 88, Best_epoch: 88, Best_valid: 95.32%, Loss: 0.5140, 
+***************
+Run: 02, Epoch: 89, Best_epoch: 88, Best_valid: 95.32%, Loss: 0.5466, 
+***************
+Run: 02, Epoch: 90, Best_epoch: 90, Best_valid: 95.45%, Loss: 0.5023, 
+***************
+Run: 02, Epoch: 91, Best_epoch: 90, Best_valid: 95.45%, Loss: 0.4999, 
+***************
+Run: 02, Epoch: 92, Best_epoch: 92, Best_valid: 95.64%, Loss: 0.5016, 
+***************
+Run: 02, Epoch: 93, Best_epoch: 92, Best_valid: 95.64%, Loss: 0.5097, 
+***************
+Run: 02, Epoch: 94, Best_epoch: 92, Best_valid: 95.64%, Loss: 0.4995, 
+***************
+Run: 02, Epoch: 95, Best_epoch: 92, Best_valid: 95.64%, Loss: 0.4874, 
+***************
+Run: 02, Epoch: 96, Best_epoch: 96, Best_valid: 95.88%, Loss: 0.4964, 
+***************
+Run: 02, Epoch: 97, Best_epoch: 96, Best_valid: 95.88%, Loss: 0.4791, 
+***************
+Run: 02, Epoch: 98, Best_epoch: 98, Best_valid: 96.14%, Loss: 0.4886, 
+***************
+Run: 02, Epoch: 99, Best_epoch: 98, Best_valid: 96.14%, Loss: 0.4842, 
+***************
+Run: 02, Epoch: 100, Best_epoch: 98, Best_valid: 96.14%, Loss: 0.4843, 
+***************
+Run: 02, Epoch: 101, Best_epoch: 98, Best_valid: 96.14%, Loss: 0.4714, 
+***************
+Run: 02, Epoch: 102, Best_epoch: 102, Best_valid: 96.16%, Loss: 0.4667, 
+***************
+Run: 02, Epoch: 103, Best_epoch: 103, Best_valid: 96.20%, Loss: 0.4746, 
+***************
+Run: 02, Epoch: 104, Best_epoch: 103, Best_valid: 96.20%, Loss: 0.4684, 
+***************
+Run: 02, Epoch: 105, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4747, 
+***************
+Run: 02, Epoch: 106, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4539, 
+***************
+Run: 02, Epoch: 107, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4664, 
+***************
+Run: 02, Epoch: 108, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4313, 
+***************
+Run: 02, Epoch: 109, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4536, 
+***************
+Run: 02, Epoch: 110, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4316, 
+***************
+Run: 02, Epoch: 111, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4442, 
+***************
+Run: 02, Epoch: 112, Best_epoch: 105, Best_valid: 96.42%, Loss: 0.4227, 
+***************
+Run: 02, Epoch: 113, Best_epoch: 113, Best_valid: 96.52%, Loss: 0.4571, 
+***************
+Run: 02, Epoch: 114, Best_epoch: 113, Best_valid: 96.52%, Loss: 0.4202, 
+***************
+Run: 02, Epoch: 115, Best_epoch: 115, Best_valid: 96.67%, Loss: 0.4285, 
+***************
+Run: 02, Epoch: 116, Best_epoch: 115, Best_valid: 96.67%, Loss: 0.4237, 
+***************
+Run: 02, Epoch: 117, Best_epoch: 115, Best_valid: 96.67%, Loss: 0.4290, 
+***************
+Run: 02, Epoch: 118, Best_epoch: 115, Best_valid: 96.67%, Loss: 0.3964, 
+***************
+Run: 02, Epoch: 119, Best_epoch: 115, Best_valid: 96.67%, Loss: 0.4084, 
+***************
+Run: 02, Epoch: 120, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.4210, 
+***************
+Run: 02, Epoch: 121, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.4183, 
+***************
+Run: 02, Epoch: 122, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.3935, 
+***************
+Run: 02, Epoch: 123, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.4093, 
+***************
+Run: 02, Epoch: 124, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.4119, 
+***************
+Run: 02, Epoch: 125, Best_epoch: 120, Best_valid: 96.84%, Loss: 0.3849, 
+***************
+Run: 02, Epoch: 126, Best_epoch: 126, Best_valid: 96.91%, Loss: 0.3995, 
+***************
+Run: 02, Epoch: 127, Best_epoch: 127, Best_valid: 96.92%, Loss: 0.3683, 
+***************
+Run: 02, Epoch: 128, Best_epoch: 127, Best_valid: 96.92%, Loss: 0.3829, 
+***************
+Run: 02, Epoch: 129, Best_epoch: 129, Best_valid: 97.00%, Loss: 0.3863, 
+***************
+Run: 02, Epoch: 130, Best_epoch: 129, Best_valid: 97.00%, Loss: 0.3722, 
+***************
+Run: 02, Epoch: 131, Best_epoch: 129, Best_valid: 97.00%, Loss: 0.3973, 
+***************
+Run: 02, Epoch: 132, Best_epoch: 129, Best_valid: 97.00%, Loss: 0.3942, 
+***************
+Run: 02, Epoch: 133, Best_epoch: 133, Best_valid: 97.13%, Loss: 0.3866, 
+***************
+Run: 02, Epoch: 134, Best_epoch: 133, Best_valid: 97.13%, Loss: 0.3825, 
+***************
+Run: 02, Epoch: 135, Best_epoch: 133, Best_valid: 97.13%, Loss: 0.3553, 
+***************
+Run: 02, Epoch: 136, Best_epoch: 133, Best_valid: 97.13%, Loss: 0.3692, 
+***************
+Run: 02, Epoch: 137, Best_epoch: 133, Best_valid: 97.13%, Loss: 0.3688, 
+***************
+Run: 02, Epoch: 138, Best_epoch: 138, Best_valid: 97.13%, Loss: 0.3570, 
+***************
+Run: 02, Epoch: 139, Best_epoch: 138, Best_valid: 97.13%, Loss: 0.3489, 
+***************
+Run: 02, Epoch: 140, Best_epoch: 138, Best_valid: 97.13%, Loss: 0.3556, 
+***************
+Run: 02, Epoch: 141, Best_epoch: 138, Best_valid: 97.13%, Loss: 0.3801, 
+***************
+Run: 02, Epoch: 142, Best_epoch: 138, Best_valid: 97.13%, Loss: 0.3614, 
+***************
+Run: 02, Epoch: 143, Best_epoch: 143, Best_valid: 97.15%, Loss: 0.3539, 
+***************
+Run: 02, Epoch: 144, Best_epoch: 143, Best_valid: 97.15%, Loss: 0.3602, 
+***************
+Run: 02, Epoch: 145, Best_epoch: 143, Best_valid: 97.15%, Loss: 0.3782, 
+***************
+Run: 02, Epoch: 146, Best_epoch: 143, Best_valid: 97.15%, Loss: 0.3584, 
+***************
+Run: 02, Epoch: 147, Best_epoch: 147, Best_valid: 97.32%, Loss: 0.3521, 
+***************
+Run: 02, Epoch: 148, Best_epoch: 147, Best_valid: 97.32%, Loss: 0.3499, 
+***************
+Run: 02, Epoch: 149, Best_epoch: 149, Best_valid: 97.32%, Loss: 0.3446, 
+***************
+Run: 02, Epoch: 150, Best_epoch: 149, Best_valid: 97.32%, Loss: 0.3530, 
+***************
+Run: 02, Epoch: 151, Best_epoch: 149, Best_valid: 97.32%, Loss: 0.3304, 
+***************
+Run: 02, Epoch: 152, Best_epoch: 149, Best_valid: 97.32%, Loss: 0.3414, 
+***************
+Run: 02, Epoch: 153, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3418, 
+***************
+Run: 02, Epoch: 154, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3266, 
+***************
+Run: 02, Epoch: 155, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3554, 
+***************
+Run: 02, Epoch: 156, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3366, 
+***************
+Run: 02, Epoch: 157, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3366, 
+***************
+Run: 02, Epoch: 158, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3468, 
+***************
+Run: 02, Epoch: 159, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3317, 
+***************
+Run: 02, Epoch: 160, Best_epoch: 153, Best_valid: 97.38%, Loss: 0.3465, 
+***************
+Run: 02, Epoch: 161, Best_epoch: 161, Best_valid: 97.42%, Loss: 0.3307, 
+***************
+Run: 02, Epoch: 162, Best_epoch: 161, Best_valid: 97.42%, Loss: 0.3307, 
+***************
+Run: 02, Epoch: 163, Best_epoch: 161, Best_valid: 97.42%, Loss: 0.3202, 
+***************
+Run: 02, Epoch: 164, Best_epoch: 161, Best_valid: 97.42%, Loss: 0.3277, 
+***************
+Run: 02, Epoch: 165, Best_epoch: 161, Best_valid: 97.42%, Loss: 0.3287, 
+***************
+Run: 02, Epoch: 166, Best_epoch: 166, Best_valid: 97.42%, Loss: 0.3272, 
+***************
+Run: 02, Epoch: 167, Best_epoch: 166, Best_valid: 97.42%, Loss: 0.3096, 
+***************
+Run: 02, Epoch: 168, Best_epoch: 168, Best_valid: 97.53%, Loss: 0.3206, 
+***************
+Run: 02, Epoch: 169, Best_epoch: 168, Best_valid: 97.53%, Loss: 0.3272, 
+***************
+Run: 02, Epoch: 170, Best_epoch: 168, Best_valid: 97.53%, Loss: 0.3220, 
+***************
+Run: 02, Epoch: 171, Best_epoch: 171, Best_valid: 97.55%, Loss: 0.2994, 
+***************
+Run: 02, Epoch: 172, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3216, 
+***************
+Run: 02, Epoch: 173, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3197, 
+***************
+Run: 02, Epoch: 174, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3270, 
+***************
+Run: 02, Epoch: 175, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3136, 
+***************
+Run: 02, Epoch: 176, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3033, 
+***************
+Run: 02, Epoch: 177, Best_epoch: 172, Best_valid: 97.62%, Loss: 0.3107, 
+***************
+Run: 02, Epoch: 178, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.3001, 
+***************
+Run: 02, Epoch: 179, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.3091, 
+***************
+Run: 02, Epoch: 180, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.2931, 
+***************
+Run: 02, Epoch: 181, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.3021, 
+***************
+Run: 02, Epoch: 182, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.2936, 
+***************
+Run: 02, Epoch: 183, Best_epoch: 178, Best_valid: 97.70%, Loss: 0.3170, 
+***************
+Run: 02, Epoch: 184, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.2787, 
+***************
+Run: 02, Epoch: 185, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.3077, 
+***************
+Run: 02, Epoch: 186, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.2944, 
+***************
+Run: 02, Epoch: 187, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.3183, 
+***************
+Run: 02, Epoch: 188, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.3162, 
+***************
+Run: 02, Epoch: 189, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.2878, 
+***************
+Run: 02, Epoch: 190, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.2998, 
+***************
+Run: 02, Epoch: 191, Best_epoch: 184, Best_valid: 97.73%, Loss: 0.2952, 
+***************
+Run: 02, Epoch: 192, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.3010, 
+***************
+Run: 02, Epoch: 193, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.2951, 
+***************
+Run: 02, Epoch: 194, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.2833, 
+***************
+Run: 02, Epoch: 195, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.2991, 
+***************
+Run: 02, Epoch: 196, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.3018, 
+***************
+Run: 02, Epoch: 197, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.2965, 
+***************
+Run: 02, Epoch: 198, Best_epoch: 192, Best_valid: 97.74%, Loss: 0.2798, 
+***************
+Run: 02, Epoch: 199, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2824, 
+***************
+Run: 02, Epoch: 200, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2577, 
+***************
+Run: 02, Epoch: 201, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2977, 
+***************
+Run: 02, Epoch: 202, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2945, 
+***************
+Run: 02, Epoch: 203, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2928, 
+***************
+Run: 02, Epoch: 204, Best_epoch: 199, Best_valid: 97.78%, Loss: 0.2770, 
+***************
+Run: 02, Epoch: 205, Best_epoch: 205, Best_valid: 97.83%, Loss: 0.2864, 
+***************
+Run: 02, Epoch: 206, Best_epoch: 206, Best_valid: 97.84%, Loss: 0.2693, 
+***************
+Run: 02, Epoch: 207, Best_epoch: 206, Best_valid: 97.84%, Loss: 0.2842, 
+***************
+Run: 02, Epoch: 208, Best_epoch: 206, Best_valid: 97.84%, Loss: 0.2771, 
+***************
+Run: 02, Epoch: 209, Best_epoch: 206, Best_valid: 97.84%, Loss: 0.2706, 
+***************
+Run: 02, Epoch: 210, Best_epoch: 206, Best_valid: 97.84%, Loss: 0.2638, 
+***************
+Run: 02, Epoch: 211, Best_epoch: 211, Best_valid: 97.85%, Loss: 0.2762, 
+***************
+Run: 02, Epoch: 212, Best_epoch: 211, Best_valid: 97.85%, Loss: 0.2735, 
+***************
+Run: 02, Epoch: 213, Best_epoch: 211, Best_valid: 97.85%, Loss: 0.2700, 
+***************
+Run: 02, Epoch: 214, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2757, 
+***************
+Run: 02, Epoch: 215, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.3004, 
+***************
+Run: 02, Epoch: 216, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2668, 
+***************
+Run: 02, Epoch: 217, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2700, 
+***************
+Run: 02, Epoch: 218, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2728, 
+***************
+Run: 02, Epoch: 219, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2670, 
+***************
+Run: 02, Epoch: 220, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2863, 
+***************
+Run: 02, Epoch: 221, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2501, 
+***************
+Run: 02, Epoch: 222, Best_epoch: 214, Best_valid: 97.97%, Loss: 0.2643, 
+***************
+Run: 02, Epoch: 223, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2703, 
+***************
+Run: 02, Epoch: 224, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2565, 
+***************
+Run: 02, Epoch: 225, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2637, 
+***************
+Run: 02, Epoch: 226, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2581, 
+***************
+Run: 02, Epoch: 227, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2483, 
+***************
+Run: 02, Epoch: 228, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2657, 
+***************
+Run: 02, Epoch: 229, Best_epoch: 223, Best_valid: 98.01%, Loss: 0.2711, 
+***************
+Run: 02, Epoch: 230, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2690, 
+***************
+Run: 02, Epoch: 231, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2676, 
+***************
+Run: 02, Epoch: 232, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2598, 
+***************
+Run: 02, Epoch: 233, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2481, 
+***************
+Run: 02, Epoch: 234, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2642, 
+***************
+Run: 02, Epoch: 235, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2524, 
+***************
+Run: 02, Epoch: 236, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2599, 
+***************
+Run: 02, Epoch: 237, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2536, 
+***************
+Run: 02, Epoch: 238, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2570, 
+***************
+Run: 02, Epoch: 239, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2416, 
+***************
+Run: 02, Epoch: 240, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2507, 
+***************
+Run: 02, Epoch: 241, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2632, 
+***************
+Run: 02, Epoch: 242, Best_epoch: 230, Best_valid: 98.06%, Loss: 0.2599, 
+***************
+Run: 02, Epoch: 243, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2602, 
+***************
+Run: 02, Epoch: 244, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2524, 
+***************
+Run: 02, Epoch: 245, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2465, 
+***************
+Run: 02, Epoch: 246, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2579, 
+***************
+Run: 02, Epoch: 247, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2461, 
+***************
+Run: 02, Epoch: 248, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2502, 
+***************
+Run: 02, Epoch: 249, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2531, 
+***************
+Run: 02, Epoch: 250, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2511, 
+***************
+Run: 02, Epoch: 251, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2537, 
+***************
+Run: 02, Epoch: 252, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2570, 
+***************
+Run: 02, Epoch: 253, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2563, 
+***************
+Run: 02, Epoch: 254, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2284, 
+***************
+Run: 02, Epoch: 255, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2387, 
+***************
+Run: 02, Epoch: 256, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2465, 
+***************
+Run: 02, Epoch: 257, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2372, 
+***************
+Run: 02, Epoch: 258, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2477, 
+***************
+Run: 02, Epoch: 259, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2480, 
+***************
+Run: 02, Epoch: 260, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2416, 
+***************
+Run: 02, Epoch: 261, Best_epoch: 243, Best_valid: 98.16%, Loss: 0.2146, 
+***************
+Run: 02, Epoch: 262, Best_epoch: 262, Best_valid: 98.19%, Loss: 0.2324, 
+***************
+Run: 02, Epoch: 263, Best_epoch: 263, Best_valid: 98.21%, Loss: 0.2551, 
+***************
+Run: 02, Epoch: 264, Best_epoch: 263, Best_valid: 98.21%, Loss: 0.2374, 
+***************
+Run: 02, Epoch: 265, Best_epoch: 263, Best_valid: 98.21%, Loss: 0.2389, 
+***************
+Run: 02, Epoch: 266, Best_epoch: 266, Best_valid: 98.24%, Loss: 0.2418, 
+***************
+Run: 02, Epoch: 267, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2488, 
+***************
+Run: 02, Epoch: 268, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2271, 
+***************
+Run: 02, Epoch: 269, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2499, 
+***************
+Run: 02, Epoch: 270, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2416, 
+***************
+Run: 02, Epoch: 271, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2317, 
+***************
+Run: 02, Epoch: 272, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2307, 
+***************
+Run: 02, Epoch: 273, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2460, 
+***************
+Run: 02, Epoch: 274, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2295, 
+***************
+Run: 02, Epoch: 275, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2382, 
+***************
+Run: 02, Epoch: 276, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2298, 
+***************
+Run: 02, Epoch: 277, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2309, 
+***************
+Run: 02, Epoch: 278, Best_epoch: 267, Best_valid: 98.25%, Loss: 0.2359, 
+***************
+Run: 02, Epoch: 279, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2337, 
+***************
+Run: 02, Epoch: 280, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2513, 
+***************
+Run: 02, Epoch: 281, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2461, 
+***************
+Run: 02, Epoch: 282, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2146, 
+***************
+Run: 02, Epoch: 283, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2200, 
+***************
+Run: 02, Epoch: 284, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2324, 
+***************
+Run: 02, Epoch: 285, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2278, 
+***************
+Run: 02, Epoch: 286, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2448, 
+***************
+Run: 02, Epoch: 287, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2373, 
+***************
+Run: 02, Epoch: 288, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2272, 
+***************
+Run: 02, Epoch: 289, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2289, 
+***************
+Run: 02, Epoch: 290, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2413, 
+***************
+Run: 02, Epoch: 291, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2424, 
+***************
+Run: 02, Epoch: 292, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2261, 
+***************
+Run: 02, Epoch: 293, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2261, 
+***************
+Run: 02, Epoch: 294, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2405, 
+***************
+Run: 02, Epoch: 295, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2256, 
+***************
+Run: 02, Epoch: 296, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2184, 
+***************
+Run: 02, Epoch: 297, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2195, 
+***************
+Run: 02, Epoch: 298, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2239, 
+***************
+Run: 02, Epoch: 299, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2070, 
+***************
+Run: 02, Epoch: 300, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2236, 
+***************
+Run: 02, Epoch: 301, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2172, 
+***************
+Run: 02, Epoch: 302, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2223, 
+***************
+Run: 02, Epoch: 303, Best_epoch: 279, Best_valid: 98.29%, Loss: 0.2064, 
+***************
+Run: 02, Epoch: 304, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2138, 
+***************
+Run: 02, Epoch: 305, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2297, 
+***************
+Run: 02, Epoch: 306, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2425, 
+***************
+Run: 02, Epoch: 307, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2146, 
+***************
+Run: 02, Epoch: 308, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2079, 
+***************
+Run: 02, Epoch: 309, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2126, 
+***************
+Run: 02, Epoch: 310, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2088, 
+***************
+Run: 02, Epoch: 311, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.1934, 
+***************
+Run: 02, Epoch: 312, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2127, 
+***************
+Run: 02, Epoch: 313, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2163, 
+***************
+Run: 02, Epoch: 314, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2260, 
+***************
+Run: 02, Epoch: 315, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2158, 
+***************
+Run: 02, Epoch: 316, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2216, 
+***************
+Run: 02, Epoch: 317, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.1905, 
+***************
+Run: 02, Epoch: 318, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.1964, 
+***************
+Run: 02, Epoch: 319, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2195, 
+***************
+Run: 02, Epoch: 320, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2031, 
+***************
+Run: 02, Epoch: 321, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2151, 
+***************
+Run: 02, Epoch: 322, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2092, 
+***************
+Run: 02, Epoch: 323, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2183, 
+***************
+Run: 02, Epoch: 324, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2011, 
+***************
+Run: 02, Epoch: 325, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2189, 
+***************
+Run: 02, Epoch: 326, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2108, 
+***************
+Run: 02, Epoch: 327, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2084, 
+***************
+Run: 02, Epoch: 328, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2092, 
+***************
+Run: 02, Epoch: 329, Best_epoch: 304, Best_valid: 98.30%, Loss: 0.2152, 
+***************
+Run: 02, Epoch: 330, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2143, 
+***************
+Run: 02, Epoch: 331, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2118, 
+***************
+Run: 02, Epoch: 332, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2073, 
+***************
+Run: 02, Epoch: 333, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2155, 
+***************
+Run: 02, Epoch: 334, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2047, 
+***************
+Run: 02, Epoch: 335, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2160, 
+***************
+Run: 02, Epoch: 336, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2057, 
+***************
+Run: 02, Epoch: 337, Best_epoch: 330, Best_valid: 98.38%, Loss: 0.2071, 
+***************
+Run: 02, Epoch: 338, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.1954, 
+***************
+Run: 02, Epoch: 339, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2261, 
+***************
+Run: 02, Epoch: 340, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2082, 
+***************
+Run: 02, Epoch: 341, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2054, 
+***************
+Run: 02, Epoch: 342, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2106, 
+***************
+Run: 02, Epoch: 343, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.1957, 
+***************
+Run: 02, Epoch: 344, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2135, 
+***************
+Run: 02, Epoch: 345, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.1930, 
+***************
+Run: 02, Epoch: 346, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.2121, 
+***************
+Run: 02, Epoch: 347, Best_epoch: 338, Best_valid: 98.40%, Loss: 0.1982, 
+***************
+Run: 02, Epoch: 348, Best_epoch: 348, Best_valid: 98.50%, Loss: 0.2013, 
+***************
+Run: 02, Epoch: 349, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2119, 
+***************
+Run: 02, Epoch: 350, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1866, 
+***************
+Run: 02, Epoch: 351, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2031, 
+***************
+Run: 02, Epoch: 352, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1854, 
+***************
+Run: 02, Epoch: 353, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2169, 
+***************
+Run: 02, Epoch: 354, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2237, 
+***************
+Run: 02, Epoch: 355, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1966, 
+***************
+Run: 02, Epoch: 356, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1952, 
+***************
+Run: 02, Epoch: 357, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2069, 
+***************
+Run: 02, Epoch: 358, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1965, 
+***************
+Run: 02, Epoch: 359, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2001, 
+***************
+Run: 02, Epoch: 360, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1913, 
+***************
+Run: 02, Epoch: 361, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2018, 
+***************
+Run: 02, Epoch: 362, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1940, 
+***************
+Run: 02, Epoch: 363, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1785, 
+***************
+Run: 02, Epoch: 364, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1844, 
+***************
+Run: 02, Epoch: 365, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2181, 
+***************
+Run: 02, Epoch: 366, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1806, 
+***************
+Run: 02, Epoch: 367, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.1899, 
+***************
+Run: 02, Epoch: 368, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2006, 
+***************
+Run: 02, Epoch: 369, Best_epoch: 349, Best_valid: 98.51%, Loss: 0.2061, 
+***************
+Run: 02, Epoch: 370, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2019, 
+***************
+Run: 02, Epoch: 371, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2040, 
+***************
+Run: 02, Epoch: 372, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2046, 
+***************
+Run: 02, Epoch: 373, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1904, 
+***************
+Run: 02, Epoch: 374, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2014, 
+***************
+Run: 02, Epoch: 375, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1916, 
+***************
+Run: 02, Epoch: 376, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2141, 
+***************
+Run: 02, Epoch: 377, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1911, 
+***************
+Run: 02, Epoch: 378, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1777, 
+***************
+Run: 02, Epoch: 379, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1785, 
+***************
+Run: 02, Epoch: 380, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1930, 
+***************
+Run: 02, Epoch: 381, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1941, 
+***************
+Run: 02, Epoch: 382, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1748, 
+***************
+Run: 02, Epoch: 383, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1877, 
+***************
+Run: 02, Epoch: 384, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1829, 
+***************
+Run: 02, Epoch: 385, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2097, 
+***************
+Run: 02, Epoch: 386, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1920, 
+***************
+Run: 02, Epoch: 387, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1862, 
+***************
+Run: 02, Epoch: 388, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1727, 
+***************
+Run: 02, Epoch: 389, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2084, 
+***************
+Run: 02, Epoch: 390, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1993, 
+***************
+Run: 02, Epoch: 391, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1792, 
+***************
+Run: 02, Epoch: 392, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1990, 
+***************
+Run: 02, Epoch: 393, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1951, 
+***************
+Run: 02, Epoch: 394, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1841, 
+***************
+Run: 02, Epoch: 395, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1819, 
+***************
+Run: 02, Epoch: 396, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1967, 
+***************
+Run: 02, Epoch: 397, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1791, 
+***************
+Run: 02, Epoch: 398, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1940, 
+***************
+Run: 02, Epoch: 399, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.1980, 
+***************
+Run: 02, Epoch: 400, Best_epoch: 370, Best_valid: 98.53%, Loss: 0.2115, 
+***************
+##### Testing on 1/3
+num parameters for finetuning: 774
+--- TestAcc: 0.6647, early-stopping-TestAcc: 0.6647, Best ValAcc: 0.6445 in epoch 299 --- 
+**** Linear probe test acc on Run 2/3 for last is acc=0.6646919431279621 estp_acc=0.6646919431279621
+num parameters for finetuning: 1542
+--- TestAcc: 0.6718, early-stopping-TestAcc: 0.6718, Best ValAcc: 0.6635 in epoch 299 --- 
+**** Linear probe test acc on Run 2/3 for combine is acc=0.6718009478672986 estp_acc=0.6718009478672986
+Run: 03, Epoch: 01, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3864, 
+***************
+Run: 03, Epoch: 02, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3865, 
+***************
+Run: 03, Epoch: 03, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3864, 
+***************
+Run: 03, Epoch: 04, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3861, 
+***************
+Run: 03, Epoch: 05, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3836, 
+***************
+Run: 03, Epoch: 06, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3775, 
+***************
+Run: 03, Epoch: 07, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3578, 
+***************
+Run: 03, Epoch: 08, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.3166, 
+***************
+Run: 03, Epoch: 09, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2760, 
+***************
+Run: 03, Epoch: 10, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2595, 
+***************
+Run: 03, Epoch: 11, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2574, 
+***************
+Run: 03, Epoch: 12, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2438, 
+***************
+Run: 03, Epoch: 13, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2344, 
+***************
+Run: 03, Epoch: 14, Best_epoch: 01, Best_valid: 78.20%, Loss: 1.2351, 
+***************
+Run: 03, Epoch: 15, Best_epoch: 15, Best_valid: 78.64%, Loss: 1.2306, 
+***************
+Run: 03, Epoch: 16, Best_epoch: 16, Best_valid: 79.14%, Loss: 1.2254, 
+***************
+Run: 03, Epoch: 17, Best_epoch: 17, Best_valid: 83.84%, Loss: 1.2098, 
+***************
+Run: 03, Epoch: 18, Best_epoch: 17, Best_valid: 83.84%, Loss: 1.1917, 
+***************
+Run: 03, Epoch: 19, Best_epoch: 19, Best_valid: 84.13%, Loss: 1.1482, 
+***************
+Run: 03, Epoch: 20, Best_epoch: 20, Best_valid: 84.43%, Loss: 1.1234, 
+***************
+Run: 03, Epoch: 21, Best_epoch: 21, Best_valid: 85.28%, Loss: 1.0949, 
+***************
+Run: 03, Epoch: 22, Best_epoch: 22, Best_valid: 85.74%, Loss: 1.0747, 
+***************
+Run: 03, Epoch: 23, Best_epoch: 23, Best_valid: 86.05%, Loss: 1.0622, 
+***************
+Run: 03, Epoch: 24, Best_epoch: 23, Best_valid: 86.05%, Loss: 1.0349, 
+***************
+Run: 03, Epoch: 25, Best_epoch: 25, Best_valid: 86.43%, Loss: 1.0136, 
+***************
+Run: 03, Epoch: 26, Best_epoch: 26, Best_valid: 86.56%, Loss: 1.0061, 
+***************
+Run: 03, Epoch: 27, Best_epoch: 27, Best_valid: 86.92%, Loss: 0.9902, 
+***************
+Run: 03, Epoch: 28, Best_epoch: 28, Best_valid: 87.00%, Loss: 0.9881, 
+***************
+Run: 03, Epoch: 29, Best_epoch: 29, Best_valid: 87.23%, Loss: 0.9650, 
+***************
+Run: 03, Epoch: 30, Best_epoch: 30, Best_valid: 87.28%, Loss: 0.9457, 
+***************
+Run: 03, Epoch: 31, Best_epoch: 31, Best_valid: 87.51%, Loss: 0.9329, 
+***************
+Run: 03, Epoch: 32, Best_epoch: 32, Best_valid: 87.66%, Loss: 0.9301, 
+***************
+Run: 03, Epoch: 33, Best_epoch: 33, Best_valid: 88.30%, Loss: 0.9354, 
+***************
+Run: 03, Epoch: 34, Best_epoch: 33, Best_valid: 88.30%, Loss: 0.8946, 
+***************
+Run: 03, Epoch: 35, Best_epoch: 35, Best_valid: 88.34%, Loss: 0.9063, 
+***************
+Run: 03, Epoch: 36, Best_epoch: 36, Best_valid: 88.77%, Loss: 0.8876, 
+***************
+Run: 03, Epoch: 37, Best_epoch: 37, Best_valid: 89.38%, Loss: 0.8753, 
+***************
+Run: 03, Epoch: 38, Best_epoch: 37, Best_valid: 89.38%, Loss: 0.8623, 
+***************
+Run: 03, Epoch: 39, Best_epoch: 39, Best_valid: 89.47%, Loss: 0.8570, 
+***************
+Run: 03, Epoch: 40, Best_epoch: 40, Best_valid: 89.81%, Loss: 0.8474, 
+***************
+Run: 03, Epoch: 41, Best_epoch: 41, Best_valid: 90.28%, Loss: 0.8305, 
+***************
+Run: 03, Epoch: 42, Best_epoch: 41, Best_valid: 90.28%, Loss: 0.8201, 
+***************
+Run: 03, Epoch: 43, Best_epoch: 43, Best_valid: 90.56%, Loss: 0.8056, 
+***************
+Run: 03, Epoch: 44, Best_epoch: 44, Best_valid: 90.81%, Loss: 0.8053, 
+***************
+Run: 03, Epoch: 45, Best_epoch: 44, Best_valid: 90.81%, Loss: 0.8011, 
+***************
+Run: 03, Epoch: 46, Best_epoch: 44, Best_valid: 90.81%, Loss: 0.7715, 
+***************
+Run: 03, Epoch: 47, Best_epoch: 47, Best_valid: 90.86%, Loss: 0.7792, 
+***************
+Run: 03, Epoch: 48, Best_epoch: 48, Best_valid: 91.30%, Loss: 0.7842, 
+***************
+Run: 03, Epoch: 49, Best_epoch: 48, Best_valid: 91.30%, Loss: 0.7921, 
+***************
+Run: 03, Epoch: 50, Best_epoch: 48, Best_valid: 91.30%, Loss: 0.7658, 
+***************
+Run: 03, Epoch: 51, Best_epoch: 48, Best_valid: 91.30%, Loss: 0.7576, 
+***************
+Run: 03, Epoch: 52, Best_epoch: 48, Best_valid: 91.30%, Loss: 0.7483, 
+***************
+Run: 03, Epoch: 53, Best_epoch: 53, Best_valid: 91.34%, Loss: 0.7413, 
+***************
+Run: 03, Epoch: 54, Best_epoch: 53, Best_valid: 91.34%, Loss: 0.7048, 
+***************
+Run: 03, Epoch: 55, Best_epoch: 53, Best_valid: 91.34%, Loss: 0.7223, 
+***************
+Run: 03, Epoch: 56, Best_epoch: 56, Best_valid: 91.66%, Loss: 0.7141, 
+***************
+Run: 03, Epoch: 57, Best_epoch: 56, Best_valid: 91.66%, Loss: 0.7035, 
+***************
+Run: 03, Epoch: 58, Best_epoch: 58, Best_valid: 91.74%, Loss: 0.7113, 
+***************
+Run: 03, Epoch: 59, Best_epoch: 58, Best_valid: 91.74%, Loss: 0.7096, 
+***************
+Run: 03, Epoch: 60, Best_epoch: 60, Best_valid: 92.15%, Loss: 0.6976, 
+***************
+Run: 03, Epoch: 61, Best_epoch: 60, Best_valid: 92.15%, Loss: 0.6993, 
+***************
+Run: 03, Epoch: 62, Best_epoch: 60, Best_valid: 92.15%, Loss: 0.6728, 
+***************
+Run: 03, Epoch: 63, Best_epoch: 60, Best_valid: 92.15%, Loss: 0.6697, 
+***************
+Run: 03, Epoch: 64, Best_epoch: 64, Best_valid: 92.28%, Loss: 0.6676, 
+***************
+Run: 03, Epoch: 65, Best_epoch: 65, Best_valid: 92.40%, Loss: 0.6688, 
+***************
+Run: 03, Epoch: 66, Best_epoch: 66, Best_valid: 92.67%, Loss: 0.6467, 
+***************
+Run: 03, Epoch: 67, Best_epoch: 66, Best_valid: 92.67%, Loss: 0.6557, 
+***************
+Run: 03, Epoch: 68, Best_epoch: 68, Best_valid: 93.04%, Loss: 0.6243, 
+***************
+Run: 03, Epoch: 69, Best_epoch: 69, Best_valid: 93.04%, Loss: 0.6261, 
+***************
+Run: 03, Epoch: 70, Best_epoch: 70, Best_valid: 93.21%, Loss: 0.6379, 
+***************
+Run: 03, Epoch: 71, Best_epoch: 71, Best_valid: 93.29%, Loss: 0.6178, 
+***************
+Run: 03, Epoch: 72, Best_epoch: 72, Best_valid: 93.41%, Loss: 0.6008, 
+***************
+Run: 03, Epoch: 73, Best_epoch: 73, Best_valid: 93.56%, Loss: 0.5953, 
+***************
+Run: 03, Epoch: 74, Best_epoch: 74, Best_valid: 93.74%, Loss: 0.6029, 
+***************
+Run: 03, Epoch: 75, Best_epoch: 75, Best_valid: 94.24%, Loss: 0.5910, 
+***************
+Run: 03, Epoch: 76, Best_epoch: 75, Best_valid: 94.24%, Loss: 0.6087, 
+***************
+Run: 03, Epoch: 77, Best_epoch: 77, Best_valid: 94.37%, Loss: 0.5831, 
+***************
+Run: 03, Epoch: 78, Best_epoch: 77, Best_valid: 94.37%, Loss: 0.5669, 
+***************
+Run: 03, Epoch: 79, Best_epoch: 79, Best_valid: 94.57%, Loss: 0.5644, 
+***************
+Run: 03, Epoch: 80, Best_epoch: 80, Best_valid: 94.83%, Loss: 0.5569, 
+***************
+Run: 03, Epoch: 81, Best_epoch: 81, Best_valid: 95.16%, Loss: 0.5455, 
+***************
+Run: 03, Epoch: 82, Best_epoch: 81, Best_valid: 95.16%, Loss: 0.5486, 
+***************
+Run: 03, Epoch: 83, Best_epoch: 83, Best_valid: 95.17%, Loss: 0.5365, 
+***************
+Run: 03, Epoch: 84, Best_epoch: 84, Best_valid: 95.24%, Loss: 0.5317, 
+***************
+Run: 03, Epoch: 85, Best_epoch: 85, Best_valid: 95.45%, Loss: 0.5192, 
+***************
+Run: 03, Epoch: 86, Best_epoch: 86, Best_valid: 95.57%, Loss: 0.5223, 
+***************
+Run: 03, Epoch: 87, Best_epoch: 86, Best_valid: 95.57%, Loss: 0.5028, 
+***************
+Run: 03, Epoch: 88, Best_epoch: 88, Best_valid: 95.86%, Loss: 0.5240, 
+***************
+Run: 03, Epoch: 89, Best_epoch: 88, Best_valid: 95.86%, Loss: 0.5011, 
+***************
+Run: 03, Epoch: 90, Best_epoch: 90, Best_valid: 95.92%, Loss: 0.4919, 
+***************
+Run: 03, Epoch: 91, Best_epoch: 91, Best_valid: 96.02%, Loss: 0.4961, 
+***************
+Run: 03, Epoch: 92, Best_epoch: 91, Best_valid: 96.02%, Loss: 0.4827, 
+***************
+Run: 03, Epoch: 93, Best_epoch: 93, Best_valid: 96.28%, Loss: 0.4721, 
+***************
+Run: 03, Epoch: 94, Best_epoch: 93, Best_valid: 96.28%, Loss: 0.4761, 
+***************
+Run: 03, Epoch: 95, Best_epoch: 93, Best_valid: 96.28%, Loss: 0.4762, 
+***************
+Run: 03, Epoch: 96, Best_epoch: 93, Best_valid: 96.28%, Loss: 0.4771, 
+***************
+Run: 03, Epoch: 97, Best_epoch: 93, Best_valid: 96.28%, Loss: 0.4683, 
+***************
+Run: 03, Epoch: 98, Best_epoch: 98, Best_valid: 96.41%, Loss: 0.4560, 
+***************
+Run: 03, Epoch: 99, Best_epoch: 98, Best_valid: 96.41%, Loss: 0.4464, 
+***************
+Run: 03, Epoch: 100, Best_epoch: 100, Best_valid: 96.46%, Loss: 0.4468, 
+***************
+Run: 03, Epoch: 101, Best_epoch: 100, Best_valid: 96.46%, Loss: 0.4525, 
+***************
+Run: 03, Epoch: 102, Best_epoch: 100, Best_valid: 96.46%, Loss: 0.4422, 
+***************
+Run: 03, Epoch: 103, Best_epoch: 103, Best_valid: 96.82%, Loss: 0.4416, 
+***************
+Run: 03, Epoch: 104, Best_epoch: 103, Best_valid: 96.82%, Loss: 0.4375, 
+***************
+Run: 03, Epoch: 105, Best_epoch: 103, Best_valid: 96.82%, Loss: 0.4304, 
+***************
+Run: 03, Epoch: 106, Best_epoch: 103, Best_valid: 96.82%, Loss: 0.4342, 
+***************
+Run: 03, Epoch: 107, Best_epoch: 107, Best_valid: 96.85%, Loss: 0.4236, 
+***************
+Run: 03, Epoch: 108, Best_epoch: 107, Best_valid: 96.85%, Loss: 0.4272, 
+***************
+Run: 03, Epoch: 109, Best_epoch: 107, Best_valid: 96.85%, Loss: 0.4367, 
+***************
+Run: 03, Epoch: 110, Best_epoch: 107, Best_valid: 96.85%, Loss: 0.4155, 
+***************
+Run: 03, Epoch: 111, Best_epoch: 107, Best_valid: 96.85%, Loss: 0.3929, 
+***************
+Run: 03, Epoch: 112, Best_epoch: 112, Best_valid: 96.94%, Loss: 0.3966, 
+***************
+Run: 03, Epoch: 113, Best_epoch: 113, Best_valid: 96.97%, Loss: 0.3922, 
+***************
+Run: 03, Epoch: 114, Best_epoch: 113, Best_valid: 96.97%, Loss: 0.4011, 
+***************
+Run: 03, Epoch: 115, Best_epoch: 115, Best_valid: 97.01%, Loss: 0.3852, 
+***************
+Run: 03, Epoch: 116, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.4098, 
+***************
+Run: 03, Epoch: 117, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.3913, 
+***************
+Run: 03, Epoch: 118, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.3745, 
+***************
+Run: 03, Epoch: 119, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.3742, 
+***************
+Run: 03, Epoch: 120, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.3778, 
+***************
+Run: 03, Epoch: 121, Best_epoch: 116, Best_valid: 97.27%, Loss: 0.3749, 
+***************
+Run: 03, Epoch: 122, Best_epoch: 122, Best_valid: 97.30%, Loss: 0.3829, 
+***************
+Run: 03, Epoch: 123, Best_epoch: 122, Best_valid: 97.30%, Loss: 0.3803, 
+***************
+Run: 03, Epoch: 124, Best_epoch: 124, Best_valid: 97.42%, Loss: 0.3938, 
+***************
+Run: 03, Epoch: 125, Best_epoch: 124, Best_valid: 97.42%, Loss: 0.3725, 
+***************
+Run: 03, Epoch: 126, Best_epoch: 124, Best_valid: 97.42%, Loss: 0.3748, 
+***************
+Run: 03, Epoch: 127, Best_epoch: 124, Best_valid: 97.42%, Loss: 0.3661, 
+***************
+Run: 03, Epoch: 128, Best_epoch: 124, Best_valid: 97.42%, Loss: 0.3530, 
+***************
+Run: 03, Epoch: 129, Best_epoch: 129, Best_valid: 97.45%, Loss: 0.3681, 
+***************
+Run: 03, Epoch: 130, Best_epoch: 130, Best_valid: 97.52%, Loss: 0.3560, 
+***************
+Run: 03, Epoch: 131, Best_epoch: 130, Best_valid: 97.52%, Loss: 0.3409, 
+***************
+Run: 03, Epoch: 132, Best_epoch: 132, Best_valid: 97.54%, Loss: 0.3635, 
+***************
+Run: 03, Epoch: 133, Best_epoch: 132, Best_valid: 97.54%, Loss: 0.3433, 
+***************
+Run: 03, Epoch: 134, Best_epoch: 132, Best_valid: 97.54%, Loss: 0.3586, 
+***************
+Run: 03, Epoch: 135, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3558, 
+***************
+Run: 03, Epoch: 136, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3508, 
+***************
+Run: 03, Epoch: 137, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3414, 
+***************
+Run: 03, Epoch: 138, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3439, 
+***************
+Run: 03, Epoch: 139, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3480, 
+***************
+Run: 03, Epoch: 140, Best_epoch: 135, Best_valid: 97.60%, Loss: 0.3418, 
+***************
+Run: 03, Epoch: 141, Best_epoch: 141, Best_valid: 97.66%, Loss: 0.3357, 
+***************
+Run: 03, Epoch: 142, Best_epoch: 142, Best_valid: 97.77%, Loss: 0.3252, 
+***************
+Run: 03, Epoch: 143, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3249, 
+***************
+Run: 03, Epoch: 144, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3266, 
+***************
+Run: 03, Epoch: 145, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3272, 
+***************
+Run: 03, Epoch: 146, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3300, 
+***************
+Run: 03, Epoch: 147, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3385, 
+***************
+Run: 03, Epoch: 148, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3110, 
+***************
+Run: 03, Epoch: 149, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3131, 
+***************
+Run: 03, Epoch: 150, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3078, 
+***************
+Run: 03, Epoch: 151, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3081, 
+***************
+Run: 03, Epoch: 152, Best_epoch: 143, Best_valid: 97.85%, Loss: 0.3125, 
+***************
+Run: 03, Epoch: 153, Best_epoch: 153, Best_valid: 97.85%, Loss: 0.3256, 
+***************
+Run: 03, Epoch: 154, Best_epoch: 153, Best_valid: 97.85%, Loss: 0.3153, 
+***************
+Run: 03, Epoch: 155, Best_epoch: 155, Best_valid: 97.87%, Loss: 0.3016, 
+***************
+Run: 03, Epoch: 156, Best_epoch: 155, Best_valid: 97.87%, Loss: 0.3063, 
+***************
+Run: 03, Epoch: 157, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.2887, 
+***************
+Run: 03, Epoch: 158, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3189, 
+***************
+Run: 03, Epoch: 159, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3018, 
+***************
+Run: 03, Epoch: 160, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3061, 
+***************
+Run: 03, Epoch: 161, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3092, 
+***************
+Run: 03, Epoch: 162, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.2964, 
+***************
+Run: 03, Epoch: 163, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3061, 
+***************
+Run: 03, Epoch: 164, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.2914, 
+***************
+Run: 03, Epoch: 165, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.2987, 
+***************
+Run: 03, Epoch: 166, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.3009, 
+***************
+Run: 03, Epoch: 167, Best_epoch: 157, Best_valid: 97.97%, Loss: 0.2978, 
+***************
+Run: 03, Epoch: 168, Best_epoch: 168, Best_valid: 98.02%, Loss: 0.2738, 
+***************
+Run: 03, Epoch: 169, Best_epoch: 168, Best_valid: 98.02%, Loss: 0.2943, 
+***************
+Run: 03, Epoch: 170, Best_epoch: 168, Best_valid: 98.02%, Loss: 0.2988, 
+***************
+Run: 03, Epoch: 171, Best_epoch: 171, Best_valid: 98.04%, Loss: 0.2860, 
+***************
+Run: 03, Epoch: 172, Best_epoch: 171, Best_valid: 98.04%, Loss: 0.3149, 
+***************
+Run: 03, Epoch: 173, Best_epoch: 173, Best_valid: 98.08%, Loss: 0.2787, 
+***************
+Run: 03, Epoch: 174, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2905, 
+***************
+Run: 03, Epoch: 175, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2985, 
+***************
+Run: 03, Epoch: 176, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2862, 
+***************
+Run: 03, Epoch: 177, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.3025, 
+***************
+Run: 03, Epoch: 178, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2687, 
+***************
+Run: 03, Epoch: 179, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2788, 
+***************
+Run: 03, Epoch: 180, Best_epoch: 174, Best_valid: 98.10%, Loss: 0.2910, 
+***************
+Run: 03, Epoch: 181, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2886, 
+***************
+Run: 03, Epoch: 182, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2921, 
+***************
+Run: 03, Epoch: 183, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2763, 
+***************
+Run: 03, Epoch: 184, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2738, 
+***************
+Run: 03, Epoch: 185, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2773, 
+***************
+Run: 03, Epoch: 186, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2714, 
+***************
+Run: 03, Epoch: 187, Best_epoch: 181, Best_valid: 98.11%, Loss: 0.2703, 
+***************
+Run: 03, Epoch: 188, Best_epoch: 188, Best_valid: 98.12%, Loss: 0.2670, 
+***************
+Run: 03, Epoch: 189, Best_epoch: 188, Best_valid: 98.12%, Loss: 0.2660, 
+***************
+Run: 03, Epoch: 190, Best_epoch: 190, Best_valid: 98.18%, Loss: 0.2550, 
+***************
+Run: 03, Epoch: 191, Best_epoch: 190, Best_valid: 98.18%, Loss: 0.2655, 
+***************
+Run: 03, Epoch: 192, Best_epoch: 190, Best_valid: 98.18%, Loss: 0.2660, 
+***************
+Run: 03, Epoch: 193, Best_epoch: 193, Best_valid: 98.19%, Loss: 0.2812, 
+***************
+Run: 03, Epoch: 194, Best_epoch: 193, Best_valid: 98.19%, Loss: 0.2683, 
+***************
+Run: 03, Epoch: 195, Best_epoch: 193, Best_valid: 98.19%, Loss: 0.2818, 
+***************
+Run: 03, Epoch: 196, Best_epoch: 196, Best_valid: 98.19%, Loss: 0.2553, 
+***************
+Run: 03, Epoch: 197, Best_epoch: 196, Best_valid: 98.19%, Loss: 0.2554, 
+***************
+Run: 03, Epoch: 198, Best_epoch: 198, Best_valid: 98.25%, Loss: 0.2714, 
+***************
+Run: 03, Epoch: 199, Best_epoch: 198, Best_valid: 98.25%, Loss: 0.2643, 
+***************
+Run: 03, Epoch: 200, Best_epoch: 198, Best_valid: 98.25%, Loss: 0.2616, 
+***************
+Run: 03, Epoch: 201, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2405, 
+***************
+Run: 03, Epoch: 202, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2493, 
+***************
+Run: 03, Epoch: 203, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2532, 
+***************
+Run: 03, Epoch: 204, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2688, 
+***************
+Run: 03, Epoch: 205, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2621, 
+***************
+Run: 03, Epoch: 206, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2600, 
+***************
+Run: 03, Epoch: 207, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2655, 
+***************
+Run: 03, Epoch: 208, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2635, 
+***************
+Run: 03, Epoch: 209, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2559, 
+***************
+Run: 03, Epoch: 210, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2465, 
+***************
+Run: 03, Epoch: 211, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2477, 
+***************
+Run: 03, Epoch: 212, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2443, 
+***************
+Run: 03, Epoch: 213, Best_epoch: 201, Best_valid: 98.30%, Loss: 0.2671, 
+***************
+Run: 03, Epoch: 214, Best_epoch: 214, Best_valid: 98.31%, Loss: 0.2450, 
+***************
+Run: 03, Epoch: 215, Best_epoch: 214, Best_valid: 98.31%, Loss: 0.2420, 
+***************
+Run: 03, Epoch: 216, Best_epoch: 214, Best_valid: 98.31%, Loss: 0.2590, 
+***************
+Run: 03, Epoch: 217, Best_epoch: 217, Best_valid: 98.32%, Loss: 0.2423, 
+***************
+Run: 03, Epoch: 218, Best_epoch: 218, Best_valid: 98.36%, Loss: 0.2341, 
+***************
+Run: 03, Epoch: 219, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2364, 
+***************
+Run: 03, Epoch: 220, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2577, 
+***************
+Run: 03, Epoch: 221, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2603, 
+***************
+Run: 03, Epoch: 222, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2446, 
+***************
+Run: 03, Epoch: 223, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2383, 
+***************
+Run: 03, Epoch: 224, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2586, 
+***************
+Run: 03, Epoch: 225, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2560, 
+***************
+Run: 03, Epoch: 226, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2544, 
+***************
+Run: 03, Epoch: 227, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2454, 
+***************
+Run: 03, Epoch: 228, Best_epoch: 219, Best_valid: 98.37%, Loss: 0.2428, 
+***************
+Run: 03, Epoch: 229, Best_epoch: 229, Best_valid: 98.37%, Loss: 0.2418, 
+***************
+Run: 03, Epoch: 230, Best_epoch: 229, Best_valid: 98.37%, Loss: 0.2484, 
+***************
+Run: 03, Epoch: 231, Best_epoch: 229, Best_valid: 98.37%, Loss: 0.2519, 
+***************
+Run: 03, Epoch: 232, Best_epoch: 232, Best_valid: 98.41%, Loss: 0.2297, 
+***************
+Run: 03, Epoch: 233, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2335, 
+***************
+Run: 03, Epoch: 234, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2397, 
+***************
+Run: 03, Epoch: 235, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2299, 
+***************
+Run: 03, Epoch: 236, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2315, 
+***************
+Run: 03, Epoch: 237, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2376, 
+***************
+Run: 03, Epoch: 238, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2687, 
+***************
+Run: 03, Epoch: 239, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2454, 
+***************
+Run: 03, Epoch: 240, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2293, 
+***************
+Run: 03, Epoch: 241, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2387, 
+***************
+Run: 03, Epoch: 242, Best_epoch: 233, Best_valid: 98.42%, Loss: 0.2414, 
+***************
+Run: 03, Epoch: 243, Best_epoch: 243, Best_valid: 98.47%, Loss: 0.2312, 
+***************
+Run: 03, Epoch: 244, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2365, 
+***************
+Run: 03, Epoch: 245, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2409, 
+***************
+Run: 03, Epoch: 246, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2423, 
+***************
+Run: 03, Epoch: 247, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2409, 
+***************
+Run: 03, Epoch: 248, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2305, 
+***************
+Run: 03, Epoch: 249, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2339, 
+***************
+Run: 03, Epoch: 250, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2469, 
+***************
+Run: 03, Epoch: 251, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2266, 
+***************
+Run: 03, Epoch: 252, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2344, 
+***************
+Run: 03, Epoch: 253, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2341, 
+***************
+Run: 03, Epoch: 254, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2303, 
+***************
+Run: 03, Epoch: 255, Best_epoch: 244, Best_valid: 98.52%, Loss: 0.2084, 
+***************
+Run: 03, Epoch: 256, Best_epoch: 256, Best_valid: 98.56%, Loss: 0.2375, 
+***************
+Run: 03, Epoch: 257, Best_epoch: 256, Best_valid: 98.56%, Loss: 0.2280, 
+***************
+Run: 03, Epoch: 258, Best_epoch: 258, Best_valid: 98.56%, Loss: 0.2288, 
+***************
+Run: 03, Epoch: 259, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.1995, 
+***************
+Run: 03, Epoch: 260, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2222, 
+***************
+Run: 03, Epoch: 261, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2240, 
+***************
+Run: 03, Epoch: 262, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2360, 
+***************
+Run: 03, Epoch: 263, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2158, 
+***************
+Run: 03, Epoch: 264, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2081, 
+***************
+Run: 03, Epoch: 265, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2259, 
+***************
+Run: 03, Epoch: 266, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2096, 
+***************
+Run: 03, Epoch: 267, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2184, 
+***************
+Run: 03, Epoch: 268, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2122, 
+***************
+Run: 03, Epoch: 269, Best_epoch: 259, Best_valid: 98.58%, Loss: 0.2130, 
+***************
+Run: 03, Epoch: 270, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2331, 
+***************
+Run: 03, Epoch: 271, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2051, 
+***************
+Run: 03, Epoch: 272, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2141, 
+***************
+Run: 03, Epoch: 273, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2305, 
+***************
+Run: 03, Epoch: 274, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2186, 
+***************
+Run: 03, Epoch: 275, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2441, 
+***************
+Run: 03, Epoch: 276, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2013, 
+***************
+Run: 03, Epoch: 277, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2094, 
+***************
+Run: 03, Epoch: 278, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2228, 
+***************
+Run: 03, Epoch: 279, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2078, 
+***************
+Run: 03, Epoch: 280, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2155, 
+***************
+Run: 03, Epoch: 281, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2028, 
+***************
+Run: 03, Epoch: 282, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2115, 
+***************
+Run: 03, Epoch: 283, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.1950, 
+***************
+Run: 03, Epoch: 284, Best_epoch: 270, Best_valid: 98.60%, Loss: 0.2136, 
+***************
+Run: 03, Epoch: 285, Best_epoch: 285, Best_valid: 98.64%, Loss: 0.2191, 
+***************
+Run: 03, Epoch: 286, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2090, 
+***************
+Run: 03, Epoch: 287, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2228, 
+***************
+Run: 03, Epoch: 288, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2308, 
+***************
+Run: 03, Epoch: 289, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2243, 
+***************
+Run: 03, Epoch: 290, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.1870, 
+***************
+Run: 03, Epoch: 291, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2106, 
+***************
+Run: 03, Epoch: 292, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.1983, 
+***************
+Run: 03, Epoch: 293, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2139, 
+***************
+Run: 03, Epoch: 294, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2185, 
+***************
+Run: 03, Epoch: 295, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2149, 
+***************
+Run: 03, Epoch: 296, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.1966, 
+***************
+Run: 03, Epoch: 297, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2079, 
+***************
+Run: 03, Epoch: 298, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2045, 
+***************
+Run: 03, Epoch: 299, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2014, 
+***************
+Run: 03, Epoch: 300, Best_epoch: 286, Best_valid: 98.66%, Loss: 0.2119, 
+***************
+Run: 03, Epoch: 301, Best_epoch: 301, Best_valid: 98.66%, Loss: 0.2112, 
+***************
+Run: 03, Epoch: 302, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.1970, 
+***************
+Run: 03, Epoch: 303, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.1952, 
+***************
+Run: 03, Epoch: 304, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2102, 
+***************
+Run: 03, Epoch: 305, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2093, 
+***************
+Run: 03, Epoch: 306, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2052, 
+***************
+Run: 03, Epoch: 307, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2159, 
+***************
+Run: 03, Epoch: 308, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2143, 
+***************
+Run: 03, Epoch: 309, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.1984, 
+***************
+Run: 03, Epoch: 310, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2015, 
+***************
+Run: 03, Epoch: 311, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.2063, 
+***************
+Run: 03, Epoch: 312, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.1955, 
+***************
+Run: 03, Epoch: 313, Best_epoch: 302, Best_valid: 98.68%, Loss: 0.1995, 
+***************
+Run: 03, Epoch: 314, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1880, 
+***************
+Run: 03, Epoch: 315, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1977, 
+***************
+Run: 03, Epoch: 316, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2094, 
+***************
+Run: 03, Epoch: 317, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2144, 
+***************
+Run: 03, Epoch: 318, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1994, 
+***************
+Run: 03, Epoch: 319, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1970, 
+***************
+Run: 03, Epoch: 320, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1914, 
+***************
+Run: 03, Epoch: 321, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1948, 
+***************
+Run: 03, Epoch: 322, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1892, 
+***************
+Run: 03, Epoch: 323, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.1834, 
+***************
+Run: 03, Epoch: 324, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2109, 
+***************
+Run: 03, Epoch: 325, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2027, 
+***************
+Run: 03, Epoch: 326, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2116, 
+***************
+Run: 03, Epoch: 327, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2048, 
+***************
+Run: 03, Epoch: 328, Best_epoch: 314, Best_valid: 98.69%, Loss: 0.2050, 
+***************
+Run: 03, Epoch: 329, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.1855, 
+***************
+Run: 03, Epoch: 330, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.2072, 
+***************
+Run: 03, Epoch: 331, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.2045, 
+***************
+Run: 03, Epoch: 332, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.2177, 
+***************
+Run: 03, Epoch: 333, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.2010, 
+***************
+Run: 03, Epoch: 334, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.1968, 
+***************
+Run: 03, Epoch: 335, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.1931, 
+***************
+Run: 03, Epoch: 336, Best_epoch: 329, Best_valid: 98.75%, Loss: 0.1959, 
+***************
+Run: 03, Epoch: 337, Best_epoch: 337, Best_valid: 98.75%, Loss: 0.1946, 
+***************
+Run: 03, Epoch: 338, Best_epoch: 338, Best_valid: 98.76%, Loss: 0.2013, 
+***************
+Run: 03, Epoch: 339, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1892, 
+***************
+Run: 03, Epoch: 340, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2043, 
+***************
+Run: 03, Epoch: 341, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1975, 
+***************
+Run: 03, Epoch: 342, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1948, 
+***************
+Run: 03, Epoch: 343, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1835, 
+***************
+Run: 03, Epoch: 344, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1819, 
+***************
+Run: 03, Epoch: 345, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2035, 
+***************
+Run: 03, Epoch: 346, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1905, 
+***************
+Run: 03, Epoch: 347, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1829, 
+***************
+Run: 03, Epoch: 348, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2031, 
+***************
+Run: 03, Epoch: 349, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1950, 
+***************
+Run: 03, Epoch: 350, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1954, 
+***************
+Run: 03, Epoch: 351, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2030, 
+***************
+Run: 03, Epoch: 352, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1819, 
+***************
+Run: 03, Epoch: 353, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1977, 
+***************
+Run: 03, Epoch: 354, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1882, 
+***************
+Run: 03, Epoch: 355, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1956, 
+***************
+Run: 03, Epoch: 356, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1831, 
+***************
+Run: 03, Epoch: 357, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2007, 
+***************
+Run: 03, Epoch: 358, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1903, 
+***************
+Run: 03, Epoch: 359, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2067, 
+***************
+Run: 03, Epoch: 360, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1912, 
+***************
+Run: 03, Epoch: 361, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2013, 
+***************
+Run: 03, Epoch: 362, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1836, 
+***************
+Run: 03, Epoch: 363, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1751, 
+***************
+Run: 03, Epoch: 364, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1776, 
+***************
+Run: 03, Epoch: 365, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1959, 
+***************
+Run: 03, Epoch: 366, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1751, 
+***************
+Run: 03, Epoch: 367, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1843, 
+***************
+Run: 03, Epoch: 368, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1854, 
+***************
+Run: 03, Epoch: 369, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1717, 
+***************
+Run: 03, Epoch: 370, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1796, 
+***************
+Run: 03, Epoch: 371, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1916, 
+***************
+Run: 03, Epoch: 372, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1881, 
+***************
+Run: 03, Epoch: 373, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1954, 
+***************
+Run: 03, Epoch: 374, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1863, 
+***************
+Run: 03, Epoch: 375, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1803, 
+***************
+Run: 03, Epoch: 376, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1729, 
+***************
+Run: 03, Epoch: 377, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1829, 
+***************
+Run: 03, Epoch: 378, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.2005, 
+***************
+Run: 03, Epoch: 379, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1744, 
+***************
+Run: 03, Epoch: 380, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1910, 
+***************
+Run: 03, Epoch: 381, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1776, 
+***************
+Run: 03, Epoch: 382, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1686, 
+***************
+Run: 03, Epoch: 383, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1838, 
+***************
+Run: 03, Epoch: 384, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1788, 
+***************
+Run: 03, Epoch: 385, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1824, 
+***************
+Run: 03, Epoch: 386, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1733, 
+***************
+Run: 03, Epoch: 387, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1845, 
+***************
+Run: 03, Epoch: 388, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1844, 
+***************
+Run: 03, Epoch: 389, Best_epoch: 339, Best_valid: 98.77%, Loss: 0.1758, 
+***************
+Early stop at 389
+##### Testing on 2/3
+num parameters for finetuning: 774
+--- TestAcc: 0.6564, early-stopping-TestAcc: 0.6546, Best ValAcc: 0.6540 in epoch 101 --- 
+**** Linear probe test acc on Run 3/3 for last is acc=0.6563981042654028 estp_acc=0.6546208530805687
+num parameters for finetuning: 1542
+--- TestAcc: 0.6641, early-stopping-TestAcc: 0.6641, Best ValAcc: 0.6682 in epoch 299 --- 
+**** Linear probe test acc on Run 3/3 for combine is acc=0.6640995260663507 estp_acc=0.6640995260663507
+Successfully delete the saved models
+
+------- Print final result for SVM
+#### Final Linear probe test result on last is mean=0.6743680884676145 std=0.019839830304275562
+#### Final Linear probe test result on combine is mean=0.6810821484992101 std=0.01883559176881583

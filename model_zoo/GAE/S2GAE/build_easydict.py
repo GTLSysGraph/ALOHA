@@ -37,10 +37,10 @@ def build_easydict_nodecls():
         'dropout':0.5,
         'batch_size':1024,
         'lr':0.001,
-        'epochs':1,
+        'epochs':400, 
         'seed':42,
         'eval_steps':1,
-        'runs':3,
+        'runs':3, 
         'mask_type' :'dm',  # help='dm | um')  # whether to use mask features    
         'patience'  : 50,       # help='Use attribute or not'                      
         'mask_ratio': 0.8
