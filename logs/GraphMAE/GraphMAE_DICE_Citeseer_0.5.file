@@ -1,0 +1,23 @@
+[I] Loading dataset Attack-Citeseer...
+train_mask, test_mask, val_mask sizes : tensor(210) tensor(211) tensor(1688)
+[I] Finished loading.
+[I] Data load time: 4.0824s
+------ Use best configs ------
+####### Run 0 for seed 12
+# IGNORE: --- TestAcc: 0.6114, early-stopping-TestAcc: 0.6049, Best ValAcc: 0.6445 in epoch 57 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.6025, early-stopping-TestAcc: 0.6072, Best ValAcc: 0.6493 in epoch 14 --- 
+####### Run 1 for seed 34
+# IGNORE: --- TestAcc: 0.6137, early-stopping-TestAcc: 0.6238, Best ValAcc: 0.6588 in epoch 20 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.6155, early-stopping-TestAcc: 0.6262, Best ValAcc: 0.6540 in epoch 18 --- 
+####### Run 2 for seed 6
+# IGNORE: --- TestAcc: 0.6055, early-stopping-TestAcc: 0.6102, Best ValAcc: 0.6398 in epoch 75 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.6013, early-stopping-TestAcc: 0.6066, Best ValAcc: 0.6351 in epoch 39 --- 
+####### Run 3 for seed 7
+# IGNORE: --- TestAcc: 0.6173, early-stopping-TestAcc: 0.6173, Best ValAcc: 0.6351 in epoch 119 --- 
+num parameters for finetuning: 3078
+--- TestAcc: 0.6132, early-stopping-TestAcc: 0.6155, Best ValAcc: 0.6445 in epoch 150 --- 
+# final_acc: 0.6081±0.0063
+# early-stopping_acc: 0.6139±0.0079

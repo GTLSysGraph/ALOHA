@@ -29,7 +29,7 @@ def build_easydict_nodecls():
     MDT.MODEL.PARAM = {
         "dataset": "Cora", #help="Datasets. (default: Cora)")
         "mask":"Path", #help="Masking stractegy, `Path`, `Edge` or `None` (default: Path)")
-        'seed':2022, #help='Random seed for model and dataset. (default: 2022)')
+        'seed':1066, #help='Random seed for model and dataset. (default: 2022)')
 
         "layer":"gcn", #help="GNN layer, (default: gcn)")
         "encoder_activation":"elu", #help="Activation function for GNN encoder, (default: elu)")
