@@ -50,7 +50,7 @@ def Train_GAE_cls(margs):
 
     train_data, val_data, test_data = transform4lcls(dataset[0])
 
-    in_channels, out_channels = dataset.num_features, 256
+    in_channels, out_channels = dataset.num_features, 256 # GAE: Cora 16  Citeseer 64  Pubmed 64  VGAE: Cora 128 Citeseer 256 Pubmed 256
 
     if not args.variational and not args.linear:
         model = GAE(GCNEncoder(in_channels, out_channels))

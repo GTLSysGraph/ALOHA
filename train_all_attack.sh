@@ -1,7 +1,7 @@
 MODEL_NAME=$1
 # DATASET_NAME=$2
 
-CUDA_USE=(0 1 2)
+CUDA_USE=(0 1 2 3)
  
 
 n=0
@@ -10,9 +10,9 @@ max_process_num=4
 
 
 num=${#CUDA_USE[*]}
-for dst in 'Cora' 'Pubmed' 'Citeseer'
+for dst in 'Pubmed'
 do
-    for i in 'Meta_Self' 'DICE' 'nettack' 'random'
+    for i in 'Meta_Self' 
     do
         if [ $i == 'Meta_Self' ]
         then
