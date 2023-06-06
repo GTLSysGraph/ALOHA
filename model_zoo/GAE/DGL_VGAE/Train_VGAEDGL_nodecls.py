@@ -1,6 +1,6 @@
-from     model_zoo.GAE.VGAE.Train_VGAE_linkcls import Train_VGAE_linkcls_usemd
-from     model_zoo.GAE.VGAE.model import *
-from     model_zoo.GAE.VGAE.build_easydict import *
+from     model_zoo.GAE.DGL_VGAE.Train_VGAEDGL_linkcls import Train_VGAE_linkcls_usemd
+from     model_zoo.GAE.DGL_VGAE.model import *
+from     model_zoo.GAE.DGL_VGAE.build_easydict import *
 from     easydict        import EasyDict
 from     datasets_dgl.data_dgl import *
 from    .utils import create_optimizer, accuracy
@@ -72,6 +72,7 @@ def Train_VGAE_nodecls(margs):
     model = vgae_model.to(device)
     args2=  MDT['MODEL']['NODECLS']
     Train_VGAE_nodeclas_usemd(args2, model , graph, feat, num_classes, device)
+
 
 
 

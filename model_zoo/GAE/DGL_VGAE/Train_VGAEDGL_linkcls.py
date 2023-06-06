@@ -2,9 +2,9 @@ import torch
 from     easydict        import EasyDict
 from     datasets_dgl.data_dgl import *
 from     sklearn.metrics import average_precision_score, roc_auc_score
-from     model_zoo.GAE.VGAE.build_easydict import *
-from     model_zoo.GAE.VGAE.preprocessed import *
-from     model_zoo.GAE.VGAE.model import *
+from     model_zoo.GAE.DGL_VGAE.build_easydict import *
+from     model_zoo.GAE.DGL_VGAE.preprocessed import *
+from     model_zoo.GAE.DGL_VGAE.model import *
 import argparse
 import os
 import time

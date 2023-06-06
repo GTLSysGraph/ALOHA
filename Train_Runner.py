@@ -25,11 +25,17 @@ if __name__ == '__main__':
             Train_GraphMAE_graphcls(margs)
         elif margs.task == 'node':
             Train_GraphMAE_nodecls(margs)
-    elif margs.model_name == 'VGAE':
+    elif margs.model_name == 'DGL_VGAE':
+        assert margs.task in ['node','link']
         if   margs.task == 'link':
             Train_VGAE_linkcls(margs)
         elif margs.task == 'node':
             Train_VGAE_nodecls(margs)
+
+    elif margs.model_name == 'GAE' or 'VGAE':
+        assert margs.task in ['node','link']
+        Train_GAE_cls(margs)
+            
     elif margs.model_name == 'STABLE':
         Train_STABLE_nodecls(margs)
     elif margs.model_name == 'RobustGAE':
@@ -49,10 +55,12 @@ if __name__ == '__main__':
     elif margs.model_name == 'InfoGraph':
         assert margs.task == 'graph'
         Train_InfoGraph_graphcls(margs)
+        
     elif margs.model_name == 'MVGRL':
+        assert margs.task in ['graph','node']
         if margs.task == 'graph':
             Train_MVGRL_graphcls(margs)
         elif margs.task == 'node':
             Train_MVGRL_nodecls(margs)
-        
-
+    else:
+        raise Exception('Model not realise, wait...')

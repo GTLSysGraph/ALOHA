@@ -1,7 +1,7 @@
 python Train_Runner.py \
---dataset  'Citeseer' \
+--dataset  'Attack-Cora' \
 --attack  'Meta_Self-0.25' \
 --task 'node' \
 --mode 'tranductive' \
---gpu_id 0 \
---model_name 'VGAE'
+--gpu_id 3 \
+--model_name 'GAE'
