@@ -29,7 +29,7 @@ def build_easydict_nodecls():
     MDT.MODEL.PARAM = {
         "dataset": "Cora", #help="Datasets. (default: Cora)")
         "mask":"Path", #help="Masking stractegy, `Path`, `Edge` or `None` (default: Path)")
-        'seed':1066, #help='Random seed for model and dataset. (default: 2022)')
+        'seed':2022, #help='Random seed for model and dataset. (default: 2022)')
 
         "layer":"gcn", #help="GNN layer, (default: gcn)")
         "encoder_activation":"elu", #help="Activation function for GNN encoder, (default: elu)")
@@ -40,9 +40,9 @@ def build_easydict_nodecls():
         'decoder_layers':2,# help='Number of layers for decoders. (default: 2)')
         'encoder_dropout':0.8,# help='Dropout probability of encoder. (default: 0.8)')
         'decoder_dropout':0.2, #help='Dropout probability of decoder. (default: 0.2)')
-        'alpha':0.004, #help='loss weight for degree prediction. (default: 0.)')
+        'alpha':0.001, #help='loss weight for degree prediction. (default: 0.)')
 
-        'lr':0.01, #help='Learning rate for training. (default: 0.01)')
+        'lr':0.02, #help='Learning rate for training. (default: 0.01)')
         'weight_decay':5e-5, #help='weight_decay for link prediction training. (default: 5e-5)')
         'grad_norm':1.0, #help='grad_norm for training. (default: 1.0.)')
         'batch_size':2**16, #help='Number of batch size for link prediction training. (default: 2**16)')
@@ -52,7 +52,7 @@ def build_easydict_nodecls():
 
         'bn':True,# help='Whether to use batch normalization for GNN encoder. (default: False)')
         'l2_normalize':True, #help='Whether to use l2 normalize output embedding. (default: False)')
-        'nodeclas_weight_decay':1e-3,# help='weight_decay for node classification training. (default: 1e-3)')
+        'nodeclas_weight_decay':0.1,# help='weight_decay for node classification training. (default: 1e-3)')
 
         'epochs':500, #help='Number of training epochs. (default: 500)')
         'runs': 10, #help='Number of runs. (default: 10)')

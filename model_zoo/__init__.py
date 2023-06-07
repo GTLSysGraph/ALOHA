@@ -19,6 +19,8 @@ from model_zoo.GAE.DiffMGAE.Train_DiffMGAE_graphcls import Train_DiffMGAE_graphc
 from model_zoo.GAE.DGI.Train_DGI_nodecls import Train_DGI_nodecls
 from model_zoo.GAE.BGRL.Train_BGRL_nodecls import Train_BGRL_nodecls
 from model_zoo.Supervised.GIN.Train_GIN_graphcls import Train_GIN_graphcls
+from model_zoo.Supervised.GCN.Train_GCN_nodecls import Train_GCN_nodecls
+from model_zoo.Supervised.GAT.Train_GAT_nodecls import Train_GAT_nodecls
 
 __all__ = ['Train_GRACE_nodecls',
             'Train_STABLE_nodecls',
@@ -33,6 +35,8 @@ __all__ = ['Train_GRACE_nodecls',
             'Train_BGRL_nodecls',
             'Train_GIN_graphcls',
             'Train_InfoGraph_graphcls',
-            'Train_MVGRL_graphcls','Train_MVGRL_nodecls'
+            'Train_MVGRL_graphcls','Train_MVGRL_nodecls',
+            'Train_GCN_nodecls',
+            'Train_GAT_nodecls'
             ]
 

@@ -59,7 +59,7 @@ def load_graph_data(dataset_name):
 
 
 def load_inductive_dataset(dataset_name):
-    if dataset_name == "PPI":
+    if dataset_name == "ppi":
         batch_size = 2
         # define loss function
         # create the dataset
