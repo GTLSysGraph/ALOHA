@@ -1,0 +1,25 @@
+Start training with mask ratio=0.8 # optimization edges=833616 / 1042020
+Run: 01, Epoch: 01, Best_epoch: 01, Best_valid: 87.65%, Loss: 0.9594, 
+***************
+Run: 01, Epoch: 02, Best_epoch: 02, Best_valid: 88.04%, Loss: 0.8801, 
+***************
+Run: 01, Epoch: 03, Best_epoch: 03, Best_valid: 88.62%, Loss: 0.8543, 
+***************
+Run: 01, Epoch: 04, Best_epoch: 04, Best_valid: 90.41%, Loss: 0.8179, 
+***************
+Run: 01, Epoch: 05, Best_epoch: 05, Best_valid: 91.11%, Loss: 0.7578, 
+***************
+Run: 01, Epoch: 06, Best_epoch: 06, Best_valid: 92.94%, Loss: 0.7306, 
+***************
+Run: 01, Epoch: 07, Best_epoch: 07, Best_valid: 93.60%, Loss: 0.7158, 
+***************
+Run: 01, Epoch: 08, Best_epoch: 08, Best_valid: 93.81%, Loss: 0.7058, 
+***************
+Run: 01, Epoch: 09, Best_epoch: 08, Best_valid: 93.81%, Loss: 0.6993, 
+***************
+Run: 01, Epoch: 10, Best_epoch: 10, Best_valid: 94.19%, Loss: 0.6939, 
+***************
+Run: 01, Epoch: 11, Best_epoch: 10, Best_valid: 94.19%, Loss: 0.6895, 
+***************
+Run: 01, Epoch: 12, Best_epoch: 12, Best_valid: 94.66%, Loss: 0.6837, 
+***************

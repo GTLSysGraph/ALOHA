@@ -12,6 +12,10 @@ from .build_easydict import build_MVGRL_nodecls
 
 
 
+# We fail to reproduce the reported accuracy on 'Cora', even with the authors' code.
+# The accuracy reported by the original paper is based on fixed-sized subgraph-training.
+# https://github.com/hengruizhang98/mvgrl/tree/main
+# Cora的值和论文里提到的有出入 83.56000518798828 0.05477583035826683 其他的值参考论文中~ happy！
 
 def Train_MVGRL_nodecls(margs):
     if margs.gpu_id < 0:
@@ -213,7 +217,7 @@ def Train_MVGRL_full_nodecls(args,dataset_name):
         if loss < best:
             best = loss
             cnt_wait = 0
-            th.save(model.state_dict(), '/home/songsh/GCL/model_zoo/GCL/MVGRL/model_saved/{dataset_name}.pkl')
+            th.save(model.state_dict(), '/home/songsh/GCL/model_zoo/GCL/MVGRL/model_saved/{}.pkl'.format(dataset_name))
         else:
             cnt_wait += 1
 
@@ -221,7 +225,7 @@ def Train_MVGRL_full_nodecls(args,dataset_name):
             print('Early stopping')
             break
 
-    model.load_state_dict(th.load('/home/songsh/GCL/model_zoo/GCL/MVGRL/model_saved/{dataset_name}.pkl'))
+    model.load_state_dict(th.load('/home/songsh/GCL/model_zoo/GCL/MVGRL/model_saved/{}.pkl'.format(dataset_name)))
     embeds = model.get_embedding(graph, diff_graph, feat, edge_weight)
 
     train_embs = embeds[train_idx]

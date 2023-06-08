@@ -61,7 +61,7 @@ def process_dataset(name, epsilon):
     elif name == 'Citeseer':
         dataset = CiteseerGraphDataset()
     else:
-        raise Exception('Only Cora Citeseer!')
+        raise Exception('Only Cora Citeseer! Pubmed use sample,CUDA out of memory')
 
     graph = dataset[0]
     feat = graph.ndata.pop('feat')

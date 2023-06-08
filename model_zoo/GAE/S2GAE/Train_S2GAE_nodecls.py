@@ -13,13 +13,14 @@ from model_zoo.GAE.S2GAE.model import LPDecoder_ogb as LPDecoder
 from model_zoo.GAE.S2GAE.model import GCN_mgaev3 as GCN
 from model_zoo.GAE.S2GAE.model import SAGE_mgaev2 as SAGE
 from model_zoo.GAE.S2GAE.model import GIN_mgaev2 as GIN
-
+import torch_geometric.transforms as T
 from sklearn.model_selection import KFold
 from sklearn import svm
 from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
 from tqdm import tqdm
 from .evaluation_linear_probe import *
+from utils import index_to_mask
 
 def random_edge_mask(args, edge_index, device, num_nodes):
     num_edge = len(edge_index)
@@ -168,7 +169,23 @@ def Train_S2GAE_nodecls(margs):
         path = osp.join(path, dataset_name)
         dataset = get_dataset(path, dataset_name)
 
-    data = dataset[0]
+    transform = T.Compose([
+        T.ToUndirected(),
+        T.ToDevice(device),
+    ])
+
+    if dataset_name == 'ogbn-arxiv':
+        data = transform(dataset[0])
+        split_idx = dataset.get_idx_split()
+        data.train_mask = index_to_mask(split_idx['train'],size=data.num_nodes)      
+        data.val_mask   = index_to_mask(split_idx['valid'],size=data.num_nodes)    
+        data.test_mask  = index_to_mask(split_idx['test'] ,size=data.num_nodes)    
+    elif dataset_name in ['Coauthor-CS', 'Coauthor-Phy','Amazon-Computers', 'Amazon-Photo']:
+        data = transform(dataset[0])
+        data = T.RandomNodeSplit(num_val=0.1, num_test=0.8)(data) # 这些数据集没有mask划分
+    else:
+        data = transform(dataset[0])
+
 
     MDT = build_easydict_nodecls()
     config         = MDT['MODEL']['PARAM']
@@ -288,13 +305,10 @@ def Train_S2GAE_nodecls(margs):
     #                                                                       np.std(temp_resullt)))
 
 
-        if dataset_name.split('-')[1] in ['Cora','Pubmed']:
-            weight_decay_f =  1e-4
-        elif dataset_name.split('-')[1] in ['Citeseer']:
-            weight_decay_f = 0.01
+
 
         for i, feature_tmp in enumerate(feature_list):
-            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, weight_decay_f, 300, device)
+            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, 0, 300, device)
             svm_result_final[run, i] = final_acc
             print('**** Linear probe test acc on Run {}/{} for {} is acc={} estp_acc={}'
                   .format(run + 1, config['runs'], result_dict[i], final_acc, estp_acc))

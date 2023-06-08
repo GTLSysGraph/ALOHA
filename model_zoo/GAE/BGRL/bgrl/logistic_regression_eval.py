@@ -7,6 +7,7 @@ from sklearn.preprocessing import OneHotEncoder, normalize
 
 
 def fit_logistic_regression(X, y, data_random_seed=1, repeat=1):
+    print('use random split')
     # transfrom targets to one-hot vector
     one_hot_encoder = OneHotEncoder(categories='auto', sparse=False)
 
@@ -39,6 +40,7 @@ def fit_logistic_regression(X, y, data_random_seed=1, repeat=1):
         test_acc = metrics.accuracy_score(y_test, y_pred)
         accuracies.append(test_acc)
     return accuracies
+
 
 
 def fit_logistic_regression_preset_splits(X, y, train_masks, val_masks, test_mask):
@@ -77,5 +79,45 @@ def fit_logistic_regression_preset_splits(X, y, train_masks, val_masks, test_mas
                 best_test_acc = metrics.accuracy_score(y_test, y_pred)
 
         accuracies.append(best_test_acc)
+    print(np.mean(accuracies))
+    return accuracies
+
+
+
+def fit_logistic_regression_fix_split(X, y, train_mask, val_mask, test_mask,repeat=1):
+    print('use fix split')
+    # transfrom targets to one-hot vector
+    one_hot_encoder = OneHotEncoder(categories='auto', sparse=False)
+    y = one_hot_encoder.fit_transform(y.reshape(-1, 1)).astype(np.bool)
+
+    # normalize x
+    X = normalize(X, norm='l2')
+
+    accuracies = []
+    for _ in range(repeat):
+        # make custom cv
+        X_train, y_train = X[train_mask], y[train_mask]
+        X_val, y_val = X[val_mask], y[val_mask]
+        X_test, y_test = X[test_mask], y[test_mask]
+
+        # grid search with one-vs-rest classifiers
+        best_test_acc, best_acc = 0, 0
+        for c in 2.0 ** np.arange(-10, 11):
+            clf = OneVsRestClassifier(LogisticRegression(solver='liblinear', C=c))
+            clf.fit(X_train, y_train)
+
+            y_pred = clf.predict_proba(X_val)
+            y_pred = np.argmax(y_pred, axis=1)
+            y_pred = one_hot_encoder.transform(y_pred.reshape(-1, 1)).astype(np.bool)
+            val_acc = metrics.accuracy_score(y_val, y_pred)
+            if val_acc > best_acc:
+                best_acc = val_acc
+                y_pred = clf.predict_proba(X_test)
+                y_pred = np.argmax(y_pred, axis=1)
+                y_pred = one_hot_encoder.transform(y_pred.reshape(-1, 1)).astype(np.bool)
+                best_test_acc = metrics.accuracy_score(y_test, y_pred)
+
+        accuracies.append(best_test_acc)
+
     print(np.mean(accuracies))
     return accuracies

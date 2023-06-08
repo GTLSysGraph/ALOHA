@@ -1,12 +1,16 @@
 import numpy as np
 import functools
-
+import torch
+import torch.nn as nn
+import torch_geometric.transforms as T
 from sklearn.metrics import f1_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import normalize, OneHotEncoder
-
+from torch.utils.data import DataLoader
+from utils import Logger
+import time 
 
 def repeat(n_times):
     def decorator(f):
@@ -111,3 +115,73 @@ def label_classification_no_repeat(embeddings, y, ratio,shuffle):
         'F1Mi': micro,
         'F1Ma': macro
     }
+
+
+
+
+
+
+
+def linear_probe_nodeclas(embeddings, data, args, device='cpu'):
+    def train(loader):
+        clf.train()
+        for nodes in loader:
+            optimizer.zero_grad()
+            loss_fn(clf(embedding[nodes]), y[nodes]).backward()
+            optimizer.step()
+
+    @torch.no_grad()
+    def test(loader):
+        clf.eval()
+        logits = []
+        labels = []
+        for nodes in loader:
+            logits.append(clf(embedding[nodes]))
+            labels.append(y[nodes])
+        logits = torch.cat(logits, dim=0).cpu()
+        labels = torch.cat(labels, dim=0).cpu()
+        logits = logits.argmax(1)
+        return (logits == labels).float().mean().item()
+
+    if hasattr(data, 'train_mask'):
+        train_loader = DataLoader(data.train_mask.nonzero().squeeze(), pin_memory=False, batch_size=512, shuffle=True)
+        test_loader = DataLoader(data.test_mask.nonzero().squeeze(), pin_memory=False, batch_size=20000, shuffle=False)
+        val_loader = DataLoader(data.val_mask.nonzero().squeeze(), pin_memory=False, batch_size=20000, shuffle=False)
+    else:
+        train_loader = DataLoader(data.train_nodes.squeeze(), pin_memory=False, batch_size=4096, shuffle=True)
+        test_loader = DataLoader(data.test_nodes.squeeze(), pin_memory=False, batch_size=20000, shuffle=False)
+        val_loader = DataLoader(data.val_nodes.squeeze(), pin_memory=False, batch_size=20000, shuffle=False)
+
+    data = data.to(device)
+    y = data.y.squeeze()
+    
+    embedding = embeddings
+
+    loss_fn = nn.CrossEntropyLoss()
+    clf = nn.Linear(embedding.size(1), y.max().item() + 1).to(device)
+
+    logger = Logger(args.runs, args)
+
+    print('Start Training (Node Classification)...')
+    for run in range(args.runs):
+        nn.init.xavier_uniform_(clf.weight.data)
+        nn.init.zeros_(clf.bias.data)
+        optimizer = torch.optim.Adam(clf.parameters(), lr=0.01, weight_decay=args.nodeclas_weight_decay)  # 1 for citeseer
+
+        best_val_metric = test_metric = 0
+        start = time.time()
+        for epoch in range(1, 101):
+            train(train_loader)
+            val_metric, test_metric = test(val_loader), test(test_loader)
+            if val_metric > best_val_metric:
+                best_val_metric = val_metric
+                best_test_metric = test_metric
+            end = time.time()
+            if args.debug:
+                print(f"Epoch {epoch:02d} / {100:02d}, Valid: {val_metric:.2%}, Test {test_metric:.2%}, Best {best_test_metric:.2%}, Time elapsed {end-start:.4f}")
+
+        print(f"Run {run+1}: Best test accuray {best_test_metric:.2%}.")
+        logger.add_result(run, (best_val_metric, best_test_metric))
+
+    print('##### Final Testing result (Node Classification)')
+    logger.print_statistics()

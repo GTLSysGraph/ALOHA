@@ -29,4 +29,9 @@ def build_easydict():
     MDT.MODEL.PARAM = {
         "use_cfg"       : True,
     }
+    MDT.MODEL.LINEAR_PROBE_PARAM = {
+        'nodeclas_weight_decay':0.001,
+        'runs': 10,
+        'debug': False 
+    }
     return MDT

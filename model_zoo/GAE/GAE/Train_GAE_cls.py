@@ -40,17 +40,35 @@ def Train_GAE_cls(margs):
         path = osp.join(path, dataset_name)
         dataset = get_dataset(path, dataset_name)
 
+    transform = T.Compose([
+            T.ToUndirected(),
+            T.ToDevice(device),
+        ])
 
-    transform4lcls = T.Compose([
+    if dataset_name == 'ogbn-arxiv':
+        data = transform(dataset[0])
+        split_idx = dataset.get_idx_split()
+        data.train_nodes = split_idx['train']
+        data.val_nodes = split_idx['valid']
+        data.test_nodes = split_idx['test']
+    elif dataset_name in ['Coauthor-CS', 'Coauthor-Phy','Amazon-Computers', 'Amazon-Photo']:
+        data = transform(dataset[0])
+        data = T.RandomNodeSplit(num_val=0.1, num_test=0.8)(data) # 这些数据集没有mask划分
+    else:
+        data = transform(dataset[0])
+
+
+
+    transform4linkcls = T.Compose([
             T.NormalizeFeatures(),
             T.ToDevice(device),
             T.RandomLinkSplit(num_val=0.05, num_test=0.1, is_undirected=True,
                             split_labels=True, add_negative_train_samples=False),
     ])
 
-    train_data, val_data, test_data = transform4lcls(dataset[0])
+    train_data, val_data, test_data = transform4linkcls(dataset[0])
 
-    in_channels, out_channels = dataset.num_features, 256 # GAE: Cora 16  Citeseer 64  Pubmed 64  VGAE: Cora 128 Citeseer 256 Pubmed 256
+    in_channels, out_channels = dataset.num_features, 64 # GAE: [Cora Citeseer] 16  [Citeseer0.0] 64  Pubmed 64        VGAE: Cora 128 Citeseer 64 Pubmed 256
 
     if not args.variational and not args.linear:
         model = GAE(GCNEncoder(in_channels, out_channels))
@@ -66,11 +84,6 @@ def Train_GAE_cls(margs):
     train_linkcls(args, model, optimizer,train_data, val_data, test_data)
 
     if margs.task == 'node':
-        transform4ncls = T.Compose([
-            T.ToUndirected(),
-            T.ToDevice(device),
-        ])
-        data = transform4ncls(dataset[0])
         train_nodeclas(model, data, args_linear_probe, device=device)
 
 

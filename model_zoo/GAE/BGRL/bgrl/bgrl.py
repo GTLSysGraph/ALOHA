@@ -64,7 +64,7 @@ def load_trained_encoder(encoder, ckpt_path, device):
     return encoder.to(device)
 
 
-def compute_representations(net, dataset, device):
+def compute_representations(net, data, device):
     r"""Pre-computes the representations for the entire dataset.
 
     Returns:
@@ -74,12 +74,11 @@ def compute_representations(net, dataset, device):
     reps = []
     labels = []
 
-    for data in dataset:
-        # forward
-        data = data.to(device)
-        with torch.no_grad():
-            reps.append(net(data))
-            labels.append(data.y)
+
+    data = data.to(device)
+    with torch.no_grad():
+        reps.append(net(data))
+        labels.append(data.y)
 
     reps = torch.cat(reps, dim=0)
     labels = torch.cat(labels, dim=0)
