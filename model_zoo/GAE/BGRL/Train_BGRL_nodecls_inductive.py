@@ -22,10 +22,7 @@ def Train_BGRL_nodecls_inductive(margs):
     assert margs.dataset == 'PPI'
     assert margs.mode =='inductive'
 
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
     MDT = build_easydict_nodecls()
     FLAGS = MDT['MODEL']['PARAM']

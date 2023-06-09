@@ -18,10 +18,8 @@ from .build_easydict import build_MVGRL_nodecls
 # Cora的值和论文里提到的有出入 83.56000518798828 0.05477583035826683 其他的值参考论文中~ happy！
 
 def Train_MVGRL_nodecls(margs):
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
     dataset_name = margs.dataset
 

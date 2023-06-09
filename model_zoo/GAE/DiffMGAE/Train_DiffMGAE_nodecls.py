@@ -45,10 +45,7 @@ def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, sched
 
 def Train_DiffMGAE_nodecls(margs):
     #########################
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
     mode = margs.mode

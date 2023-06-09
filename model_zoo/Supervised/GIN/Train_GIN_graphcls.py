@@ -131,10 +131,7 @@ def train(train_loader, val_loader, device, model):
 
 def Train_GIN_graphcls(margs):
     #############################################################################################
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
     dataset_name = margs.dataset
     if margs.task == 'graph':

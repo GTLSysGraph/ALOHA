@@ -117,10 +117,8 @@ def test_transductive(model: Model, data, LINEAR_PROBE_PARAM, device):
 
 
 def Train_GRACE_nodecls(margs):
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     ################################################ prepare data
     transform = T.Compose([
         T.ToUndirected(),

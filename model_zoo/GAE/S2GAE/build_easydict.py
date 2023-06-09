@@ -34,8 +34,8 @@ def build_easydict_nodecls():
         'decode_layers':2,
         'hidden_channels':128,
         'decode_channels':256,
-        'dropout':0.5,
-        'batch_size':1024,
+        'dropout':0.2,
+        'batch_size':8192,
         'lr':0.001,
         'epochs':400, 
         'seed':42,
@@ -47,3 +47,6 @@ def build_easydict_nodecls():
 
     }
     return MDT
+
+
+# Attack-Citeseer dropout 0.2

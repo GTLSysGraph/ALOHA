@@ -20,9 +20,8 @@ import os
 
 def Train_BGRL_nodecls_tranductive(margs):
     dataset_name = margs.dataset
-    device = torch.device('cuda:{}'.format(margs.gpu_id) if torch.cuda.is_available() else 'cpu')
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    
     transform = T.Compose([
         T.ToUndirected(),
         T.ToDevice(device),

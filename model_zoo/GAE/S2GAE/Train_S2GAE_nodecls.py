@@ -157,7 +157,7 @@ def test_classify(feature, labels, args):
 
 def Train_S2GAE_nodecls(margs):
     dataset_name = margs.dataset
-    device = torch.device('cuda:{}'.format(margs.gpu_id) if torch.cuda.is_available() else 'cpu')
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     path = osp.expanduser('/home/songsh/GCL/datasets_pyg')
     if dataset_name.split('-')[0] == 'Attack':

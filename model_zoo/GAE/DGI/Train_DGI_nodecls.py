@@ -11,10 +11,8 @@ import torch.nn.functional as F
 
 def Train_DGI_nodecls(margs):
     #########################
-    if margs.gpu_id < 0:
-        device = "cpu"
-    else:
-        device = f"cuda:{margs.gpu_id}" if torch.cuda.is_available() else "cpu"
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     
     multilabel = False
 
