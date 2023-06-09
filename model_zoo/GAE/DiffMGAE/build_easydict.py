@@ -6,7 +6,7 @@ def build_easydict():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'DiffGMAE'
     MDT.MODEL.PARAM = {
-        'seeds'         : [12,34,6,7],
+        'seeds'         : [2022,2023,2024,2025], 
         "device"        : -1 ,
         "max_epoch"     : 200,             
         "warmup_steps"  : -1,

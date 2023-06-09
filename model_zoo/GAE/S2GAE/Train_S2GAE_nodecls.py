@@ -170,7 +170,7 @@ def Train_S2GAE_nodecls(margs):
         dataset = get_dataset(path, dataset_name)
 
     transform = T.Compose([
-        T.ToUndirected(),
+        # T.ToUndirected(), ogbn try
         T.ToDevice(device),
     ])
 
@@ -308,7 +308,7 @@ def Train_S2GAE_nodecls(margs):
 
 
         for i, feature_tmp in enumerate(feature_list):
-            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.01, 0, 300, device)
+            final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.1, 5e-4 , 300, device)
             svm_result_final[run, i] = final_acc
             print('**** Linear probe test acc on Run {}/{} for {} is acc={} estp_acc={}'
                   .format(run + 1, config['runs'], result_dict[i], final_acc, estp_acc))

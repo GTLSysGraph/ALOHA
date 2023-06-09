@@ -1,4 +1,5 @@
 cora:
+  seeds: [12,34,6,7]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512
@@ -24,12 +25,12 @@ cora:
   alpha_l: 3
   scheduler: True
   #
-  remask_rate     : 0.6 
+  remask_rate     : 1.0 
   timestep        : 10000
-  beta_schedule   : 'linear'
-  start_t         : 9000
-  lamda_loss      : 0.0
-  lamda_neg_ratio : 0.0
+  beta_schedule   : 'sigmoid'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 8000 # not 0
+  lamda_loss      : 0.1
+  lamda_neg_ratio : 0.2
   #
 
 

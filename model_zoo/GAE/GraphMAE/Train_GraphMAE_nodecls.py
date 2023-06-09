@@ -181,7 +181,8 @@ def Train_GraphMAE_nodecls(margs):
             elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
                 multilabel_data = set(['ppi', 'yelp', 'amazon'])
                 multilabel = dataset_name in multilabel_data
-
+                if multilabel == True:
+                    raise Exception('not realise multilabel, loss should be BCE loss, will realise if use')
                 dataset  = load_GraphSAINT_data(dataset_name, multilabel)
                 graph = dataset.g
 
