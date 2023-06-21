@@ -49,6 +49,7 @@ def build_easydict():
         'start_t'         : 9000,
         'lamda_loss'      : 0.1,
         'lamda_neg_ratio' : 0.0,
+        'momentum'        : 0.996,
 
         # for graph classification
         "pooling"    : "mean",

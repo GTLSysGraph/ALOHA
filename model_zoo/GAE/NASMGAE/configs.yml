@@ -19,12 +19,19 @@ cora:
   attn_drop: 0.1
   linear_prob: True
   loss_fn: sce 
-  drop_edge_rate: 0.0
+  drop_edge_rate: 0.2
   optimizer: adam
   replace_rate: 0.05
   alpha_l: 3
   scheduler: True
-  # 84.07+-0.7
+  concat_hidden: False   
+  # concat True  :0.8315±0.0009 
+  # concat False : 0.8407±0.0071
+  # sum          : 0.8260±0.0054
+  # mean         : 0.8285±0.0052
+  # hardam       : 0.1765±0.0437
+
+
 citeseer:
   seeds  : [23]
   lr: 0.001

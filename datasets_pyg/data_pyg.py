@@ -46,7 +46,7 @@ def get_dataset(path, name, attackmethod= None, attackptb = None):
         return AttackDataset(root = path, name = name, attackmethod = attackmethod, ptb_rate=attackptb, transform=T.NormalizeFeatures())
 
     if name.startswith('ogbn'):
-        return PygNodePropPredDataset(root=osp.join(root_path, 'OGB'), name=name, transform=T.NormalizeFeatures())
+        return PygNodePropPredDataset(root=osp.join(root_path, 'OGB'), name=name) #S2GAE里不需要, transform=T.NormalizeFeatures()
 
     return (CitationFull if name == 'dblp' else Planetoid)(osp.join(root_path, 'Citation'), name, transform=T.NormalizeFeatures())
 

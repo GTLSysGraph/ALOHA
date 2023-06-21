@@ -10,60 +10,2200 @@ Done loading data from cached files.
 ###################################################################################################################################################
 grid search at experiment 1
 ************************************************
-remask_rate: 0.4
 beta_schedule: linear
-lamda_loss: 0.1
-lamda_neg_ratio: -10
+lamda_loss: 0
+remask_rate: 1.0
 ************************************************
-####### Run 0 for seed 12
-# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7840 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7900 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7860 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7880 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7900 in epoch 14 --- 
-# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7840 in epoch 34 --- 
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.7940 in epoch 100 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8000 in epoch 251 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8040 in epoch 299 --- 
 num parameters for finetuning: 3591
---- TestAcc: 0.8310, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.7900 in epoch 4 --- 
-####### Run 1 for seed 34
-# IGNORE: --- TestAcc: 0.7930, early-stopping-TestAcc: 0.7930, Best ValAcc: 0.7700 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7840 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7900 in epoch 258 --- 
-# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7920 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7900 in epoch 299 --- 
-num parameters for finetuning: 3591
---- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7900 in epoch 299 --- 
-####### Run 2 for seed 6
-# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7960 in epoch 71 --- 
-# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.7980 in epoch 4 --- 
-# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 216 --- 
-# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.7960 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8460, Best ValAcc: 0.8100 in epoch 228 --- 
-# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 299 --- 
-num parameters for finetuning: 3591
---- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 299 --- 
-####### Run 3 for seed 7
-# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7920 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7840 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7760 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7900 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7920 in epoch 5 --- 
-# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7860 in epoch 299 --- 
-# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7860 in epoch 299 --- 
-num parameters for finetuning: 3591
---- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7860 in epoch 299 --- 
-# final_acc: 0.8330±0.0053
-# early-stopping_acc: 0.8290±0.0096
+--- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8040 in epoch 299 --- 
+# final_acc: 0.8420±0.0000
+# early-stopping_acc: 0.8420±0.0000
 ###################################################################################################################################################
 ###################################################################################################################################################
 grid search at experiment 2
 ************************************************
-remask_rate: 0.4
 beta_schedule: linear
-lamda_loss: 0.1
-lamda_neg_ratio: 0
+lamda_loss: 0
+remask_rate: 0.9
 ************************************************
-####### Run 0 for seed 12
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8130, early-stopping-TestAcc: 0.8130, Best ValAcc: 0.7820 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8010, Best ValAcc: 0.7880 in epoch 12 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7820 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7760 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7800 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7880 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7880 in epoch 299 --- 
+# final_acc: 0.8260±0.0000
+# early-stopping_acc: 0.8260±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 3
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.7990, Best ValAcc: 0.7740 in epoch 187 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7900 in epoch 126 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7920 in epoch 280 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7860 in epoch 285 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7920 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7920 in epoch 299 --- 
+# final_acc: 0.8250±0.0000
+# early-stopping_acc: 0.8250±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 4
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8020, Best ValAcc: 0.7680 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7940 in epoch 124 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7920 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7920 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7900 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7920 in epoch 292 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7920 in epoch 291 --- 
+# final_acc: 0.8270±0.0000
+# early-stopping_acc: 0.8270±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 5
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.7900, early-stopping-TestAcc: 0.7870, Best ValAcc: 0.7580 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7820 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7920 in epoch 269 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8250, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7920 in epoch 271 --- 
+# final_acc: 0.8250±0.0000
+# early-stopping_acc: 0.8260±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 6
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.7990, early-stopping-TestAcc: 0.7990, Best ValAcc: 0.7740 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7820 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7940 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7940 in epoch 299 --- 
+# final_acc: 0.8270±0.0000
+# early-stopping_acc: 0.8270±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 7
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8020, Best ValAcc: 0.7800 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7840 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7840 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7840 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7860 in epoch 279 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7880 in epoch 299 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8310±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 8
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8140, early-stopping-TestAcc: 0.8140, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7820 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7860 in epoch 242 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7820 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7840 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7840 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7860 in epoch 299 --- 
+# final_acc: 0.8320±0.0000
+# early-stopping_acc: 0.8320±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 9
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7960 in epoch 173 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7980 in epoch 229 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 149 --- 
+# IGNORE: --- TestAcc: 0.8470, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8080 in epoch 185 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8100 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8180 in epoch 173 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8390, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8180 in epoch 43 --- 
+# final_acc: 0.8390±0.0000
+# early-stopping_acc: 0.8240±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 10
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7980 in epoch 9 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8020 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.8080 in epoch 28 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8040 in epoch 257 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8000 in epoch 221 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8190, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8040 in epoch 14 --- 
+# final_acc: 0.8190±0.0000
+# early-stopping_acc: 0.8190±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 11
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8120 in epoch 36 --- 
+# IGNORE: --- TestAcc: 0.8160, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8060 in epoch 38 --- 
+# IGNORE: --- TestAcc: 0.8120, early-stopping-TestAcc: 0.8120, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8020, Best ValAcc: 0.8020 in epoch 241 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.8000 in epoch 164 --- 
+# IGNORE: --- TestAcc: 0.7910, early-stopping-TestAcc: 0.7890, Best ValAcc: 0.7880 in epoch 79 --- 
+# IGNORE: --- TestAcc: 0.7920, early-stopping-TestAcc: 0.8130, Best ValAcc: 0.7780 in epoch 28 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7920, early-stopping-TestAcc: 0.7920, Best ValAcc: 0.7720 in epoch 299 --- 
+# final_acc: 0.7920±0.0000
+# early-stopping_acc: 0.7920±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 12
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.7920 in epoch 214 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7960 in epoch 275 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 299 --- 
+# final_acc: 0.8430±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 13
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7920 in epoch 276 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7920 in epoch 257 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 250 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 244 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8320±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 14
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7960 in epoch 240 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7940 in epoch 215 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.7960 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7960 in epoch 204 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8410±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 15
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 172 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7940 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7900 in epoch 132 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7880 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7880 in epoch 299 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8380±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 16
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7920 in epoch 184 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7900 in epoch 195 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7920 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7940 in epoch 261 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7940 in epoch 266 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8310±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 17
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7920 in epoch 282 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 158 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8000 in epoch 16 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7920 in epoch 197 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7920 in epoch 175 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 163 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8340, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 161 --- 
+# final_acc: 0.8340±0.0000
+# early-stopping_acc: 0.8360±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 18
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7940 in epoch 221 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7980 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8060 in epoch 20 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8060 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8450, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8020 in epoch 298 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8450, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8020 in epoch 288 --- 
+# final_acc: 0.8450±0.0000
+# early-stopping_acc: 0.8450±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 19
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7880 in epoch 215 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8020 in epoch 135 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8040 in epoch 21 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8400, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8020 in epoch 44 --- 
+# final_acc: 0.8400±0.0000
+# early-stopping_acc: 0.8230±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 20
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.7980 in epoch 9 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 223 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8040 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8060 in epoch 94 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8080 in epoch 122 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8080 in epoch 142 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8390, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8100 in epoch 109 --- 
+# final_acc: 0.8390±0.0000
+# early-stopping_acc: 0.8350±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 21
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8060 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8080 in epoch 211 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8040 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8140 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8140 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8160 in epoch 256 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8160 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8160 in epoch 299 --- 
+# final_acc: 0.8370±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 22
+************************************************
+beta_schedule: linear
+lamda_loss: 0.5
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8020 in epoch 234 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8020 in epoch 216 --- 
+# IGNORE: --- TestAcc: 0.8070, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8000 in epoch 25 --- 
+# IGNORE: --- TestAcc: 0.8080, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8060 in epoch 66 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8100 in epoch 32 --- 
+# IGNORE: --- TestAcc: 0.7940, early-stopping-TestAcc: 0.7910, Best ValAcc: 0.7980 in epoch 81 --- 
+# IGNORE: --- TestAcc: 0.7900, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7940 in epoch 40 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7880, early-stopping-TestAcc: 0.8000, Best ValAcc: 0.7860 in epoch 49 --- 
+# final_acc: 0.7880±0.0000
+# early-stopping_acc: 0.8000±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 23
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.7920 in epoch 103 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7900 in epoch 40 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8060 in epoch 295 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 299 --- 
+# final_acc: 0.8400±0.0000
+# early-stopping_acc: 0.8400±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 24
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.7880 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7900 in epoch 198 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7940 in epoch 59 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7920 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7920 in epoch 299 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8310±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 25
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7920 in epoch 289 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7960 in epoch 231 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7900 in epoch 158 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7920 in epoch 173 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7920 in epoch 164 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7900 in epoch 299 --- 
+# final_acc: 0.8290±0.0000
+# early-stopping_acc: 0.8290±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 26
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7940 in epoch 175 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7900 in epoch 200 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7920 in epoch 266 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7900 in epoch 287 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8320±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 27
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7940 in epoch 178 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8000 in epoch 122 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 273 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7980 in epoch 34 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7980 in epoch 146 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7960 in epoch 62 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7920 in epoch 257 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7940 in epoch 57 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8340±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 28
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 216 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8000 in epoch 225 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8020 in epoch 280 --- 
+# final_acc: 0.8430±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 29
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8080 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8020 in epoch 251 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 221 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8020 in epoch 243 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 248 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 237 --- 
+# final_acc: 0.8400±0.0000
+# early-stopping_acc: 0.8400±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 30
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8100 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8000 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8020 in epoch 17 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8020 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8040 in epoch 13 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8280±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 31
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7980 in epoch 228 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8040 in epoch 240 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8020 in epoch 151 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 217 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 32
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8100 in epoch 114 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8000 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8120 in epoch 162 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8160 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8140 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8180 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8180 in epoch 299 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 33
+************************************************
+beta_schedule: linear
+lamda_loss: 1
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8100, early-stopping-TestAcc: 0.8100, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8050, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7960 in epoch 27 --- 
+# IGNORE: --- TestAcc: 0.8090, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8050, early-stopping-TestAcc: 0.8050, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.7950, early-stopping-TestAcc: 0.7930, Best ValAcc: 0.7860 in epoch 182 --- 
+# IGNORE: --- TestAcc: 0.7880, early-stopping-TestAcc: 0.7910, Best ValAcc: 0.7860 in epoch 71 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7840, early-stopping-TestAcc: 0.7870, Best ValAcc: 0.7840 in epoch 50 --- 
+# final_acc: 0.7840±0.0000
+# early-stopping_acc: 0.7870±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 34
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7900 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8040 in epoch 237 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 299 --- 
+# final_acc: 0.8430±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 35
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7960 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8000 in epoch 259 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7920 in epoch 191 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7900 in epoch 226 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7900 in epoch 189 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7900 in epoch 188 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 36
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8000 in epoch 278 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 132 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7960 in epoch 145 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7960 in epoch 157 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7940 in epoch 146 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7920 in epoch 158 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 37
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7940 in epoch 138 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 36 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8000 in epoch 252 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8000 in epoch 202 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8340, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8000 in epoch 209 --- 
+# final_acc: 0.8340±0.0000
+# early-stopping_acc: 0.8400±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 38
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7960 in epoch 91 --- 
+# IGNORE: --- TestAcc: 0.8450, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7960 in epoch 107 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8080 in epoch 258 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8060 in epoch 267 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8080 in epoch 229 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8080 in epoch 227 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8080 in epoch 223 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8440±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 39
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8440, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8060 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 218 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 289 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 266 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8100 in epoch 273 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8080 in epoch 299 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8410±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 40
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8040 in epoch 183 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7940 in epoch 276 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8060 in epoch 15 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8060 in epoch 7 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8040 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8040 in epoch 299 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8380±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 41
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8000 in epoch 95 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8020 in epoch 228 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8060 in epoch 15 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8040 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8060 in epoch 16 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8260±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 42
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8020 in epoch 37 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8020 in epoch 148 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8020 in epoch 126 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8060 in epoch 203 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8040 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8040 in epoch 297 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 43
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8020 in epoch 21 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 226 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8060 in epoch 125 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8180 in epoch 273 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8180 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8180 in epoch 174 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8200 in epoch 141 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8200 in epoch 140 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8280±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 44
+************************************************
+beta_schedule: linear
+lamda_loss: 5
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8040, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.7980, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.7940 in epoch 25 --- 
+# IGNORE: --- TestAcc: 0.8000, early-stopping-TestAcc: 0.8000, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8000 in epoch 32 --- 
+# IGNORE: --- TestAcc: 0.7950, early-stopping-TestAcc: 0.8030, Best ValAcc: 0.7860 in epoch 22 --- 
+# IGNORE: --- TestAcc: 0.7890, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7820 in epoch 28 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7920, early-stopping-TestAcc: 0.7890, Best ValAcc: 0.7760 in epoch 173 --- 
+# final_acc: 0.7920±0.0000
+# early-stopping_acc: 0.7890±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 45
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7880 in epoch 258 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8460, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8100 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8100 in epoch 299 --- 
+# final_acc: 0.8430±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 46
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7920 in epoch 113 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7980 in epoch 18 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7920 in epoch 192 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7920 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7920 in epoch 105 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7900 in epoch 299 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8350±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 47
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7940 in epoch 200 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7960 in epoch 151 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.7980 in epoch 245 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8000 in epoch 177 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 199 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 141 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 48
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.7920 in epoch 53 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7960 in epoch 221 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8020 in epoch 255 --- 
+# IGNORE: --- TestAcc: 0.8450, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8000 in epoch 6 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8020 in epoch 197 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8020 in epoch 232 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8390, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8020 in epoch 225 --- 
+# final_acc: 0.8390±0.0000
+# early-stopping_acc: 0.8440±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 49
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7960 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8000 in epoch 220 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 188 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8100 in epoch 161 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8080 in epoch 166 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8430, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8100 in epoch 154 --- 
+# final_acc: 0.8430±0.0000
+# early-stopping_acc: 0.8400±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 50
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7980 in epoch 123 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8080 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 245 --- 
+# IGNORE: --- TestAcc: 0.8450, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8460, Best ValAcc: 0.8060 in epoch 276 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8440, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8060 in epoch 299 --- 
+# final_acc: 0.8440±0.0000
+# early-stopping_acc: 0.8440±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 51
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8000 in epoch 109 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8100 in epoch 253 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8020 in epoch 184 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8020 in epoch 243 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8020 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8040 in epoch 218 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8340, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8040 in epoch 194 --- 
+# final_acc: 0.8340±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 52
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8000 in epoch 35 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8040 in epoch 103 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 28 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8060 in epoch 20 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8040 in epoch 38 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8040 in epoch 33 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 53
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7960 in epoch 177 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8040 in epoch 280 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8000 in epoch 209 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8060 in epoch 27 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8120 in epoch 237 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8040 in epoch 236 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8020 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8020 in epoch 299 --- 
+# final_acc: 0.8280±0.0000
+# early-stopping_acc: 0.8280±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 54
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7960 in epoch 174 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8080 in epoch 16 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8060 in epoch 233 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8180 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8160 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8200 in epoch 51 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8200 in epoch 81 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8230, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8200 in epoch 81 --- 
+# final_acc: 0.8230±0.0000
+# early-stopping_acc: 0.8260±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 55
+************************************************
+beta_schedule: linear
+lamda_loss: 10
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7980 in epoch 29 --- 
+# IGNORE: --- TestAcc: 0.8080, early-stopping-TestAcc: 0.8140, Best ValAcc: 0.8040 in epoch 36 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8120, Best ValAcc: 0.7980 in epoch 27 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8110, Best ValAcc: 0.8060 in epoch 14 --- 
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8060 in epoch 33 --- 
+# IGNORE: --- TestAcc: 0.7980, early-stopping-TestAcc: 0.8110, Best ValAcc: 0.7940 in epoch 37 --- 
+# IGNORE: --- TestAcc: 0.7970, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7980 in epoch 28 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7990, early-stopping-TestAcc: 0.8060, Best ValAcc: 0.7860 in epoch 51 --- 
+# final_acc: 0.7990±0.0000
+# early-stopping_acc: 0.8060±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 56
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7940 in epoch 131 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7980 in epoch 176 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7980 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8080 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8100 in epoch 26 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8100 in epoch 242 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8140 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8160 in epoch 45 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8340±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 57
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7960 in epoch 256 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 257 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 232 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.7980 in epoch 228 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 204 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8400, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.7980 in epoch 161 --- 
+# final_acc: 0.8400±0.0000
+# early-stopping_acc: 0.8420±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 58
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7920 in epoch 179 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 241 --- 
+# IGNORE: --- TestAcc: 0.8470, early-stopping-TestAcc: 0.8460, Best ValAcc: 0.8000 in epoch 207 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.8020 in epoch 180 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 230 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8420, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8000 in epoch 223 --- 
+# final_acc: 0.8420±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 59
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7940 in epoch 170 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7960 in epoch 254 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8020 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8080 in epoch 209 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 220 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8370, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 215 --- 
+# final_acc: 0.8370±0.0000
+# early-stopping_acc: 0.8390±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 60
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 180 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 224 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8450, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8040 in epoch 4 --- 
+# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8440, Best ValAcc: 0.8060 in epoch 186 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 161 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8060 in epoch 172 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8430±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 61
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7980 in epoch 142 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7920 in epoch 142 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8100 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8040 in epoch 275 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8000 in epoch 182 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8040 in epoch 170 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 235 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 62
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8020 in epoch 127 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 201 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8020 in epoch 268 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 184 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8000 in epoch 297 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8000 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 63
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7940 in epoch 159 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8060 in epoch 175 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8060 in epoch 25 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8100 in epoch 10 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8100 in epoch 43 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8160 in epoch 41 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8140 in epoch 31 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8180 in epoch 27 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8190±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 64
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7940 in epoch 240 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8140 in epoch 46 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8140, Best ValAcc: 0.7980 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8080 in epoch 285 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8100 in epoch 215 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8100 in epoch 236 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8140 in epoch 140 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8140 in epoch 144 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 65
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7940 in epoch 199 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8080 in epoch 146 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8120 in epoch 30 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8220 in epoch 110 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8220 in epoch 143 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8160 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8180 in epoch 166 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8250, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8180 in epoch 209 --- 
+# final_acc: 0.8250±0.0000
+# early-stopping_acc: 0.8280±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 66
+************************************************
+beta_schedule: linear
+lamda_loss: 20
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.7910, Best ValAcc: 0.7980 in epoch 12 --- 
+# IGNORE: --- TestAcc: 0.8140, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8080 in epoch 15 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.7960 in epoch 26 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8010, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8000 in epoch 32 --- 
+# IGNORE: --- TestAcc: 0.8000, early-stopping-TestAcc: 0.8070, Best ValAcc: 0.7960 in epoch 34 --- 
+# IGNORE: --- TestAcc: 0.7960, early-stopping-TestAcc: 0.8100, Best ValAcc: 0.7960 in epoch 39 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7960, early-stopping-TestAcc: 0.7910, Best ValAcc: 0.7860 in epoch 52 --- 
+# final_acc: 0.7960±0.0000
+# early-stopping_acc: 0.7910±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 67
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7940 in epoch 255 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8040 in epoch 256 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7960 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8040 in epoch 25 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8060 in epoch 22 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8080 in epoch 40 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8120 in epoch 85 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8120 in epoch 89 --- 
+# final_acc: 0.8370±0.0000
+# early-stopping_acc: 0.8360±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 68
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7960 in epoch 174 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8060 in epoch 254 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 229 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 227 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8380±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 69
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.7960 in epoch 181 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8040 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8040 in epoch 212 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8080 in epoch 213 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8100 in epoch 183 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8100 in epoch 213 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8100 in epoch 209 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8400±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 70
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7960 in epoch 222 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8060 in epoch 258 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8020 in epoch 200 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8040 in epoch 175 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8020 in epoch 299 --- 
+# final_acc: 0.8420±0.0000
+# early-stopping_acc: 0.8420±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 71
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7980 in epoch 156 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8060 in epoch 239 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8100, Best ValAcc: 0.8100 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8060 in epoch 257 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8080 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8080 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 72
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 153 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8060, Best ValAcc: 0.8060 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 245 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8080 in epoch 208 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8060 in epoch 220 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 73
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 137 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.7980 in epoch 151 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8120 in epoch 11 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8100 in epoch 17 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8100 in epoch 19 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8100 in epoch 35 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8240±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 74
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8060 in epoch 115 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.8100 in epoch 43 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8100 in epoch 173 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8120 in epoch 55 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8200 in epoch 57 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8180 in epoch 59 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 75
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8000 in epoch 92 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8080 in epoch 172 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8000 in epoch 161 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8100 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8180 in epoch 127 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8200 in epoch 214 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8200 in epoch 159 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8320, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8200 in epoch 165 --- 
+# final_acc: 0.8320±0.0000
+# early-stopping_acc: 0.8340±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 76
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 149 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8080 in epoch 121 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8120 in epoch 9 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8180 in epoch 150 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8160 in epoch 260 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8180 in epoch 161 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8160 in epoch 193 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8250, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8160 in epoch 191 --- 
+# final_acc: 0.8250±0.0000
+# early-stopping_acc: 0.8280±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 77
+************************************************
+beta_schedule: linear
+lamda_loss: 40
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8050, early-stopping-TestAcc: 0.8050, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8120, Best ValAcc: 0.7860 in epoch 27 --- 
+# IGNORE: --- TestAcc: 0.8050, early-stopping-TestAcc: 0.8060, Best ValAcc: 0.7980 in epoch 167 --- 
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8070, Best ValAcc: 0.7980 in epoch 52 --- 
+# IGNORE: --- TestAcc: 0.7930, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7980 in epoch 22 --- 
+# IGNORE: --- TestAcc: 0.7870, early-stopping-TestAcc: 0.7930, Best ValAcc: 0.7920 in epoch 44 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7860, early-stopping-TestAcc: 0.7890, Best ValAcc: 0.7880 in epoch 77 --- 
+# final_acc: 0.7860±0.0000
+# early-stopping_acc: 0.7890±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 78
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8040 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8080, Best ValAcc: 0.7980 in epoch 17 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8040 in epoch 250 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8040 in epoch 119 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8080 in epoch 62 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8080 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8080 in epoch 299 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 79
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7980 in epoch 192 --- 
+# IGNORE: --- TestAcc: 0.8460, early-stopping-TestAcc: 0.8450, Best ValAcc: 0.7960 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8020 in epoch 278 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 299 --- 
+# final_acc: 0.8370±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 80
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7960 in epoch 164 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8040 in epoch 199 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8020 in epoch 283 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 191 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8020 in epoch 299 --- 
+# final_acc: 0.8410±0.0000
+# early-stopping_acc: 0.8410±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 81
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.7960 in epoch 36 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8100 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8080 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8060 in epoch 281 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8100 in epoch 239 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8080 in epoch 248 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 82
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8000 in epoch 129 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.8100 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8040 in epoch 238 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8120 in epoch 8 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8060 in epoch 152 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8320±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 83
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7940 in epoch 259 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7880 in epoch 247 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8060 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8060 in epoch 299 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 84
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7980 in epoch 256 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 261 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.7940 in epoch 17 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8020 in epoch 94 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8120 in epoch 28 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.8140 in epoch 19 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8160 in epoch 44 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.8200 in epoch 13 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8190±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 85
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8040, Best ValAcc: 0.7920 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8060 in epoch 241 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8060 in epoch 197 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8080 in epoch 248 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8080 in epoch 20 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8080 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8270, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8160 in epoch 15 --- 
+# final_acc: 0.8270±0.0000
+# early-stopping_acc: 0.8200±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 86
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8190, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8100 in epoch 262 --- 
+# IGNORE: --- TestAcc: 0.8220, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8040 in epoch 57 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8140 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8160 in epoch 195 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8180 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8180 in epoch 299 --- 
+# final_acc: 0.8340±0.0000
+# early-stopping_acc: 0.8340±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 87
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8040 in epoch 16 --- 
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8040 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8120 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8180 in epoch 30 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8160 in epoch 106 --- 
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8140 in epoch 114 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8200, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8160 in epoch 35 --- 
+# final_acc: 0.8200±0.0000
+# early-stopping_acc: 0.8210±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 88
+************************************************
+beta_schedule: linear
+lamda_loss: 60
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8110, Best ValAcc: 0.7880 in epoch 139 --- 
+# IGNORE: --- TestAcc: 0.8130, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7920 in epoch 20 --- 
+# IGNORE: --- TestAcc: 0.8010, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7960 in epoch 26 --- 
+# IGNORE: --- TestAcc: 0.8050, early-stopping-TestAcc: 0.8040, Best ValAcc: 0.7980 in epoch 70 --- 
+# IGNORE: --- TestAcc: 0.8000, early-stopping-TestAcc: 0.8000, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.7920, early-stopping-TestAcc: 0.8030, Best ValAcc: 0.7920 in epoch 21 --- 
+# IGNORE: --- TestAcc: 0.7900, early-stopping-TestAcc: 0.8130, Best ValAcc: 0.7940 in epoch 39 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7940, early-stopping-TestAcc: 0.7950, Best ValAcc: 0.7800 in epoch 49 --- 
+# final_acc: 0.7940±0.0000
+# early-stopping_acc: 0.7950±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 89
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7960 in epoch 210 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8020 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8060 in epoch 167 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8120 in epoch 91 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8120 in epoch 88 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8140 in epoch 102 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8280, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8120 in epoch 143 --- 
+# final_acc: 0.8280±0.0000
+# early-stopping_acc: 0.8300±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 90
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 191 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 272 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8020 in epoch 257 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8020 in epoch 299 --- 
+# final_acc: 0.8370±0.0000
+# early-stopping_acc: 0.8370±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 91
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7960 in epoch 187 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8130, Best ValAcc: 0.7920 in epoch 17 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8060 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8060 in epoch 299 --- 
+# final_acc: 0.8420±0.0000
+# early-stopping_acc: 0.8420±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 92
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7960 in epoch 218 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8000 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8100 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8120 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8060 in epoch 243 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8080 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8100 in epoch 299 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8380±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 93
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7940 in epoch 162 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.7980 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8040 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8080 in epoch 99 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8140 in epoch 104 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8120 in epoch 102 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8290±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 94
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7940 in epoch 23 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8020 in epoch 167 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8040 in epoch 182 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8130, Best ValAcc: 0.8100 in epoch 8 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8060 in epoch 192 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8310±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 95
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.8040 in epoch 56 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8080 in epoch 48 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8100 in epoch 82 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8100 in epoch 178 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8340, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8120 in epoch 100 --- 
+# final_acc: 0.8340±0.0000
+# early-stopping_acc: 0.8240±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 96
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8120, Best ValAcc: 0.7980 in epoch 13 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8120 in epoch 276 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8040 in epoch 212 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8100 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8310, Best ValAcc: 0.8100 in epoch 273 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.8140 in epoch 19 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8140 in epoch 137 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8180 in epoch 33 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8230±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 97
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.7920 in epoch 31 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8040 in epoch 251 --- 
+# IGNORE: --- TestAcc: 0.8200, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.8060 in epoch 55 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8160 in epoch 207 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8080 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8160 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8160 in epoch 126 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8270±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 98
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8180, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.7880 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8000 in epoch 14 --- 
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8000 in epoch 132 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8140 in epoch 178 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.8180 in epoch 145 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8140 in epoch 48 --- 
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8180 in epoch 131 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8210, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.8180 in epoch 139 --- 
+# final_acc: 0.8210±0.0000
+# early-stopping_acc: 0.8220±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 99
+************************************************
+beta_schedule: linear
+lamda_loss: 80
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8170, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7860 in epoch 270 --- 
+# IGNORE: --- TestAcc: 0.8150, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8040, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7960 in epoch 25 --- 
+# IGNORE: --- TestAcc: 0.8000, early-stopping-TestAcc: 0.8070, Best ValAcc: 0.8020 in epoch 57 --- 
+# IGNORE: --- TestAcc: 0.7970, early-stopping-TestAcc: 0.8080, Best ValAcc: 0.7980 in epoch 34 --- 
+# IGNORE: --- TestAcc: 0.7870, early-stopping-TestAcc: 0.7860, Best ValAcc: 0.7960 in epoch 22 --- 
+# IGNORE: --- TestAcc: 0.7830, early-stopping-TestAcc: 0.8140, Best ValAcc: 0.7940 in epoch 28 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7830, early-stopping-TestAcc: 0.7910, Best ValAcc: 0.7820 in epoch 32 --- 
+# final_acc: 0.7830±0.0000
+# early-stopping_acc: 0.7910±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 100
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7980 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8100 in epoch 240 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.8140 in epoch 99 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8160 in epoch 104 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8140 in epoch 23 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8310, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8100 in epoch 118 --- 
+# final_acc: 0.8310±0.0000
+# early-stopping_acc: 0.8350±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 101
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 297 --- 
+# IGNORE: --- TestAcc: 0.8430, early-stopping-TestAcc: 0.8430, Best ValAcc: 0.7940 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8040 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8080 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8060 in epoch 190 --- 
+# IGNORE: --- TestAcc: 0.8410, early-stopping-TestAcc: 0.8410, Best ValAcc: 0.8080 in epoch 299 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8080 in epoch 298 --- 
+# final_acc: 0.8420±0.0000
+# early-stopping_acc: 0.8420±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 102
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.8
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8020 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.7920 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8060 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8420, Best ValAcc: 0.8100 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8400, Best ValAcc: 0.8120 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8120 in epoch 290 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8120 in epoch 287 --- 
+# final_acc: 0.8390±0.0000
+# early-stopping_acc: 0.8390±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 103
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.7
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.7940 in epoch 190 --- 
+# IGNORE: --- TestAcc: 0.8420, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8000 in epoch 40 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8150, Best ValAcc: 0.7960 in epoch 13 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8060 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8400, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.8080 in epoch 5 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.7980, Best ValAcc: 0.8060 in epoch 8 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8080 in epoch 236 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8380, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8080 in epoch 238 --- 
+# final_acc: 0.8380±0.0000
+# early-stopping_acc: 0.8360±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 104
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.6
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8220, Best ValAcc: 0.7920 in epoch 144 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.7940 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8000 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8020 in epoch 155 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8040 in epoch 228 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8100 in epoch 8 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8060 in epoch 276 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8320±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 105
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.5
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 76 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.7940 in epoch 281 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.7920 in epoch 43 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8060 in epoch 12 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8200, Best ValAcc: 0.8060 in epoch 51 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8100 in epoch 57 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8140 in epoch 97 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8140 in epoch 82 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8230±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 106
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.4
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.7900 in epoch 37 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8000 in epoch 252 --- 
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8280, Best ValAcc: 0.7960 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8080 in epoch 266 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8110, Best ValAcc: 0.8080 in epoch 12 --- 
+# IGNORE: --- TestAcc: 0.8300, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.8100 in epoch 19 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8120 in epoch 171 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8280, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8120 in epoch 169 --- 
+# final_acc: 0.8280±0.0000
+# early-stopping_acc: 0.8260±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 107
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.3
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8280, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.7960 in epoch 30 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8120 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8240, Best ValAcc: 0.7960 in epoch 215 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8120 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.8080 in epoch 76 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8080 in epoch 173 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8290, Best ValAcc: 0.8120 in epoch 219 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8300, early-stopping-TestAcc: 0.8160, Best ValAcc: 0.8140 in epoch 15 --- 
+# final_acc: 0.8300±0.0000
+# early-stopping_acc: 0.8160±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 108
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.2
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8230, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.7900 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8310, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8060 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8240, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8120 in epoch 55 --- 
+# IGNORE: --- TestAcc: 0.8290, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8140 in epoch 12 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8160 in epoch 187 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8140 in epoch 19 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8200 in epoch 298 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8180 in epoch 299 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8330±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 109
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0.1
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8210, Best ValAcc: 0.7860 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8270, early-stopping-TestAcc: 0.8270, Best ValAcc: 0.7980 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8210, early-stopping-TestAcc: 0.8250, Best ValAcc: 0.8040 in epoch 10 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8160 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8260, early-stopping-TestAcc: 0.8260, Best ValAcc: 0.8100 in epoch 171 --- 
+# IGNORE: --- TestAcc: 0.8250, early-stopping-TestAcc: 0.8300, Best ValAcc: 0.8160 in epoch 19 --- 
+# IGNORE: --- TestAcc: 0.8190, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8140 in epoch 116 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.8190, early-stopping-TestAcc: 0.8230, Best ValAcc: 0.8140 in epoch 121 --- 
+# final_acc: 0.8190±0.0000
+# early-stopping_acc: 0.8230±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 110
+************************************************
+beta_schedule: linear
+lamda_loss: 100
+remask_rate: 0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.8160, early-stopping-TestAcc: 0.8090, Best ValAcc: 0.7800 in epoch 94 --- 
+# IGNORE: --- TestAcc: 0.8110, early-stopping-TestAcc: 0.8100, Best ValAcc: 0.7860 in epoch 141 --- 
+# IGNORE: --- TestAcc: 0.8020, early-stopping-TestAcc: 0.8170, Best ValAcc: 0.7920 in epoch 26 --- 
+# IGNORE: --- TestAcc: 0.7950, early-stopping-TestAcc: 0.8180, Best ValAcc: 0.8020 in epoch 15 --- 
+# IGNORE: --- TestAcc: 0.7970, early-stopping-TestAcc: 0.8020, Best ValAcc: 0.7980 in epoch 51 --- 
+# IGNORE: --- TestAcc: 0.7870, early-stopping-TestAcc: 0.7930, Best ValAcc: 0.7960 in epoch 50 --- 
+# IGNORE: --- TestAcc: 0.7840, early-stopping-TestAcc: 0.7900, Best ValAcc: 0.7940 in epoch 43 --- 
+num parameters for finetuning: 3591
+--- TestAcc: 0.7840, early-stopping-TestAcc: 0.7930, Best ValAcc: 0.7900 in epoch 33 --- 
+# final_acc: 0.7840±0.0000
+# early-stopping_acc: 0.7930±0.0000
+###################################################################################################################################################

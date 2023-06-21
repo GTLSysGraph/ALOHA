@@ -6,11 +6,9 @@ import dgl
 from   dgl.nn.pytorch.glob import SumPooling, AvgPooling, MaxPooling
 from   dgl.dataloading import GraphDataLoader
 
-from   model_zoo.GAE.DiffMGAE.build_easydict import *
-from   model_zoo.GAE.DiffMGAE.models import build_model
 
 import torch
-from   torch.utils.data.sampler import SubsetRandomSampler
+from torch.utils.data.sampler import SubsetRandomSampler
 
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.svm import SVC
@@ -87,7 +85,6 @@ def evaluate_graph_embeddings_using_svm(embeddings, labels):
 
 
 def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob=True, logger=None):
-    logging.info("start training DiffGMAE graph classification..")
     train_loader, eval_loader = dataloaders
 
     epoch_iter = tqdm(range(max_epoch))
@@ -100,7 +97,7 @@ def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler
 
             feat = batch_g.ndata["attr"]
             model.train()
-            loss, loss_dict = model(batch_g, feat, epoch)
+            loss, loss_dict = model(batch_g, feat)
             
             optimizer.zero_grad()
             loss.backward()
@@ -128,7 +125,7 @@ def collate_fn(batch):
 
 
 
-def Train_DiffMGAE_graphcls(margs):
+def Train_NASMGAE_graphcls(margs):
     #############################################################################################
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -138,9 +135,8 @@ def Train_DiffMGAE_graphcls(margs):
 
     MDT = build_easydict()
     args         = MDT['MODEL']['PARAM']
-
     if args.use_cfg:
-        args = load_best_configs(args, dataset_name, "./model_zoo/GAE/DiffMGAE/configs.yml")
+        args = load_best_configs(args, dataset_name, "./model_zoo/GAE/NASMGAE/configs.yml")
     #############################################################################################
 
 
@@ -170,6 +166,7 @@ def Train_DiffMGAE_graphcls(margs):
     batch_size = args.batch_size
 
     graphs, (num_features, num_classes) = load_graph_classification_dataset(dataset_name, deg4feat=deg4feat)
+
     args.num_features = num_features
 
     train_idx = torch.arange(len(graphs))
@@ -189,66 +186,44 @@ def Train_DiffMGAE_graphcls(margs):
     else:
         raise NotImplementedError
 
-  ##################################################################################################################
-    # grid search
-    grid_num = 0 
-    for beta_schedule in ['linear']:
-        for momentum in [0.9, 0.5, 0.1]:
-            for lamda_loss in [0, 0.1, 0.5 ,1, 5, 10, 20, 40, 60, 80, 100]:
-                for remask_rate in [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0]:
-                    grid_num += 1
-                    args.remask_rate     = remask_rate
-                    args.beta_schedule   = beta_schedule
-                    args.lamda_loss      = lamda_loss
-                    args.momentum        = momentum
-                    print('###################################################################################################################################################')
-                    print('grid search at experiment {}'.format(grid_num))
-                    print('************************************************')
-                    print('beta_schedule: {}'.format(args.beta_schedule))
-                    print('lamda_loss: {}'.format(args.lamda_loss))
-                    print('remask_rate: {}'.format(args.remask_rate))
-                    print('momentum: {}'.format(args.momentum))
-                    print('************************************************')
-        ###############################################################################################################
-                    
-                    acc_list = []
-                    for i, seed in enumerate(seeds):
-                        print(f"####### Run {i} for seed {seed}")
-                        set_random_seed(seed)
+    acc_list = []
+    for i, seed in enumerate(seeds):
+        print(f"####### Run {i} for seed {seed}")
+        set_random_seed(seed)
 
-                        if logs:
-                            logger = TBLogger(name=f"{dataset_name}_loss_{loss_fn}_rpr_{replace_rate}_nh_{num_hidden}_nl_{num_layers}_lr_{lr}_mp_{max_epoch}_mpf_{max_epoch_f}_wd_{weight_decay}_wdf_{weight_decay_f}_{encoder_type}_{decoder_type}")
-                        else:
-                            logger = None
+        if logs:
+            logger = TBLogger(name=f"{dataset_name}_loss_{loss_fn}_rpr_{replace_rate}_nh_{num_hidden}_nl_{num_layers}_lr_{lr}_mp_{max_epoch}_mpf_{max_epoch_f}_wd_{weight_decay}_wdf_{weight_decay_f}_{encoder_type}_{decoder_type}")
+        else:
+            logger = None
 
-                        model = build_model(args)
-                        model.to(device)
-                        optimizer = create_optimizer(optim_type, model, lr, weight_decay)
+        model = build_model(args)
+        model.to(device)
+        optimizer = create_optimizer(optim_type, model, lr, weight_decay)
 
-                        if use_scheduler:
-                            logging.info("Use schedular")
-                            scheduler = lambda epoch :( 1 + np.cos((epoch) * np.pi / max_epoch) ) * 0.5
-                            # scheduler = lambda epoch: epoch / warmup_steps if epoch < warmup_steps \
-                                    # else ( 1 + np.cos((epoch - warmup_steps) * np.pi / (max_epoch - warmup_steps))) * 0.5
-                            scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=scheduler)
-                        else:
-                            scheduler = None
-                            
-                        if not load_model:
-                            model = pretrain(model, pooler, (train_loader, eval_loader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob,  logger)
-                            model = model.cpu()
+        if use_scheduler:
+            logging.info("Use schedular")
+            scheduler = lambda epoch :( 1 + np.cos((epoch) * np.pi / max_epoch) ) * 0.5
+            # scheduler = lambda epoch: epoch / warmup_steps if epoch < warmup_steps \
+                    # else ( 1 + np.cos((epoch - warmup_steps) * np.pi / (max_epoch - warmup_steps))) * 0.5
+            scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=scheduler)
+        else:
+            scheduler = None
+            
+        if not load_model:
+            model = pretrain(model, pooler, (train_loader, eval_loader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob,  logger)
+            model = model.cpu()
 
-                        if load_model:
-                            logging.info("Loading Model ... ")
-                            model.load_state_dict(torch.load("checkpoint.pt"))
-                        if save_model:
-                            logging.info("Saveing Model ...")
-                            torch.save(model.state_dict(), "checkpoint.pt")
-                        
-                        model = model.to(device)
-                        model.eval()
-                        test_f1 = graph_classification_evaluation(model, pooler, eval_loader, num_classes, lr_f, weight_decay_f, max_epoch_f, device, mute=False)
-                        acc_list.append(test_f1)
+        if load_model:
+            logging.info("Loading Model ... ")
+            model.load_state_dict(torch.load("checkpoint.pt"))
+        if save_model:
+            logging.info("Saveing Model ...")
+            torch.save(model.state_dict(), "checkpoint.pt")
+        
+        model = model.to(device)
+        model.eval()
+        test_f1 = graph_classification_evaluation(model, pooler, eval_loader, num_classes, lr_f, weight_decay_f, max_epoch_f, device, mute=False)
+        acc_list.append(test_f1)
 
-                    final_acc, final_acc_std = np.mean(acc_list), np.std(acc_list)
-                    print(f"# final_acc: {final_acc:.4f}±{final_acc_std:.4f}")
+    final_acc, final_acc_std = np.mean(acc_list), np.std(acc_list)
+    print(f"# final_acc: {final_acc:.4f}±{final_acc_std:.4f}")

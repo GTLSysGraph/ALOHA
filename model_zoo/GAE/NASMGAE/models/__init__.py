@@ -17,21 +17,13 @@ def build_model(param):
     drop_edge_rate  = param.drop_edge_rate
     replace_rate    = param.replace_rate
 
+
     activation      = param.activation
     loss_fn         = param.loss_fn
     alpha_l         = param.alpha_l
     concat_hidden   = param.concat_hidden
     num_features    = param.num_features
 
-    # add by ssh
-    remask_rate     = param.remask_rate
-    timestep        = param.timestep
-    beta_schedule   = param.beta_schedule
-    start_t         = param.start_t
-    lamda_loss      = param.lamda_loss
-    lamda_neg_ratio = param.lamda_neg_ratio
-    momentum        = param.momentum
-    #
 
     model = PreModel(
         in_dim=num_features,
@@ -53,14 +45,5 @@ def build_model(param):
         replace_rate=replace_rate,
         alpha_l=alpha_l,
         concat_hidden=concat_hidden,
-        #
-        remask_rate = remask_rate,
-        timestep = timestep,
-        beta_schedule = beta_schedule,
-        start_t = start_t,
-        lamda_loss = lamda_loss,
-        lamda_neg_ratio= lamda_neg_ratio,
-        momentum = momentum
-        #
     )
     return model

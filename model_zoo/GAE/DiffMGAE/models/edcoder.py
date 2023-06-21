@@ -120,24 +120,12 @@ class PreModel(nn.Module):
             start_t = 9000,
             lamda_loss = 0.1,
             lamda_neg_ratio= 0.0,
+            momentum = 0.996
             #
 
          ):
         super(PreModel, self).__init__()
         self._mask_rate = mask_rate
-
-        #### add by ssh
-        # self.predict_noises = False
-        self.remask_rate = remask_rate
-        self.timestep = timestep
-        self.start_t = start_t
-        self.beta_schedule = beta_schedule
-        self.gaussian_diffusion = GaussianDiffusion(self.timestep, self.beta_schedule)
-        self.position_encoding =  PositionalEncoding(in_dim)
-        self.lamda_loss = lamda_loss 
-        self.lamda_neg_ratio = lamda_neg_ratio
-        ####
-
         self._encoder_type = encoder_type
         self._decoder_type = decoder_type
         self._drop_edge_rate = drop_edge_rate
@@ -159,6 +147,19 @@ class PreModel(nn.Module):
         dec_in_dim = num_hidden
         dec_num_hidden = num_hidden // nhead_out if decoder_type in ("gat", "dotgat") else num_hidden 
 
+        #### add by ssh
+        # self.predict_noises = False
+        self.remask_rate = remask_rate
+        self.timestep = timestep
+        self.start_t = start_t
+        self.beta_schedule = beta_schedule
+        self.gaussian_diffusion = GaussianDiffusion(self.timestep, self.beta_schedule)
+        self.position_encoding =  PositionalEncoding(dec_in_dim) #in_dim
+        self.lamda_loss = lamda_loss 
+        self.lamda_neg_ratio = lamda_neg_ratio
+        self._momentum = momentum
+        ####
+        
         # build encoder
     
         self.encoder = setup_module(
@@ -187,8 +188,8 @@ class PreModel(nn.Module):
         
 
 
-        # # remask 可见patch的emedding
-        # self.re_enc_mask_token = nn.Parameter(torch.FloatTensor(size=(1, in_dim)))
+        # remask 可见patch的emedding
+        self.re_enc_mask_token = nn.Parameter(torch.zeros(1, dec_in_dim))
         # gain = nn.init.calculate_gain('relu')
         # nn.init.xavier_normal_(self.re_enc_mask_token, gain=gain)
 
@@ -214,7 +215,7 @@ class PreModel(nn.Module):
         self.decoder = setup_module(
             m_type=decoder_type,
             enc_dec="decoding",
-            in_dim=in_dim,
+            in_dim=dec_in_dim,
             num_hidden=dec_num_hidden,
             out_dim=in_dim, # in_dim 
             num_layers=1,
@@ -229,12 +230,33 @@ class PreModel(nn.Module):
             concat_out=True,
         )
 
+        ################
+        self.decoder_ema = setup_module(
+            m_type=decoder_type,
+            enc_dec="decoding",
+            in_dim=dec_in_dim,
+            num_hidden=dec_num_hidden,
+            out_dim=in_dim, # in_dim 
+            num_layers=1,
+            nhead=nhead,
+            nhead_out=nhead_out,
+            activation=activation,
+            dropout=feat_drop,
+            attn_drop=attn_drop,
+            negative_slope=negative_slope,
+            residual=residual,
+            norm=norm,
+            concat_out=True,
+        )
+
+        self.decoder_ema.load_state_dict(self.decoder.state_dict())
+        ################## addd ema for decoder
 
         self.enc_mask_token = nn.Parameter(torch.zeros(1, in_dim))
         if concat_hidden:
-            self.encoder_to_decoder = nn.Linear(dec_in_dim * num_layers, in_dim, bias=False)
+            self.encoder_to_decoder = nn.Linear(dec_in_dim * num_layers, dec_in_dim, bias=False)
         else:
-            self.encoder_to_decoder = nn.Linear(dec_in_dim, in_dim, bias=False)
+            self.encoder_to_decoder = nn.Linear(dec_in_dim, dec_in_dim, bias=False)
 
         # * setup loss function
         self.criterion = self.setup_loss_fn(loss_fn, alpha_l)
@@ -272,7 +294,7 @@ class PreModel(nn.Module):
             raise NotImplementedError
         return criterion
     
-    def encoding_mask_noise(self, g, x, n_steps, start_t, mask_rate=0.3, remask_rate=0.6):
+    def encoding_mask_noise(self, g, x, mask_rate=0.3, remask_rate=0.6):
         num_nodes = g.num_nodes()
         perm = torch.randperm(num_nodes, device=x.device)
         num_mask_nodes = int(mask_rate * num_nodes)
@@ -288,7 +310,6 @@ class PreModel(nn.Module):
         perm_index = torch.randperm(num_mask_nodes, device=x.device)
         num_remask_nodes = int(remask_rate * num_mask_nodes)
         remask_nodes = mask_nodes[perm_index[: num_remask_nodes]]
-
 
         if self._replace_rate > 0:
             # 这里利用的BERT中的思想 BERT建议不总是用实际的[MASK]令牌替换“掩码”单词，而是用小概率(即15%或更小)保持不变或用另一个随机令牌替换它。
@@ -309,29 +330,19 @@ class PreModel(nn.Module):
             out_encoder_x[mask_nodes] = 0.0
 
 
-        out_diffusion_x = x.clone()
-        # add noise
-        timestep_size = out_diffusion_x[mask_nodes].shape[0]
-        # 注意初始值不为0，会做分母
-        mask_nodes_t = torch.randint(start_t, n_steps, size=(timestep_size,)).long().to(out_diffusion_x.device)
-        out_diffusion_x[mask_nodes] = self.gaussian_diffusion.q_sample(out_diffusion_x[mask_nodes],mask_nodes_t)
-        mask_positon_encoding = self.position_encoding(mask_nodes_t)
-        mask_positon_encoding = mask_positon_encoding.to(out_diffusion_x.device)
-        out_diffusion_x[mask_nodes] += mask_positon_encoding
-        out_diffusion_x[mask_nodes] +=  self.enc_mask_token
-
+        out_encoder_x[token_nodes] += self.enc_mask_token
         use_g = g.clone()
 
-        return use_g, perm, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes,remask_nodes,keep_nodes)
+        return use_g, perm, out_encoder_x, (mask_nodes,remask_nodes,keep_nodes)
 
-    def forward(self, g, x):
+    def forward(self, g, x, epoch):
         # ---- attribute reconstruction ----
-        loss = self.mask_attr_prediction(g, x)
+        loss = self.mask_attr_prediction(g, x,epoch)
         loss_item = {"loss": loss.item()}
         return loss, loss_item
     
-    def mask_attr_prediction(self, g, x):
-        pre_use_g, perm, out_encoder_x, out_diffusion_x, mask_nodes_t, (mask_nodes, remask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self.timestep, self.start_t, self._mask_rate, self.remask_rate)
+    def mask_attr_prediction(self, g, x, epoch):
+        pre_use_g, perm, out_encoder_x, (mask_nodes, remask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self._mask_rate, self.remask_rate)
 
         if self._drop_edge_rate > 0:
             use_g, masked_edges = drop_edge(pre_use_g, self._drop_edge_rate, return_edges=True)
@@ -355,13 +366,25 @@ class PreModel(nn.Module):
         
         #     x_rec = recon
     
-        rep[keep_nodes] = rep[keep_nodes]  # 给一定的缩放比例貌似能提升效果，更好的关注生成部分 0.0的时候不能重建，这就证明需要encoder提供的信息，但是直接用效果又不太好，得缩放简单提供
-        rep[mask_nodes] =  out_diffusion_x[mask_nodes] * (1 /mask_nodes_t.unsqueeze(-1)) + self.enc_mask_token  # 这里重新用enc_mask_token比再重新用一个re_enc_mask_token要好很多
+        rep[keep_nodes] = F.dropout(rep[keep_nodes],p=0.0)  # 给一定的缩放比例貌似能提升效果，更好的关注生成部分 0.0的时候不能重建，这就证明需要encoder提供的信息，但是直接用效果又不太好，得缩放简单提供
+
+        #####################################################
+        # add noise
+        timestep_size = rep[mask_nodes].shape[0]
+        # # 注意初始值不为0，会做分母
+        mask_nodes_t = torch.randint(self.start_t, self.timestep, size=(timestep_size,)).long().to(rep.device)
+        rep[mask_nodes] = self.gaussian_diffusion.q_sample(rep[mask_nodes],mask_nodes_t) * (1 /mask_nodes_t.unsqueeze(-1))
+        mask_positon_encoding = self.position_encoding(mask_nodes_t)
+        mask_positon_encoding = mask_positon_encoding.to(rep.device)
+        rep[mask_nodes] +=  mask_positon_encoding
+        rep[mask_nodes] +=  self.re_enc_mask_token
+        ########################################################
+        # rep[mask_nodes] =  out_diffusion_x[mask_nodes] * (1 /mask_nodes_t.unsqueeze(-1)) + self.enc_mask_token  # 这里重新用enc_mask_token比再重新用一个re_enc_mask_token要好很多 
     
         ######### 看一下是不是mask不为0就会影响结果
         if self._decoder_type not in ("mlp", "linear"):
         # * remask, re-mask
-            rep[remask_nodes] = 0
+            rep[remask_nodes] = 0.0
         ###############################################
 
         # rep_use_for_against = rep.clone()
@@ -371,13 +394,15 @@ class PreModel(nn.Module):
             recon = self.decoder(rep)
         else:
             recon = self.decoder(pre_use_g, rep)
-            rep[keep_nodes] = 0
-            recon_against = self.decoder(pre_use_g, rep)
 
-        x_rec =  recon[mask_nodes]
-        x_init = x[mask_nodes]
-        
+            with torch.no_grad():
+                rep[mask_nodes] = 0.0
+                recon_clean = self.decoder_ema(pre_use_g, rep)
+            # rep[keep_nodes] = 0
+            # recon_against = self.decoder(pre_use_g, rep)
 
+
+  
         # 如果用gat做扩散模型感觉太简单了，这里试一下模仿transformer或者Unet，但是不行，没有意义
         # if self.predict_noises:
         #     # generate random noise
@@ -385,8 +410,13 @@ class PreModel(nn.Module):
         #     # get x_t
         #     loss = self.criterion(noise, x_rec)
         # else:
+      
+        loss = self.criterion(recon[mask_nodes], x[mask_nodes])  +  self.lamda_loss * F.mse_loss(recon_clean[keep_nodes], recon[keep_nodes])
+         #self.lamda_loss * self.criterion(recon[keep_nodes], self.lamda_neg_ratio *  x[perm][keep_nodes]) # 第二部分时希望keep node在重建的时候可以保持自身不被扰动
 
-        loss = self.criterion(x_rec, x_init)  +   self.lamda_loss * self.criterion(recon_against[mask_nodes], self.lamda_neg_ratio *  x[perm][mask_nodes]) # cora 0.1 0的时候效果不错 第二个
+        if epoch >= 0:
+            self.ema_update()
+
         return loss
 
 
@@ -402,3 +432,13 @@ class PreModel(nn.Module):
     @property
     def dec_params(self):
         return chain(*[self.encoder_to_decoder.parameters(), self.decoder.parameters()])
+    
+
+    def ema_update(self):
+        def update(student, teacher):
+            with torch.no_grad():
+            # m = momentum_schedule[it]  # momentum parameter
+                m = self._momentum
+                for param_q, param_k in zip(student.parameters(), teacher.parameters()):
+                    param_k.data.mul_(m).add_((1 - m) * param_q.detach().data)
+        update(self.decoder, self.decoder_ema)

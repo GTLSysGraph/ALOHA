@@ -1,0 +1,27 @@
+------ Use best configs ------
+###################################################################################################################################################
+grid search at experiment 1
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 1.0
+************************************************
+####### Run 0 for seed 23
+# IGNORE: --- TestAcc: 0.7110, early-stopping-TestAcc: 0.7184, Best ValAcc: 0.7293 in epoch 516 --- 
+# IGNORE: --- TestAcc: 0.7122, early-stopping-TestAcc: 0.7200, Best ValAcc: 0.7300 in epoch 333 --- 
+# IGNORE: --- TestAcc: 0.6969, early-stopping-TestAcc: 0.7157, Best ValAcc: 0.7299 in epoch 481 --- 
+# IGNORE: --- TestAcc: 0.7168, early-stopping-TestAcc: 0.7187, Best ValAcc: 0.7303 in epoch 413 --- 
+# IGNORE: --- TestAcc: 0.7112, early-stopping-TestAcc: 0.7186, Best ValAcc: 0.7301 in epoch 317 --- 
+num parameters for finetuning: 41000
+--- TestAcc: 0.7073, early-stopping-TestAcc: 0.7196, Best ValAcc: 0.7299 in epoch 569 --- 
+# final_acc: 0.7073±0.0000
+# early-stopping_acc: 0.7196±0.0000
+###################################################################################################################################################
+###################################################################################################################################################
+grid search at experiment 2
+************************************************
+beta_schedule: linear
+lamda_loss: 0
+remask_rate: 0.9
+************************************************
+####### Run 0 for seed 23

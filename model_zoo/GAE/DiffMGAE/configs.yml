@@ -1,5 +1,5 @@
 cora:
-  seeds: [12,34,6,7]
+  seeds: [23] #[12,34,6,7]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512
@@ -25,16 +25,18 @@ cora:
   alpha_l: 3
   scheduler: True
   #
-  remask_rate     : 1.0 
-  timestep        : 10000
-  beta_schedule   : 'sigmoid'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
-  start_t         : 8000 # not 0
-  lamda_loss      : 0.1
-  lamda_neg_ratio : 0.2
+  remask_rate     : 0.9
+  timestep        : 1000
+  beta_schedule   : 'linear'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 500 # not 0
+  lamda_loss      : 0
+  lamda_neg_ratio : 0
+  momentum        : 0.996
   #
 
 
 citeseer:
+  seeds: [23]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512
@@ -58,9 +60,18 @@ citeseer:
   replace_rate: 0.05
   alpha_l: 1 # or 3 
   scheduler: True
-
+  #
+  remask_rate     : 0.6
+  timestep        : 2
+  beta_schedule   : 'sigmoid'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 1 # not 0
+  lamda_loss      : 10
+  lamda_neg_ratio : 1
+  momentum        : 0.9
+  #
   
 pubmed:
+  seeds: [23]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 1024
@@ -84,7 +95,20 @@ pubmed:
   replace_rate: 0.0
   alpha_l: 3
   scheduler: True
-ogbn-arxiv:
+  #
+  remask_rate     : 0.3
+  timestep        : 1000
+  beta_schedule   : 'linear'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 500 # not 0
+  lamda_loss      : 10
+  lamda_neg_ratio : 1
+  momentum        : 0.996
+  #
+
+
+
+ogbn-arxiv_undirected:
+  seeds: [23]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 1024
@@ -107,6 +131,19 @@ ogbn-arxiv:
   alpha_l: 3 # 2
   scheduler: True
   norm: layernorm
+  #
+  remask_rate     : 0.3
+  timestep        : 1000
+  beta_schedule   : 'linear'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 500 # not 0
+  lamda_loss      : 10
+  lamda_neg_ratio : 1
+  momentum        : 0.996
+  #
+
+
+
+
 ppi:
   lr: 0.0001 # 1e-4 for hidden=1024/2048, 2e-5 for hidden=8192, 5e-6 for hidden=16384
   lr_f: 0.005
@@ -157,6 +194,7 @@ reddit:
   linear_prob: True
   
 IMDB-BINARY:
+  seeds: [3]
   lr: 0.00015
   lr_f: 0.005
   num_hidden: 512
@@ -184,12 +222,13 @@ IMDB-BINARY:
   batch_size: 32
   alpha_l: 1
   #
-  remask_rate     : 0.5 
-  timestep        : 10000
-  beta_schedule   : 'linear'
-  start_t         : 9000
-  lamda_loss      : 0.1
-  lamda_neg_ratio : 0.0
+  remask_rate     : 1.0
+  timestep        : 1000
+  beta_schedule   : 'cosine'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 900 # not 0
+  lamda_loss      : 0.
+  lamda_neg_ratio : 1
+  momentum        : 0.5
   #
 
 
@@ -240,6 +279,7 @@ PROTEINS:
   norm: batchnorm
   alpha_l: 1
 MUTAG:
+  seeds: [1,2,3,4]
   num_hidden: 32
   num_layers: 5
   lr: 0.0005
@@ -260,6 +300,18 @@ MUTAG:
   in_drop: 0.2
   attn_drop: 0.1
   alpha_l: 2
+  #
+  remask_rate     : 0.2
+  timestep        : 1000
+  beta_schedule   : 'cosine'  # 'linear' 'cosine' 'quadratic' 'sigmoid'
+  start_t         : 900 # not 0
+  lamda_loss      : 0.1
+  lamda_neg_ratio : 1
+  momentum        : 0.5
+  # best 88.44 1,2,3,4
+
+
+
 REDDIT-BINARY:
   lr: 0.00015
   weight_decay: 0.0

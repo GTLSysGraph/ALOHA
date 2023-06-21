@@ -64,5 +64,8 @@ if __name__ == '__main__':
     elif margs.model_name == 'GAT':
         assert margs.task == 'node'
         Train_GAT_nodecls(margs)
+    elif margs.model_name == 'NASMGAE':
+        assert margs.task == 'node'
+        Train_NASMGAE_nodecls(margs)
     else:
         raise Exception('Model not realise, wait...')

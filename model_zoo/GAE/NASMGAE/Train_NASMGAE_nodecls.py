@@ -1,29 +1,94 @@
 
 from     easydict        import EasyDict
 import   torch
-from     model_zoo.GAE.DiffMGAE.utils          import *
-from     model_zoo.GAE.DiffMGAE.build_easydict import *
-from     model_zoo.GAE.DiffMGAE.evaluation     import * 
-from     datasets_dgl.data_dgl import *
+from     model_zoo.GAE.NASMGAE.utils          import *
+from     model_zoo.GAE.NASMGAE.build_easydict import *
+from     model_zoo.GAE.NASMGAE.evaluation_tranductive     import * 
+from     model_zoo.GAE.NASMGAE.evaluation_inductive       import * 
+from     model_zoo.GAE.NASMGAE.evaluation_mini_batch       import * 
 from     datasets_graphsaint.data_graphsaint import *
+from     datasets_dgl.data_dgl import *
 
 import   logging
 from     tqdm import tqdm
-from     model_zoo.GAE.DiffMGAE.models import build_model
-import  ipdb
+from     model_zoo.GAE.NASMGAE.models import build_model
+from     sampler.SAINTSampler import SAINTNodeSampler, SAINTEdgeSampler, SAINTRandomWalkSampler
+import torch.nn.functional as F
+from .utils import compute_edge_sim
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
+
+
+
+
+def pretrain_inductive(model, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+    logging.info("start training..")
+    train_loader, val_loader, test_loader, eval_train_loader = dataloaders
+
+    epoch_iter = tqdm(range(max_epoch))
+
+    if isinstance(train_loader, list) and len(train_loader) ==1:
+        train_loader = [train_loader[0].to(device)]
+        eval_train_loader = train_loader
+    if isinstance(val_loader, list) and len(val_loader) == 1:
+        val_loader = [val_loader[0].to(device)]
+        test_loader = val_loader
+
+    for epoch in epoch_iter:
+        model.train()
+        loss_list = []
+
+        for subgraph in train_loader:
+            subgraph = subgraph.to(device)
+            loss, loss_dict = model(subgraph, subgraph.ndata["feat"])
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            loss_list.append(loss.item())
+
+        if scheduler is not None:
+            scheduler.step()
+
+        train_loss = np.mean(loss_list)
+        epoch_iter.set_description(f"# Epoch {epoch} | train_loss: {train_loss:.4f}")
+        if logger is not None:
+            loss_dict["lr"] = get_current_lr(optimizer)
+            logger.note(loss_dict, step=epoch)
+        
+        if epoch == (max_epoch//2):
+            evaluete(model, (eval_train_loader, val_loader, test_loader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob, mute=True)
+    return model
+
+
+
+
 def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
-    logging.info("start training DiffGMAE node classification..")
+    logging.info("start training..")
     graph = graph.to(device)
     x = feat.to(device)
+
+    # ###########################################################
+    # n_node = graph.num_nodes()
+
+    # edges_sim       =  compute_edge_sim(graph.edges(), x, sim_mode='cosine')
+    # ref_edges_index = torch.where(edges_sim >= 0.1)
+    # del_edges_index = torch.where(edges_sim < 0.1)
+    # edges           = torch.stack((graph.edges()[0],graph.edges()[1]),dim=0)
+
+    # ref_edges       = edges[:, ref_edges_index[0]]
+    # del_edges       = edges[:, del_edges_index[0]]
+    # graph_refine = dgl.graph((ref_edges[0],ref_edges[1]), num_nodes=n_node)
+    # ############################################################
 
     epoch_iter = tqdm(range(max_epoch))
     for epoch in epoch_iter:
         model.train()
 
         loss, loss_dict = model(graph, x, epoch)
+        # loss, loss_dict = model(graph_refine, del_edges, x, epoch)
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -43,13 +108,12 @@ def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, sched
 
 
 
-def Train_DiffMGAE_nodecls(margs):
+def Train_NASMGAE_nodecls(margs):
     #########################
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    mode = margs.mode
+    device = f"cuda" if torch.cuda.is_available() else "cpu"
+  
     dataset_name = margs.dataset
-    if margs.mode in ['tranductive' , 'mini_batch']:
+    if margs.mode in ['tranductive']:
         if dataset_name.split('-')[0] == 'Attack':
             # dataset_name = dataset_name.split('-')[1]
             DATASET = EasyDict()
@@ -77,16 +141,28 @@ def Train_DiffMGAE_nodecls(margs):
 
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph)
-    
-    dstname =  dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower()
-    num_classes = dataset.num_classes
-    num_features = graph.ndata['feat'].shape[1]
-    #######################
+        
+        num_classes = dataset.num_classes
+        num_features = graph.ndata['feat'].shape[1]
+    elif margs.mode in ['inductive']:
+            (
+                train_dataloader,
+                valid_dataloader, 
+                test_dataloader, 
+                eval_train_dataloader, 
+                num_features, 
+                num_classes
+            ) = load_inductive_dataset(dataset_name)
+    else:
+        raise Exception('Unknown mode!')
+
+
+    ##########################
     
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dstname , "./model_zoo/GAE/DiffMGAE/configs.yml")
+        param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/NASMGAE/configs.yml")
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -109,34 +185,14 @@ def Train_DiffMGAE_nodecls(margs):
     save_model     = param.save_model
     logs           = param.logging
     use_scheduler  = param.scheduler
-    
+    batch_size     = param.batch_size
     param.num_features = num_features
-    param.num_nodes    = graph.num_nodes()
 
-
-    ##################################################################################################################
-    # grid search
-    # grid_num = 0 
-    # for beta_schedule in ['linear']:
-    #     for lamda_loss in [0, 0.5 ,1, 5, 10, 20, 40, 60, 80, 100]:
-    #         for remask_rate in [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0]:
-    #             grid_num += 1
-    #             param.remask_rate     = remask_rate
-    #             param.beta_schedule   = beta_schedule
-    #             param.lamda_loss      = lamda_loss
-    #             print('###################################################################################################################################################')
-    #             print('grid search at experiment {}'.format(grid_num))
-    #             print('************************************************')
-    #             print('beta_schedule: {}'.format(param.beta_schedule))
-    #             print('lamda_loss: {}'.format(param.lamda_loss))
-    #             print('remask_rate: {}'.format(param.remask_rate))
-    #             print('************************************************')
-    ###############################################################################################################
     acc_list = []
     estp_acc_list = []
 
     for i, seed in enumerate(seeds):
-        print(f"####### Run {i} for seed {seed}")
+        print(f"####### Run {i+1} for seed {seed}")
         set_random_seed(seed)
 
         if logs:
@@ -158,13 +214,13 @@ def Train_DiffMGAE_nodecls(margs):
             scheduler = None
 
 
-        x = graph.ndata["feat"]
-
         if not load_model:
-            if mode == 'tranductive':
-                model = pretrain_tranductive(model, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
-            else:
-                print("waiting...")
+            if margs.mode == 'tranductive':
+                model = pretrain_tranductive(model, graph, graph.ndata["feat"], optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            elif margs.mode == 'inductive':
+                model = pretrain_inductive(model, (train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+           
+
 
         if load_model:
             logging.info("Loading Model ... ")
@@ -176,7 +232,13 @@ def Train_DiffMGAE_nodecls(margs):
         model = model.to(device)
         model.eval()
 
-        final_acc, estp_acc = node_classification_evaluation(model, graph, x, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+
+        if margs.mode == 'tranductive':
+            final_acc, estp_acc = node_classification_evaluation(model, graph, graph.ndata['feat'], num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        elif margs.mode == 'inductive':
+            final_acc, estp_acc = evaluete(model, (eval_train_dataloader, valid_dataloader, test_dataloader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+       
+
         acc_list.append(final_acc)
         estp_acc_list.append(estp_acc)
 
@@ -187,5 +249,4 @@ def Train_DiffMGAE_nodecls(margs):
     estp_acc, estp_acc_std = np.mean(estp_acc_list), np.std(estp_acc_list)
     print(f"# final_acc: {final_acc:.4f}±{final_acc_std:.4f}")
     print(f"# early-stopping_acc: {estp_acc:.4f}±{estp_acc_std:.4f}")
-    print('###################################################################################################################################################')
-    
+

@@ -36,6 +36,7 @@ def random_edge_mask(args, edge_index, device, num_nodes):
     adj = SparseTensor.from_edge_index(edge_index_train).t()
     return adj, edge_index_train, edge_index_mask
 
+
 def train(model, predictor, data, edge_index, optimizer, args):
     model.train()
     predictor.train()
@@ -77,7 +78,6 @@ def train(model, predictor, data, edge_index, optimizer, args):
         total_examples += num_examples
 
     return total_loss / total_examples
-
 
 
 @torch.no_grad()
@@ -170,7 +170,7 @@ def Train_S2GAE_nodecls(margs):
         dataset = get_dataset(path, dataset_name)
 
     transform = T.Compose([
-        # T.ToUndirected(), ogbn try
+        T.ToUndirected(), 
         T.ToDevice(device),
     ])
 
@@ -188,72 +188,73 @@ def Train_S2GAE_nodecls(margs):
 
 
     MDT = build_easydict_nodecls()
-    config         = MDT['MODEL']['PARAM']
+    args         = MDT['MODEL']['PARAM']
 
     if data.is_undirected():
         edge_index = data.edge_index
     else:
         print('### Input graph {} is directed'.format(margs.dataset))
         edge_index = to_undirected(data.edge_index)
+
+
     data.full_adj_t = SparseTensor.from_edge_index(edge_index).t()
 
     edge_index, test_edge, test_edge_neg = do_edge_split_nc(edge_index, data.x.shape[0])
 
     labels = data.y.view(-1)
 
-    save_path_model = './model_zoo/GAE/S2GAE/weight/s2gaesvm-' + config['use_sage'] + '_{}_{}'.format(dataset_name,  config['mask_type']) + '_{}'.format(config['num_layers']) + '_hidd{}-{}-{}-{}'.format(config['hidden_channels'], config['mask_ratio'], config['decode_layers'], config['decode_channels']) + '_model.pth'
-    save_path_predictor = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + config['use_sage'] + '_{}_{}'.format(dataset_name,
-                                                                          config['mask_type']) + '_{}'.format(
-        config['num_layers']) + '_hidd{}-{}-{}-{}'.format(config['hidden_channels'], config['mask_ratio'], config['decode_layers'],
-                                                     config['decode_channels']) + '_pred.pth'
+    save_path_model = './model_zoo/GAE/S2GAE/weight/s2gaesvm-' + args.use_sage + '_{}_{}'.format(dataset_name, args.mask_type) + '_{}'.format(
+        args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
+                                                     args.decode_channels) + '_model.pth'
+    save_path_predictor = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}'.format(dataset_name,
+                                                                          args.mask_type) + '_{}'.format(
+        args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
+                                                     args.decode_channels) + '_pred.pth'
 
     out2_dict = {0: 'last', 1: 'combine'}
     result_dict = out2_dict
-
-    svm_result_final = np.zeros(shape=[config['runs'], len(out2_dict)])
+    svm_result_final = np.zeros(shape=[args.runs, len(out2_dict)])
     # Use training + validation edges for inference on test set.
-    
+
     data = data.to(device)
 
-    if config['use_sage'] == 'SAGE':
-        model = SAGE(data.num_features, config['hidden_channels'],
-                     config['hidden_channels'], config['num_layers'],
-                     config['dropout']).to(device)
-    elif config['use_sage'] == 'GIN':
-        model = GIN(data.num_features, config['hidden_channels'],
-                     config['hidden_channels'], config['num_layers'],
-                     config['dropout']).to(device)
+    if args.use_sage == 'SAGE':
+        model = SAGE(data.num_features, args.hidden_channels,
+                     args.hidden_channels, args.num_layers,
+                     args.dropout).to(device)
+    elif args.use_sage == 'GIN':
+        model = GIN(data.num_features, args.hidden_channels,
+                     args.hidden_channels, args.num_layers,
+                     args.dropout).to(device)
     else:
-        model = GCN(data.num_features, config['hidden_channels'],
-                    config['hidden_channels'], config['num_layers'],
-                    config['dropout']).to(device)
+        model = GCN(data.num_features, args.hidden_channels,
+                    args.hidden_channels, args.num_layers,
+                    args.dropout).to(device)
 
-    predictor = LPDecoder(config['hidden_channels'], config['decode_channels'], 1, config['num_layers'],
-                              config['decode_layers'], config['dropout']).to(device)
+    predictor = LPDecoder(args.hidden_channels, args.decode_channels, 1, args.num_layers,
+                              args.decode_layers, args.dropout).to(device)
 
-    print('Start training with mask ratio={} # optimization edges={} / {}'.format( config['mask_ratio'],
-                                                                             int( config['mask_ratio'] *
+    print('Start training with mask ratio={} # optimization edges={} / {}'.format(args.mask_ratio,
+                                                                             int(args.mask_ratio *
                                                                                  edge_index.shape[0]), edge_index.shape[0]))
 
-
-    for run in range(config['runs']):
+    for run in range(args.runs):
         model.reset_parameters()
         predictor.reset_parameters()
         optimizer = torch.optim.Adam(
             list(model.parameters()) + list(predictor.parameters()),
-            lr=config['lr'])
+            lr=args.lr)
 
         best_valid = 0.0
         best_epoch = 0
         cnt_wait = 0
-        for epoch in range(1, 1 + config['epochs']):
+        for epoch in range(1, 1 + args.epochs):
             t1 = time.time()
             loss = train(model, predictor, data, edge_index, optimizer,
-                         config)
+                         args)
             t2 = time.time()
-            #这里的test使用edge的预测情况做的auc
             auc_test = test(model, predictor, data, test_edge, test_edge_neg,
-                           config['batch_size'])
+                           args.batch_size)
 
             if auc_test > best_valid:
                 best_valid = auc_test
@@ -274,22 +275,21 @@ def Train_S2GAE_nodecls(margs):
                 print('Early stop at {}'.format(epoch))
                 break
 
-        print('##### Testing on {}/{}'.format(run, config['runs']))
+        print('##### Testing on {}/{}'.format(run + 1, args.runs))
 
         model.load_state_dict(torch.load(save_path_model))
         predictor.load_state_dict(torch.load(save_path_predictor))
         feature = model(data.x, data.full_adj_t)
         feature = [feature_.detach() for feature_ in feature]
-        
+
         feature_list = extract_feature_list_layer2(feature)
-    
+##############################################################################################
     #     for i, feature_tmp in enumerate(feature_list):
-    #         # 改成只用测试集的结果而不是用全图 评估方式好像也要改一下
-    #         f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp[data.test_mask].data.cpu().numpy(), labels[data.test_mask].data.cpu().numpy(),
-    #                                                         margs)
+    #         f1_mic_svm, f1_mac_svm, acc_svm = test_classify(feature_tmp.data.cpu().numpy(), labels.data.cpu().numpy(),
+    #                                                         args)
     #         svm_result_final[run, i] = acc_svm
     #         print('**** SVM test acc on Run {}/{} for {} is F1-mic={} F1-mac={} acc={}'
-    #               .format(run + 1, config['runs'], result_dict[i], f1_mic_svm, f1_mac_svm, acc_svm))
+    #               .format(run + 1, args.runs, result_dict[i], f1_mic_svm, f1_mac_svm, acc_svm))
 
     # svm_result_final = np.array(svm_result_final)
 
@@ -307,11 +307,12 @@ def Train_S2GAE_nodecls(margs):
 
 
 
+
         for i, feature_tmp in enumerate(feature_list):
             final_acc, estp_acc = node_classification_evaluation(data, feature_tmp, labels, dataset.num_classes, 0.1, 5e-4 , 300, device)
             svm_result_final[run, i] = final_acc
             print('**** Linear probe test acc on Run {}/{} for {} is acc={} estp_acc={}'
-                  .format(run + 1, config['runs'], result_dict[i], final_acc, estp_acc))
+                  .format(run + 1, args.runs, result_dict[i], final_acc, estp_acc))
 
 
     svm_result_final = np.array(svm_result_final)

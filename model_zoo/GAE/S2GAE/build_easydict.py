@@ -27,11 +27,11 @@ def build_easydict_nodecls():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'S2GAE'
     MDT.MODEL.PARAM = {
-        'log_steps'       : 1,
+        'log_steps'   : 1,
         'use_sage'    : 'GCN',
         'use_valedges_as_input':False,
         'num_layers':2,
-        'decode_layers':2,
+        'decode_layers':3,
         'hidden_channels':128,
         'decode_channels':256,
         'dropout':0.5,
@@ -40,7 +40,7 @@ def build_easydict_nodecls():
         'epochs':400, 
         'seed':42,
         'eval_steps':1,
-        'runs':1, 
+        'runs':3, 
         'mask_type' :'dm',  # help='dm | um')  # whether to use mask features    
         'patience'  : 50,       # help='Use attribute or not'                      
         'mask_ratio': 0.8
