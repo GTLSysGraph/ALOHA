@@ -1,5 +1,6 @@
 cora:
-  seeds: [2,1,3,4]
+  # 0.8407±0.0071
+  seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512
@@ -24,9 +25,10 @@ cora:
   replace_rate: 0.05
   alpha_l: 3
   scheduler: True
-  # 84.07+-0.7
+  
 citeseer:
-  seeds  : [23]
+  # 0.7323±0.0029
+  seeds  : [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 512

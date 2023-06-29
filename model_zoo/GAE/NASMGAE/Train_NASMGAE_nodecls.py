@@ -64,30 +64,37 @@ def pretrain_inductive(model, dataloaders, optimizer, max_epoch, device, schedul
 
 
 
-def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
-    logging.info("start training..")
+def pretrain_tranductive(param, model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+    logging.info("start training RobustGAE node classification..")
     graph = graph.to(device)
     x = feat.to(device)
 
-    # ###########################################################
-    # n_node = graph.num_nodes()
+    ###########################################################
+    n_node = graph.num_nodes()
 
-    # edges_sim       =  compute_edge_sim(graph.edges(), x, sim_mode='cosine')
-    # ref_edges_index = torch.where(edges_sim >= 0.1)
-    # del_edges_index = torch.where(edges_sim < 0.1)
-    # edges           = torch.stack((graph.edges()[0],graph.edges()[1]),dim=0)
+    edges_sim       = compute_edge_sim(graph.edges(), x, sim_mode=param.sim_mode)
+    ref_edges_index = torch.where(edges_sim >= param.keep_threshold)
+    del_edges_index = torch.where(edges_sim <  param.dele_threshold)
+    edges           = torch.stack((graph.edges()[0],graph.edges()[1]),dim=0)
 
-    # ref_edges       = edges[:, ref_edges_index[0]]
-    # del_edges       = edges[:, del_edges_index[0]]
-    # graph_refine = dgl.graph((ref_edges[0],ref_edges[1]), num_nodes=n_node)
-    # ############################################################
+    ref_edges       = edges[:, ref_edges_index[0]]
+    del_edges       = edges[:, del_edges_index[0]]
+    graph_refine    = dgl.graph((ref_edges[0],ref_edges[1]), num_nodes=n_node).to(device)
+    graph_refine = graph_refine.remove_self_loop()
+    graph_refine = graph_refine.add_self_loop()
+
+    print('num  edges : {}'.format(graph.num_edges()))
+    print('keep edges : {}'.format(len(ref_edges_index[0])))
+    print('del  edges : {}'.format(len(del_edges_index[0])))
+
+    ############################################################
 
     epoch_iter = tqdm(range(max_epoch))
     for epoch in epoch_iter:
         model.train()
 
-        loss, loss_dict = model(graph, x, epoch)
-        # loss, loss_dict = model(graph_refine, del_edges, x, epoch)
+        # loss, loss_dict = model(graph, x, epoch)
+        loss, loss_dict = model(graph_refine, del_edges, x, epoch)
 
         optimizer.zero_grad()
         loss.backward()
@@ -156,7 +163,6 @@ def Train_NASMGAE_nodecls(margs):
     else:
         raise Exception('Unknown mode!')
 
-
     ##########################
     
     MDT = build_easydict()
@@ -191,6 +197,7 @@ def Train_NASMGAE_nodecls(margs):
     acc_list = []
     estp_acc_list = []
 
+
     for i, seed in enumerate(seeds):
         print(f"####### Run {i+1} for seed {seed}")
         set_random_seed(seed)
@@ -216,7 +223,7 @@ def Train_NASMGAE_nodecls(margs):
 
         if not load_model:
             if margs.mode == 'tranductive':
-                model = pretrain_tranductive(model, graph, graph.ndata["feat"], optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+                model = pretrain_tranductive(param, model, graph, graph.ndata["feat"], optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             elif margs.mode == 'inductive':
                 model = pretrain_inductive(model, (train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
            

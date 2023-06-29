@@ -10,6 +10,7 @@ from .gat import GAT
 from .gcn import GCN
 from .dot_gat import DotGAT
 from .edgedecoder import EdgeDecoder
+from ..utils import add_ptb_edges
 import torch.nn.functional as F
 from torch_geometric.utils import negative_sampling
 
@@ -118,6 +119,15 @@ class PreModel(nn.Module):
             replace_rate: float = 0.1,
             alpha_l: float = 2,
             concat_hidden: bool = False,
+            #
+            edge_hidden        = 64,
+            updata_guide_model = 10,
+            decay              = 0.95,
+            undirected         = False,
+            add_rate           = 0.4,
+            gamma              = 10,
+            beta               = 0.001
+            #
          ):
         super(PreModel, self).__init__()
         self._mask_rate = mask_rate
@@ -130,6 +140,17 @@ class PreModel(nn.Module):
         
         self._replace_rate = replace_rate
         self._mask_token_rate = 1 - self._replace_rate
+
+        ########### add by ssh
+        self._undirected        = undirected
+        self._add_rate          = add_rate
+        self.edge_hidden        = edge_hidden
+        self.updata_guide_model = updata_guide_model
+        self.decay              = decay
+        self.gamma              = gamma
+        self.beta               = beta
+        self.shadow = {}
+        ###########
 
         assert num_hidden % nhead == 0
         assert num_hidden % nhead_out == 0
@@ -163,6 +184,24 @@ class PreModel(nn.Module):
             norm=norm,
         )
 
+        # add by ssh
+        self.guide_encoder = setup_module(
+            m_type=encoder_type,
+            enc_dec="encoding",
+            in_dim=in_dim,
+            num_hidden=enc_num_hidden,
+            out_dim=enc_num_hidden,
+            num_layers=num_layers,
+            nhead=enc_nhead,
+            nhead_out=enc_nhead,
+            concat_out=True,
+            activation=activation,
+            dropout=feat_drop,
+            attn_drop=attn_drop,
+            negative_slope=negative_slope,
+            residual=residual,
+            norm=norm,
+        )
 
 
         # build decoder for attribute prediction
@@ -185,7 +224,7 @@ class PreModel(nn.Module):
         )
 
 
-        self.edgedecoder = EdgeDecoder(dec_in_dim, 16)
+        self.edgedecoder = EdgeDecoder(dec_in_dim, edge_hidden)
 
 
         self.enc_mask_token = nn.Parameter(torch.zeros(1, in_dim))
@@ -196,6 +235,8 @@ class PreModel(nn.Module):
 
         # * setup loss function
         self.criterion = self.setup_loss_fn(loss_fn, alpha_l)
+        self.register()
+
 
     @property
     def output_hidden_dim(self):
@@ -210,8 +251,8 @@ class PreModel(nn.Module):
             raise NotImplementedError
         return criterion
     
-    def encoding_mask_noise(self, g, x, mask_rate=0.3):
-        num_nodes = g.num_nodes()
+    def encoding_mask_noise(self, use_g, del_edges, x, add_prob, mask_rate, undirected):
+        num_nodes = use_g.num_nodes()
         perm = torch.randperm(num_nodes, device=x.device)
         num_mask_nodes = int(mask_rate * num_nodes)
 
@@ -241,13 +282,35 @@ class PreModel(nn.Module):
 
         # 这里为啥不扩展啊 这里不加效果确实不如加了好，为啥啊，感觉没道理啊
         out_x[token_nodes] +=  self.enc_mask_token
-        use_g = g.clone()
 
-        return use_g, out_x, (mask_nodes, keep_nodes)
+        # add perb edges
+        use_g, (add_edges_src,add_edges_dst) = add_ptb_edges(use_g, del_edges, add_prob, undirected)
 
-    def forward(self, g, x,epoch):
+        return use_g, out_x, (mask_nodes, keep_nodes), (add_edges_src,add_edges_dst)
+
+
+    def register(self):
+        for name, param in self.encoder.named_parameters():
+            if param.requires_grad:
+                self.shadow[name] = param.data.clone()
+
+
+    def update(self):
+        for name, param in self.encoder.named_parameters():
+            if param.requires_grad:
+                assert name in self.shadow
+                new_average = (1.0 - self.decay) * param.data.cpu() + self.decay * self.shadow[name]
+                self.shadow[name] = new_average.clone()
+
+    def guide_model_apply_shadow(self):
+        for name, param in self.guide_encoder.named_parameters():
+            if param.requires_grad:
+                param.data = self.shadow[name]
+
+
+    def forward(self, graph_refine, del_edges, x, epoch):
         # ---- attribute reconstruction ----
-        loss = self.mask_attr_prediction(g, x,epoch)
+        loss = self.mask_attr_prediction(graph_refine, del_edges, x, epoch)
         loss_item = {"loss": loss.item()}
         return loss, loss_item
     
@@ -255,90 +318,69 @@ class PreModel(nn.Module):
         neg_edges = torch.randint(0, num_nodes, size=(2, num_neg_samples)).to(edge_index)
         return neg_edges
 
+
     def ce_loss(self, pos_out, neg_out):
         pos_loss = F.binary_cross_entropy(pos_out.sigmoid(), torch.ones_like(pos_out))
         neg_loss = F.binary_cross_entropy(neg_out.sigmoid(), torch.zeros_like(neg_out))
         return pos_loss + neg_loss
 
-    def info_nce_loss(self,pos_out, neg_out):
-        pos_exp = torch.exp(pos_out)
-        neg_exp = torch.sum(torch.exp(neg_out), 1, keepdim=True)
-        return -torch.log(pos_exp / (pos_exp + neg_exp) + 1e-15).mean()
-
-
-    def compute_edge_sim(self,edges,features,sim_mode='cosine'):
-        if sim_mode == 'jaccard':
-            intersection = torch.count_nonzero(features[edges[0]] * features[edges[1]],dim = 1)
-            edges_sim = intersection * 1.0 / (torch.count_nonzero(features[edges[0]],dim=1) + torch.count_nonzero(features[edges[1]],dim=1) - intersection)
-        elif sim_mode == 'cosine':
-            edges_sim = F.cosine_similarity(features[edges[0]], features[edges[1]], dim=1)
-        return edges_sim
-
-
     
-    def mask_attr_prediction(self, g, x, epoch):
-        pre_use_g, use_x, (mask_nodes, keep_nodes) = self.encoding_mask_noise(g, x, self._mask_rate)
+    def mask_attr_prediction(self, graph_refine, del_edges, x, epoch):
+        use_g = graph_refine.clone()
 
         if self._drop_edge_rate > 0:
-            use_g, masked_edges = drop_edge(pre_use_g, self._drop_edge_rate, return_edges=True)
+            use_g,  masked_edges = drop_edge(use_g, self._drop_edge_rate, return_edges=True)
         else:
-            use_g = pre_use_g
+            use_g = use_g
 
-        enc_rep, all_hidden = self.encoder(use_g, use_x, return_hidden=True)
+        graph_preturbation, use_x, (mask_nodes, keep_nodes), (perb_edges_src,perb_edges_dst) = self.encoding_mask_noise(use_g, del_edges, x, self._add_rate, self._mask_rate, undirected = self._undirected)
+
+
+        enc_rep, all_hidden = self.encoder(graph_preturbation, use_x, return_hidden=True)
         if self._concat_hidden:
             enc_rep = torch.cat(all_hidden, dim=1)
-        # enc_rep = encoder(use_x,torch.stack((use_g.edges()[0],use_g.edges()[1]),dim=0))
 
 
-        # **************************** recon edges ************************************** 
-        edges_sim       = self.compute_edge_sim(g.edges(), x, sim_mode='jaccard')
+        if epoch % self.updata_guide_model == 0:
+            self.update()
+            self.guide_model_apply_shadow()
 
-        pos_edges_index = torch.where(edges_sim >= 0.06)
-        neg_edges_index = torch.where(edges_sim < 0.06)
-        edges           = torch.stack((g.edges()[0],g.edges()[1]),dim=0)
-
-        if epoch == 0:
-            print(g.num_edges())
-            print(pos_edges_index[0].shape)
-            print(neg_edges_index[0].shape)
-
-        pos_edges        =  edges[:,pos_edges_index[0]]
-        # pos_edges          = torch.stack((masked_edges[0],masked_edges[1]),dim=0)
-        # if self._drop_edge_rate > 0:
-        #     pos_edges        =  torch.cat((pos_edges,torch.stack((masked_edges[0],masked_edges[1]),dim=0)),dim=1)
+        self.guide_encoder = self.guide_encoder.to('cuda')
+        guide_enc_rep, guide_all_hidden = self.guide_encoder(graph_refine, x, return_hidden=True)
+        if self._concat_hidden:
+            guide_enc_rep = torch.cat(guide_all_hidden, dim=1)
+        guide_enc_rep = guide_enc_rep.detach()
         
-
-        neg_edges             =  edges[:,neg_edges_index[0]] 
-        neg_edges_random      =  self.random_negative_sampler(pos_edges, num_nodes=g.num_nodes(), num_neg_samples =pos_edges.view(2, -1).size(1),).view_as(pos_edges) 
-        neg_edges             =  torch.cat((neg_edges_random, neg_edges),dim=1)
-
-
-        pos_edge_out  = self.edgedecoder(enc_rep,  pos_edges,     sigmoid=False )
-        neg_edges_out = self.edgedecoder(enc_rep,  neg_edges,     sigmoid=False )
-        loss_struct   = self.ce_loss(pos_edge_out, neg_edges_out)
-
 
         # **************************** attribute reconstruction ***************************
         rep = self.encoder_to_decoder(enc_rep)
+    
+
+        # **************************** sturct reconstruction ***************************
+        pos_edges        =  torch.stack((graph_refine.edges()[0],graph_refine.edges()[1]),dim=0)
+        neg_edges        =  self.random_negative_sampler(pos_edges, num_nodes=graph_refine.num_nodes(), num_neg_samples =pos_edges.view(2, -1).size(1),).view_as(pos_edges) 
+        
+        pos_edge_out  = self.edgedecoder(enc_rep,  pos_edges,     sigmoid=False )
+        neg_edges_out = self.edgedecoder(enc_rep,  neg_edges,     sigmoid=False )
+        loss_struct   = self.ce_loss(pos_edge_out, neg_edges_out)
 
         # **************************** recon features **************************************
         if self._decoder_type not in ("mlp", "linear"):
             # * remask, re-mask
             rep[mask_nodes] = 0
 
+        # 可以加一个判断，graph4recon = graph_preturbation if not attack else graph_refine
         if self._decoder_type in ("mlp", "liear") :
             recon = self.decoder(rep)
         else:
-            recon = self.decoder(pre_use_g, rep)
+            recon = self.decoder(graph_preturbation, rep) # 扰动小的时候用graph_preturbation 用refine比pertuerbation要好，猜测原因，在cora的时候貌似更喜欢对扰动矩阵重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
 
 
         x_init = x[mask_nodes]
-        x_rec = recon[mask_nodes]
+        x_rec  = recon[mask_nodes]
 
-
-        # cosine  0.1 0.1   x sigmoid True 85.7%
-        # jaccard 0.06 0.06 x sigmoid True 85.8%
-        loss =   0.2 * loss_struct + self.criterion(x_rec, x_init) 
+        loss =   self.criterion(x_rec, x_init)  +  self.gamma * F.mse_loss(enc_rep[mask_nodes], guide_enc_rep[mask_nodes]) + self.beta * loss_struct
+        # loss = loss_struct
         return loss
 
     def embed(self, g, x):

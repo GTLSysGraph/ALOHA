@@ -16,7 +16,7 @@ from sklearn.metrics import f1_score
 
 from .models import build_model
 from .build_easydict import * 
-
+from .utils import compute_edge_sim
 
 from .utils import (
     create_optimizer,
@@ -84,7 +84,8 @@ def evaluate_graph_embeddings_using_svm(embeddings, labels):
     return test_f1, test_std
 
 
-def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob=True, logger=None):
+def pretrain(param, model, pooler, dataloaders, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob=True, logger=None):
+    logging.info("start training RobustGAE node classification..")
     train_loader, eval_loader = dataloaders
 
     epoch_iter = tqdm(range(max_epoch))
@@ -96,9 +97,32 @@ def pretrain(model, pooler, dataloaders, optimizer, max_epoch, device, scheduler
             batch_g = batch_g.to(device)
 
             feat = batch_g.ndata["attr"]
+
+            ###########################################################
+            n_node = batch_g.num_nodes()
+   
+            edges_sim       = compute_edge_sim(batch_g.edges(), feat, sim_mode=param.sim_mode)
+            ref_edges_index = torch.where(edges_sim >= param.keep_threshold)
+            del_edges_index = torch.where(edges_sim <  param.dele_threshold)
+            edges           = torch.stack((batch_g.edges()[0],batch_g.edges()[1]),dim=0)
+
+            ref_edges       = edges[:, ref_edges_index[0]]
+            del_edges       = edges[:, del_edges_index[0]]
+            graph_refine    = dgl.graph((ref_edges[0],ref_edges[1]), num_nodes=n_node).to(device)
+            graph_refine = graph_refine.remove_self_loop()
+            graph_refine = graph_refine.add_self_loop()
+
+
+            # print('num  edges : {}'.format(batch_g.num_edges()))
+            # print('keep edges : {}'.format(len(ref_edges_index[0])))
+            # print('del  edges : {}'.format(len(del_edges_index[0])))
+
+            ############################################################
+
             model.train()
-            loss, loss_dict = model(batch_g, feat)
-            
+            # loss, loss_dict = model(batch_g, feat)
+            loss, loss_dict = model(graph_refine, del_edges, feat, epoch)
+           
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -210,7 +234,7 @@ def Train_NASMGAE_graphcls(margs):
             scheduler = None
             
         if not load_model:
-            model = pretrain(model, pooler, (train_loader, eval_loader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob,  logger)
+            model = pretrain(args, model, pooler, (train_loader, eval_loader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob,  logger)
             model = model.cpu()
 
         if load_model:

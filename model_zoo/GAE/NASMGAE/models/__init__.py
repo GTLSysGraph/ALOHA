@@ -23,6 +23,16 @@ def build_model(param):
     alpha_l         = param.alpha_l
     concat_hidden   = param.concat_hidden
     num_features    = param.num_features
+    
+    # add by ssh
+    edge_hidden        = param.edge_hidden
+    updata_guide_model = param.updata_guide_model
+    decay              = param.decay
+    undirected         = param.undirected
+    add_rate           = param.add_rate
+    gamma              = param.gamma
+    beta               = param.beta
+
 
 
     model = PreModel(
@@ -45,5 +55,14 @@ def build_model(param):
         replace_rate=replace_rate,
         alpha_l=alpha_l,
         concat_hidden=concat_hidden,
+        #
+        edge_hidden        = edge_hidden,
+        updata_guide_model = updata_guide_model,
+        decay              = decay,
+        undirected         = undirected,
+        add_rate           = add_rate,
+        gamma              = gamma,
+        beta               = beta
+        #
     )
     return model

@@ -23,8 +23,13 @@ def compute_edge_sim(edges,features,sim_mode='cosine'):
         edges_sim = intersection * 1.0 / (torch.count_nonzero(features[edges[0]],dim=1) + torch.count_nonzero(features[edges[1]],dim=1) - intersection)
     elif sim_mode == 'cosine':
         edges_sim = F.cosine_similarity(features[edges[0]], features[edges[1]], dim=1)
+        edges_sim = 0.5 + 0.5 * edges_sim # # 取值范围(-1 ~ 1),0.5 + 0.5 * result 归一化(0 ~ 1)
+    elif sim_mode == 'pearson':
+        avg0 = torch.mean(features[edges[0]],dim=1).unsqueeze(-1)
+        avg1 = torch.mean(features[edges[1]],dim=1).unsqueeze(-1)
+        edges_sim = F.cosine_similarity(features[edges[0]] - avg0 , features[edges[1]] - avg1, dim=1)
+        edges_sim = 0.5 + 0.5 * edges_sim # # 皮尔逊相关系数的取值范围(-1 ~ 1),0.5 + 0.5 * result 归一化(0 ~ 1)
     return edges_sim
-
 
 
 
@@ -121,13 +126,31 @@ def create_norm(name):
     else:
         return nn.Identity
 
+def add_ptb_edges(graph, add_edges, add_prob, undirected):
+    E = len(add_edges[0])
+    add_rates = torch.FloatTensor(np.ones(E) * add_prob)
+    add_masks = torch.bernoulli(add_rates).bool()
+    add_masks_idx = add_masks.nonzero().squeeze(1)
+
+    add_edges_src = add_edges[0][add_masks_idx]
+    add_edges_dst = add_edges[1][add_masks_idx]
+
+    graph.add_edges(add_edges_src,add_edges_dst)
+    if undirected == True:
+        graph = dgl.to_bidirected(graph.cpu()).to('cuda')
+    return graph, (add_edges_src,add_edges_dst)
+
+
+
 
 def drop_edge(graph, drop_rate, return_edges=False):
     if drop_rate <= 0:
         return graph
 
     n_node = graph.num_nodes()
+    graph = graph.remove_self_loop() # 不删除自环边，只drop非自环边
     keep_mask_idx, masked_mask_idx = mask_edge(graph, drop_rate)
+
     src = graph.edges()[0]
     dst = graph.edges()[1]
 

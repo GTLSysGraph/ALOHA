@@ -4,7 +4,7 @@ from easydict import EasyDict
 def build_easydict():
     MDT = EasyDict()
     MDT.MODEL = EasyDict()
-    MDT.MODEL.NAME = 'GraphMAE'
+    MDT.MODEL.NAME = 'RobustGAE'
     MDT.MODEL.PARAM = {
         'seeds'         : [12,34,6,7], # 0.8367±0.0050
         "device"        : -1 ,
@@ -42,10 +42,23 @@ def build_easydict():
         "scheduler"     : False,
         "concat_hidden" : False,
 
+        # add by ssh
+        "sim_mode"           : "cosine",
+        "keep_threshold"     : 0.1,
+        "dele_threshold"     : 0.1,
+        "edge_hidden"        : 64,
+        "updata_guide_model" : 10,
+        "decay"              : 0.95,
+        "undirected"         : False,
+        "add_rate"           : 0.4,
+        "gamma"              : 10,
+        "beta"               : 0.001,
+
+
         # for graph classification
         "pooling"    : "mean",
         "deg4feat"   : False,
-        "batch_size" :32
+        "batch_size" : 32
     }
 
     return MDT
