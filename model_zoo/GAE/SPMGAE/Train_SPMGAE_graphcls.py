@@ -149,7 +149,7 @@ def collate_fn(batch):
 
 
 
-def Train_NASMGAE_graphcls(margs):
+def Train_SPMGAE_graphcls(margs):
     #############################################################################################
     device = "cuda" if torch.cuda.is_available() else "cpu"
 

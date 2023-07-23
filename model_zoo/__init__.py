@@ -4,8 +4,8 @@ from model_zoo.GCL.InfoGraph.Train_InfoGraph_graphcls import Train_InfoGraph_gra
 from model_zoo.GCL.MVGRL.Train_MVGRL_graphcls import Train_MVGRL_graphcls
 from model_zoo.GCL.MVGRL.Train_MVGRL_nodecls import Train_MVGRL_nodecls
 
-from model_zoo.GAE.NASMGAE.Train_NASMGAE_nodecls import Train_NASMGAE_nodecls
-from model_zoo.GAE.NASMGAE.Train_NASMGAE_graphcls import Train_NASMGAE_graphcls
+from model_zoo.GAE.SPMGAE.Train_SPMGAE_nodecls  import Train_SPMGAE_nodecls
+from model_zoo.GAE.SPMGAE.Train_SPMGAE_graphcls import Train_SPMGAE_graphcls
 
 from model_zoo.GAE.S2GAE.Train_S2GAE_nodecls import Train_S2GAE_nodecls
 from model_zoo.GAE.MaskGAE.Train_MaskGAE_nodecls import Train_MaskGAE_nodecls
@@ -40,6 +40,6 @@ __all__ = ['Train_GRACE_nodecls',
             'Train_MVGRL_graphcls','Train_MVGRL_nodecls',
             'Train_GCN_nodecls',
             'Train_GAT_nodecls',
-            'Train_NASMGAE_nodecls','Train_NASMGAE_graphcls'
+            'Train_SPMGAE_nodecls','Train_SPMGAE_graphcls'
             ]
 

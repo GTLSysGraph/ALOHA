@@ -64,10 +64,10 @@ if __name__ == '__main__':
     elif margs.model_name == 'GAT':
         assert margs.task == 'node'
         Train_GAT_nodecls(margs)
-    elif margs.model_name == 'NASMGAE':
+    elif margs.model_name == 'SPMGAE':
         if margs.task == 'graph':
-            Train_NASMGAE_graphcls(margs)
+            Train_SPMGAE_graphcls(margs)
         elif margs.task == 'node':
-            Train_NASMGAE_nodecls(margs)
+            Train_SPMGAE_nodecls(margs)
     else:
         raise Exception('Model not realise, wait...')

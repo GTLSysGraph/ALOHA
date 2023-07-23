@@ -335,7 +335,6 @@ class PreModel(nn.Module):
 
         graph_preturbation, use_x, (mask_nodes, keep_nodes), (perb_edges_src,perb_edges_dst) = self.encoding_mask_noise(use_g, del_edges, x, self._add_rate, self._mask_rate, undirected = self._undirected)
 
-
         enc_rep, all_hidden = self.encoder(graph_preturbation, use_x, return_hidden=True)
         if self._concat_hidden:
             enc_rep = torch.cat(all_hidden, dim=1)

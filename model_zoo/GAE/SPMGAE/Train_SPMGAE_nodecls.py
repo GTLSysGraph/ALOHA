@@ -1,17 +1,17 @@
 
 from     easydict        import EasyDict
 import   torch
-from     model_zoo.GAE.NASMGAE.utils          import *
-from     model_zoo.GAE.NASMGAE.build_easydict import *
-from     model_zoo.GAE.NASMGAE.evaluation_tranductive     import * 
-from     model_zoo.GAE.NASMGAE.evaluation_inductive       import * 
-from     model_zoo.GAE.NASMGAE.evaluation_mini_batch       import * 
+from     model_zoo.GAE.SPMGAE.utils          import *
+from     model_zoo.GAE.SPMGAE.build_easydict import *
+from     model_zoo.GAE.SPMGAE.evaluation_tranductive     import * 
+from     model_zoo.GAE.SPMGAE.evaluation_inductive       import * 
+from     model_zoo.GAE.SPMGAE.evaluation_mini_batch       import * 
 from     datasets_graphsaint.data_graphsaint import *
 from     datasets_dgl.data_dgl import *
 
 import   logging
 from     tqdm import tqdm
-from     model_zoo.GAE.NASMGAE.models import build_model
+from     model_zoo.GAE.SPMGAE.models import build_model
 from     sampler.SAINTSampler import SAINTNodeSampler, SAINTEdgeSampler, SAINTRandomWalkSampler
 import torch.nn.functional as F
 from .utils import compute_edge_sim
@@ -65,7 +65,7 @@ def pretrain_inductive(model, dataloaders, optimizer, max_epoch, device, schedul
 
 
 def pretrain_tranductive(param, model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
-    logging.info("start training RobustGAE node classification..")
+    logging.info("start training SPMGAE node classification..")
     graph = graph.to(device)
     x = feat.to(device)
 
@@ -115,7 +115,7 @@ def pretrain_tranductive(param, model, graph, feat, optimizer, max_epoch, device
 
 
 
-def Train_NASMGAE_nodecls(margs):
+def Train_SPMGAE_nodecls(margs):
     #########################
     device = f"cuda" if torch.cuda.is_available() else "cpu"
   
@@ -163,12 +163,13 @@ def Train_NASMGAE_nodecls(margs):
     else:
         raise Exception('Unknown mode!')
 
+
     ##########################
     
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/NASMGAE/configs.yml")
+        param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/SPMGAE/configs.yml")
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
