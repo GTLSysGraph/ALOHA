@@ -29,7 +29,7 @@ def build_easydict_nodecls():
     MDT.MODEL.PARAM = {
         "dataset": "Cora", #help="Datasets. (default: Cora)")
         "mask":"Path", #help="Masking stractegy, `Path`, `Edge` or `None` (default: Path)")
-        'seed':2022, #help='Random seed for model and dataset. (default: 2022)')
+        'seed':1, #help='Random seed for model and dataset. (default: 2022)')
 
         "layer":"gcn", #help="GNN layer, (default: gcn)")
         "encoder_activation":"elu", #help="Activation function for GNN encoder, (default: elu)")
@@ -38,9 +38,9 @@ def build_easydict_nodecls():
         'decoder_channels':32, #help='Channels of decoder layers. (default: 128)')
         'encoder_layers':2, #help='Number of layers for encoder. (default: 2)')
         'decoder_layers':2,# help='Number of layers for decoders. (default: 2)')
-        'encoder_dropout':0.8,# help='Dropout probability of encoder. (default: 0.8)')
-        'decoder_dropout':0.2, #help='Dropout probability of decoder. (default: 0.2)')
-        'alpha':0.001, #help='loss weight for degree prediction. (default: 0.)')
+        'encoder_dropout': 0.8,# help='Dropout probability of encoder. (default: 0.8)')
+        'decoder_dropout': 0.2, #help='Dropout probability of decoder. (default: 0.2)')
+        'alpha': 0.001, #help='loss weight for degree prediction. (default: 0.)')
 
         'lr':0.02, #help='Learning rate for training. (default: 0.01)')
         'weight_decay':5e-5, #help='weight_decay for link prediction training. (default: 5e-5)')
@@ -55,7 +55,7 @@ def build_easydict_nodecls():
         'nodeclas_weight_decay':0.1,# help='weight_decay for node classification training. (default: 1e-3)')
 
         'epochs':500, #help='Number of training epochs. (default: 500)')
-        'runs': 10, #help='Number of runs. (default: 10)')
+        'runs': 1, #help='Number of runs. (default: 10)')
         'eval_period':30, #help='(default: 30)')
         'patience':30, #help='(default: 30)')
         "debug": False,

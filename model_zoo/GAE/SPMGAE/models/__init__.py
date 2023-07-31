@@ -32,6 +32,7 @@ def build_model(param):
     add_rate           = param.add_rate
     gamma              = param.gamma
     beta               = param.beta
+    type_graph4recon   = param.type_graph4recon
 
 
 
@@ -62,7 +63,8 @@ def build_model(param):
         undirected         = undirected,
         add_rate           = add_rate,
         gamma              = gamma,
-        beta               = beta
+        beta               = beta,
+        type_graph4recon   = type_graph4recon
         #
     )
     return model

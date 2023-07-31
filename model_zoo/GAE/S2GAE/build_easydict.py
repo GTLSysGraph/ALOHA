@@ -35,18 +35,18 @@ def build_easydict_nodecls():
         'hidden_channels':128,
         'decode_channels':256,
         'dropout':0.5,
-        'batch_size':8192,
+        'batch_size':1024, #别jb瞎改别人的设置 Cora citeseer 1024 Pubmed 可以大一些8192
         'lr':0.001,
         'epochs':400, 
-        'seed':42,
+        'seed':1,
         'eval_steps':1,
         'runs':3, 
         'mask_type' :'dm',  # help='dm | um')  # whether to use mask features    
         'patience'  : 50,       # help='Use attribute or not'                      
-        'mask_ratio': 0.8
+        'mask_ratio': 0.5
 
     }
     return MDT
 
 
-# Attack-Citeseer dropout 0.2
+# Attack-Citeseer dropout 0.2 mask 0.5 decoder layer 2

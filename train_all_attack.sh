@@ -1,7 +1,7 @@
 MODEL_NAME=$1
 # DATASET_NAME=$2
 
-CUDA_USE=(0 1 2 3)
+CUDA_USE=(0 1 2)
  
 
 n=0
@@ -10,7 +10,7 @@ max_process_num=6
 
 
 num=${#CUDA_USE[*]}
-for dst in 'Citeseer'
+for dst in 'Cora_ml'
 do
     for i in 'Meta_Self' 
     do

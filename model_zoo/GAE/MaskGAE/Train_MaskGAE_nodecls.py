@@ -225,10 +225,12 @@ def Train_MaskGAE_nodecls(margs):
     else:
         data = transform(dataset[0])
 
+
+
     train_data, val_data, test_data = T.RandomLinkSplit(num_val=0.1, num_test=0.05,
                                                     is_undirected=True,
                                                     split_labels=True,
-                                                    add_negative_train_samples=True)(data)
+                                                    add_negative_train_samples=False)(data)
 
     # Data(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708]) 原始数据
     # Data(x=[2708, 1433], edge_index=[2, 8976], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], pos_edge_label=[4488], pos_edge_label_index=[2, 4488], neg_edge_label=[4488], neg_edge_label_index=[2, 4488])

@@ -6,7 +6,7 @@ from datasets_pyg.Attack_data.attackdata import AttackDataset
 from datasets_pyg.Reddit_small.Reddit_small import Reddit_small
 
 def get_dataset(path, name, attackmethod= None, attackptb = None):
-    assert name in ['Cora', 'CiteSeer', 'PubMed', 'DBLP', 'WikiCS', 'Coauthor-CS', 'Coauthor-Phy', 'Amazon-Computers', 'Amazon-Photo', 'ogbn-arxiv','Flickr','Yelp','Reddit','Attack-Cora','Attack-Citeseer','Attack-Pubmed','Attack-polblogs','PPI','Reddit_small']
+    assert name in ['Cora', 'CiteSeer', 'PubMed', 'DBLP', 'WikiCS', 'Coauthor-CS', 'Coauthor-Phy', 'Amazon-Computers', 'Amazon-Photo', 'ogbn-arxiv','Flickr','Yelp','Reddit','Attack-Cora','Attack-Cora_ml','Attack-Citeseer','Attack-Pubmed','Attack-polblogs','PPI','Reddit_small']
     
     name = 'dblp' if name == 'DBLP' else name
     root_path = osp.expanduser('/home/songsh/GCL/datasets_pyg')

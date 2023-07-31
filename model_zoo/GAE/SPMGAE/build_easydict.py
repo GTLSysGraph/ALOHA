@@ -53,6 +53,7 @@ def build_easydict():
         "add_rate"           : 0.4,
         "gamma"              : 10,
         "beta"               : 0.001,
+        "type_graph4recon"   : "refine",
 
 
         # for graph classification

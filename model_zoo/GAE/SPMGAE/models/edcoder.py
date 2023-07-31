@@ -126,7 +126,8 @@ class PreModel(nn.Module):
             undirected         = False,
             add_rate           = 0.4,
             gamma              = 10,
-            beta               = 0.001
+            beta               = 0.001,
+            type_graph4recon   = "refine"
             #
          ):
         super(PreModel, self).__init__()
@@ -149,6 +150,7 @@ class PreModel(nn.Module):
         self.decay              = decay
         self.gamma              = gamma
         self.beta               = beta
+        self.type_graph4recon   = type_graph4recon
         self.shadow = {}
         ###########
 
@@ -223,8 +225,10 @@ class PreModel(nn.Module):
             concat_out=True,
         )
 
-
-        self.edgedecoder = EdgeDecoder(dec_in_dim, edge_hidden)
+        if self._concat_hidden == True:
+            self.edgedecoder = EdgeDecoder(dec_in_dim * num_layers, edge_hidden)
+        else:
+            self.edgedecoder = EdgeDecoder(dec_in_dim, edge_hidden)
 
 
         self.enc_mask_token = nn.Parameter(torch.zeros(1, in_dim))
@@ -368,16 +372,23 @@ class PreModel(nn.Module):
             # * remask, re-mask
             rep[mask_nodes] = 0
 
-        # 可以加一个判断，graph4recon = graph_preturbation if not attack else graph_refine
+        # 加一个判断，graph4recon = graph_preturbation if not attack else graph_refine
+        if self.type_graph4recon == "refine":
+            graph4recon = graph_refine
+        else:
+            graph4recon = graph_preturbation
+
+
         if self._decoder_type in ("mlp", "liear") :
             recon = self.decoder(rep)
         else:
-            recon = self.decoder(graph_preturbation, rep) # 扰动小的时候用graph_preturbation 用refine比pertuerbation要好，猜测原因，在cora的时候貌似更喜欢对扰动矩阵重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
+            recon = self.decoder(graph4recon, rep) # 扰动小的时候用graph_preturbation 用pertuerbation比refine要好，猜测原因，在cora的时候貌似更喜欢对扰动矩阵重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
 
 
         x_init = x[mask_nodes]
         x_rec  = recon[mask_nodes]
 
+        # mask ? keep ? all?
         loss =   self.criterion(x_rec, x_init)  +  self.gamma * F.mse_loss(enc_rep[mask_nodes], guide_enc_rep[mask_nodes]) + self.beta * loss_struct
         # loss = loss_struct
         return loss

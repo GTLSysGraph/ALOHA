@@ -1,0 +1,2597 @@
+[I] Loading dataset Attack-Pubmed...
+train_mask, test_mask, val_mask sizes : tensor(1971) tensor(1972) tensor(15774)
+[I] Finished loading.
+[I] Data load time: 3.1826s
+------ Use best configs ------
+############################################################################
+grid search at experiment 1
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8316 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8343, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8291 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8324, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8296 in epoch 273 --- 
+# final_acc: 0.8324±0.0000
+# early-stopping_acc: 0.8321±0.0000
+############################################################################
+grid search at experiment 2
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8406, early-stopping-TestAcc: 0.8406, Best ValAcc: 0.8408 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8371, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8361±0.0000
+# early-stopping_acc: 0.8361±0.0000
+############################################################################
+grid search at experiment 3
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8388, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8348, Best ValAcc: 0.8362 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8337 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8342 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8342 in epoch 299 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8350±0.0000
+############################################################################
+grid search at experiment 4
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8332 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8341, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8301 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8327, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8306 in epoch 298 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 210 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8305±0.0000
+############################################################################
+grid search at experiment 5
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8408, Best ValAcc: 0.8418 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8392 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8362±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 6
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8384, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8372 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8352 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8337 in epoch 263 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8342 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8341, early-stopping-TestAcc: 0.8338, Best ValAcc: 0.8347 in epoch 272 --- 
+# final_acc: 0.8341±0.0000
+# early-stopping_acc: 0.8338±0.0000
+############################################################################
+grid search at experiment 7
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8332 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8348, early-stopping-TestAcc: 0.8348, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8332, early-stopping-TestAcc: 0.8332, Best ValAcc: 0.8316 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8332 in epoch 235 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8327 in epoch 290 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8331, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8327 in epoch 290 --- 
+# final_acc: 0.8331±0.0000
+# early-stopping_acc: 0.8328±0.0000
+############################################################################
+grid search at experiment 8
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8413, early-stopping-TestAcc: 0.8415, Best ValAcc: 0.8418 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8365, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8387 in epoch 294 --- 
+# final_acc: 0.8365±0.0000
+# early-stopping_acc: 0.8364±0.0000
+############################################################################
+grid search at experiment 9
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8378, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8387 in epoch 262 --- 
+# IGNORE: --- TestAcc: 0.8377, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8352 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8347 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8347 in epoch 299 --- 
+# final_acc: 0.8349±0.0000
+# early-stopping_acc: 0.8349±0.0000
+############################################################################
+grid search at experiment 10
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8377 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8334, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8316 in epoch 248 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8311 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8316 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8328, early-stopping-TestAcc: 0.8325, Best ValAcc: 0.8316 in epoch 273 --- 
+# final_acc: 0.8328±0.0000
+# early-stopping_acc: 0.8325±0.0000
+############################################################################
+grid search at experiment 11
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8398, early-stopping-TestAcc: 0.8398, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8407, Best ValAcc: 0.8428 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8379, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8428 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8365, early-stopping-TestAcc: 0.8365, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8366±0.0000
+# early-stopping_acc: 0.8366±0.0000
+############################################################################
+grid search at experiment 12
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8374, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8377 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8378, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8347 in epoch 239 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8347 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8348, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8347 in epoch 153 --- 
+# final_acc: 0.8348±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 13
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8343, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8327 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8337 in epoch 277 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8320, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8332 in epoch 292 --- 
+# final_acc: 0.8320±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 14
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8397, early-stopping-TestAcc: 0.8397, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8392, early-stopping-TestAcc: 0.8392, Best ValAcc: 0.8438 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8388, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8363, early-stopping-TestAcc: 0.8363, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8366, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8377 in epoch 290 --- 
+# final_acc: 0.8366±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 15
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8392, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8387 in epoch 224 --- 
+# IGNORE: --- TestAcc: 0.8373, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8392 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8365, early-stopping-TestAcc: 0.8365, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8372 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8372 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 16
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8382 in epoch 282 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8342 in epoch 297 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8327 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8322 in epoch 292 --- 
+# final_acc: 0.8321±0.0000
+# early-stopping_acc: 0.8321±0.0000
+############################################################################
+grid search at experiment 17
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8395, early-stopping-TestAcc: 0.8395, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8394, early-stopping-TestAcc: 0.8394, Best ValAcc: 0.8443 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8382, early-stopping-TestAcc: 0.8372, Best ValAcc: 0.8372 in epoch 288 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8387 in epoch 289 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8382 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8367±0.0000
+# early-stopping_acc: 0.8367±0.0000
+############################################################################
+grid search at experiment 18
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8383, Best ValAcc: 0.8382 in epoch 238 --- 
+# IGNORE: --- TestAcc: 0.8374, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8398 in epoch 252 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8382 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8387 in epoch 296 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8382 in epoch 295 --- 
+# final_acc: 0.8357±0.0000
+# early-stopping_acc: 0.8357±0.0000
+############################################################################
+grid search at experiment 19
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8336, Best ValAcc: 0.8372 in epoch 293 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8327 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8322 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8324, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8322 in epoch 274 --- 
+# final_acc: 0.8324±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 20
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8394, early-stopping-TestAcc: 0.8394, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8408, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8367 in epoch 299 --- 
+# final_acc: 0.8359±0.0000
+# early-stopping_acc: 0.8359±0.0000
+############################################################################
+grid search at experiment 21
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8367 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8372 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8377 in epoch 299 --- 
+# final_acc: 0.8357±0.0000
+# early-stopping_acc: 0.8357±0.0000
+############################################################################
+grid search at experiment 22
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8327 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8332 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8342 in epoch 277 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8320±0.0000
+############################################################################
+grid search at experiment 23
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8382 in epoch 263 --- 
+# IGNORE: --- TestAcc: 0.8411, early-stopping-TestAcc: 0.8402, Best ValAcc: 0.8392 in epoch 266 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8363, early-stopping-TestAcc: 0.8363, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 24
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8378, Best ValAcc: 0.8377 in epoch 258 --- 
+# IGNORE: --- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8347 in epoch 254 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8352 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8352 in epoch 299 --- 
+# final_acc: 0.8355±0.0000
+# early-stopping_acc: 0.8355±0.0000
+############################################################################
+grid search at experiment 25
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8357 in epoch 293 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8332 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8337 in epoch 299 --- 
+# final_acc: 0.8317±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 26
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8423 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8404, early-stopping-TestAcc: 0.8401, Best ValAcc: 0.8428 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8413 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8408 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8408 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 27
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8362 in epoch 277 --- 
+# IGNORE: --- TestAcc: 0.8372, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8357 in epoch 250 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8357 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8398 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8403 in epoch 299 --- 
+# final_acc: 0.8356±0.0000
+# early-stopping_acc: 0.8356±0.0000
+############################################################################
+grid search at experiment 28
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8341, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8342 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8314, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8316 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8322 in epoch 297 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8314, early-stopping-TestAcc: 0.8314, Best ValAcc: 0.8332 in epoch 275 --- 
+# final_acc: 0.8314±0.0000
+# early-stopping_acc: 0.8314±0.0000
+############################################################################
+grid search at experiment 29
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8381, Best ValAcc: 0.8428 in epoch 262 --- 
+# IGNORE: --- TestAcc: 0.8405, early-stopping-TestAcc: 0.8405, Best ValAcc: 0.8413 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8418 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8398 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8398 in epoch 299 --- 
+# final_acc: 0.8361±0.0000
+# early-stopping_acc: 0.8361±0.0000
+############################################################################
+grid search at experiment 30
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8362 in epoch 272 --- 
+# IGNORE: --- TestAcc: 0.8373, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8362 in epoch 226 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8357 in epoch 232 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8382 in epoch 248 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8392 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8355±0.0000
+# early-stopping_acc: 0.8355±0.0000
+############################################################################
+grid search at experiment 31
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8314, Best ValAcc: 0.8322 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8313, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8309, early-stopping-TestAcc: 0.8302, Best ValAcc: 0.8311 in epoch 279 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8311, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 292 --- 
+# final_acc: 0.8311±0.0000
+# early-stopping_acc: 0.8305±0.0000
+############################################################################
+grid search at experiment 32
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8389, Best ValAcc: 0.8387 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8401, Best ValAcc: 0.8382 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8362 in epoch 299 --- 
+# final_acc: 0.8362±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 33
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8342 in epoch 222 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8367 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8372 in epoch 287 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8347, early-stopping-TestAcc: 0.8346, Best ValAcc: 0.8372 in epoch 288 --- 
+# final_acc: 0.8347±0.0000
+# early-stopping_acc: 0.8346±0.0000
+############################################################################
+grid search at experiment 34
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8306 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8306 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8307, early-stopping-TestAcc: 0.8307, Best ValAcc: 0.8306 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8304, early-stopping-TestAcc: 0.8304, Best ValAcc: 0.8296 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8306, early-stopping-TestAcc: 0.8306, Best ValAcc: 0.8296 in epoch 295 --- 
+# final_acc: 0.8306±0.0000
+# early-stopping_acc: 0.8306±0.0000
+############################################################################
+grid search at experiment 35
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8389, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8406, early-stopping-TestAcc: 0.8406, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8379, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8357 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8352±0.0000
+# early-stopping_acc: 0.8352±0.0000
+############################################################################
+grid search at experiment 36
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8342 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8346, early-stopping-TestAcc: 0.8346, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8346±0.0000
+# early-stopping_acc: 0.8346±0.0000
+############################################################################
+grid search at experiment 37
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8372 in epoch 287 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8334, Best ValAcc: 0.8372 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8311 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8325, early-stopping-TestAcc: 0.8312, Best ValAcc: 0.8301 in epoch 234 --- 
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8306 in epoch 239 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8319, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 272 --- 
+# final_acc: 0.8319±0.0000
+# early-stopping_acc: 0.8311±0.0000
+############################################################################
+grid search at experiment 38
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8381, Best ValAcc: 0.8403 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8383, Best ValAcc: 0.8403 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8367 in epoch 299 --- 
+# final_acc: 0.8352±0.0000
+# early-stopping_acc: 0.8352±0.0000
+############################################################################
+grid search at experiment 39
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8382 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8357 in epoch 212 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 287 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 283 --- 
+# final_acc: 0.8345±0.0000
+# early-stopping_acc: 0.8345±0.0000
+############################################################################
+grid search at experiment 40
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8296 in epoch 285 --- 
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 256 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8291 in epoch 299 --- 
+# final_acc: 0.8319±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 41
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8403 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8353, early-stopping-TestAcc: 0.8353, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8353, early-stopping-TestAcc: 0.8353, Best ValAcc: 0.8372 in epoch 299 --- 
+# final_acc: 0.8353±0.0000
+# early-stopping_acc: 0.8353±0.0000
+############################################################################
+grid search at experiment 42
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8391, early-stopping-TestAcc: 0.8391, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8338, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8367 in epoch 250 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8377 in epoch 284 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8342, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8377 in epoch 284 --- 
+# final_acc: 0.8342±0.0000
+# early-stopping_acc: 0.8339±0.0000
+############################################################################
+grid search at experiment 43
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8336, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8382 in epoch 275 --- 
+# IGNORE: --- TestAcc: 0.8325, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8327 in epoch 282 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8316 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8309, Best ValAcc: 0.8306 in epoch 227 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8321, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8311 in epoch 267 --- 
+# final_acc: 0.8321±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 44
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8413 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8352 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8356±0.0000
+# early-stopping_acc: 0.8356±0.0000
+############################################################################
+grid search at experiment 45
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8362 in epoch 253 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8345, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8367 in epoch 272 --- 
+# final_acc: 0.8345±0.0000
+# early-stopping_acc: 0.8342±0.0000
+############################################################################
+grid search at experiment 46
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8367 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8332 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8337 in epoch 260 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 270 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8327 in epoch 279 --- 
+# final_acc: 0.8323±0.0000
+# early-stopping_acc: 0.8323±0.0000
+############################################################################
+grid search at experiment 47
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8386, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8351, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8351, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8362 in epoch 299 --- 
+# final_acc: 0.8351±0.0000
+# early-stopping_acc: 0.8351±0.0000
+############################################################################
+grid search at experiment 48
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.2
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8377 in epoch 299 --- 
+# final_acc: 0.8347±0.0000
+# early-stopping_acc: 0.8347±0.0000
+############################################################################
+grid search at experiment 49
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8316 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8343, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8291 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8324, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8296 in epoch 273 --- 
+# final_acc: 0.8324±0.0000
+# early-stopping_acc: 0.8321±0.0000
+############################################################################
+grid search at experiment 50
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8406, early-stopping-TestAcc: 0.8406, Best ValAcc: 0.8408 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8371, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8361±0.0000
+# early-stopping_acc: 0.8361±0.0000
+############################################################################
+grid search at experiment 51
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8388, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8348, Best ValAcc: 0.8362 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8337 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8342 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8342 in epoch 299 --- 
+# final_acc: 0.8350±0.0000
+# early-stopping_acc: 0.8350±0.0000
+############################################################################
+grid search at experiment 52
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8332 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8341, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8296 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8301 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8327, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8306 in epoch 298 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 210 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8305±0.0000
+############################################################################
+grid search at experiment 53
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8408, Best ValAcc: 0.8418 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8392 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8362±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 54
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8384, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8372 in epoch 284 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8352 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8337 in epoch 263 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8342 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8341, early-stopping-TestAcc: 0.8338, Best ValAcc: 0.8347 in epoch 272 --- 
+# final_acc: 0.8341±0.0000
+# early-stopping_acc: 0.8338±0.0000
+############################################################################
+grid search at experiment 55
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8332 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8348, early-stopping-TestAcc: 0.8348, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8332, early-stopping-TestAcc: 0.8332, Best ValAcc: 0.8316 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8332 in epoch 235 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8327 in epoch 290 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8331, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8327 in epoch 290 --- 
+# final_acc: 0.8331±0.0000
+# early-stopping_acc: 0.8328±0.0000
+############################################################################
+grid search at experiment 56
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8413, early-stopping-TestAcc: 0.8415, Best ValAcc: 0.8418 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8365, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8387 in epoch 294 --- 
+# final_acc: 0.8365±0.0000
+# early-stopping_acc: 0.8364±0.0000
+############################################################################
+grid search at experiment 57
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8378, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8387 in epoch 262 --- 
+# IGNORE: --- TestAcc: 0.8377, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8352 in epoch 294 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8347 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8347 in epoch 299 --- 
+# final_acc: 0.8349±0.0000
+# early-stopping_acc: 0.8349±0.0000
+############################################################################
+grid search at experiment 58
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8377 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8334, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8316 in epoch 248 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8311 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8316 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8328, early-stopping-TestAcc: 0.8325, Best ValAcc: 0.8316 in epoch 273 --- 
+# final_acc: 0.8328±0.0000
+# early-stopping_acc: 0.8325±0.0000
+############################################################################
+grid search at experiment 59
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8398, early-stopping-TestAcc: 0.8398, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8407, Best ValAcc: 0.8428 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8379, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8428 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8370, early-stopping-TestAcc: 0.8370, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8365, early-stopping-TestAcc: 0.8365, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8366±0.0000
+# early-stopping_acc: 0.8366±0.0000
+############################################################################
+grid search at experiment 60
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.04
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 107529
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8374, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8377 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8378, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8347 in epoch 239 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8347 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8348, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8347 in epoch 153 --- 
+# final_acc: 0.8348±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 61
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8343, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8327 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8337 in epoch 277 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8320, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8332 in epoch 292 --- 
+# final_acc: 0.8320±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 62
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8397, early-stopping-TestAcc: 0.8397, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8392, early-stopping-TestAcc: 0.8392, Best ValAcc: 0.8438 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8388, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8363, early-stopping-TestAcc: 0.8363, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8366, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8377 in epoch 290 --- 
+# final_acc: 0.8366±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 63
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8392, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8387 in epoch 224 --- 
+# IGNORE: --- TestAcc: 0.8373, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8392 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8365, early-stopping-TestAcc: 0.8365, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8372 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8372 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 64
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8382 in epoch 282 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8342 in epoch 297 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8327 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8322 in epoch 292 --- 
+# final_acc: 0.8321±0.0000
+# early-stopping_acc: 0.8321±0.0000
+############################################################################
+grid search at experiment 65
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8395, early-stopping-TestAcc: 0.8395, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8394, early-stopping-TestAcc: 0.8394, Best ValAcc: 0.8443 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8382, early-stopping-TestAcc: 0.8372, Best ValAcc: 0.8372 in epoch 288 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8387 in epoch 289 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8382 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8387 in epoch 299 --- 
+# final_acc: 0.8367±0.0000
+# early-stopping_acc: 0.8367±0.0000
+############################################################################
+grid search at experiment 66
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8383, Best ValAcc: 0.8382 in epoch 238 --- 
+# IGNORE: --- TestAcc: 0.8374, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8398 in epoch 252 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8382 in epoch 296 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8387 in epoch 296 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8382 in epoch 295 --- 
+# final_acc: 0.8357±0.0000
+# early-stopping_acc: 0.8357±0.0000
+############################################################################
+grid search at experiment 67
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8336, Best ValAcc: 0.8372 in epoch 293 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8327 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8322 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8324, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8322 in epoch 274 --- 
+# final_acc: 0.8324±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 68
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8394, early-stopping-TestAcc: 0.8394, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8408, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8367 in epoch 299 --- 
+# final_acc: 0.8359±0.0000
+# early-stopping_acc: 0.8359±0.0000
+############################################################################
+grid search at experiment 69
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8371, Best ValAcc: 0.8367 in epoch 246 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8372 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8377 in epoch 299 --- 
+# final_acc: 0.8357±0.0000
+# early-stopping_acc: 0.8357±0.0000
+############################################################################
+grid search at experiment 70
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8327 in epoch 286 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8332 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8330, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8342 in epoch 277 --- 
+# final_acc: 0.8330±0.0000
+# early-stopping_acc: 0.8320±0.0000
+############################################################################
+grid search at experiment 71
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8382 in epoch 263 --- 
+# IGNORE: --- TestAcc: 0.8411, early-stopping-TestAcc: 0.8402, Best ValAcc: 0.8392 in epoch 266 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8363, early-stopping-TestAcc: 0.8363, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8387 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 72
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.06
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 105691
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8378, Best ValAcc: 0.8377 in epoch 258 --- 
+# IGNORE: --- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8347 in epoch 254 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8352 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8352 in epoch 299 --- 
+# final_acc: 0.8355±0.0000
+# early-stopping_acc: 0.8355±0.0000
+############################################################################
+grid search at experiment 73
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8328, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8335, Best ValAcc: 0.8357 in epoch 293 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8347 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8320, Best ValAcc: 0.8332 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8337 in epoch 299 --- 
+# final_acc: 0.8317±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 74
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8423 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8404, early-stopping-TestAcc: 0.8401, Best ValAcc: 0.8428 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8376, early-stopping-TestAcc: 0.8376, Best ValAcc: 0.8413 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8408 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8360, early-stopping-TestAcc: 0.8360, Best ValAcc: 0.8408 in epoch 299 --- 
+# final_acc: 0.8360±0.0000
+# early-stopping_acc: 0.8360±0.0000
+############################################################################
+grid search at experiment 75
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8362 in epoch 277 --- 
+# IGNORE: --- TestAcc: 0.8372, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8357 in epoch 250 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8357 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8403 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8398 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8403 in epoch 299 --- 
+# final_acc: 0.8356±0.0000
+# early-stopping_acc: 0.8356±0.0000
+############################################################################
+grid search at experiment 76
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8330, early-stopping-TestAcc: 0.8330, Best ValAcc: 0.8337 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8341, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8342 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8314, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8316 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8322 in epoch 297 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8314, early-stopping-TestAcc: 0.8314, Best ValAcc: 0.8332 in epoch 275 --- 
+# final_acc: 0.8314±0.0000
+# early-stopping_acc: 0.8314±0.0000
+############################################################################
+grid search at experiment 77
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8381, Best ValAcc: 0.8428 in epoch 262 --- 
+# IGNORE: --- TestAcc: 0.8405, early-stopping-TestAcc: 0.8405, Best ValAcc: 0.8413 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8375, early-stopping-TestAcc: 0.8375, Best ValAcc: 0.8418 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8367, early-stopping-TestAcc: 0.8367, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8398 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8361, early-stopping-TestAcc: 0.8361, Best ValAcc: 0.8398 in epoch 299 --- 
+# final_acc: 0.8361±0.0000
+# early-stopping_acc: 0.8361±0.0000
+############################################################################
+grid search at experiment 78
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8362 in epoch 272 --- 
+# IGNORE: --- TestAcc: 0.8373, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8362 in epoch 226 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8341, Best ValAcc: 0.8357 in epoch 232 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8343, Best ValAcc: 0.8382 in epoch 248 --- 
+# IGNORE: --- TestAcc: 0.8357, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8392 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8392 in epoch 299 --- 
+# final_acc: 0.8355±0.0000
+# early-stopping_acc: 0.8355±0.0000
+############################################################################
+grid search at experiment 79
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8314, Best ValAcc: 0.8322 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8322, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8313, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8309, early-stopping-TestAcc: 0.8302, Best ValAcc: 0.8311 in epoch 279 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8311, early-stopping-TestAcc: 0.8305, Best ValAcc: 0.8306 in epoch 292 --- 
+# final_acc: 0.8311±0.0000
+# early-stopping_acc: 0.8305±0.0000
+############################################################################
+grid search at experiment 80
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8389, Best ValAcc: 0.8387 in epoch 291 --- 
+# IGNORE: --- TestAcc: 0.8408, early-stopping-TestAcc: 0.8401, Best ValAcc: 0.8382 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.8380, early-stopping-TestAcc: 0.8380, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8366, early-stopping-TestAcc: 0.8366, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8362 in epoch 299 --- 
+# final_acc: 0.8362±0.0000
+# early-stopping_acc: 0.8362±0.0000
+############################################################################
+grid search at experiment 81
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8342 in epoch 222 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8367 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8372 in epoch 287 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8347, early-stopping-TestAcc: 0.8346, Best ValAcc: 0.8372 in epoch 288 --- 
+# final_acc: 0.8347±0.0000
+# early-stopping_acc: 0.8346±0.0000
+############################################################################
+grid search at experiment 82
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8317, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8306 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8316, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8306 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8307, early-stopping-TestAcc: 0.8307, Best ValAcc: 0.8306 in epoch 269 --- 
+# IGNORE: --- TestAcc: 0.8304, early-stopping-TestAcc: 0.8304, Best ValAcc: 0.8296 in epoch 299 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8306, early-stopping-TestAcc: 0.8306, Best ValAcc: 0.8296 in epoch 295 --- 
+# final_acc: 0.8306±0.0000
+# early-stopping_acc: 0.8306±0.0000
+############################################################################
+grid search at experiment 83
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8389, early-stopping-TestAcc: 0.8389, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8406, early-stopping-TestAcc: 0.8406, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8379, early-stopping-TestAcc: 0.8379, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8358, early-stopping-TestAcc: 0.8358, Best ValAcc: 0.8357 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8352±0.0000
+# early-stopping_acc: 0.8352±0.0000
+############################################################################
+grid search at experiment 84
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.08
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 101915
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8385, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8342 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8377 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8346, early-stopping-TestAcc: 0.8346, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8346±0.0000
+# early-stopping_acc: 0.8346±0.0000
+############################################################################
+grid search at experiment 85
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8372 in epoch 287 --- 
+# IGNORE: --- TestAcc: 0.8335, early-stopping-TestAcc: 0.8334, Best ValAcc: 0.8372 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8331, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8311 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8325, early-stopping-TestAcc: 0.8312, Best ValAcc: 0.8301 in epoch 234 --- 
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8306 in epoch 239 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8319, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 272 --- 
+# final_acc: 0.8319±0.0000
+# early-stopping_acc: 0.8311±0.0000
+############################################################################
+grid search at experiment 86
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8388, early-stopping-TestAcc: 0.8381, Best ValAcc: 0.8403 in epoch 279 --- 
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8383, Best ValAcc: 0.8403 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8369, early-stopping-TestAcc: 0.8369, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8367 in epoch 299 --- 
+# final_acc: 0.8352±0.0000
+# early-stopping_acc: 0.8352±0.0000
+############################################################################
+grid search at experiment 87
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8399, early-stopping-TestAcc: 0.8399, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8361, early-stopping-TestAcc: 0.8357, Best ValAcc: 0.8382 in epoch 274 --- 
+# IGNORE: --- TestAcc: 0.8340, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8357 in epoch 212 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 287 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8372 in epoch 283 --- 
+# final_acc: 0.8345±0.0000
+# early-stopping_acc: 0.8345±0.0000
+############################################################################
+grid search at experiment 88
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8324, early-stopping-TestAcc: 0.8324, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8337, early-stopping-TestAcc: 0.8337, Best ValAcc: 0.8352 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8326, early-stopping-TestAcc: 0.8326, Best ValAcc: 0.8332 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8322, Best ValAcc: 0.8296 in epoch 285 --- 
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8311, Best ValAcc: 0.8301 in epoch 256 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8319, early-stopping-TestAcc: 0.8319, Best ValAcc: 0.8291 in epoch 299 --- 
+# final_acc: 0.8319±0.0000
+# early-stopping_acc: 0.8319±0.0000
+############################################################################
+grid search at experiment 89
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8403 in epoch 295 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8353, early-stopping-TestAcc: 0.8353, Best ValAcc: 0.8367 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8353, early-stopping-TestAcc: 0.8353, Best ValAcc: 0.8372 in epoch 299 --- 
+# final_acc: 0.8353±0.0000
+# early-stopping_acc: 0.8353±0.0000
+############################################################################
+grid search at experiment 90
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.02
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 204
+# IGNORE: --- TestAcc: 0.8391, early-stopping-TestAcc: 0.8391, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8387 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8338, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8367 in epoch 250 --- 
+# IGNORE: --- TestAcc: 0.8342, early-stopping-TestAcc: 0.8340, Best ValAcc: 0.8377 in epoch 284 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8342, early-stopping-TestAcc: 0.8339, Best ValAcc: 0.8377 in epoch 284 --- 
+# final_acc: 0.8342±0.0000
+# early-stopping_acc: 0.8339±0.0000
+############################################################################
+grid search at experiment 91
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8321, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8357 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8336, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8382 in epoch 275 --- 
+# IGNORE: --- TestAcc: 0.8325, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8327 in epoch 282 --- 
+# IGNORE: --- TestAcc: 0.8323, early-stopping-TestAcc: 0.8321, Best ValAcc: 0.8316 in epoch 271 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8309, Best ValAcc: 0.8306 in epoch 227 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8321, early-stopping-TestAcc: 0.8317, Best ValAcc: 0.8311 in epoch 267 --- 
+# final_acc: 0.8321±0.0000
+# early-stopping_acc: 0.8317±0.0000
+############################################################################
+grid search at experiment 92
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8384, early-stopping-TestAcc: 0.8385, Best ValAcc: 0.8413 in epoch 298 --- 
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8368, early-stopping-TestAcc: 0.8368, Best ValAcc: 0.8392 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8355, early-stopping-TestAcc: 0.8355, Best ValAcc: 0.8352 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8356, early-stopping-TestAcc: 0.8356, Best ValAcc: 0.8357 in epoch 299 --- 
+# final_acc: 0.8356±0.0000
+# early-stopping_acc: 0.8356±0.0000
+############################################################################
+grid search at experiment 93
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : refine
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8382, Best ValAcc: 0.8362 in epoch 253 --- 
+# IGNORE: --- TestAcc: 0.8362, early-stopping-TestAcc: 0.8362, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8352, early-stopping-TestAcc: 0.8352, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8349, early-stopping-TestAcc: 0.8349, Best ValAcc: 0.8372 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8345, early-stopping-TestAcc: 0.8345, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8345, early-stopping-TestAcc: 0.8342, Best ValAcc: 0.8367 in epoch 272 --- 
+# final_acc: 0.8345±0.0000
+# early-stopping_acc: 0.8342±0.0000
+############################################################################
+grid search at experiment 94
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 256
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8319, early-stopping-TestAcc: 0.8316, Best ValAcc: 0.8367 in epoch 292 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8333, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8333, early-stopping-TestAcc: 0.8331, Best ValAcc: 0.8332 in epoch 290 --- 
+# IGNORE: --- TestAcc: 0.8328, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8337 in epoch 260 --- 
+# IGNORE: --- TestAcc: 0.8320, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8332 in epoch 270 --- 
+num parameters for finetuning: 771
+--- TestAcc: 0.8323, early-stopping-TestAcc: 0.8323, Best ValAcc: 0.8327 in epoch 279 --- 
+# final_acc: 0.8323±0.0000
+# early-stopping_acc: 0.8323±0.0000
+############################################################################
+grid search at experiment 95
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 512
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8386, early-stopping-TestAcc: 0.8386, Best ValAcc: 0.8423 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8387, early-stopping-TestAcc: 0.8387, Best ValAcc: 0.8398 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8364, early-stopping-TestAcc: 0.8364, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8354, early-stopping-TestAcc: 0.8354, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8351, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8362 in epoch 299 --- 
+num parameters for finetuning: 1539
+--- TestAcc: 0.8351, early-stopping-TestAcc: 0.8351, Best ValAcc: 0.8362 in epoch 299 --- 
+# final_acc: 0.8351±0.0000
+# early-stopping_acc: 0.8351±0.0000
+############################################################################
+grid search at experiment 96
+************************************************
+gamma                : 0.0
+beta                 : 0.0
+add_rate             : 0.2
+decay                : 0.8
+num_hidden           : 1024
+keep_threshold       : 0.1
+dele_threshold       : 0.04
+type_graph4recon     : ptb
+************************************************
+####### Run 1 for seed 1
+tensor(1., device='cuda:0')
+tensor(0., device='cuda:0')
+num  edges : 108365
+keep edges : 95729
+del  edges : 836
+# IGNORE: --- TestAcc: 0.8390, early-stopping-TestAcc: 0.8390, Best ValAcc: 0.8362 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8359, early-stopping-TestAcc: 0.8359, Best ValAcc: 0.8382 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8350, early-stopping-TestAcc: 0.8350, Best ValAcc: 0.8367 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8377 in epoch 299 --- 
+num parameters for finetuning: 3075
+--- TestAcc: 0.8347, early-stopping-TestAcc: 0.8347, Best ValAcc: 0.8377 in epoch 299 --- 
+# final_acc: 0.8347±0.0000
+# early-stopping_acc: 0.8347±0.0000

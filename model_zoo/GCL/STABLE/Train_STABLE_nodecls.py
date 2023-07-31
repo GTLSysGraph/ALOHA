@@ -23,7 +23,7 @@ def Train_STABLE_nodecls(margs):
             "ptb_rate":margs.attack.split('-')[1]
         }
         # now just attack use
-        dataset  = load_data(DATASET['ATTACK']['PARAM'])
+        dataset  = load_attack_data(DATASET['ATTACK']['PARAM'])
         graph = dataset.graph
     else:
         DATASET.PARAM = {
@@ -49,7 +49,7 @@ def Train_STABLE_nodecls(margs):
     perturbed_adj_sparse = to_scipy(graph.adj())
 
     print('===start preprocessing the graph===')
-    if dataset_name == 'polblogs':
+    if dataset_name.split('-')[1].lower() == 'polblogs':
         args.jt = 0
     adj_pre = preprocess_adj(features, perturbed_adj_sparse,  threshold=args.jt)
     adj_delete = perturbed_adj_sparse - adj_pre

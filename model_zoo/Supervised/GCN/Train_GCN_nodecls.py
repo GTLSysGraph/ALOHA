@@ -34,7 +34,7 @@ def Train_GCN_nodecls(margs):
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
         else:
-            if dataset_name in ['Cora','Pubmed','Citeseer']:
+            if dataset_name in ['Cora','Pubmed','Citeseer','CoauthorCS']:
                 dataset  = load_data(dataset_name)
                 graph = dataset[0]
             elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   

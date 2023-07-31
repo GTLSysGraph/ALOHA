@@ -203,13 +203,18 @@ def Train_S2GAE_nodecls(margs):
 
     labels = data.y.view(-1)
 
-    save_path_model = './model_zoo/GAE/S2GAE/weight/s2gaesvm-' + args.use_sage + '_{}_{}'.format(dataset_name, args.mask_type) + '_{}'.format(
-        args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
-                                                     args.decode_channels) + '_model.pth'
-    save_path_predictor = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}'.format(dataset_name,
-                                                                          args.mask_type) + '_{}'.format(
-        args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
-                                                     args.decode_channels) + '_pred.pth'
+    if dataset_name.split('-')[0] == 'Attack':
+        save_path_model = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}_{}_{}'.format(dataset_name, attackmethod, attackptb, args.mask_type) + '_{}'.format(args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,args.decode_channels) + '_model.pth'
+        
+        save_path_predictor = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}_{}_{}'.format(dataset_name, attackmethod, attackptb, args.mask_type) + '_{}'.format(args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,args.decode_channels) + '_pred.pth'
+    else:
+        save_path_model = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}'.format(dataset_name, args.mask_type) + '_{}'.format(
+            args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
+                                                        args.decode_channels) + '_model.pth'
+        save_path_predictor = './model_zoo/GAE/S2GAE/weight/s2gaesvm' + args.use_sage + '_{}_{}'.format(dataset_name,
+                                                                            args.mask_type) + '_{}'.format(
+            args.num_layers) + '_hidd{}-{}-{}-{}'.format(args.hidden_channels, args.mask_ratio, args.decode_layers,
+                                                        args.decode_channels) + '_pred.pth'
 
     out2_dict = {0: 'last', 1: 'combine'}
     result_dict = out2_dict

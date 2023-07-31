@@ -29,6 +29,9 @@ def compute_edge_sim(edges,features,sim_mode='cosine'):
         avg1 = torch.mean(features[edges[1]],dim=1).unsqueeze(-1)
         edges_sim = F.cosine_similarity(features[edges[0]] - avg0 , features[edges[1]] - avg1, dim=1)
         edges_sim = 0.5 + 0.5 * edges_sim # # 皮尔逊相关系数的取值范围(-1 ~ 1),0.5 + 0.5 * result 归一化(0 ~ 1)
+    
+    print(max(edges_sim))
+    print(min(edges_sim))
     return edges_sim
 
 

@@ -135,7 +135,7 @@ def Train_SPMGAE_nodecls(margs):
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
         else:
-            if dataset_name in ['Cora','Pubmed','Citeseer']:
+            if dataset_name in ['Cora','Pubmed','Citeseer','CoauthorCS']:
                 dataset  = load_data(dataset_name)
                 graph = dataset[0]
             elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
@@ -164,12 +164,47 @@ def Train_SPMGAE_nodecls(margs):
         raise Exception('Unknown mode!')
 
 
+
     ##########################
     
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
         param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/SPMGAE/configs.yml")
+
+
+    # ##################################################################################################################
+    # # grid search
+    # grid_num = 0 
+    # # for gamma in [0, 1, 10]:
+    # #     for beta in [0.0, 0.001, 0.1]:
+    # for decay in [0.2, 0.8]:
+    # #           for add_rate in [0.2, 0.4, 0.6, 0.8]:
+    #     for threshold in [[0.04, 0.02], [0.04, 0.04],[0.06,0.02], [0.06,0.04],[0.08, 0.02],[0.08, 0.04],[0.1, 0.02],[0.1, 0.04]]:
+    #         for type_graph4recon in ['refine', 'ptb']:
+    #             for num_hidden in [256, 512, 1024]:
+    #                 grid_num += 1
+    #                 # param.gamma              = gamma
+    #                 # param.beta               = beta
+    #                 param.decay              = decay
+    #                 # param.add_rate           = add_rate
+    #                 param.num_hidden         = num_hidden
+    #                 param.type_graph4recon   = type_graph4recon
+    #                 param.keep_threshold     = threshold[0]
+    #                 param.dele_threshold     = threshold[1]
+    #                 print('############################################################################')
+    #                 print('grid search at experiment {}'.format(grid_num))
+    #                 print('************************************************')
+    #                 print('gamma                : {}'.format(param.gamma))
+    #                 print('beta                 : {}'.format(param.beta))
+    #                 print('add_rate             : {}'.format(param.add_rate))
+    #                 print('decay                : {}'.format(param.decay))
+    #                 print('num_hidden           : {}'.format(param.num_hidden))
+    #                 print('keep_threshold       : {}'.format(param.keep_threshold))
+    #                 print('dele_threshold       : {}'.format(param.dele_threshold))
+    #                 print('type_graph4recon     : {}'.format(param.type_graph4recon))
+    #                 print('************************************************')
+    #                 ###############################################################################################################
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -194,6 +229,7 @@ def Train_SPMGAE_nodecls(margs):
     use_scheduler  = param.scheduler
     batch_size     = param.batch_size
     param.num_features = num_features
+
 
     acc_list = []
     estp_acc_list = []
@@ -227,7 +263,7 @@ def Train_SPMGAE_nodecls(margs):
                 model = pretrain_tranductive(param, model, graph, graph.ndata["feat"], optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             elif margs.mode == 'inductive':
                 model = pretrain_inductive(model, (train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
-           
+        
 
 
         if load_model:
@@ -245,7 +281,7 @@ def Train_SPMGAE_nodecls(margs):
             final_acc, estp_acc = node_classification_evaluation(model, graph, graph.ndata['feat'], num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
         elif margs.mode == 'inductive':
             final_acc, estp_acc = evaluete(model, (eval_train_dataloader, valid_dataloader, test_dataloader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
-       
+    
 
         acc_list.append(final_acc)
         estp_acc_list.append(estp_acc)

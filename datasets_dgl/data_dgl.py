@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import torch
 # attack nodecls dataset
 from datasets_dgl.datasets_file.cora import CoraDataset
+from datasets_dgl.datasets_file.coraml import CoraMLDataset
 from datasets_dgl.datasets_file.citeseer import CiteseerDataset
 from datasets_dgl.datasets_file.pubmed import PubmedDataset
 from datasets_dgl.datasets_file.polblogs import PolblogsDataset
@@ -15,6 +16,7 @@ from dgl.data     import CoraGraphDataset
 from dgl.data     import CiteseerGraphDataset
 from dgl.data     import PubmedGraphDataset
 from dgl.data     import RedditDataset
+from dgl.data     import CoauthorCSDataset
 # inductive 
 from ogb.nodeproppred import DglNodePropPredDataset
 from dgl.data.ppi import PPIDataset
@@ -32,6 +34,8 @@ def load_attack_data(args):
         return PubmedDataset(args)
     elif args.data in ['Attack-Polblogs']:
         return PolblogsDataset(args)
+    elif args.data in ['Attack-Cora_ml']:
+        return CoraMLDataset(args)
     else:
         raise Exception('Unknown dataset!')
 
@@ -42,6 +46,8 @@ def load_data(dataname):
         return CiteseerGraphDataset()
     elif dataname in ['Pubmed']:
         return PubmedGraphDataset()
+    if dataname in ['CoauthorCS']:
+        return CoauthorCSDataset()
     elif dataname in ['ogbn-arxiv']:
         return DglNodePropPredDataset('ogbn-arxiv',root = '/home/songsh/.dgl')
     elif dataname in ['Reddit']:

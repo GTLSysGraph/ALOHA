@@ -1,5 +1,5 @@
 cora:
-  seeds: [3,1,2,4]
+  seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
   batch_size: 500
@@ -23,7 +23,8 @@ cora:
   alpha_l: 3
   scheduler: True
   concat_hidden: False 
-  # cora 0.8478±0.0045 ## 0.8400 0.8490 0.8510 0.8510
+
+  # raw cora                ptb 0.8478±0.0045  refine 0.8413±0.0039
   # num_hidden         : 512 # 在扰动小的情况下希望大一些而且希望使用graph perb进行重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
   # drop_edge_rate     : 0.1
   # sim_mode           : jaccard
@@ -36,27 +37,151 @@ cora:
   # add_rate           : 0.4
   # gamma              : 10
   # beta               : 0.3
+  # type_graph4recon   : "ptb"
 
-  #### attack cora meta 0.2   0.6457±0.0109
+  #### attack cora meta 0.0  ptb 0.8590±0.0029  refine 0.8524±0.0046
+  # num_hidden         : 512
+  # drop_edge_rate     : 0.1
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.02
+  # dele_threshold     : 0.02
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 100
+  # decay              : 0.4 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.4
+  # gamma              : 20
+  # beta               : 0.001
+  # type_graph4recon   : "ptb"
+
+  #### attack cora meta 0.05  ptb 0.8227±0.0021 refine 0.8144±0.0035
+  # num_hidden         : 512
+  # drop_edge_rate     : 0.1
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.06
+  # edge_hidden        : 64 
+  # updata_guide_model : 100
+  # decay              : 0.6 
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 10
+  # beta               : 0.0
+  # type_graph4recon   : "ptb"
+
+  #### attack cora meta 0.1  ptb 0.7648±0.0059 refine 0.7618±0.0059
+  # num_hidden         : 256
+  # drop_edge_rate     : 0.1
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.08
+  # dele_threshold     : 0.04
+  # edge_hidden        : 32 
+  # updata_guide_model : 100
+  # decay              : 0.8
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.001
+  # type_graph4recon   : "ptb"
+
+  #### attack cora meta 0.15   ptb 0.7176±0.0154  refine 0.7152±0.0111
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.1
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.04
+  # edge_hidden        : 32
+  # updata_guide_model : 100
+  # decay              : 0.9 
+  # undirected         : False
+  # add_rate           : 0.1 #0.2?回来探索一下
+  # gamma              : 1
+  # beta               : 0.001
+  # type_graph4recon   : "ptb"
+
+
+
+  #### attack cora meta 0.2  ptb 0.6397±0.0053   refine 0.6502±0.0100
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.08
+  # dele_threshold     : 0.02
+  # edge_hidden        : 32
+  # updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.001
+  # type_graph4recon   : "refine"
+
+  #### attack cora meta 0.25  ptb 0.5692±0.0080  reine 0.5812±0.0075  gamma=0 0.5663±0.0055
   num_hidden         : 64
   drop_edge_rate     : 0.0
   sim_mode           : jaccard
-  keep_threshold     : 0.08
-  dele_threshold     : 0.02
+  keep_threshold     : 0.1
+  dele_threshold     : 0.04
+  edge_hidden        : 32
   updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
   decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
   undirected         : False
-  add_rate           : 0.2
+  add_rate           : 0.1
   gamma              : 1
+  beta               : 0.005
+  type_graph4recon   : "refine"
+
+
+cora_ml:
+  seeds: [1,2,3,4]
+  lr: 0.001
+  lr_f: 0.01
+  batch_size: 500
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1500
+  max_epoch_f: 300
+  mask_rate: 0.5
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce 
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  scheduler: True
+  concat_hidden: False 
+  
+  #### attack cora_ml meta 0.0  
+  num_hidden         : 512
+  drop_edge_rate     : 0.1
+  sim_mode           : jaccard
+  keep_threshold     : 0.02
+  dele_threshold     : 0.02
+  edge_hidden        : 64 #最好的还是64的时候
+  updata_guide_model : 100
+  decay              : 0.4 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  undirected         : False
+  add_rate           : 0.4
+  gamma              : 20
   beta               : 0.001
+  type_graph4recon   : "ptb"
+
+
+
 
 
 
 citeseer:
-  seeds  : [4,1,2,3]
+  seeds  : [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 512
   num_heads: 2
   num_layers: 2
   weight_decay: 2e-5
@@ -76,6 +201,7 @@ citeseer:
   replace_rate: 0.05
   alpha_l: 1 # or 3 
   scheduler: True
+
   # Citeseer 0.7348±0.0029
   # num_hidden: 512
   # drop_edge_rate     : 0.2
@@ -89,25 +215,104 @@ citeseer:
   # add_rate           : 0.5
   # gamma              : 10
   # beta               : 0.01
+  # type_graph4recon   : "ptb"
 
-  #### attack citeseer meta 0.2   
+  #### attack citeseer meta 0.0   ptb 0.7550±0.0056 refine 0.7559±0.0041
   num_hidden         : 64
   drop_edge_rate     : 0.0
   sim_mode           : jaccard
-  keep_threshold     : 0.08
-  dele_threshold     : 0.02
-  updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
-  decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  keep_threshold     : 0.02
+  dele_threshold     : 0.01
+  edge_hidden        : 32
+  updata_guide_model : 100   # 不能太频繁 100 在攻击的时候不错
+  decay              : 0.9 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
   undirected         : False
-  add_rate           : 0.2
-  gamma              : 1
-  beta               : 0.001
+  add_rate           : 0.5
+  gamma              : 0.
+  beta               : 0.
+  type_graph4recon   : "refine"
+
+  #### attack citeseer meta 0.05  ptb 0.7524±0.0044 refine 0.7536±0.0011
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.06
+  # dele_threshold     : 0.01
+  # edge_hidden        : 32
+  # updata_guide_model : 400   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.2 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
+  # undirected         : False
+  # add_rate           : 0.1
+  # gamma              : 0.
+  # beta               : 0.
+  # type_graph4recon   : "refine"
+
+  #### attack citeseer meta 0.1   ptb 0.7325±0.0043     refine 0.7337±0.0054                    
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.04
+  # dele_threshold     : 0.02
+  # edge_hidden        : 32
+  # updata_guide_model : 100   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.001
+  # type_graph4recon   : "refine"
+
+  #### attack citeseer meta 0.15  ptb 0.6885±0.0091  refine 0.6936±0.0067  beta=0  0.6798±0.0041 可以用这个分析一下
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.06
+  # dele_threshold     : 0.02
+  # edge_hidden        : 32
+  # updata_guide_model : 200   
+  # decay              : 0.995
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.1 #在攻击比例大的时候，这个值大开始发挥出作用
+  # type_graph4recon   : "refine"
+
+
+  #### attack citeseer meta 0.2  ptb 0.6678±0.0101  0.6702±0.0088
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.06
+  # dele_threshold     : 0.02
+  # edge_hidden        : 32
+  # updata_guide_model : 200   
+  # decay              : 0.995
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.1
+  # type_graph4recon   : "refine"
+
+  #### attack citeseer meta 0.25   ptb 0.6608±0.0113   refine 0.6638±0.0087 
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.04
+  # dele_threshold     : 0.02
+  # edge_hidden        : 32
+  # updata_guide_model : 100   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.4 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 1
+  # beta               : 0.001
+  # type_graph4recon   : "refine"
 
 
 
 
 
 pubmed:
+  seeds  : [1,2]
   lr: 0.001
   lr_f: 0.01
   num_heads: 4
@@ -116,7 +321,7 @@ pubmed:
   weight_decay_f: 1e-4
   max_epoch: 1000
   max_epoch_f: 300
-  mask_rate: 0.75
+  mask_rate: 0.1 # pubmed种对特征的mask小一些鲁棒性要更好
   num_layers: 2
   encoder: gat
   decoder: gat
@@ -130,19 +335,166 @@ pubmed:
   replace_rate: 0.0
   alpha_l: 3
   scheduler: True
+  concat_hidden: True
 
-  #### attack pubmed meta 0.2   
+
+  ### raw pubmed   
+  # mask_rate          : 0.75
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.08 #0.08
+  # dele_threshold     : 0.08 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.8 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.0 #pubmed边的重建会起作用，比设置为0要好 
+  # type_graph4recon   : "ptb"
+
+
+
+
+
+  ### attack pubmed meta 0.0   0.8496±0.0003
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.2 #0.08
+  # dele_threshold     : 0.2 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.5 #pubmed边的重建会起作用，比设置为0要好 
+  # type_graph4recon   : "refine"
+
+
+
+  ### attack pubmed meta 0.05   refine 0.8264±0.0005
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.2 #0.08
+  # dele_threshold     : 0.2 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.5 #pubmed边的重建会起作用，比设置为0要好
+  # type_graph4recon   : "refine"
+
+  # ### attack pubmed meta 0.1   0.8122±0.0024
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.2 #0.08
+  # dele_threshold     : 0.2 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.5 #pubmed边的重建会起作用，比设置为0要好
+  # type_graph4recon   : "refine"
+
+  ### attack pubmed meta 0.15  0.8036±0.0011
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.2 #0.08
+  # dele_threshold     : 0.2 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.5 #pubmed边的重建会起作用，比设置为0要好
+  # type_graph4recon   : "refine"
+
+  ### attack pubmed meta 0.2   0.7950±0.0010
+  # num_hidden         : 1024
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.2 #0.08
+  # dele_threshold     : 0.2 #0.04
+  # edge_hidden        : 64
+  # updata_guide_model : 200  # 在pubmed里貌似迭代的快点
+  # decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40  #这个值也可以设置的大一点，
+  # beta               : 0.5 #pubmed边的重建会起作用，比设置为0要好
+  # type_graph4recon   : "refine"
+
+
+  #### attack pubmed meta 0.25   0.7833±0.0012          
+  # gamma:    0  77.2  10  78.07    20 0.7857     40 0.7840   60 78.58   80 78.20
+  # beta：    0  67.5  0.1 76.07    0.5 0.7833    1  77.81    10 76.72   20 75.8
+  mask_rate          : 0.1
   num_hidden         : 1024
   drop_edge_rate     : 0.0
   sim_mode           : jaccard
-  keep_threshold     : 0.08
-  dele_threshold     : 0.02
-  updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
-  decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  keep_threshold     : 0.2 #0.08
+  dele_threshold     : 0.2 #0.04
+  edge_hidden        : 64
+  updata_guide_model : 200  # 在pubmed里貌似不希望迭代的太快
+  decay              : 0.1 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
   undirected         : False
-  add_rate           : 0.2
+  add_rate           : 0.8
+  gamma              : 20
+  beta               : 0.5 # 0.5
+  type_graph4recon   : "refine"
+
+polblogs:
+  seeds: [1,2,3,4]
+  lr: 0.001
+  lr_f: 0.01
+  batch_size: 500
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 800
+  max_epoch_f: 300
+  mask_rate: 0.5
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce 
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  scheduler: True
+  concat_hidden: False 
+  ##
+  num_hidden         : 64 # 在扰动小的情况下希望大一些而且希望使用graph perb进行重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
+  drop_edge_rate     : 0.1
+  sim_mode           : jaccard
+  keep_threshold     : 0.9
+  dele_threshold     : 0.9
+  updata_guide_model : 100
+  decay              : 0.99
+  undirected         : False
+  add_rate           : 0.4
   gamma              : 1
-  beta               : 0.001
+  beta               : 0.0
+
+
+
+
 
 
 ogbn-arxiv:

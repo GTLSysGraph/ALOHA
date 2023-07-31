@@ -175,7 +175,7 @@ def Train_GraphMAE_nodecls(margs):
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
         else:
-            if dataset_name in ['Cora','Pubmed','Citeseer']:
+            if dataset_name in ['Cora','Pubmed','Citeseer','Cora_ml']:
                 dataset  = load_data(dataset_name)
                 graph = dataset[0]
             elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
@@ -203,13 +203,13 @@ def Train_GraphMAE_nodecls(margs):
     else:
         raise Exception('Unknown mode!')
 
-
     ##########################
     
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
         param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/GraphMAE/configs.yml")
+
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch

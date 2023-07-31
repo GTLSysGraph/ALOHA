@@ -3,7 +3,7 @@ cora:
   seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 512
+  num_hidden: 64
   batch_size: 500
   num_heads: 4
   num_layers: 2
@@ -25,9 +25,45 @@ cora:
   replace_rate: 0.05
   alpha_l: 3
   scheduler: True
-  
+
+cora_ml:
+  # 
+  seeds: [1,2,3,4]
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 64
+  batch_size: 500
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 1500
+  max_epoch_f: 300
+  mask_rate: 0.5
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce 
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.05
+  alpha_l: 3
+  scheduler: True
+
+
+
+
 citeseer:
-  # 0.7323±0.0029
+  # meta 0.0  hidden 64  0.7580±0.0016 
+  # meta 0.05 hidden 64  0.7539±0.0046
+  # meta 0.1  hidden 64  0.7202±0.0053
+  # meta 0.15 hidden 64  0.6748±0.0051
+  # meta 0.2  hidden 64  0.6565±0.0022
+  # meta 0.25 hidden 64  0.6340±0.0062
   seeds  : [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
@@ -52,7 +88,9 @@ citeseer:
   replace_rate: 0.05
   alpha_l: 1 # or 3 
   scheduler: True
+
 pubmed:
+  seeds  : [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 1024
@@ -62,7 +100,7 @@ pubmed:
   weight_decay_f: 1e-4
   max_epoch: 1000
   max_epoch_f: 300
-  mask_rate: 0.75
+  mask_rate: 0.1
   num_layers: 2
   encoder: gat
   decoder: gat
@@ -76,6 +114,38 @@ pubmed:
   replace_rate: 0.0
   alpha_l: 3
   scheduler: True
+
+
+polblogs:
+  seeds: [1,2,3,4]
+  lr: 0.001
+  lr_f: 0.01
+  num_hidden: 64
+  batch_size: 500
+  num_heads: 4
+  num_layers: 2
+  weight_decay: 2e-4
+  weight_decay_f: 1e-4
+  max_epoch: 800
+  max_epoch_f: 300
+  mask_rate: 0.5
+  num_layers: 2
+  encoder: gat
+  decoder: gat
+  activation: prelu
+  in_drop: 0.2
+  attn_drop: 0.1
+  linear_prob: True
+  loss_fn: sce 
+  drop_edge_rate: 0.0
+  optimizer: adam
+  replace_rate: 0.0
+  alpha_l: 3
+  scheduler: True
+
+
+
+
 ogbn-arxiv:
   lr: 0.001
   lr_f: 0.01
@@ -147,6 +217,7 @@ reddit:
   residual: True
   scheduler: True
   linear_prob: True
+  
 IMDB-BINARY:
   seeds: [1,2,3,4]
   lr: 0.00015
