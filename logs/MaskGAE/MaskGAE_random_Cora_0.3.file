@@ -34,876 +34,876 @@ MaskGAE(
 )
 Start Training (Link Prediction Pretext Training)...
 AUC
-Run: 01 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.15%%, Loss: 0.8244, Valid: 81.15%, Test: 78.09% Training Time/epoch: 0.041
+Run: 01 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 72.53%%, Loss: 0.8362, Valid: 72.53%, Test: 73.64% Training Time/epoch: 0.044
 AP
-Run: 01 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.15%%, Loss: 0.8244, Valid: 81.93%, Test: 80.19% Training Time/epoch: 0.041
+Run: 01 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 72.53%%, Loss: 0.8362, Valid: 72.93%, Test: 75.62% Training Time/epoch: 0.044
 ########
 AUC
-Run: 01 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.7820, Valid: 86.54%, Test: 84.26% Training Time/epoch: 0.040
+Run: 01 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7661, Valid: 86.79%, Test: 87.72% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.7820, Valid: 88.30%, Test: 86.99% Training Time/epoch: 0.040
+Run: 01 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7661, Valid: 88.54%, Test: 89.59% Training Time/epoch: 0.043
 #################
 AUC
-Run: 01 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.46%%, Loss: 0.7304, Valid: 87.46%, Test: 84.65% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 90 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7661, Valid: 86.79%, Test: 88.60% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.46%%, Loss: 0.7304, Valid: 89.70%, Test: 87.77% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 90 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7661, Valid: 89.64%, Test: 90.48% Training Time/epoch: 0.043
 #########################
 AUC
-Run: 01 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.56%%, Loss: 0.7395, Valid: 87.56%, Test: 85.10% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.97%%, Loss: 0.7451, Valid: 86.97%, Test: 88.70% Training Time/epoch: 0.038
 AP
-Run: 01 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.56%%, Loss: 0.7395, Valid: 89.88%, Test: 88.40% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.97%%, Loss: 0.7451, Valid: 89.90%, Test: 90.49% Training Time/epoch: 0.038
 ##################################
 AUC
-Run: 01 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.56%%, Loss: 0.7318, Valid: 87.54%, Test: 85.22% Training Time/epoch: 0.037
+Run: 01 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.7499, Valid: 87.02%, Test: 88.76% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.56%%, Loss: 0.7318, Valid: 90.12%, Test: 88.45% Training Time/epoch: 0.037
+Run: 01 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.7499, Valid: 89.95%, Test: 90.87% Training Time/epoch: 0.043
 ##########################################
 AUC
-Run: 01 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.76%%, Loss: 0.7234, Valid: 87.76%, Test: 85.24% Training Time/epoch: 0.040
+Run: 01 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.7218, Valid: 86.90%, Test: 88.46% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.76%%, Loss: 0.7234, Valid: 90.18%, Test: 88.41% Training Time/epoch: 0.040
+Run: 01 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.7218, Valid: 89.95%, Test: 90.58% Training Time/epoch: 0.043
 ##################################################
 AUC
-Run: 01 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.92%%, Loss: 0.7223, Valid: 87.92%, Test: 85.63% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.6977, Valid: 86.79%, Test: 88.67% Training Time/epoch: 0.046
 AP
-Run: 01 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.92%%, Loss: 0.7223, Valid: 90.51%, Test: 88.73% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.6977, Valid: 89.94%, Test: 90.74% Training Time/epoch: 0.046
 ###########################################################
 AUC
-Run: 01 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.94%%, Loss: 0.7006, Valid: 87.94%, Test: 85.47% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.6954, Valid: 86.85%, Test: 89.08% Training Time/epoch: 0.044
 AP
-Run: 01 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.94%%, Loss: 0.7006, Valid: 90.48%, Test: 88.81% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 87.02%%, Loss: 0.6954, Valid: 89.97%, Test: 91.03% Training Time/epoch: 0.044
 ###################################################################
 AUC
-Run: 01 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.7011, Valid: 88.01%, Test: 85.66% Training Time/epoch: 0.037
+Run: 01 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 87.05%%, Loss: 0.6912, Valid: 87.05%, Test: 89.15% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.7011, Valid: 90.54%, Test: 88.92% Training Time/epoch: 0.037
+Run: 01 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 87.05%%, Loss: 0.6912, Valid: 90.20%, Test: 91.05% Training Time/epoch: 0.043
 ###########################################################################
 AUC
-Run: 01 / 10, Epoch: 300 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6701, Valid: 87.97%, Test: 85.71% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.06%%, Loss: 0.7202, Valid: 87.06%, Test: 89.12% Training Time/epoch: 0.045
 AP
-Run: 01 / 10, Epoch: 300 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6701, Valid: 90.49%, Test: 89.01% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.06%%, Loss: 0.7202, Valid: 90.14%, Test: 91.03% Training Time/epoch: 0.045
 ####################################################################################
 AUC
-Run: 01 / 10, Epoch: 330 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.7056, Valid: 87.77%, Test: 85.67% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.06%%, Loss: 0.6869, Valid: 86.95%, Test: 88.83% Training Time/epoch: 0.041
 AP
-Run: 01 / 10, Epoch: 330 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.7056, Valid: 90.38%, Test: 89.14% Training Time/epoch: 0.038
+Run: 01 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.06%%, Loss: 0.6869, Valid: 90.12%, Test: 90.92% Training Time/epoch: 0.041
 ############################################################################################
 AUC
-Run: 01 / 10, Epoch: 360 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6667, Valid: 87.88%, Test: 85.31% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 87.09%%, Loss: 0.6794, Valid: 87.09%, Test: 88.79% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 360 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6667, Valid: 90.55%, Test: 88.86% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 87.09%%, Loss: 0.6794, Valid: 90.25%, Test: 91.06% Training Time/epoch: 0.043
 #####################################################################################################
 AUC
-Run: 01 / 10, Epoch: 390 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6929, Valid: 87.82%, Test: 85.79% Training Time/epoch: 0.036
+Run: 01 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.10%%, Loss: 0.6651, Valid: 87.10%, Test: 88.72% Training Time/epoch: 0.048
 AP
-Run: 01 / 10, Epoch: 390 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6929, Valid: 90.46%, Test: 89.10% Training Time/epoch: 0.036
+Run: 01 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.10%%, Loss: 0.6651, Valid: 90.35%, Test: 90.89% Training Time/epoch: 0.048
 #############################################################################################################
 AUC
-Run: 01 / 10, Epoch: 420 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6986, Valid: 87.87%, Test: 86.27% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.13%%, Loss: 0.6784, Valid: 87.13%, Test: 88.80% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 420 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6986, Valid: 90.48%, Test: 89.39% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.13%%, Loss: 0.6784, Valid: 90.29%, Test: 91.01% Training Time/epoch: 0.043
 #####################################################################################################################
 AUC
-Run: 01 / 10, Epoch: 450 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6962, Valid: 87.82%, Test: 86.12% Training Time/epoch: 0.042
+Run: 01 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.13%%, Loss: 0.6726, Valid: 87.01%, Test: 88.76% Training Time/epoch: 0.048
 AP
-Run: 01 / 10, Epoch: 450 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6962, Valid: 90.50%, Test: 89.24% Training Time/epoch: 0.042
+Run: 01 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.13%%, Loss: 0.6726, Valid: 90.22%, Test: 91.02% Training Time/epoch: 0.048
 ##############################################################################################################################
 AUC
-Run: 01 / 10, Epoch: 480 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6540, Valid: 87.89%, Test: 85.89% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.19%%, Loss: 0.6687, Valid: 87.19%, Test: 88.48% Training Time/epoch: 0.043
 AP
-Run: 01 / 10, Epoch: 480 / 500, Best_epoch: 270, Best_valid: 88.01%%, Loss: 0.6540, Valid: 90.50%, Test: 89.21% Training Time/epoch: 0.039
+Run: 01 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.19%%, Loss: 0.6687, Valid: 90.40%, Test: 90.74% Training Time/epoch: 0.043
 ######################################################################################################################################
 ##### Testing on 1/10
 AUC
-**** Testing on Run: 01, Best Epoch: 270, Valid: 88.01%, Test: 85.66%
+**** Testing on Run: 01, Best Epoch: 480, Valid: 87.19%, Test: 88.48%
 AP
-**** Testing on Run: 01, Best Epoch: 270, Valid: 90.54%, Test: 88.92%
+**** Testing on Run: 01, Best Epoch: 480, Valid: 90.40%, Test: 90.74%
 AUC
-Run: 02 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 73.18%%, Loss: 0.8785, Valid: 73.18%, Test: 73.85% Training Time/epoch: 0.037
+Run: 02 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 79.97%%, Loss: 0.8551, Valid: 79.97%, Test: 81.16% Training Time/epoch: 0.044
 AP
-Run: 02 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 73.18%%, Loss: 0.8785, Valid: 73.98%, Test: 73.58% Training Time/epoch: 0.037
+Run: 02 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 79.97%%, Loss: 0.8551, Valid: 80.51%, Test: 82.49% Training Time/epoch: 0.044
 ########
 AUC
-Run: 02 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.58%%, Loss: 0.7699, Valid: 86.58%, Test: 84.28% Training Time/epoch: 0.042
+Run: 02 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.99%%, Loss: 0.7702, Valid: 85.99%, Test: 87.76% Training Time/epoch: 0.048
 AP
-Run: 02 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.58%%, Loss: 0.7699, Valid: 88.51%, Test: 86.88% Training Time/epoch: 0.042
+Run: 02 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.99%%, Loss: 0.7702, Valid: 88.36%, Test: 89.46% Training Time/epoch: 0.048
 #################
 AUC
-Run: 02 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.37%%, Loss: 0.7547, Valid: 87.37%, Test: 84.92% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.37%%, Loss: 0.7829, Valid: 86.37%, Test: 88.52% Training Time/epoch: 0.047
 AP
-Run: 02 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.37%%, Loss: 0.7547, Valid: 89.75%, Test: 88.13% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.37%%, Loss: 0.7829, Valid: 89.28%, Test: 90.43% Training Time/epoch: 0.047
 #########################
 AUC
-Run: 02 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.47%%, Loss: 0.7517, Valid: 87.47%, Test: 85.38% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.81%%, Loss: 0.7395, Valid: 86.81%, Test: 88.67% Training Time/epoch: 0.047
 AP
-Run: 02 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.47%%, Loss: 0.7517, Valid: 89.96%, Test: 88.51% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.81%%, Loss: 0.7395, Valid: 89.70%, Test: 90.77% Training Time/epoch: 0.047
 ##################################
 AUC
-Run: 02 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.74%%, Loss: 0.7221, Valid: 87.74%, Test: 85.53% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.99%%, Loss: 0.7184, Valid: 86.99%, Test: 88.47% Training Time/epoch: 0.041
 AP
-Run: 02 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.74%%, Loss: 0.7221, Valid: 89.98%, Test: 88.54% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.99%%, Loss: 0.7184, Valid: 89.95%, Test: 90.68% Training Time/epoch: 0.041
 ##########################################
 AUC
-Run: 02 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.81%%, Loss: 0.7231, Valid: 87.81%, Test: 85.56% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7404, Valid: 87.28%, Test: 88.74% Training Time/epoch: 0.039
 AP
-Run: 02 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.81%%, Loss: 0.7231, Valid: 90.34%, Test: 88.63% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7404, Valid: 90.14%, Test: 90.77% Training Time/epoch: 0.039
 ##################################################
 AUC
-Run: 02 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.92%%, Loss: 0.7147, Valid: 87.92%, Test: 85.82% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7054, Valid: 87.22%, Test: 88.40% Training Time/epoch: 0.043
 AP
-Run: 02 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.92%%, Loss: 0.7147, Valid: 90.34%, Test: 88.99% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7054, Valid: 90.16%, Test: 90.68% Training Time/epoch: 0.043
 ###########################################################
 AUC
-Run: 02 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6960, Valid: 88.11%, Test: 85.61% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7412, Valid: 87.21%, Test: 88.24% Training Time/epoch: 0.038
 AP
-Run: 02 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6960, Valid: 90.65%, Test: 88.76% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7412, Valid: 90.26%, Test: 90.61% Training Time/epoch: 0.038
 ###################################################################
 AUC
-Run: 02 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.7255, Valid: 87.96%, Test: 85.76% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7093, Valid: 86.84%, Test: 88.46% Training Time/epoch: 0.039
 AP
-Run: 02 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.7255, Valid: 90.48%, Test: 88.86% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7093, Valid: 90.07%, Test: 90.63% Training Time/epoch: 0.039
 ###########################################################################
 AUC
-Run: 02 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6819, Valid: 88.04%, Test: 85.89% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 300 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7004, Valid: 86.78%, Test: 88.51% Training Time/epoch: 0.039
 AP
-Run: 02 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6819, Valid: 90.49%, Test: 88.98% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 300 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7004, Valid: 89.93%, Test: 90.82% Training Time/epoch: 0.039
 ####################################################################################
 AUC
-Run: 02 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6751, Valid: 87.73%, Test: 86.01% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 330 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7113, Valid: 86.96%, Test: 88.76% Training Time/epoch: 0.038
 AP
-Run: 02 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6751, Valid: 90.39%, Test: 89.21% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 330 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.7113, Valid: 89.93%, Test: 90.85% Training Time/epoch: 0.038
 ############################################################################################
 AUC
-Run: 02 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6760, Valid: 87.67%, Test: 86.16% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 360 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6968, Valid: 87.06%, Test: 88.40% Training Time/epoch: 0.038
 AP
-Run: 02 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6760, Valid: 90.46%, Test: 89.38% Training Time/epoch: 0.039
+Run: 02 / 10, Epoch: 360 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6968, Valid: 90.20%, Test: 90.79% Training Time/epoch: 0.038
 #####################################################################################################
 AUC
-Run: 02 / 10, Epoch: 390 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.7274, Valid: 87.70%, Test: 85.62% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 390 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6953, Valid: 87.22%, Test: 88.43% Training Time/epoch: 0.038
 AP
-Run: 02 / 10, Epoch: 390 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.7274, Valid: 90.42%, Test: 89.09% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 390 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6953, Valid: 90.27%, Test: 90.72% Training Time/epoch: 0.038
 #############################################################################################################
 AUC
-Run: 02 / 10, Epoch: 420 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6826, Valid: 87.84%, Test: 85.85% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 420 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6875, Valid: 87.14%, Test: 88.65% Training Time/epoch: 0.039
 AP
-Run: 02 / 10, Epoch: 420 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6826, Valid: 90.54%, Test: 89.03% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 420 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6875, Valid: 90.28%, Test: 91.12% Training Time/epoch: 0.039
 #####################################################################################################################
 AUC
-Run: 02 / 10, Epoch: 450 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6932, Valid: 88.04%, Test: 85.93% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 450 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6757, Valid: 86.89%, Test: 88.67% Training Time/epoch: 0.037
 AP
-Run: 02 / 10, Epoch: 450 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6932, Valid: 90.73%, Test: 89.03% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 450 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6757, Valid: 90.24%, Test: 91.11% Training Time/epoch: 0.037
 ##############################################################################################################################
 AUC
-Run: 02 / 10, Epoch: 480 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6754, Valid: 88.09%, Test: 85.65% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 480 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6683, Valid: 86.96%, Test: 88.95% Training Time/epoch: 0.038
 AP
-Run: 02 / 10, Epoch: 480 / 500, Best_epoch: 240, Best_valid: 88.11%%, Loss: 0.6754, Valid: 90.75%, Test: 89.15% Training Time/epoch: 0.038
+Run: 02 / 10, Epoch: 480 / 500, Best_epoch: 180, Best_valid: 87.28%%, Loss: 0.6683, Valid: 90.25%, Test: 91.38% Training Time/epoch: 0.038
 ######################################################################################################################################
 ##### Testing on 2/10
 AUC
-**** Testing on Run: 02, Best Epoch: 240, Valid: 88.11%, Test: 85.61%
+**** Testing on Run: 02, Best Epoch: 180, Valid: 87.28%, Test: 88.74%
 AP
-**** Testing on Run: 02, Best Epoch: 240, Valid: 90.65%, Test: 88.76%
+**** Testing on Run: 02, Best Epoch: 180, Valid: 90.14%, Test: 90.77%
 AUC
-Run: 03 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 76.12%%, Loss: 0.8168, Valid: 76.12%, Test: 74.72% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.10%%, Loss: 0.8290, Valid: 81.10%, Test: 80.67% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 76.12%%, Loss: 0.8168, Valid: 77.24%, Test: 75.99% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.10%%, Loss: 0.8290, Valid: 81.33%, Test: 82.36% Training Time/epoch: 0.038
 ########
 AUC
-Run: 03 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.55%%, Loss: 0.7817, Valid: 86.55%, Test: 84.73% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.26%%, Loss: 0.7989, Valid: 86.26%, Test: 86.92% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.55%%, Loss: 0.7817, Valid: 88.46%, Test: 87.46% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.26%%, Loss: 0.7989, Valid: 88.57%, Test: 89.00% Training Time/epoch: 0.038
 #################
 AUC
-Run: 03 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.13%%, Loss: 0.7627, Valid: 87.13%, Test: 84.40% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 90 / 500, Best_epoch: 60, Best_valid: 86.26%%, Loss: 0.7726, Valid: 86.19%, Test: 87.75% Training Time/epoch: 0.039
 AP
-Run: 03 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.13%%, Loss: 0.7627, Valid: 89.55%, Test: 87.67% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 90 / 500, Best_epoch: 60, Best_valid: 86.26%%, Loss: 0.7726, Valid: 89.10%, Test: 89.83% Training Time/epoch: 0.039
 #########################
 AUC
-Run: 03 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.32%%, Loss: 0.7425, Valid: 87.32%, Test: 84.68% Training Time/epoch: 0.040
+Run: 03 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.66%%, Loss: 0.7405, Valid: 86.66%, Test: 88.17% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.32%%, Loss: 0.7425, Valid: 89.71%, Test: 88.13% Training Time/epoch: 0.040
+Run: 03 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.66%%, Loss: 0.7405, Valid: 89.54%, Test: 90.38% Training Time/epoch: 0.038
 ##################################
 AUC
-Run: 03 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.54%%, Loss: 0.7278, Valid: 87.54%, Test: 84.78% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.81%%, Loss: 0.7085, Valid: 86.81%, Test: 88.33% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.54%%, Loss: 0.7278, Valid: 89.99%, Test: 88.49% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.81%%, Loss: 0.7085, Valid: 89.70%, Test: 90.45% Training Time/epoch: 0.038
 ##########################################
 AUC
-Run: 03 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.77%%, Loss: 0.6874, Valid: 87.77%, Test: 84.96% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 86.81%%, Loss: 0.7233, Valid: 86.68%, Test: 88.16% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.77%%, Loss: 0.6874, Valid: 90.16%, Test: 88.52% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 86.81%%, Loss: 0.7233, Valid: 89.69%, Test: 90.36% Training Time/epoch: 0.038
 ##################################################
 AUC
-Run: 03 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.77%%, Loss: 0.7409, Valid: 87.64%, Test: 85.06% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.13%%, Loss: 0.7202, Valid: 87.13%, Test: 88.39% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.77%%, Loss: 0.7409, Valid: 90.22%, Test: 88.54% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.13%%, Loss: 0.7202, Valid: 90.14%, Test: 90.68% Training Time/epoch: 0.038
 ###########################################################
 AUC
-Run: 03 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.90%%, Loss: 0.7120, Valid: 87.90%, Test: 85.52% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.18%%, Loss: 0.6895, Valid: 87.18%, Test: 88.40% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.90%%, Loss: 0.7120, Valid: 90.35%, Test: 88.95% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.18%%, Loss: 0.6895, Valid: 90.15%, Test: 90.52% Training Time/epoch: 0.038
 ###################################################################
 AUC
-Run: 03 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.90%%, Loss: 0.6920, Valid: 87.78%, Test: 85.29% Training Time/epoch: 0.039
+Run: 03 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.18%%, Loss: 0.7032, Valid: 87.06%, Test: 88.64% Training Time/epoch: 0.039
 AP
-Run: 03 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.90%%, Loss: 0.6920, Valid: 90.21%, Test: 88.81% Training Time/epoch: 0.039
+Run: 03 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.18%%, Loss: 0.7032, Valid: 90.11%, Test: 90.85% Training Time/epoch: 0.039
 ###########################################################################
 AUC
-Run: 03 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6879, Valid: 87.91%, Test: 85.73% Training Time/epoch: 0.039
+Run: 03 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.22%%, Loss: 0.6581, Valid: 87.22%, Test: 88.70% Training Time/epoch: 0.037
 AP
-Run: 03 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6879, Valid: 90.36%, Test: 88.96% Training Time/epoch: 0.039
+Run: 03 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.22%%, Loss: 0.6581, Valid: 90.17%, Test: 90.90% Training Time/epoch: 0.037
 ####################################################################################
 AUC
-Run: 03 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6709, Valid: 87.54%, Test: 85.44% Training Time/epoch: 0.040
+Run: 03 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.27%%, Loss: 0.6919, Valid: 87.27%, Test: 88.63% Training Time/epoch: 0.039
 AP
-Run: 03 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6709, Valid: 90.25%, Test: 88.98% Training Time/epoch: 0.040
+Run: 03 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.27%%, Loss: 0.6919, Valid: 90.20%, Test: 90.87% Training Time/epoch: 0.039
 ############################################################################################
 AUC
-Run: 03 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.7128, Valid: 87.68%, Test: 85.44% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.27%%, Loss: 0.7149, Valid: 87.24%, Test: 88.74% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.7128, Valid: 90.22%, Test: 88.86% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.27%%, Loss: 0.7149, Valid: 90.25%, Test: 90.94% Training Time/epoch: 0.038
 #####################################################################################################
 AUC
-Run: 03 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6989, Valid: 87.69%, Test: 85.76% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6713, Valid: 87.43%, Test: 88.34% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6989, Valid: 90.29%, Test: 89.07% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6713, Valid: 90.40%, Test: 90.92% Training Time/epoch: 0.038
 #############################################################################################################
 AUC
-Run: 03 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6878, Valid: 87.83%, Test: 85.55% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6654, Valid: 87.36%, Test: 88.45% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 87.91%%, Loss: 0.6878, Valid: 90.38%, Test: 89.12% Training Time/epoch: 0.037
+Run: 03 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6654, Valid: 90.28%, Test: 90.75% Training Time/epoch: 0.038
 #####################################################################################################################
 AUC
-Run: 03 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.97%%, Loss: 0.6884, Valid: 87.97%, Test: 85.62% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6912, Valid: 87.22%, Test: 88.44% Training Time/epoch: 0.038
 AP
-Run: 03 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.97%%, Loss: 0.6884, Valid: 90.63%, Test: 89.15% Training Time/epoch: 0.038
+Run: 03 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6912, Valid: 90.23%, Test: 90.87% Training Time/epoch: 0.038
 ##############################################################################################################################
 AUC
-Run: 03 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 87.97%%, Loss: 0.6609, Valid: 87.81%, Test: 85.71% Training Time/epoch: 0.034
+Run: 03 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6723, Valid: 87.38%, Test: 88.62% Training Time/epoch: 0.039
 AP
-Run: 03 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 87.97%%, Loss: 0.6609, Valid: 90.67%, Test: 89.10% Training Time/epoch: 0.034
+Run: 03 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 87.43%%, Loss: 0.6723, Valid: 90.40%, Test: 90.89% Training Time/epoch: 0.039
 ######################################################################################################################################
 ##### Testing on 3/10
 AUC
-**** Testing on Run: 03, Best Epoch: 450, Valid: 87.97%, Test: 85.62%
+**** Testing on Run: 03, Best Epoch: 390, Valid: 87.43%, Test: 88.34%
 AP
-**** Testing on Run: 03, Best Epoch: 450, Valid: 90.63%, Test: 89.15%
+**** Testing on Run: 03, Best Epoch: 390, Valid: 90.40%, Test: 90.92%
 AUC
-Run: 04 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.28%%, Loss: 0.8479, Valid: 81.28%, Test: 78.74% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.38%%, Loss: 0.8293, Valid: 81.38%, Test: 81.53% Training Time/epoch: 0.039
 AP
-Run: 04 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.28%%, Loss: 0.8479, Valid: 82.07%, Test: 79.94% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.38%%, Loss: 0.8293, Valid: 82.67%, Test: 83.01% Training Time/epoch: 0.039
 ########
 AUC
-Run: 04 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.57%%, Loss: 0.7969, Valid: 86.57%, Test: 84.22% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.8024, Valid: 86.54%, Test: 87.46% Training Time/epoch: 0.038
 AP
-Run: 04 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.57%%, Loss: 0.7969, Valid: 88.78%, Test: 87.32% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.8024, Valid: 88.59%, Test: 89.56% Training Time/epoch: 0.038
 #################
 AUC
-Run: 04 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.93%%, Loss: 0.7384, Valid: 86.93%, Test: 84.17% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.09%%, Loss: 0.7492, Valid: 87.09%, Test: 88.10% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.93%%, Loss: 0.7384, Valid: 89.44%, Test: 87.55% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.09%%, Loss: 0.7492, Valid: 89.58%, Test: 90.36% Training Time/epoch: 0.041
 #########################
 AUC
-Run: 04 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.37%%, Loss: 0.7228, Valid: 87.37%, Test: 84.28% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 87.09%%, Loss: 0.7662, Valid: 86.99%, Test: 88.21% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.37%%, Loss: 0.7228, Valid: 90.00%, Test: 87.81% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 87.09%%, Loss: 0.7662, Valid: 89.75%, Test: 90.49% Training Time/epoch: 0.041
 ##################################
 AUC
-Run: 04 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.37%%, Loss: 0.7470, Valid: 87.13%, Test: 84.88% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7240, Valid: 87.30%, Test: 88.44% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.37%%, Loss: 0.7470, Valid: 89.90%, Test: 88.31% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7240, Valid: 90.11%, Test: 90.65% Training Time/epoch: 0.041
 ##########################################
 AUC
-Run: 04 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.38%%, Loss: 0.7321, Valid: 87.38%, Test: 84.91% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7200, Valid: 87.29%, Test: 88.45% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.38%%, Loss: 0.7321, Valid: 90.12%, Test: 88.36% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7200, Valid: 90.15%, Test: 90.84% Training Time/epoch: 0.041
 ##################################################
 AUC
-Run: 04 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.67%%, Loss: 0.7407, Valid: 87.67%, Test: 84.72% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7105, Valid: 87.28%, Test: 88.05% Training Time/epoch: 0.042
 AP
-Run: 04 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.67%%, Loss: 0.7407, Valid: 90.43%, Test: 88.16% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.30%%, Loss: 0.7105, Valid: 90.23%, Test: 90.65% Training Time/epoch: 0.042
 ###########################################################
 AUC
-Run: 04 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 87.67%%, Loss: 0.7261, Valid: 87.63%, Test: 85.15% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.7107, Valid: 87.44%, Test: 88.00% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 87.67%%, Loss: 0.7261, Valid: 90.38%, Test: 88.61% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.7107, Valid: 90.40%, Test: 90.60% Training Time/epoch: 0.041
 ###################################################################
 AUC
-Run: 04 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 87.84%%, Loss: 0.6874, Valid: 87.84%, Test: 85.07% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6985, Valid: 87.36%, Test: 87.89% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 87.84%%, Loss: 0.6874, Valid: 90.60%, Test: 88.27% Training Time/epoch: 0.037
+Run: 04 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6985, Valid: 90.47%, Test: 90.67% Training Time/epoch: 0.041
 ###########################################################################
 AUC
-Run: 04 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.84%%, Loss: 0.6863, Valid: 87.84%, Test: 85.33% Training Time/epoch: 0.040
+Run: 04 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6870, Valid: 87.18%, Test: 88.23% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.84%%, Loss: 0.6863, Valid: 90.54%, Test: 88.46% Training Time/epoch: 0.040
+Run: 04 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6870, Valid: 90.11%, Test: 90.80% Training Time/epoch: 0.041
 ####################################################################################
 AUC
-Run: 04 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 88.05%%, Loss: 0.7033, Valid: 88.05%, Test: 85.83% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.7025, Valid: 87.17%, Test: 88.45% Training Time/epoch: 0.042
 AP
-Run: 04 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 88.05%%, Loss: 0.7033, Valid: 90.81%, Test: 89.13% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.7025, Valid: 90.20%, Test: 90.94% Training Time/epoch: 0.042
 ############################################################################################
 AUC
-Run: 04 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 88.08%%, Loss: 0.6845, Valid: 88.08%, Test: 85.57% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6802, Valid: 87.40%, Test: 88.14% Training Time/epoch: 0.042
 AP
-Run: 04 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 88.08%%, Loss: 0.6845, Valid: 90.78%, Test: 88.79% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 87.44%%, Loss: 0.6802, Valid: 90.42%, Test: 90.64% Training Time/epoch: 0.042
 #####################################################################################################
 AUC
-Run: 04 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 88.20%%, Loss: 0.6670, Valid: 88.20%, Test: 85.68% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6741, Valid: 87.50%, Test: 88.32% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 88.20%%, Loss: 0.6670, Valid: 90.88%, Test: 88.99% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6741, Valid: 90.58%, Test: 91.02% Training Time/epoch: 0.041
 #############################################################################################################
 AUC
-Run: 04 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 88.20%%, Loss: 0.6927, Valid: 88.20%, Test: 85.84% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6926, Valid: 87.28%, Test: 88.61% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 88.20%%, Loss: 0.6927, Valid: 90.81%, Test: 89.26% Training Time/epoch: 0.038
+Run: 04 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6926, Valid: 90.27%, Test: 91.13% Training Time/epoch: 0.041
 #####################################################################################################################
 AUC
-Run: 04 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.25%%, Loss: 0.6730, Valid: 88.25%, Test: 85.88% Training Time/epoch: 0.039
+Run: 04 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6855, Valid: 87.16%, Test: 88.31% Training Time/epoch: 0.041
 AP
-Run: 04 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.25%%, Loss: 0.6730, Valid: 90.81%, Test: 89.08% Training Time/epoch: 0.039
+Run: 04 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6855, Valid: 90.28%, Test: 90.79% Training Time/epoch: 0.041
 ##############################################################################################################################
 AUC
-Run: 04 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 88.25%%, Loss: 0.6736, Valid: 88.18%, Test: 86.03% Training Time/epoch: 0.039
+Run: 04 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6647, Valid: 86.99%, Test: 88.10% Training Time/epoch: 0.042
 AP
-Run: 04 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 88.25%%, Loss: 0.6736, Valid: 90.95%, Test: 89.12% Training Time/epoch: 0.039
+Run: 04 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 87.50%%, Loss: 0.6647, Valid: 90.34%, Test: 90.82% Training Time/epoch: 0.042
 ######################################################################################################################################
 ##### Testing on 4/10
 AUC
-**** Testing on Run: 04, Best Epoch: 450, Valid: 88.25%, Test: 85.88%
+**** Testing on Run: 04, Best Epoch: 390, Valid: 87.50%, Test: 88.32%
 AP
-**** Testing on Run: 04, Best Epoch: 450, Valid: 90.81%, Test: 89.08%
+**** Testing on Run: 04, Best Epoch: 390, Valid: 90.58%, Test: 91.02%
 AUC
-Run: 05 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 75.66%%, Loss: 0.8530, Valid: 75.66%, Test: 74.95% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 76.34%%, Loss: 0.8382, Valid: 76.34%, Test: 78.05% Training Time/epoch: 0.038
 AP
-Run: 05 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 75.66%%, Loss: 0.8530, Valid: 76.93%, Test: 75.22% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 76.34%%, Loss: 0.8382, Valid: 77.11%, Test: 79.12% Training Time/epoch: 0.038
 ########
 AUC
-Run: 05 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.63%%, Loss: 0.7902, Valid: 85.63%, Test: 84.12% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.52%%, Loss: 0.7860, Valid: 85.52%, Test: 86.43% Training Time/epoch: 0.038
 AP
-Run: 05 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.63%%, Loss: 0.7902, Valid: 87.80%, Test: 86.89% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.52%%, Loss: 0.7860, Valid: 87.62%, Test: 88.09% Training Time/epoch: 0.038
 #################
 AUC
-Run: 05 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.24%%, Loss: 0.7157, Valid: 87.24%, Test: 85.33% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.27%%, Loss: 0.7474, Valid: 86.27%, Test: 87.29% Training Time/epoch: 0.037
 AP
-Run: 05 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.24%%, Loss: 0.7157, Valid: 89.63%, Test: 88.45% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.27%%, Loss: 0.7474, Valid: 89.26%, Test: 89.75% Training Time/epoch: 0.037
 #########################
 AUC
-Run: 05 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.51%%, Loss: 0.7499, Valid: 87.51%, Test: 85.49% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.69%%, Loss: 0.7324, Valid: 86.69%, Test: 87.75% Training Time/epoch: 0.040
 AP
-Run: 05 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.51%%, Loss: 0.7499, Valid: 89.79%, Test: 88.70% Training Time/epoch: 0.039
+Run: 05 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.69%%, Loss: 0.7324, Valid: 89.69%, Test: 90.04% Training Time/epoch: 0.040
 ##################################
 AUC
-Run: 05 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.58%%, Loss: 0.7320, Valid: 87.58%, Test: 85.51% Training Time/epoch: 0.040
+Run: 05 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.77%%, Loss: 0.7332, Valid: 86.77%, Test: 88.10% Training Time/epoch: 0.041
 AP
-Run: 05 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.58%%, Loss: 0.7320, Valid: 89.97%, Test: 88.83% Training Time/epoch: 0.040
+Run: 05 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.77%%, Loss: 0.7332, Valid: 89.92%, Test: 90.46% Training Time/epoch: 0.041
 ##########################################
 AUC
-Run: 05 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.62%%, Loss: 0.7135, Valid: 87.62%, Test: 85.63% Training Time/epoch: 0.038
+Run: 05 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.08%%, Loss: 0.7570, Valid: 87.08%, Test: 88.27% Training Time/epoch: 0.040
 AP
-Run: 05 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.62%%, Loss: 0.7135, Valid: 90.09%, Test: 88.74% Training Time/epoch: 0.038
+Run: 05 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.08%%, Loss: 0.7570, Valid: 89.99%, Test: 90.68% Training Time/epoch: 0.040
 ##################################################
 AUC
-Run: 05 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.62%%, Loss: 0.7046, Valid: 87.61%, Test: 85.64% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7148, Valid: 87.28%, Test: 88.54% Training Time/epoch: 0.041
 AP
-Run: 05 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.62%%, Loss: 0.7046, Valid: 90.17%, Test: 88.82% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7148, Valid: 90.30%, Test: 90.94% Training Time/epoch: 0.041
 ###########################################################
 AUC
-Run: 05 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6966, Valid: 87.91%, Test: 85.80% Training Time/epoch: 0.038
+Run: 05 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7063, Valid: 87.12%, Test: 88.77% Training Time/epoch: 0.037
 AP
-Run: 05 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6966, Valid: 90.56%, Test: 89.03% Training Time/epoch: 0.038
+Run: 05 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7063, Valid: 90.16%, Test: 91.16% Training Time/epoch: 0.037
 ###################################################################
 AUC
-Run: 05 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.7047, Valid: 87.80%, Test: 86.14% Training Time/epoch: 0.046
+Run: 05 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6957, Valid: 87.05%, Test: 88.62% Training Time/epoch: 0.040
 AP
-Run: 05 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.7047, Valid: 90.37%, Test: 89.23% Training Time/epoch: 0.046
+Run: 05 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6957, Valid: 90.13%, Test: 90.96% Training Time/epoch: 0.040
 ###########################################################################
 AUC
-Run: 05 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6781, Valid: 87.45%, Test: 85.97% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 300 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6904, Valid: 87.27%, Test: 88.75% Training Time/epoch: 0.039
 AP
-Run: 05 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6781, Valid: 90.11%, Test: 89.19% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 300 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6904, Valid: 90.31%, Test: 90.99% Training Time/epoch: 0.039
 ####################################################################################
 AUC
-Run: 05 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6805, Valid: 87.73%, Test: 85.75% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 330 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6858, Valid: 86.83%, Test: 88.48% Training Time/epoch: 0.042
 AP
-Run: 05 / 10, Epoch: 330 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6805, Valid: 90.29%, Test: 89.33% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 330 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6858, Valid: 90.02%, Test: 90.93% Training Time/epoch: 0.042
 ############################################################################################
 AUC
-Run: 05 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6773, Valid: 87.69%, Test: 86.26% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 360 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7037, Valid: 86.89%, Test: 88.88% Training Time/epoch: 0.041
 AP
-Run: 05 / 10, Epoch: 360 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6773, Valid: 90.40%, Test: 89.46% Training Time/epoch: 0.042
+Run: 05 / 10, Epoch: 360 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7037, Valid: 90.11%, Test: 91.11% Training Time/epoch: 0.041
 #####################################################################################################
 AUC
-Run: 05 / 10, Epoch: 390 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6701, Valid: 87.70%, Test: 85.68% Training Time/epoch: 0.041
+Run: 05 / 10, Epoch: 390 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6684, Valid: 87.03%, Test: 88.80% Training Time/epoch: 0.041
 AP
-Run: 05 / 10, Epoch: 390 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6701, Valid: 90.31%, Test: 89.27% Training Time/epoch: 0.041
+Run: 05 / 10, Epoch: 390 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6684, Valid: 90.23%, Test: 91.03% Training Time/epoch: 0.041
 #############################################################################################################
 AUC
-Run: 05 / 10, Epoch: 420 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6734, Valid: 87.54%, Test: 86.09% Training Time/epoch: 0.047
+Run: 05 / 10, Epoch: 420 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7022, Valid: 86.80%, Test: 88.72% Training Time/epoch: 0.038
 AP
-Run: 05 / 10, Epoch: 420 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.6734, Valid: 90.26%, Test: 89.46% Training Time/epoch: 0.047
+Run: 05 / 10, Epoch: 420 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7022, Valid: 90.14%, Test: 91.00% Training Time/epoch: 0.038
 #####################################################################################################################
 AUC
-Run: 05 / 10, Epoch: 450 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.7196, Valid: 87.90%, Test: 85.71% Training Time/epoch: 0.045
+Run: 05 / 10, Epoch: 450 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6886, Valid: 86.93%, Test: 88.62% Training Time/epoch: 0.037
 AP
-Run: 05 / 10, Epoch: 450 / 500, Best_epoch: 240, Best_valid: 87.91%%, Loss: 0.7196, Valid: 90.49%, Test: 89.23% Training Time/epoch: 0.045
+Run: 05 / 10, Epoch: 450 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.6886, Valid: 90.32%, Test: 90.85% Training Time/epoch: 0.037
 ##############################################################################################################################
 AUC
-Run: 05 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 88.12%%, Loss: 0.6726, Valid: 88.12%, Test: 85.68% Training Time/epoch: 0.055
+Run: 05 / 10, Epoch: 480 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7041, Valid: 86.95%, Test: 88.49% Training Time/epoch: 0.038
 AP
-Run: 05 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 88.12%%, Loss: 0.6726, Valid: 90.69%, Test: 89.18% Training Time/epoch: 0.055
+Run: 05 / 10, Epoch: 480 / 500, Best_epoch: 210, Best_valid: 87.28%%, Loss: 0.7041, Valid: 90.27%, Test: 90.95% Training Time/epoch: 0.038
 ######################################################################################################################################
 ##### Testing on 5/10
 AUC
-**** Testing on Run: 05, Best Epoch: 480, Valid: 88.12%, Test: 85.68%
+**** Testing on Run: 05, Best Epoch: 210, Valid: 87.28%, Test: 88.54%
 AP
-**** Testing on Run: 05, Best Epoch: 480, Valid: 90.69%, Test: 89.18%
+**** Testing on Run: 05, Best Epoch: 210, Valid: 90.30%, Test: 90.94%
 AUC
-Run: 06 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.24%%, Loss: 0.8520, Valid: 78.24%, Test: 77.11% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 80.11%%, Loss: 0.8302, Valid: 80.11%, Test: 81.06% Training Time/epoch: 0.038
 AP
-Run: 06 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.24%%, Loss: 0.8520, Valid: 78.71%, Test: 77.71% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 80.11%%, Loss: 0.8302, Valid: 80.92%, Test: 82.39% Training Time/epoch: 0.038
 ########
 AUC
-Run: 06 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.97%%, Loss: 0.7871, Valid: 85.97%, Test: 84.43% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.12%%, Loss: 0.7822, Valid: 86.12%, Test: 87.42% Training Time/epoch: 0.039
 AP
-Run: 06 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.97%%, Loss: 0.7871, Valid: 88.06%, Test: 87.18% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.12%%, Loss: 0.7822, Valid: 88.55%, Test: 89.21% Training Time/epoch: 0.039
 #################
 AUC
-Run: 06 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.04%%, Loss: 0.7512, Valid: 87.04%, Test: 84.82% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7653, Valid: 86.89%, Test: 88.20% Training Time/epoch: 0.037
 AP
-Run: 06 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.04%%, Loss: 0.7512, Valid: 89.42%, Test: 88.13% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7653, Valid: 89.64%, Test: 90.23% Training Time/epoch: 0.037
 #########################
 AUC
-Run: 06 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.13%%, Loss: 0.7355, Valid: 87.13%, Test: 85.08% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7394, Valid: 86.64%, Test: 88.58% Training Time/epoch: 0.040
 AP
-Run: 06 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.13%%, Loss: 0.7355, Valid: 89.60%, Test: 88.49% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7394, Valid: 89.65%, Test: 90.78% Training Time/epoch: 0.040
 ##################################
 AUC
-Run: 06 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.49%%, Loss: 0.7373, Valid: 87.49%, Test: 85.32% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 150 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.6983, Valid: 86.67%, Test: 88.20% Training Time/epoch: 0.042
 AP
-Run: 06 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.49%%, Loss: 0.7373, Valid: 90.06%, Test: 88.58% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 150 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.6983, Valid: 89.63%, Test: 90.57% Training Time/epoch: 0.042
 ##########################################
 AUC
-Run: 06 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.75%%, Loss: 0.7187, Valid: 87.75%, Test: 85.71% Training Time/epoch: 0.043
+Run: 06 / 10, Epoch: 180 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7127, Valid: 86.85%, Test: 88.18% Training Time/epoch: 0.042
 AP
-Run: 06 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.75%%, Loss: 0.7187, Valid: 90.40%, Test: 88.99% Training Time/epoch: 0.043
+Run: 06 / 10, Epoch: 180 / 500, Best_epoch: 90, Best_valid: 86.89%%, Loss: 0.7127, Valid: 89.87%, Test: 90.42% Training Time/epoch: 0.042
 ##################################################
 AUC
-Run: 06 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.99%%, Loss: 0.7019, Valid: 87.99%, Test: 85.37% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.7597, Valid: 86.93%, Test: 88.38% Training Time/epoch: 0.040
 AP
-Run: 06 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.99%%, Loss: 0.7019, Valid: 90.42%, Test: 88.86% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.7597, Valid: 90.09%, Test: 90.75% Training Time/epoch: 0.040
 ###########################################################
 AUC
-Run: 06 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.02%%, Loss: 0.6942, Valid: 88.02%, Test: 85.52% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.7041, Valid: 86.83%, Test: 88.47% Training Time/epoch: 0.040
 AP
-Run: 06 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.02%%, Loss: 0.6942, Valid: 90.43%, Test: 88.88% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.7041, Valid: 90.08%, Test: 90.86% Training Time/epoch: 0.040
 ###################################################################
 AUC
-Run: 06 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 88.02%%, Loss: 0.7057, Valid: 87.89%, Test: 85.87% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.6977, Valid: 86.92%, Test: 88.33% Training Time/epoch: 0.040
 AP
-Run: 06 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 88.02%%, Loss: 0.7057, Valid: 90.54%, Test: 89.24% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 86.93%%, Loss: 0.6977, Valid: 90.06%, Test: 90.89% Training Time/epoch: 0.040
 ###########################################################################
 AUC
-Run: 06 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7103, Valid: 88.07%, Test: 85.88% Training Time/epoch: 0.041
+Run: 06 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6870, Valid: 87.01%, Test: 88.21% Training Time/epoch: 0.036
 AP
-Run: 06 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7103, Valid: 90.69%, Test: 89.29% Training Time/epoch: 0.041
+Run: 06 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6870, Valid: 90.28%, Test: 90.60% Training Time/epoch: 0.036
 ####################################################################################
 AUC
-Run: 06 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7087, Valid: 87.98%, Test: 85.90% Training Time/epoch: 0.037
+Run: 06 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6829, Valid: 86.75%, Test: 88.48% Training Time/epoch: 0.039
 AP
-Run: 06 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7087, Valid: 90.55%, Test: 89.17% Training Time/epoch: 0.037
+Run: 06 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6829, Valid: 90.03%, Test: 90.82% Training Time/epoch: 0.039
 ############################################################################################
 AUC
-Run: 06 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.6887, Valid: 87.80%, Test: 86.12% Training Time/epoch: 0.041
+Run: 06 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6958, Valid: 86.83%, Test: 88.52% Training Time/epoch: 0.041
 AP
-Run: 06 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.6887, Valid: 90.61%, Test: 89.25% Training Time/epoch: 0.041
+Run: 06 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6958, Valid: 90.20%, Test: 90.81% Training Time/epoch: 0.041
 #####################################################################################################
 AUC
-Run: 06 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.6983, Valid: 87.84%, Test: 85.70% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6731, Valid: 86.82%, Test: 88.34% Training Time/epoch: 0.041
 AP
-Run: 06 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.6983, Valid: 90.50%, Test: 89.07% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6731, Valid: 90.25%, Test: 90.76% Training Time/epoch: 0.041
 #############################################################################################################
 AUC
-Run: 06 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7093, Valid: 87.93%, Test: 86.11% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6579, Valid: 86.94%, Test: 88.35% Training Time/epoch: 0.035
 AP
-Run: 06 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 88.07%%, Loss: 0.7093, Valid: 90.46%, Test: 89.31% Training Time/epoch: 0.040
+Run: 06 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 87.01%%, Loss: 0.6579, Valid: 90.16%, Test: 90.66% Training Time/epoch: 0.035
 #####################################################################################################################
 AUC
-Run: 06 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.11%%, Loss: 0.6960, Valid: 88.11%, Test: 86.26% Training Time/epoch: 0.042
+Run: 06 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.10%%, Loss: 0.6913, Valid: 87.10%, Test: 88.44% Training Time/epoch: 0.040
 AP
-Run: 06 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.11%%, Loss: 0.6960, Valid: 90.80%, Test: 89.38% Training Time/epoch: 0.042
+Run: 06 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.10%%, Loss: 0.6913, Valid: 90.34%, Test: 90.87% Training Time/epoch: 0.040
 ##############################################################################################################################
 AUC
-Run: 06 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 88.11%%, Loss: 0.7147, Valid: 88.10%, Test: 86.02% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.14%%, Loss: 0.6821, Valid: 87.14%, Test: 88.60% Training Time/epoch: 0.037
 AP
-Run: 06 / 10, Epoch: 480 / 500, Best_epoch: 450, Best_valid: 88.11%%, Loss: 0.7147, Valid: 90.78%, Test: 89.34% Training Time/epoch: 0.039
+Run: 06 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.14%%, Loss: 0.6821, Valid: 90.28%, Test: 90.94% Training Time/epoch: 0.037
 ######################################################################################################################################
 ##### Testing on 6/10
 AUC
-**** Testing on Run: 06, Best Epoch: 450, Valid: 88.11%, Test: 86.26%
+**** Testing on Run: 06, Best Epoch: 480, Valid: 87.14%, Test: 88.60%
 AP
-**** Testing on Run: 06, Best Epoch: 450, Valid: 90.80%, Test: 89.38%
+**** Testing on Run: 06, Best Epoch: 480, Valid: 90.28%, Test: 90.94%
 AUC
-Run: 07 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 77.25%%, Loss: 0.8457, Valid: 77.25%, Test: 75.33% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 79.40%%, Loss: 0.8418, Valid: 79.40%, Test: 81.09% Training Time/epoch: 0.038
 AP
-Run: 07 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 77.25%%, Loss: 0.8457, Valid: 78.15%, Test: 76.65% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 79.40%%, Loss: 0.8418, Valid: 79.97%, Test: 81.48% Training Time/epoch: 0.038
 ########
 AUC
-Run: 07 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.36%%, Loss: 0.7777, Valid: 86.36%, Test: 84.37% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.39%%, Loss: 0.7683, Valid: 86.39%, Test: 86.78% Training Time/epoch: 0.038
 AP
-Run: 07 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.36%%, Loss: 0.7777, Valid: 88.49%, Test: 87.11% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.39%%, Loss: 0.7683, Valid: 88.48%, Test: 88.90% Training Time/epoch: 0.038
 #################
 AUC
-Run: 07 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.53%%, Loss: 0.7965, Valid: 87.53%, Test: 84.82% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.03%%, Loss: 0.7862, Valid: 87.03%, Test: 87.90% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.53%%, Loss: 0.7965, Valid: 89.86%, Test: 88.17% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.03%%, Loss: 0.7862, Valid: 89.63%, Test: 90.21% Training Time/epoch: 0.039
 #########################
 AUC
-Run: 07 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.76%%, Loss: 0.7275, Valid: 87.76%, Test: 84.94% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7894, Valid: 87.12%, Test: 88.31% Training Time/epoch: 0.036
 AP
-Run: 07 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.76%%, Loss: 0.7275, Valid: 90.27%, Test: 88.39% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7894, Valid: 89.84%, Test: 90.54% Training Time/epoch: 0.036
 ##################################
 AUC
-Run: 07 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.76%%, Loss: 0.7222, Valid: 87.74%, Test: 85.14% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7114, Valid: 87.03%, Test: 88.35% Training Time/epoch: 0.040
 AP
-Run: 07 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.76%%, Loss: 0.7222, Valid: 90.25%, Test: 88.53% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7114, Valid: 89.94%, Test: 90.49% Training Time/epoch: 0.040
 ##########################################
 AUC
-Run: 07 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7082, Valid: 87.92%, Test: 85.32% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 180 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7105, Valid: 87.04%, Test: 88.54% Training Time/epoch: 0.038
 AP
-Run: 07 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7082, Valid: 90.27%, Test: 88.86% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 180 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7105, Valid: 89.95%, Test: 90.74% Training Time/epoch: 0.038
 ##################################################
 AUC
-Run: 07 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7323, Valid: 87.83%, Test: 85.65% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 210 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7217, Valid: 86.79%, Test: 88.45% Training Time/epoch: 0.041
 AP
-Run: 07 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7323, Valid: 90.47%, Test: 88.93% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 210 / 500, Best_epoch: 120, Best_valid: 87.12%%, Loss: 0.7217, Valid: 89.89%, Test: 90.73% Training Time/epoch: 0.041
 ###########################################################
 AUC
-Run: 07 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7018, Valid: 87.89%, Test: 85.80% Training Time/epoch: 0.036
+Run: 07 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7568, Valid: 87.13%, Test: 88.83% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7018, Valid: 90.36%, Test: 89.00% Training Time/epoch: 0.036
+Run: 07 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7568, Valid: 90.23%, Test: 91.04% Training Time/epoch: 0.039
 ###################################################################
 AUC
-Run: 07 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7108, Valid: 87.68%, Test: 85.90% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7153, Valid: 87.11%, Test: 88.63% Training Time/epoch: 0.042
 AP
-Run: 07 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7108, Valid: 90.27%, Test: 89.17% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7153, Valid: 90.10%, Test: 90.82% Training Time/epoch: 0.042
 ###########################################################################
 AUC
-Run: 07 / 10, Epoch: 300 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7124, Valid: 87.77%, Test: 85.61% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7070, Valid: 87.13%, Test: 88.57% Training Time/epoch: 0.038
 AP
-Run: 07 / 10, Epoch: 300 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.7124, Valid: 90.54%, Test: 89.04% Training Time/epoch: 0.039
+Run: 07 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.13%%, Loss: 0.7070, Valid: 90.22%, Test: 90.92% Training Time/epoch: 0.038
 ####################################################################################
 AUC
-Run: 07 / 10, Epoch: 330 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.6587, Valid: 87.85%, Test: 85.95% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.7039, Valid: 87.16%, Test: 88.79% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 330 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.6587, Valid: 90.68%, Test: 89.22% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.7039, Valid: 90.20%, Test: 90.97% Training Time/epoch: 0.039
 ############################################################################################
 AUC
-Run: 07 / 10, Epoch: 360 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.6948, Valid: 87.81%, Test: 85.94% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.7233, Valid: 86.88%, Test: 88.86% Training Time/epoch: 0.038
 AP
-Run: 07 / 10, Epoch: 360 / 500, Best_epoch: 180, Best_valid: 87.92%%, Loss: 0.6948, Valid: 90.55%, Test: 89.36% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.7233, Valid: 90.16%, Test: 91.09% Training Time/epoch: 0.038
 #####################################################################################################
 AUC
-Run: 07 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.7289, Valid: 88.09%, Test: 86.54% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 390 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6787, Valid: 86.94%, Test: 89.07% Training Time/epoch: 0.040
 AP
-Run: 07 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.7289, Valid: 90.73%, Test: 89.79% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 390 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6787, Valid: 90.14%, Test: 91.37% Training Time/epoch: 0.040
 #############################################################################################################
 AUC
-Run: 07 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6664, Valid: 88.01%, Test: 86.22% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 420 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6628, Valid: 86.90%, Test: 88.78% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 420 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6664, Valid: 90.56%, Test: 89.70% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 420 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6628, Valid: 90.17%, Test: 91.11% Training Time/epoch: 0.039
 #####################################################################################################################
 AUC
-Run: 07 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6566, Valid: 88.03%, Test: 86.28% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 450 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6936, Valid: 86.76%, Test: 88.85% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 450 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6566, Valid: 90.69%, Test: 89.57% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 450 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6936, Valid: 90.12%, Test: 91.17% Training Time/epoch: 0.039
 ##############################################################################################################################
 AUC
-Run: 07 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6854, Valid: 87.82%, Test: 86.08% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 480 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6906, Valid: 86.85%, Test: 88.96% Training Time/epoch: 0.039
 AP
-Run: 07 / 10, Epoch: 480 / 500, Best_epoch: 390, Best_valid: 88.09%%, Loss: 0.6854, Valid: 90.49%, Test: 89.45% Training Time/epoch: 0.038
+Run: 07 / 10, Epoch: 480 / 500, Best_epoch: 330, Best_valid: 87.16%%, Loss: 0.6906, Valid: 90.10%, Test: 91.25% Training Time/epoch: 0.039
 ######################################################################################################################################
 ##### Testing on 7/10
 AUC
-**** Testing on Run: 07, Best Epoch: 390, Valid: 88.09%, Test: 86.54%
+**** Testing on Run: 07, Best Epoch: 330, Valid: 87.16%, Test: 88.79%
 AP
-**** Testing on Run: 07, Best Epoch: 390, Valid: 90.73%, Test: 89.79%
+**** Testing on Run: 07, Best Epoch: 330, Valid: 90.20%, Test: 90.97%
 AUC
-Run: 08 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.81%%, Loss: 0.8406, Valid: 78.81%, Test: 77.53% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 80.59%%, Loss: 0.8528, Valid: 80.59%, Test: 81.96% Training Time/epoch: 0.040
 AP
-Run: 08 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.81%%, Loss: 0.8406, Valid: 79.49%, Test: 77.59% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 80.59%%, Loss: 0.8528, Valid: 81.58%, Test: 83.11% Training Time/epoch: 0.040
 ########
 AUC
-Run: 08 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7714, Valid: 86.79%, Test: 84.16% Training Time/epoch: 0.037
+Run: 08 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.68%%, Loss: 0.7989, Valid: 85.68%, Test: 87.02% Training Time/epoch: 0.041
 AP
-Run: 08 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.79%%, Loss: 0.7714, Valid: 88.93%, Test: 86.56% Training Time/epoch: 0.037
+Run: 08 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.68%%, Loss: 0.7989, Valid: 87.83%, Test: 88.99% Training Time/epoch: 0.041
 #################
 AUC
-Run: 08 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.66%%, Loss: 0.7592, Valid: 87.66%, Test: 84.76% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.43%%, Loss: 0.7819, Valid: 86.43%, Test: 88.02% Training Time/epoch: 0.039
 AP
-Run: 08 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.66%%, Loss: 0.7592, Valid: 90.02%, Test: 87.81% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.43%%, Loss: 0.7819, Valid: 89.19%, Test: 90.00% Training Time/epoch: 0.039
 #########################
 AUC
-Run: 08 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.71%%, Loss: 0.7501, Valid: 87.71%, Test: 84.45% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.80%%, Loss: 0.7519, Valid: 86.80%, Test: 88.34% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.71%%, Loss: 0.7501, Valid: 90.26%, Test: 87.85% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.80%%, Loss: 0.7519, Valid: 89.62%, Test: 90.24% Training Time/epoch: 0.038
 ##################################
 AUC
-Run: 08 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.71%%, Loss: 0.7254, Valid: 87.69%, Test: 84.79% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7234, Valid: 86.93%, Test: 88.46% Training Time/epoch: 0.039
 AP
-Run: 08 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.71%%, Loss: 0.7254, Valid: 90.28%, Test: 88.10% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7234, Valid: 89.91%, Test: 90.44% Training Time/epoch: 0.039
 ##########################################
 AUC
-Run: 08 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.86%%, Loss: 0.7202, Valid: 87.86%, Test: 84.87% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7005, Valid: 86.73%, Test: 88.49% Training Time/epoch: 0.039
 AP
-Run: 08 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.86%%, Loss: 0.7202, Valid: 90.37%, Test: 88.18% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7005, Valid: 89.87%, Test: 90.61% Training Time/epoch: 0.039
 ##################################################
 AUC
-Run: 08 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.91%%, Loss: 0.6819, Valid: 87.91%, Test: 85.19% Training Time/epoch: 0.047
+Run: 08 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7477, Valid: 86.77%, Test: 88.77% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.91%%, Loss: 0.6819, Valid: 90.53%, Test: 88.58% Training Time/epoch: 0.047
+Run: 08 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7477, Valid: 89.72%, Test: 90.97% Training Time/epoch: 0.038
 ###########################################################
 AUC
-Run: 08 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.00%%, Loss: 0.6996, Valid: 88.00%, Test: 85.26% Training Time/epoch: 0.047
+Run: 08 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7231, Valid: 86.69%, Test: 88.59% Training Time/epoch: 0.040
 AP
-Run: 08 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 88.00%%, Loss: 0.6996, Valid: 90.56%, Test: 88.62% Training Time/epoch: 0.047
+Run: 08 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7231, Valid: 89.78%, Test: 91.01% Training Time/epoch: 0.040
 ###################################################################
 AUC
-Run: 08 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 88.25%%, Loss: 0.6814, Valid: 88.25%, Test: 84.90% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 270 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7085, Valid: 86.82%, Test: 88.65% Training Time/epoch: 0.039
 AP
-Run: 08 / 10, Epoch: 270 / 500, Best_epoch: 270, Best_valid: 88.25%%, Loss: 0.6814, Valid: 90.86%, Test: 88.34% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 270 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7085, Valid: 89.89%, Test: 91.01% Training Time/epoch: 0.039
 ###########################################################################
 AUC
-Run: 08 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6837, Valid: 88.25%, Test: 85.08% Training Time/epoch: 0.039
+Run: 08 / 10, Epoch: 300 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6938, Valid: 86.66%, Test: 89.00% Training Time/epoch: 0.037
 AP
-Run: 08 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6837, Valid: 90.89%, Test: 88.68% Training Time/epoch: 0.039
+Run: 08 / 10, Epoch: 300 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6938, Valid: 89.89%, Test: 91.26% Training Time/epoch: 0.037
 ####################################################################################
 AUC
-Run: 08 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6960, Valid: 88.16%, Test: 85.32% Training Time/epoch: 0.040
+Run: 08 / 10, Epoch: 330 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6820, Valid: 86.74%, Test: 88.90% Training Time/epoch: 0.036
 AP
-Run: 08 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6960, Valid: 90.77%, Test: 88.75% Training Time/epoch: 0.040
+Run: 08 / 10, Epoch: 330 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6820, Valid: 89.87%, Test: 91.21% Training Time/epoch: 0.036
 ############################################################################################
 AUC
-Run: 08 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.7058, Valid: 88.20%, Test: 85.47% Training Time/epoch: 0.044
+Run: 08 / 10, Epoch: 360 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7025, Valid: 86.71%, Test: 88.90% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.7058, Valid: 90.89%, Test: 88.95% Training Time/epoch: 0.044
+Run: 08 / 10, Epoch: 360 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.7025, Valid: 89.82%, Test: 91.23% Training Time/epoch: 0.038
 #####################################################################################################
 AUC
-Run: 08 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.7022, Valid: 88.11%, Test: 85.29% Training Time/epoch: 0.041
+Run: 08 / 10, Epoch: 390 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6913, Valid: 86.73%, Test: 88.82% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 390 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.7022, Valid: 90.79%, Test: 88.82% Training Time/epoch: 0.041
+Run: 08 / 10, Epoch: 390 / 500, Best_epoch: 150, Best_valid: 86.93%%, Loss: 0.6913, Valid: 89.92%, Test: 91.18% Training Time/epoch: 0.038
 #############################################################################################################
 AUC
-Run: 08 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6865, Valid: 88.13%, Test: 85.12% Training Time/epoch: 0.045
+Run: 08 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.7264, Valid: 87.10%, Test: 88.81% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 420 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6865, Valid: 90.82%, Test: 88.59% Training Time/epoch: 0.045
+Run: 08 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.7264, Valid: 90.07%, Test: 91.27% Training Time/epoch: 0.038
 #####################################################################################################################
 AUC
-Run: 08 / 10, Epoch: 450 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6771, Valid: 88.07%, Test: 85.50% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.6557, Valid: 86.91%, Test: 88.90% Training Time/epoch: 0.039
 AP
-Run: 08 / 10, Epoch: 450 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6771, Valid: 90.67%, Test: 89.15% Training Time/epoch: 0.038
+Run: 08 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.6557, Valid: 89.99%, Test: 91.27% Training Time/epoch: 0.039
 ##############################################################################################################################
 AUC
-Run: 08 / 10, Epoch: 480 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6918, Valid: 88.17%, Test: 85.61% Training Time/epoch: 0.044
+Run: 08 / 10, Epoch: 480 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.7120, Valid: 87.04%, Test: 88.80% Training Time/epoch: 0.038
 AP
-Run: 08 / 10, Epoch: 480 / 500, Best_epoch: 300, Best_valid: 88.25%%, Loss: 0.6918, Valid: 90.88%, Test: 89.22% Training Time/epoch: 0.044
+Run: 08 / 10, Epoch: 480 / 500, Best_epoch: 420, Best_valid: 87.10%%, Loss: 0.7120, Valid: 90.12%, Test: 91.21% Training Time/epoch: 0.038
 ######################################################################################################################################
 ##### Testing on 8/10
 AUC
-**** Testing on Run: 08, Best Epoch: 300, Valid: 88.25%, Test: 85.08%
+**** Testing on Run: 08, Best Epoch: 420, Valid: 87.10%, Test: 88.81%
 AP
-**** Testing on Run: 08, Best Epoch: 300, Valid: 90.89%, Test: 88.68%
+**** Testing on Run: 08, Best Epoch: 420, Valid: 90.07%, Test: 91.27%
 AUC
-Run: 09 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 83.08%%, Loss: 0.7992, Valid: 83.08%, Test: 80.20% Training Time/epoch: 0.045
+Run: 09 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 77.68%%, Loss: 0.8718, Valid: 77.68%, Test: 78.80% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 83.08%%, Loss: 0.7992, Valid: 84.11%, Test: 82.37% Training Time/epoch: 0.045
+Run: 09 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 77.68%%, Loss: 0.8718, Valid: 77.48%, Test: 79.74% Training Time/epoch: 0.038
 ########
 AUC
-Run: 09 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.7882, Valid: 86.54%, Test: 85.06% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.48%%, Loss: 0.7642, Valid: 86.48%, Test: 87.51% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.54%%, Loss: 0.7882, Valid: 88.71%, Test: 87.91% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.48%%, Loss: 0.7642, Valid: 88.88%, Test: 89.29% Training Time/epoch: 0.039
 #################
 AUC
-Run: 09 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.12%%, Loss: 0.7474, Valid: 87.12%, Test: 85.15% Training Time/epoch: 0.039
+Run: 09 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.70%%, Loss: 0.7407, Valid: 86.70%, Test: 88.37% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.12%%, Loss: 0.7474, Valid: 89.72%, Test: 88.47% Training Time/epoch: 0.039
+Run: 09 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.70%%, Loss: 0.7407, Valid: 89.51%, Test: 90.42% Training Time/epoch: 0.038
 #########################
 AUC
-Run: 09 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.43%%, Loss: 0.7138, Valid: 87.43%, Test: 85.58% Training Time/epoch: 0.036
+Run: 09 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 86.70%%, Loss: 0.7580, Valid: 86.70%, Test: 88.54% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.43%%, Loss: 0.7138, Valid: 90.02%, Test: 88.92% Training Time/epoch: 0.036
+Run: 09 / 10, Epoch: 120 / 500, Best_epoch: 90, Best_valid: 86.70%%, Loss: 0.7580, Valid: 89.60%, Test: 90.64% Training Time/epoch: 0.038
 ##################################
 AUC
-Run: 09 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.57%%, Loss: 0.7312, Valid: 87.57%, Test: 85.76% Training Time/epoch: 0.040
+Run: 09 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7417, Valid: 87.04%, Test: 88.68% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.57%%, Loss: 0.7312, Valid: 90.12%, Test: 89.04% Training Time/epoch: 0.040
+Run: 09 / 10, Epoch: 150 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7417, Valid: 89.94%, Test: 90.73% Training Time/epoch: 0.038
 ##########################################
 AUC
-Run: 09 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.57%%, Loss: 0.6920, Valid: 87.51%, Test: 85.28% Training Time/epoch: 0.043
+Run: 09 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7275, Valid: 86.73%, Test: 88.69% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.57%%, Loss: 0.6920, Valid: 89.93%, Test: 88.74% Training Time/epoch: 0.043
+Run: 09 / 10, Epoch: 180 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7275, Valid: 89.90%, Test: 90.84% Training Time/epoch: 0.039
 ##################################################
 AUC
-Run: 09 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.72%%, Loss: 0.6905, Valid: 87.72%, Test: 85.83% Training Time/epoch: 0.040
+Run: 09 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7088, Valid: 86.84%, Test: 88.56% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 87.72%%, Loss: 0.6905, Valid: 90.30%, Test: 89.01% Training Time/epoch: 0.040
+Run: 09 / 10, Epoch: 210 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7088, Valid: 89.92%, Test: 90.60% Training Time/epoch: 0.038
 ###########################################################
 AUC
-Run: 09 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.6968, Valid: 87.79%, Test: 85.26% Training Time/epoch: 0.038
+Run: 09 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7211, Valid: 86.65%, Test: 88.70% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 240 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.6968, Valid: 90.38%, Test: 88.74% Training Time/epoch: 0.038
+Run: 09 / 10, Epoch: 240 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7211, Valid: 89.80%, Test: 90.84% Training Time/epoch: 0.039
 ###################################################################
 AUC
-Run: 09 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.6943, Valid: 87.71%, Test: 85.21% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 270 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7174, Valid: 86.85%, Test: 88.66% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 270 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.6943, Valid: 90.34%, Test: 88.83% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 270 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7174, Valid: 90.06%, Test: 90.97% Training Time/epoch: 0.038
 ###########################################################################
 AUC
-Run: 09 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.7200, Valid: 87.71%, Test: 85.32% Training Time/epoch: 0.041
+Run: 09 / 10, Epoch: 300 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6974, Valid: 86.87%, Test: 88.99% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 300 / 500, Best_epoch: 240, Best_valid: 87.79%%, Loss: 0.7200, Valid: 90.39%, Test: 88.79% Training Time/epoch: 0.041
+Run: 09 / 10, Epoch: 300 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6974, Valid: 90.10%, Test: 91.12% Training Time/epoch: 0.039
 ####################################################################################
 AUC
-Run: 09 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6876, Valid: 87.82%, Test: 85.67% Training Time/epoch: 0.038
+Run: 09 / 10, Epoch: 330 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7212, Valid: 86.87%, Test: 89.05% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 330 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6876, Valid: 90.54%, Test: 89.31% Training Time/epoch: 0.038
+Run: 09 / 10, Epoch: 330 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7212, Valid: 89.99%, Test: 91.26% Training Time/epoch: 0.039
 ############################################################################################
 AUC
-Run: 09 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6867, Valid: 87.70%, Test: 85.21% Training Time/epoch: 0.037
+Run: 09 / 10, Epoch: 360 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6933, Valid: 86.61%, Test: 88.49% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 360 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6867, Valid: 90.49%, Test: 88.89% Training Time/epoch: 0.037
+Run: 09 / 10, Epoch: 360 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6933, Valid: 89.82%, Test: 90.92% Training Time/epoch: 0.038
 #####################################################################################################
 AUC
-Run: 09 / 10, Epoch: 390 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.7140, Valid: 87.66%, Test: 85.15% Training Time/epoch: 0.037
+Run: 09 / 10, Epoch: 390 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7100, Valid: 86.62%, Test: 88.96% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 390 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.7140, Valid: 90.46%, Test: 88.93% Training Time/epoch: 0.037
+Run: 09 / 10, Epoch: 390 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7100, Valid: 89.81%, Test: 91.11% Training Time/epoch: 0.039
 #############################################################################################################
 AUC
-Run: 09 / 10, Epoch: 420 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6789, Valid: 87.73%, Test: 84.78% Training Time/epoch: 0.041
+Run: 09 / 10, Epoch: 420 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7131, Valid: 86.76%, Test: 88.90% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 420 / 500, Best_epoch: 330, Best_valid: 87.82%%, Loss: 0.6789, Valid: 90.49%, Test: 88.83% Training Time/epoch: 0.041
+Run: 09 / 10, Epoch: 420 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.7131, Valid: 89.99%, Test: 91.02% Training Time/epoch: 0.039
 #####################################################################################################################
 AUC
-Run: 09 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.88%%, Loss: 0.6567, Valid: 87.88%, Test: 85.22% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 450 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6981, Valid: 86.89%, Test: 88.96% Training Time/epoch: 0.039
 AP
-Run: 09 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 87.88%%, Loss: 0.6567, Valid: 90.57%, Test: 88.85% Training Time/epoch: 0.042
+Run: 09 / 10, Epoch: 450 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6981, Valid: 90.11%, Test: 91.09% Training Time/epoch: 0.039
 ##############################################################################################################################
 AUC
-Run: 09 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.93%%, Loss: 0.6939, Valid: 87.93%, Test: 85.47% Training Time/epoch: 0.046
+Run: 09 / 10, Epoch: 480 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6709, Valid: 86.74%, Test: 88.81% Training Time/epoch: 0.038
 AP
-Run: 09 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 87.93%%, Loss: 0.6939, Valid: 90.68%, Test: 89.12% Training Time/epoch: 0.046
+Run: 09 / 10, Epoch: 480 / 500, Best_epoch: 150, Best_valid: 87.04%%, Loss: 0.6709, Valid: 90.03%, Test: 91.05% Training Time/epoch: 0.038
 ######################################################################################################################################
 ##### Testing on 9/10
 AUC
-**** Testing on Run: 09, Best Epoch: 480, Valid: 87.93%, Test: 85.47%
+**** Testing on Run: 09, Best Epoch: 150, Valid: 87.04%, Test: 88.68%
 AP
-**** Testing on Run: 09, Best Epoch: 480, Valid: 90.68%, Test: 89.12%
+**** Testing on Run: 09, Best Epoch: 150, Valid: 89.94%, Test: 90.73%
 AUC
-Run: 10 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.96%%, Loss: 0.8542, Valid: 81.96%, Test: 80.79% Training Time/epoch: 0.044
+Run: 10 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.90%%, Loss: 0.8449, Valid: 78.90%, Test: 80.49% Training Time/epoch: 0.039
 AP
-Run: 10 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 81.96%%, Loss: 0.8542, Valid: 82.87%, Test: 81.84% Training Time/epoch: 0.044
+Run: 10 / 10, Epoch: 30 / 500, Best_epoch: 30, Best_valid: 78.90%%, Loss: 0.8449, Valid: 78.59%, Test: 80.54% Training Time/epoch: 0.039
 ########
 AUC
-Run: 10 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.11%%, Loss: 0.7865, Valid: 86.11%, Test: 84.61% Training Time/epoch: 0.047
+Run: 10 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.67%%, Loss: 0.7525, Valid: 85.67%, Test: 86.84% Training Time/epoch: 0.038
 AP
-Run: 10 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 86.11%%, Loss: 0.7865, Valid: 88.32%, Test: 87.09% Training Time/epoch: 0.047
+Run: 10 / 10, Epoch: 60 / 500, Best_epoch: 60, Best_valid: 85.67%%, Loss: 0.7525, Valid: 87.70%, Test: 88.60% Training Time/epoch: 0.038
 #################
 AUC
-Run: 10 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.41%%, Loss: 0.7391, Valid: 87.41%, Test: 85.24% Training Time/epoch: 0.043
+Run: 10 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.52%%, Loss: 0.7598, Valid: 86.52%, Test: 88.04% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 87.41%%, Loss: 0.7391, Valid: 89.79%, Test: 88.41% Training Time/epoch: 0.043
+Run: 10 / 10, Epoch: 90 / 500, Best_epoch: 90, Best_valid: 86.52%%, Loss: 0.7598, Valid: 89.43%, Test: 90.21% Training Time/epoch: 0.034
 #########################
 AUC
-Run: 10 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.65%%, Loss: 0.7665, Valid: 87.65%, Test: 85.05% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7474, Valid: 86.64%, Test: 88.14% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 87.65%%, Loss: 0.7665, Valid: 90.00%, Test: 88.40% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 120 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7474, Valid: 89.55%, Test: 90.34% Training Time/epoch: 0.034
 ##################################
 AUC
-Run: 10 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.65%%, Loss: 0.7162, Valid: 87.47%, Test: 85.09% Training Time/epoch: 0.042
+Run: 10 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7055, Valid: 86.43%, Test: 88.03% Training Time/epoch: 0.035
 AP
-Run: 10 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 87.65%%, Loss: 0.7162, Valid: 90.02%, Test: 88.44% Training Time/epoch: 0.042
+Run: 10 / 10, Epoch: 150 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7055, Valid: 89.60%, Test: 90.40% Training Time/epoch: 0.035
 ##########################################
 AUC
-Run: 10 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7101, Valid: 87.79%, Test: 85.47% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 180 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7153, Valid: 86.56%, Test: 88.35% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 180 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7101, Valid: 90.31%, Test: 88.78% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 180 / 500, Best_epoch: 120, Best_valid: 86.64%%, Loss: 0.7153, Valid: 89.72%, Test: 90.69% Training Time/epoch: 0.034
 ##################################################
 AUC
-Run: 10 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7474, Valid: 87.70%, Test: 85.16% Training Time/epoch: 0.071
+Run: 10 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6901, Valid: 86.69%, Test: 88.36% Training Time/epoch: 0.035
 AP
-Run: 10 / 10, Epoch: 210 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7474, Valid: 90.21%, Test: 88.66% Training Time/epoch: 0.071
+Run: 10 / 10, Epoch: 210 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6901, Valid: 89.89%, Test: 90.79% Training Time/epoch: 0.035
 ###########################################################
 AUC
-Run: 10 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7015, Valid: 87.69%, Test: 85.07% Training Time/epoch: 0.050
+Run: 10 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.7117, Valid: 86.55%, Test: 88.81% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 240 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7015, Valid: 90.30%, Test: 88.64% Training Time/epoch: 0.050
+Run: 10 / 10, Epoch: 240 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.7117, Valid: 89.85%, Test: 91.22% Training Time/epoch: 0.034
 ###################################################################
 AUC
-Run: 10 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7190, Valid: 87.76%, Test: 84.74% Training Time/epoch: 0.037
+Run: 10 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.7060, Valid: 86.63%, Test: 88.30% Training Time/epoch: 0.035
 AP
-Run: 10 / 10, Epoch: 270 / 500, Best_epoch: 180, Best_valid: 87.79%%, Loss: 0.7190, Valid: 90.41%, Test: 88.30% Training Time/epoch: 0.037
+Run: 10 / 10, Epoch: 270 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.7060, Valid: 89.77%, Test: 90.83% Training Time/epoch: 0.035
 ###########################################################################
 AUC
-Run: 10 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.6953, Valid: 87.82%, Test: 85.12% Training Time/epoch: 0.039
+Run: 10 / 10, Epoch: 300 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6874, Valid: 86.53%, Test: 88.01% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 300 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.6953, Valid: 90.45%, Test: 88.54% Training Time/epoch: 0.039
+Run: 10 / 10, Epoch: 300 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6874, Valid: 89.75%, Test: 90.69% Training Time/epoch: 0.034
 ####################################################################################
 AUC
-Run: 10 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.7215, Valid: 87.80%, Test: 85.59% Training Time/epoch: 0.039
+Run: 10 / 10, Epoch: 330 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6712, Valid: 86.46%, Test: 88.10% Training Time/epoch: 0.033
 AP
-Run: 10 / 10, Epoch: 330 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.7215, Valid: 90.40%, Test: 89.06% Training Time/epoch: 0.039
+Run: 10 / 10, Epoch: 330 / 500, Best_epoch: 210, Best_valid: 86.69%%, Loss: 0.6712, Valid: 89.70%, Test: 90.41% Training Time/epoch: 0.033
 ############################################################################################
 AUC
-Run: 10 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.6883, Valid: 87.74%, Test: 85.35% Training Time/epoch: 0.033
+Run: 10 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 86.83%%, Loss: 0.7421, Valid: 86.83%, Test: 88.29% Training Time/epoch: 0.034
 AP
-Run: 10 / 10, Epoch: 360 / 500, Best_epoch: 300, Best_valid: 87.82%%, Loss: 0.6883, Valid: 90.46%, Test: 88.86% Training Time/epoch: 0.033
+Run: 10 / 10, Epoch: 360 / 500, Best_epoch: 360, Best_valid: 86.83%%, Loss: 0.7421, Valid: 89.87%, Test: 90.73% Training Time/epoch: 0.034
 #####################################################################################################
 AUC
-Run: 10 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.85%%, Loss: 0.7068, Valid: 87.85%, Test: 85.64% Training Time/epoch: 0.040
+Run: 10 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 86.92%%, Loss: 0.6763, Valid: 86.92%, Test: 88.55% Training Time/epoch: 0.030
 AP
-Run: 10 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 87.85%%, Loss: 0.7068, Valid: 90.53%, Test: 89.22% Training Time/epoch: 0.040
+Run: 10 / 10, Epoch: 390 / 500, Best_epoch: 390, Best_valid: 86.92%%, Loss: 0.6763, Valid: 90.00%, Test: 90.89% Training Time/epoch: 0.030
 #############################################################################################################
 AUC
-Run: 10 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.92%%, Loss: 0.6735, Valid: 87.92%, Test: 85.31% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.7017, Valid: 87.16%, Test: 88.51% Training Time/epoch: 0.030
 AP
-Run: 10 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.92%%, Loss: 0.6735, Valid: 90.47%, Test: 88.94% Training Time/epoch: 0.038
+Run: 10 / 10, Epoch: 420 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.7017, Valid: 90.17%, Test: 90.93% Training Time/epoch: 0.030
 #####################################################################################################################
 AUC
-Run: 10 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.02%%, Loss: 0.6863, Valid: 88.02%, Test: 85.21% Training Time/epoch: 0.033
+Run: 10 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.6965, Valid: 87.07%, Test: 88.64% Training Time/epoch: 0.030
 AP
-Run: 10 / 10, Epoch: 450 / 500, Best_epoch: 450, Best_valid: 88.02%%, Loss: 0.6863, Valid: 90.54%, Test: 88.82% Training Time/epoch: 0.033
+Run: 10 / 10, Epoch: 450 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.6965, Valid: 90.15%, Test: 91.06% Training Time/epoch: 0.030
 ##############################################################################################################################
 AUC
-Run: 10 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 88.08%%, Loss: 0.6762, Valid: 88.08%, Test: 84.93% Training Time/epoch: 0.032
+Run: 10 / 10, Epoch: 480 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.6913, Valid: 87.15%, Test: 88.55% Training Time/epoch: 0.030
 AP
-Run: 10 / 10, Epoch: 480 / 500, Best_epoch: 480, Best_valid: 88.08%%, Loss: 0.6762, Valid: 90.56%, Test: 88.68% Training Time/epoch: 0.032
+Run: 10 / 10, Epoch: 480 / 500, Best_epoch: 420, Best_valid: 87.16%%, Loss: 0.6913, Valid: 90.14%, Test: 90.83% Training Time/epoch: 0.030
 ######################################################################################################################################
 ##### Testing on 10/10
 AUC
-**** Testing on Run: 10, Best Epoch: 480, Valid: 88.08%, Test: 84.93%
+**** Testing on Run: 10, Best Epoch: 420, Valid: 87.16%, Test: 88.51%
 AP
-**** Testing on Run: 10, Best Epoch: 480, Valid: 90.56%, Test: 88.68%
+**** Testing on Run: 10, Best Epoch: 420, Valid: 90.17%, Test: 90.93%
 ##### Final Testing result (Link Prediction Pretext Training)
 AUC
 All runs:
-Highest Valid: 88.09 ± 0.11
-   Final Test: 85.67 ± 0.48
+Highest Valid: 87.23 ± 0.15
+   Final Test: 88.58 ± 0.17
 AP
 All runs:
-Highest Valid: 90.70 ± 0.11
-   Final Test: 89.07 ± 0.34
+Highest Valid: 90.25 ± 0.18
+   Final Test: 90.92 ± 0.16
 Start Training (Node Classification)...
-Run 1: Best test accuray 79.53%.
-Run 2: Best test accuray 78.92%.
-Run 3: Best test accuray 79.33%.
-Run 4: Best test accuray 79.02%.
-Run 5: Best test accuray 79.02%.
-Run 6: Best test accuray 79.07%.
-Run 7: Best test accuray 79.02%.
-Run 8: Best test accuray 79.63%.
-Run 9: Best test accuray 79.33%.
-Run 10: Best test accuray 79.53%.
+Run 1: Best test accuray 79.18%.
+Run 2: Best test accuray 78.82%.
+Run 3: Best test accuray 78.92%.
+Run 4: Best test accuray 79.12%.
+Run 5: Best test accuray 79.12%.
+Run 6: Best test accuray 78.82%.
+Run 7: Best test accuray 78.57%.
+Run 8: Best test accuray 79.02%.
+Run 9: Best test accuray 78.62%.
+Run 10: Best test accuray 79.12%.
 ##### Final Testing result (Node Classification)
 All runs:
-Highest Valid: 82.81 ± 0.32
-   Final Test: 79.24 ± 0.26
+Highest Valid: 81.97 ± 0.35
+   Final Test: 78.93 ± 0.22

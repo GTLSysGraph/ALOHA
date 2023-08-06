@@ -1,10 +1,12 @@
 cora:
+  # nettack hidden 256
+  # DICE random 256 
+
   # 0.8407±0.0071
   seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 64
-  batch_size: 500
+  num_hidden: 512
   num_heads: 4
   num_layers: 2
   weight_decay: 2e-4
@@ -31,8 +33,7 @@ cora_ml:
   seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 64
-  batch_size: 500
+  num_hidden: 128
   num_heads: 4
   num_layers: 2
   weight_decay: 2e-4

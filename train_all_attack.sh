@@ -10,7 +10,7 @@ max_process_num=6
 
 
 num=${#CUDA_USE[*]}
-for dst in 'Cora_ml'
+for dst in 'Cora'
 do
     for i in 'Meta_Self' 
     do
@@ -36,7 +36,7 @@ do
         then
             for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
             do
-                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
+                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb"  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
                 process_num=`expr $process_num + 1`
                 process_num=`expr $process_num % $max_process_num`
                 if [ $process_num == 0 ]
@@ -54,7 +54,7 @@ do
         then
             for ptb in 0.0 1.0 2.0 3.0 4.0 5.0
             do
-                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
+                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb"  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
                 process_num=`expr $process_num + 1`
                 process_num=`expr $process_num % $max_process_num`
                 if [ $process_num == 0 ]
@@ -72,7 +72,7 @@ do
         then
             for ptb in 0.0 0.1 0.2 0.3 0.4 0.5
             do
-                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb" --gpu_id ${CUDA_USE[$n]}  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
+                CUDA_VISIBLE_DEVICES=${CUDA_USE[$n]} python Train_Runner.py --dataset "Attack-$dst"  --attack  "$i-$ptb"  --model_name $1 >"./logs/$1/$1_${i}_${dst}_${ptb}.file" &
                 process_num=`expr $process_num + 1`
                 process_num=`expr $process_num % $max_process_num`
                 if [ $process_num == 0 ]

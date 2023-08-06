@@ -141,7 +141,6 @@ cora_ml:
   num_layers: 2
   weight_decay: 2e-4
   weight_decay_f: 1e-4
-  max_epoch: 1500
   max_epoch_f: 300
   mask_rate: 0.5
   num_layers: 2
@@ -157,21 +156,114 @@ cora_ml:
   alpha_l: 3
   scheduler: True
   concat_hidden: False 
-  
-  #### attack cora_ml meta 0.0  
-  num_hidden         : 512
-  drop_edge_rate     : 0.1
+
+  #### attack cora_ml meta 0.0    
+  max_epoch          : 1500
+  num_hidden         : 128
+  drop_edge_rate     : 0.0
   sim_mode           : jaccard
-  keep_threshold     : 0.02
-  dele_threshold     : 0.02
+  keep_threshold     : 0.06
+  dele_threshold     : 0.06
   edge_hidden        : 64 #最好的还是64的时候
-  updata_guide_model : 100
-  decay              : 0.4 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  updata_guide_model : 200
+  decay              : 0.1 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
   undirected         : False
-  add_rate           : 0.4
-  gamma              : 20
-  beta               : 0.001
+  add_rate           : 0.6
+  gamma              : 40
+  beta               : 0.0
   type_graph4recon   : "ptb"
+
+
+
+
+  #### attack cora_ml meta 0.05    refine 84.25  ptb 85.68
+  # max_epoch          : 1500
+  # num_hidden         : 128
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.1
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 200
+  # decay              : 0.1 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.8
+  # gamma              : 40
+  # beta               : 0.1
+  # type_graph4recon   : "ptb"
+
+
+
+  #### attack cora_ml meta 0.1
+  # max_epoch          : 1500
+  # num_hidden         : 128
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.1
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 200
+  # decay              : 0.1 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.6
+  # gamma              : 40
+  # beta               : 0.1
+  # type_graph4recon   : "refine"
+
+
+
+  #### attack cora_ml meta 0.15  
+  # max_epoch          : 1500
+  # num_hidden         : 128
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.1
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 200
+  # decay              : 0.1 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.4
+  # gamma              : 40
+  # beta               : 0.
+  # type_graph4recon   : "refine"
+
+
+
+  #### attack cora_ml meta 0.2  
+  # max_epoch          : 1500
+  # num_hidden         : 128
+  # drop_edge_rate     : 0.4
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.1
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 200
+  # decay              : 0.2 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.4
+  # gamma              : 40
+  # beta               : 0.2
+  # type_graph4recon   : "refine"
+
+
+
+
+  #### attack cora_ml meta 0.25  
+  # max_epoch          : 1000
+  # num_hidden         : 256
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.1
+  # edge_hidden        : 64 #最好的还是64的时候
+  # updata_guide_model : 600
+  # decay              : 0.995 #在扰动小的情况下是不是希望更新的更快一些，也就是用到的新参数更频繁一些
+  # undirected         : False
+  # add_rate           : 0.4
+  # gamma              : 40
+  # beta               : 0.2
+  # type_graph4recon   : "refine"
 
 
 

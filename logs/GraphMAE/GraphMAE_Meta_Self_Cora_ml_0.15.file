@@ -1,7 +1,7 @@
 [I] Loading dataset Attack-Cora_ml...
 train_mask, test_mask, val_mask sizes : tensor(280) tensor(282) tensor(2248)
 [I] Finished loading.
-[I] Data load time: 3.1202s
+[I] Data load time: 2.9596s
 ------ Use best configs ------
 ####### Run 0 for seed 1
 # IGNORE: --- TestAcc: 0.7447, early-stopping-TestAcc: 0.7447, Best ValAcc: 0.7553 in epoch 294 --- 
