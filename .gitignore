@@ -1,4 +1,5 @@
 # .gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交
+*.pdf
 __pycache__
 model_zoo/GAE/S2GAE/weight
 model_zoo/GCL/MVGRL/graph/data
