@@ -24,6 +24,26 @@ cora:
   scheduler: True
   concat_hidden: False 
 
+  # try nettack DICE random
+  # max_epoch          : 600
+  # num_hidden         : 512
+  # drop_edge_rate     : 0.6
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.01
+  # dele_threshold     : 0.01
+  # edge_hidden        : 64
+  # updata_guide_model : 200
+  # decay              : 0.2
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 40
+  # beta               : 0.0
+  # type_graph4recon   : "ptb"
+
+
+
+
+
   # raw cora                ptb 0.8478±0.0045  refine 0.8413±0.0039
   # num_hidden         : 512 # 在扰动小的情况下希望大一些而且希望使用graph perb进行重建，扰动小的时候其实所有的边都是有用的，所以其实graph perb比refine多了更多的有用信息来帮助重建，因为加的边其实并不是扰动边
   # drop_edge_rate     : 0.1
@@ -117,19 +137,19 @@ cora:
   # type_graph4recon   : "refine"
 
   #### attack cora meta 0.25  ptb 0.5692±0.0080  reine 0.5812±0.0075  gamma=0 0.5663±0.0055
-  num_hidden         : 64
-  drop_edge_rate     : 0.0
-  sim_mode           : jaccard
-  keep_threshold     : 0.1
-  dele_threshold     : 0.04
-  edge_hidden        : 32
-  updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
-  decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
-  undirected         : False
-  add_rate           : 0.1
-  gamma              : 1
-  beta               : 0.005
-  type_graph4recon   : "refine"
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.1
+  # dele_threshold     : 0.04
+  # edge_hidden        : 32
+  # updata_guide_model : 200   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.995 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些
+  # undirected         : False
+  # add_rate           : 0.1
+  # gamma              : 1
+  # beta               : 0.005
+  # type_graph4recon   : "refine"
 
 
 cora_ml:
@@ -294,6 +314,23 @@ citeseer:
   alpha_l: 1 # or 3 
   scheduler: True
 
+  # try nettack
+  # num_hidden: 64
+  # drop_edge_rate     : 0.2
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.08
+  # dele_threshold     : 0.08
+  # edge_hidden        : 16
+  # updata_guide_model : 200
+  # decay              : 0.1
+  # undirected         : False
+  # add_rate           : 0.2
+  # gamma              : 10
+  # beta               : 0.1
+  # type_graph4recon   : "ptb"
+
+
+
   # Citeseer 0.7348±0.0029
   # num_hidden: 512
   # drop_edge_rate     : 0.2
@@ -310,19 +347,19 @@ citeseer:
   # type_graph4recon   : "ptb"
 
   #### attack citeseer meta 0.0   ptb 0.7550±0.0056 refine 0.7559±0.0041
-  num_hidden         : 64
-  drop_edge_rate     : 0.0
-  sim_mode           : jaccard
-  keep_threshold     : 0.02
-  dele_threshold     : 0.01
-  edge_hidden        : 32
-  updata_guide_model : 100   # 不能太频繁 100 在攻击的时候不错
-  decay              : 0.9 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
-  undirected         : False
-  add_rate           : 0.5
-  gamma              : 0.
-  beta               : 0.
-  type_graph4recon   : "refine"
+  # num_hidden         : 64
+  # drop_edge_rate     : 0.0
+  # sim_mode           : jaccard
+  # keep_threshold     : 0.02
+  # dele_threshold     : 0.01
+  # edge_hidden        : 32
+  # updata_guide_model : 100   # 不能太频繁 100 在攻击的时候不错
+  # decay              : 0.9 # 在被攻击的时候好像希望新的参数的比重稍微大一些，即这个值稍小一些 如果gamma为0，这个值是不变的，因为没有对齐的说法hh，真傻啊，要探究敏感性，gamma不能为0
+  # undirected         : False
+  # add_rate           : 0.5
+  # gamma              : 0.
+  # beta               : 0.
+  # type_graph4recon   : "refine"
 
   #### attack citeseer meta 0.05  ptb 0.7524±0.0044 refine 0.7536±0.0011
   # num_hidden         : 64

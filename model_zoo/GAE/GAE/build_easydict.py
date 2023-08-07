@@ -8,7 +8,7 @@ def build_easydict():
     MDT.MODEL.PARAM = {
         'linear': False,
         'epochs': 400,
-        'variational':False,
+        'variational':True,
         'seed': 1
     }
 

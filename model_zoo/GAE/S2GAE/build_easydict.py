@@ -34,7 +34,7 @@ def build_easydict_nodecls():
         'decode_layers':3,
         'hidden_channels':128,
         'decode_channels':256,
-        'dropout':0.5,
+        'dropout':0.2,
         'batch_size':1024, #别jb瞎改别人的设置 Cora citeseer 1024 Pubmed 可以大一些8192
         'lr':0.001,
         'epochs':400, 

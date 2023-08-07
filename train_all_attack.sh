@@ -10,9 +10,9 @@ max_process_num=6
 
 
 num=${#CUDA_USE[*]}
-for dst in 'Cora'
+for dst in 'Citeseer'
 do
-    for i in 'Meta_Self' 
+    for i in 'nettack' 
     do
         if [ $i == 'Meta_Self' ]
         then
