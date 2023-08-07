@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=2
 python Train_Runner.py \
---dataset  'Attack-Citeseer' \
---attack  'nettack-0.0' \
+--dataset  'Attack-Cora' \
+--attack  'Meta_Self-0.25' \
 --task 'node' \
 --mode 'tranductive' \
 --model_name 'SPMGAE'
