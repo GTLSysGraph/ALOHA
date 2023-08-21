@@ -11,6 +11,12 @@ import seaborn as sns
 import matplotlib
 
 
+font = {'family' : 'Times New Roman',
+        'weight' : 'normal',
+        'size' : 20,
+       }
+
+
 dataset_name = 'Cora'
 attack       = 'Meta_Self-0.2'
 
@@ -37,11 +43,11 @@ for n, y in enumerate(set(data.y.numpy())):
 plt.figure(figsize=(10, 10))
 # plt.scatter(x=embd_x.T[0], y=embd_x.T[1],c=data.y.cpu().numpy(),marker='o')
 
-sns.set_theme(style="white",font='Times New Roman',font_scale=1.4)
+sns.set_theme(style="white",font='Times New Roman',font_scale=2.5) # font_scale可以调整横纵坐标字体大小
 sns.scatterplot(x=embd_x.T[0], y=embd_x.T[1], hue=data.y.cpu().numpy(),palette=palette)
 
 # plt.ylabel('y', font={'family':'Times New Roman', 'size':16})
 # plt.xlabel('x', font={'family':'Times New Roman', 'size':16})
 
-plt.legend(bbox_to_anchor=(1,1), loc='upper left',prop={"family": "Times New Roman"})
+plt.legend(loc = 3, prop=font)
 plt.savefig("Cora2.pdf", dpi=1280)
