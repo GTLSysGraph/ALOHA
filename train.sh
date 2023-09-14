@@ -4,4 +4,4 @@ python Train_Runner.py \
 --attack  'Meta_Self-0.25' \
 --task 'node' \
 --mode 'tranductive' \
---model_name 'SPMGAE'
+--model_name 'MaskGAE'

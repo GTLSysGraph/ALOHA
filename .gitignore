@@ -3,6 +3,7 @@
 __pycache__
 model_zoo/GAE/S2GAE/weight
 model_zoo/GCL/MVGRL/graph/data
+*.pth
 subgraphs
 datasets_dgl
 datasets_graphsaint
