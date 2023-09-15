@@ -9,3 +9,4 @@ datasets_dgl
 datasets_graphsaint
 datasets_pyg
 events*
+test.py
