@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=2
 python Train_Runner.py \
---dataset  'Attack-Cora' \
---attack  'Meta_Self-0.25' \
+--dataset  'Attack-Squirrel' \
+--attack  'Meta_Self-0.0' \
 --task 'node' \
 --mode 'tranductive' \
---model_name 'AutoRobustGAE'
+--model_name 'GraphMAE'

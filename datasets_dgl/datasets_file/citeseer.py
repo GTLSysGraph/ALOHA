@@ -8,19 +8,21 @@ import scipy
 class CiteseerDGL(torch.utils.data.Dataset):
 
     def __init__(self,args):      
-
         data_name = args.data.split('-')[1].lower()
-        adj = torch.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_%s_%s.pt' % (args.attack, data_name, args.attack, data_name, args.ptb_rate),map_location= 'cuda')
+
+        data_dir = '/home/songsh/AutoGAE/datasets_dgl/all_data_attack/%s/%s/' % (args.attack, data_name)
+
+        adj = torch.load(data_dir + '%s_%s_%s.pt' % (args.attack, data_name, args.ptb_rate),map_location= 'cuda')
         g = dgl.from_scipy(to_scipy(adj))
         
-        features = to_tensor_features(scipy.sparse.load_npz('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_features.npz' % (args.attack,data_name,data_name))).to_dense()
-        self.labels   = torch.tensor(np.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_labels.npy' % (args.attack,data_name,data_name)))
+        features = to_tensor_features(scipy.sparse.load_npz(data_dir + '%s_features.npz' % (data_name))).to_dense()
+        self.labels   = torch.tensor(np.load(data_dir + '%s_labels.npy' % (data_name)))
         g.ndata['feat'] = features
         g.ndata['label'] = self.labels
 
-        self.idx_train = np.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_%s_%s_idx_train.npy' % (args.attack, data_name,args.attack, data_name, args.ptb_rate))
-        self.idx_val   = np.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_%s_%s_idx_val.npy' % (args.attack, data_name,args.attack, data_name, args.ptb_rate))
-        self.idx_test  = np.load('/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/%s_%s_%s_idx_test.npy' % (args.attack, data_name,args.attack, data_name, args.ptb_rate))
+        self.idx_train = np.load(data_dir + '%s_%s_%s_idx_train.npy' % (args.attack, data_name, args.ptb_rate))
+        self.idx_val   = np.load(data_dir + '%s_%s_%s_idx_val.npy'   % (args.attack, data_name, args.ptb_rate))
+        self.idx_test  = np.load(data_dir + '%s_%s_%s_idx_test.npy'  % (args.attack, data_name, args.ptb_rate))
         
         self.get_mask()
         g.ndata['train_mask'] =   torch.tensor(self.train_mask)
