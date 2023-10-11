@@ -8,6 +8,7 @@ from .loss_func import sce_loss
 from .gin import GIN
 from .gat import GAT
 from .gcn import GCN
+from .gprgnn import GPRGNN
 from .dot_gat import DotGAT
 
 def setup_module(m_type, enc_dec, in_dim, num_hidden, out_dim, num_layers, dropout, activation, residual, norm, nhead, nhead_out, attn_drop, negative_slope=0.2, concat_out=True) -> nn.Module:
@@ -68,6 +69,11 @@ def setup_module(m_type, enc_dec, in_dim, num_hidden, out_dim, num_layers, dropo
             norm=create_norm(norm),
             encoding=(enc_dec == "encoding")
         )
+    elif m_type == 'gprgnn':
+        mod = GPRGNN(in_dim=in_dim, 
+                     hidden_dim=num_hidden, 
+                     out_dim=out_dim, 
+                     dropout=dropout)
     elif m_type == "mlp":
         # * just for decoder 
         mod = nn.Sequential(
@@ -257,7 +263,7 @@ class PreModel(nn.Module):
         if self._decoder_type in ("mlp", "liear") :
             recon = self.decoder(rep)
         else:
-            recon = self.decoder(pre_use_g, rep)
+            recon = self.decoder(pre_use_g, rep, return_hidden=False)
 
         x_init = x[mask_nodes]
         x_rec = recon[mask_nodes]

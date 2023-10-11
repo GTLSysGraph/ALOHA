@@ -239,7 +239,7 @@ def Train_GraphMAE_nodecls(margs):
     estp_acc_list = []
 
     for i, seed in enumerate(seeds):
-        print(f"####### Run {i} for seed {seed}")
+        print(f"####### Run {i+1} for seed {seed}")
         set_random_seed(seed)
 
         if logs:

@@ -374,7 +374,7 @@ NCI1:
 
 # heterophilic
 
-squirrel:
+chameleon:
   seeds: [1,2,3,4]
   lr: 0.001
   lr_f: 0.01
