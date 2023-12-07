@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import dgl
 from torch.utils.data import DataLoader
-from .utils import accuracy
+from .utils import accuracy,set_random_seed,show_occupied_memory
 
 
 def evaluete_mini_batch(model, graph, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, device, batch_size, shuffle):
@@ -19,13 +19,14 @@ def evaluete_mini_batch(model, graph, num_classes, lr_f, weight_decay_f, max_epo
     labels = graph.ndata["label"]
     train_lbls, val_lbls, test_lbls = labels[train_mask], labels[val_mask], labels[test_mask]
 
+    print(f"num_train: {train_mask.shape[0]}, num_val: {val_mask.shape[0]}, num_test: {test_mask.shape[0]}")
+
     # 这里要注意labels的位置不一样 linear在cpu上，而finetune在cuda上
     if linear_prob:
-        test_acc, estp_test_acc = linear_probing_minibatch(model, graph, [train_mask,val_mask,test_mask],[train_lbls, val_lbls, test_lbls], lr_f=lr_f, weight_decay_f=weight_decay_f, max_epoch_f=max_epoch_f, batch_size=batch_size, device=device, shuffle=shuffle)
+        test_acc = linear_probing_minibatch(model, graph, [train_mask,val_mask,test_mask],[train_lbls, val_lbls, test_lbls], lr_f=lr_f, weight_decay_f=weight_decay_f, max_epoch_f=max_epoch_f, batch_size=batch_size, device=device, shuffle=shuffle)
     else:
-        test_acc, estp_test_acc = finetune(model, graph, labels.to(device), num_classes, lr_f=lr_f, weight_decay_f=weight_decay_f, max_epoch_f=max_epoch_f, use_scheduler=True,batch_size=batch_size, device=device
-        )
-    return test_acc, estp_test_acc
+        test_acc = finetune(model, graph, labels.to(device), num_classes, lr_f=lr_f, weight_decay_f=weight_decay_f, max_epoch_f=max_epoch_f, use_scheduler=True,batch_size=batch_size, device=device)
+    return test_acc
 
 
 
@@ -43,20 +44,20 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
     criterion = torch.nn.CrossEntropyLoss()
 
     sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
-    train_loader = dgl.dataloading.DataLoader(
+    train_loader = dgl.dataloading.NodeDataLoader(
             graph,train_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
             drop_last=False,
             num_workers=1)    
-    val_loader = dgl.dataloading.DataLoader(
+    val_loader = dgl.dataloading.NodeDataLoader(
             graph,val_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
             drop_last=False,
             num_workers=1)    
     
-    test_loader = dgl.dataloading.DataLoader(
+    test_loader = dgl.dataloading.NodeDataLoader(
             graph,test_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
@@ -76,17 +77,16 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
 
 
     def eval_with_lc(model, loader):
-        with loader.enable_cpu_affinity():
-            pred_counts = []
-            model.eval()
-            epoch_iter = tqdm(loader)
-            with torch.no_grad():
-                for input_nodes, output_nodes, _ in epoch_iter:
-                    subgraph = dgl.node_subgraph(graph, input_nodes,store_ids=True).to(device)
-                    x = subgraph.ndata.pop("feat")
-                    prediction = model(subgraph, x)
-                    prediction = prediction[:output_nodes.shape[0]]
-                    pred_counts.append((prediction.argmax(1) == labels[output_nodes]))
+        pred_counts = []
+        model.eval()
+        epoch_iter = tqdm(loader)
+        with torch.no_grad():
+            for input_nodes, output_nodes, _ in epoch_iter:
+                subgraph = dgl.node_subgraph(graph, input_nodes,store_ids=True).to(device)
+                x = subgraph.ndata.pop("feat")
+                prediction, _ = model(subgraph, x) # 注意这里返回的是tuple，所以分开
+                prediction = prediction[:output_nodes.shape[0]]
+                pred_counts.append((prediction.argmax(1) == labels[output_nodes]))
         pred_counts = torch.cat(pred_counts)
         acc = pred_counts.float().sum() / pred_counts.shape[0]
         return acc
@@ -97,7 +97,6 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
     best_epoch = 0
     test_acc = 0
     early_stop_cnt = 0
-    estp_test_acc = 0 
 
     
     for epoch in range(max_epoch_f):
@@ -108,66 +107,46 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
         losses = []
         model.train()
 
-        with train_loader.enable_cpu_affinity():
-            for input_nodes, output_nodes, _ in epoch_iter:
-                subgraph = dgl.node_subgraph(graph, input_nodes,store_ids=True).to(device)
-                x = subgraph.ndata.pop("feat")
-                prediction = model(subgraph, x)[:output_nodes.shape[0]]
-                loss = criterion(prediction, labels[output_nodes])
+        for input_nodes, output_nodes, _ in epoch_iter:
+            subgraph = dgl.node_subgraph(graph, input_nodes,store_ids=True).to(device)
+            x = subgraph.ndata.pop("feat")
+            prediction, _ = model(subgraph, x)
+            prediction = prediction[:output_nodes.shape[0]]
+            loss = criterion(prediction, labels[output_nodes])
 
-                optimizer.zero_grad()
-                loss.backward()
+            optimizer.zero_grad()
+            loss.backward()
 
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 5)
-                epoch_iter.set_description(f"Finetuning | train_loss: {loss.item():.4f}, Memory: {show_occupied_memory():.2f} MB")
-                optimizer.step()
-                losses.append(loss.item())
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 5)
+
+            epoch_iter.set_description(f"Finetuning | train_loss: {loss.item():.4f}, Memory: {show_occupied_memory():.2f} MB")
+            optimizer.step()
+            losses.append(loss.item())
 
 
-            if scheduler is not None:
-                scheduler.step()
+        if scheduler is not None:
+            scheduler.step()
 
-            print("eval val...")
-            val_acc  = eval_with_lc(model, val_loader)
-            print("eval test...")
-            test_acc = eval_with_lc(model, test_loader)
+        print("eval val...")
+        val_acc  = eval_with_lc(model, val_loader)
 
-            print('val Acc {:.4f}'.format(val_acc))
-
-            if val_acc > best_val_acc:
-                best_model = copy.deepcopy(model)
-                best_val_acc = val_acc
-                best_epoch = epoch
-                early_stop_cnt = 0
-            else:
-                early_stop_cnt += 1
-
-            print("val Acc {:.4f}, Best Val Acc {:.4f}".format(val_acc, best_val_acc))
-            print("###################################################################################################################")
+        if val_acc > best_val_acc:
+            best_model = copy.deepcopy(model)
+            best_val_acc = val_acc
+            best_epoch = epoch
+            early_stop_cnt = 0
+        else:
+            early_stop_cnt += 1
+        print("val Acc {:.4f}, Best Val Acc {:.4f}".format(val_acc, best_val_acc))
     
-    best_model.eval()
-    with torch.no_grad():
-        estp_test_acc = eval_with_lc(best_model,test_loader)
-    
+    # 用best model
+    model = best_model
+    print("eval test...")
+    test_acc = eval_with_lc(model, test_loader)
+
     test_acc = np.array(test_acc.cpu())
-    estp_test_acc =np.array(estp_test_acc.cpu())
-    print(f"--- TestAcc: {test_acc:.4f}, early-stopping-TestAcc: {estp_test_acc:.4f}, Best ValAcc: {best_val_acc:.4f} in epoch {best_epoch} --- ")
-    print(f"Finetune | TestAcc: {test_acc:.4f} from Epoch {best_epoch}")
-
-    return test_acc, estp_test_acc
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(f"Finetune | TestAcc: {test_acc:.4f},  Best ValAcc: {best_val_acc:.4f} in epoch {best_epoch} --- ")
+    return test_acc
 
 
 
@@ -176,13 +155,14 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
 def linear_probing_minibatch(model, graph, mask, labels, lr_f, weight_decay_f, max_epoch_f, batch_size, device, shuffle):
     logging.info("-- Linear Probing in downstream tasks ---")
 
-
+  
     train_lbls, val_lbls, test_lbls = labels
     train_mask, val_mask, test_mask = mask
 
-    sampler = dgl.dataloading.MultiLayerFullNeighborSampler(2)
-    train_eval_dataloader = dgl.dataloading.DataLoader(
-            graph,torch.arange(0, graph.num_nodes()), sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
+    sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
+    # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
+    train_eval_dataloader = dgl.dataloading.NodeDataLoader(
+            graph, torch.arange(0, graph.num_nodes()), sampler,  
             batch_size=batch_size,
             shuffle=False, # 顺序不能变
             drop_last=False,
@@ -193,25 +173,34 @@ def linear_probing_minibatch(model, graph, mask, labels, lr_f, weight_decay_f, m
         model.eval()
         embeddings = []
 
-        with train_eval_dataloader.enable_cpu_affinity():
-            for input_nodes, output_nodes, _ in tqdm(train_eval_dataloader):
-                subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
-                x = subgraph.ndata.pop("feat")
-                batch_emb = model.embed(subgraph, x)[:output_nodes.shape[0]]
-                embeddings.append(batch_emb.cpu())
+        for input_nodes, output_nodes, _ in tqdm(train_eval_dataloader):
+            subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
+            x = subgraph.ndata.pop("feat")
+            batch_emb, _ = model.embed(subgraph, x) #注意返回的是tuple
+            batch_emb = batch_emb[:output_nodes.shape[0]] #这里一定要分开写，因为上面是tuple！
+            embeddings.append(batch_emb.cpu())
     embeddings = torch.cat(embeddings, dim=0)
     train_emb, val_emb, test_emb = embeddings[train_mask], embeddings[val_mask], embeddings[test_mask]
 
-    batch_size = 5120
 
-    print(f"####### Run LinearProbing...")
-    print(f"training sample:{len(train_emb)}")
-    test_acc,test_acc = node_classification_linear_probing(
-        (train_emb, val_emb, test_emb), 
-        (train_lbls, val_lbls, test_lbls), 
-        lr_f, weight_decay_f, max_epoch_f, device, batch_size=batch_size, shuffle=shuffle) # 这个shuffle可以变
+    batch_size_LinearProbing = 5120
 
-    return test_acc, test_acc
+    acc = []
+    seeds = [0]
+    for i,_ in enumerate(seeds):
+        print(f"######## Run seed {seeds[i]} for LinearProbing...")
+        set_random_seed(seeds[i])
+        print(f"training sample:{len(train_emb)}")
+        test_acc = node_classification_linear_probing(
+            (train_emb, val_emb, test_emb), 
+            (train_lbls, val_lbls, test_lbls), 
+            lr_f, weight_decay_f, max_epoch_f, device, batch_size=batch_size_LinearProbing, shuffle=shuffle) # 这个shuffle可以变
+        acc.append(test_acc)
+
+    print(f"# final_acc: {np.mean(acc):.4f}, std: {np.std(acc):.4f}")
+    return np.mean(acc)
+
+
 
 
 def node_classification_linear_probing(embeddings, labels, lr, weight_decay, max_epoch, device, mute=False, batch_size=-1, shuffle=True):
@@ -294,7 +283,7 @@ def node_classification_linear_probing(embeddings, labels, lr, weight_decay, max
     else:
         print(f"--- TestAcc: {test_acc:.4f}, Best ValAcc: {best_val_acc:.4f} in epoch {best_val_epoch} --- ")
 
-    return test_acc, test_acc
+    return test_acc
 
 
 
@@ -324,8 +313,3 @@ class LogisticRegression(nn.Module):
         logits = self.linear(x)
         return logits
     
-
-
-def show_occupied_memory():
-    process = psutil.Process(os.getpid())
-    return process.memory_info().rss / 1024**2

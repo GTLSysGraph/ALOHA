@@ -45,7 +45,8 @@ def build_easydict():
         # for graph classification
         "pooling"    : "mean",
         "deg4feat"   : False,
-        "batch_size" :32
+        "batch_size" :32,
+        "batch_size_f" :256
     }
 
     return MDT

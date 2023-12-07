@@ -1,0 +1,75 @@
+[I] Loading dataset Attack-ogbn-arxiv...
+train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
+[I] Finished loading.
+[I] Data load time: 8.1861s
+------ Use best configs ------
+{'seeds': [1], 'device': -1, 'max_epoch': 60, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 3, 'num_hidden': 1024, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': 'layernorm', 'lr': 0.001, 'weight_decay': 0.0, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.5, 'replace_rate': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 3, 'optimizer': 'adamw', 'max_epoch_f': 1000, 'lr_f': 0.01, 'weight_decay_f': 0.0005, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 512, 'batch_size_f': 256}
+####### Run 1 for seed 1
+# Epoch 0 | train_loss: 0.4982, Memory: 3065.09 MB
+# Epoch 1 | train_loss: 0.4731, Memory: 3065.75 MB
+# Epoch 2 | train_loss: 0.4686, Memory: 3067.22 MB
+# Epoch 3 | train_loss: 0.4663, Memory: 3068.56 MB
+# Epoch 4 | train_loss: 0.4634, Memory: 3068.88 MB
+# Epoch 5 | train_loss: 0.4628, Memory: 3069.08 MB
+# Epoch 6 | train_loss: 0.4604, Memory: 3069.33 MB
+# Epoch 7 | train_loss: 0.4574, Memory: 3069.59 MB
+# Epoch 8 | train_loss: 0.4576, Memory: 3070.30 MB
+# Epoch 9 | train_loss: 0.4560, Memory: 3070.38 MB
+# Epoch 10 | train_loss: 0.4545, Memory: 3070.14 MB
+# Epoch 11 | train_loss: 0.4547, Memory: 3070.39 MB
+# Epoch 12 | train_loss: 0.4537, Memory: 3070.64 MB
+# Epoch 13 | train_loss: 0.4533, Memory: 3070.89 MB
+# Epoch 14 | train_loss: 0.4530, Memory: 3070.89 MB
+# Epoch 15 | train_loss: 0.4524, Memory: 3071.14 MB
+# Epoch 16 | train_loss: 0.4511, Memory: 3070.89 MB
+# Epoch 17 | train_loss: 0.4504, Memory: 3070.89 MB
+# Epoch 18 | train_loss: 0.4503, Memory: 3071.14 MB
+# Epoch 19 | train_loss: 0.4493, Memory: 3071.14 MB
+# Epoch 20 | train_loss: 0.4483, Memory: 3071.39 MB
+# Epoch 21 | train_loss: 0.4480, Memory: 3070.91 MB
+# Epoch 22 | train_loss: 0.4485, Memory: 3070.88 MB
+# Epoch 23 | train_loss: 0.4482, Memory: 3070.89 MB
+# Epoch 24 | train_loss: 0.4471, Memory: 3071.14 MB
+# Epoch 25 | train_loss: 0.4473, Memory: 3071.12 MB
+# Epoch 26 | train_loss: 0.4464, Memory: 3071.13 MB
+# Epoch 27 | train_loss: 0.4461, Memory: 3071.38 MB
+# Epoch 28 | train_loss: 0.4447, Memory: 3071.86 MB
+# Epoch 29 | train_loss: 0.4455, Memory: 3072.13 MB
+# Epoch 30 | train_loss: 0.4449, Memory: 3071.87 MB
+# Epoch 31 | train_loss: 0.4435, Memory: 3072.79 MB
+# Epoch 32 | train_loss: 0.4432, Memory: 3072.79 MB
+# Epoch 33 | train_loss: 0.4443, Memory: 3072.54 MB
+# Epoch 34 | train_loss: 0.4440, Memory: 3072.54 MB
+# Epoch 35 | train_loss: 0.4431, Memory: 3072.78 MB
+# Epoch 36 | train_loss: 0.4424, Memory: 3073.03 MB
+# Epoch 37 | train_loss: 0.4428, Memory: 3073.03 MB
+# Epoch 38 | train_loss: 0.4415, Memory: 3073.04 MB
+# Epoch 39 | train_loss: 0.4418, Memory: 3072.80 MB
+# Epoch 40 | train_loss: 0.4415, Memory: 3072.79 MB
+# Epoch 41 | train_loss: 0.4409, Memory: 3073.04 MB
+# Epoch 42 | train_loss: 0.4399, Memory: 3072.79 MB
+# Epoch 43 | train_loss: 0.4408, Memory: 3073.04 MB
+# Epoch 44 | train_loss: 0.4407, Memory: 3073.29 MB
+# Epoch 45 | train_loss: 0.4404, Memory: 3073.04 MB
+# Epoch 46 | train_loss: 0.4396, Memory: 3073.05 MB
+# Epoch 47 | train_loss: 0.4395, Memory: 3073.04 MB
+# Epoch 48 | train_loss: 0.4386, Memory: 3072.79 MB
+# Epoch 49 | train_loss: 0.4390, Memory: 3072.55 MB
+# Epoch 50 | train_loss: 0.4400, Memory: 3072.79 MB
+# Epoch 51 | train_loss: 0.4395, Memory: 3073.04 MB
+# Epoch 52 | train_loss: 0.4385, Memory: 3073.31 MB
+# Epoch 53 | train_loss: 0.4388, Memory: 3074.16 MB
+# Epoch 54 | train_loss: 0.4384, Memory: 3074.16 MB
+# Epoch 55 | train_loss: 0.4390, Memory: 3074.41 MB
+# Epoch 56 | train_loss: 0.4393, Memory: 3074.41 MB
+# Epoch 57 | train_loss: 0.4385, Memory: 3074.18 MB
+# Epoch 58 | train_loss: 0.4388, Memory: 3074.41 MB
+# Epoch 59 | train_loss: 0.4386, Memory: 3074.41 MB
+num_train: 169343, num_val: 169343, num_test: 169343
+######## Prepare All Embedding used...
+######## Run seed 0 for LinearProbing...
+training sample:90941
+--- TestAcc: 0.6202, Best ValAcc: 0.6230 in epoch 800 --- 
+# final_acc: 0.6202, std: 0.0000
+# final_acc: 0.6202±0.0000
+# early-stopping_acc: 0.6202±0.0000

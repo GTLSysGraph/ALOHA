@@ -273,7 +273,7 @@ class PreModel(nn.Module):
         return loss
 
     def embed(self, g, x):
-        rep = self.encoder(g, x)
+        rep = self.encoder(g, x, return_hidden=True)
         return rep
 
     @property

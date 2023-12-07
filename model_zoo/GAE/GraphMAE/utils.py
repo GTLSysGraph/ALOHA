@@ -12,7 +12,7 @@ import yaml
 from collections import namedtuple, Counter
 from datasets_dgl.data_dgl import load_graph_data
 import torch.nn.functional as F
-
+import psutil
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -24,6 +24,10 @@ def set_random_seed(seed):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.determinstic = True
 
+
+def show_occupied_memory():
+    process = psutil.Process(os.getpid())
+    return process.memory_info().rss / 1024**2
 
 def accuracy(y_pred, y_true):
     y_true = y_true.squeeze().long()

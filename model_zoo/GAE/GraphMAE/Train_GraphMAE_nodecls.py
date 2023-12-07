@@ -17,69 +17,112 @@ from     sampler.SAINTSampler import SAINTNodeSampler, SAINTEdgeSampler, SAINTRa
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 
-def pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size,device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+# def pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size,device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
     
-    # 用全部的还是只用train
-    # train_index = graph.ndata['train_mask'].nonzero().squeeze()
-    # torch.arange(0, graph.num_nodes())
+#     # 用全部的还是只用train
+#     # train_index = graph.ndata['train_mask'].nonzero().squeeze()
+#     # torch.arange(0, graph.num_nodes())
 
-    # base sample 
+#     # base sample 
 
-    # sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
-    # dataloader = dgl.dataloading.NodeDataLoader(
-    #         graph,torch.arange(0, graph.num_nodes()), sampler,
-    #         batch_size=batch_size,
-    #         shuffle=True,
-    #         drop_last=False,
-    #         num_workers=1)
-    # 
-    # for input_nodes, output_nodes, _ in epoch_iter:
-    #     model.train()
-    #     subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
+#     # sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
+#     # dataloader = dgl.dataloading.NodeDataLoader(
+#     #         graph,torch.arange(0, graph.num_nodes()), sampler,
+#     #         batch_size=batch_size,
+#     #         shuffle=True,
+#     #         drop_last=False,
+#     #         num_workers=1)
+#     # 
+#     # for input_nodes, output_nodes, _ in epoch_iter:
+#     #     model.train()
+#     #     subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
 
 
-    # saint sample 用dgl提供的SAINTSampler
+#     # saint sample 用dgl提供的SAINTSampler
 
-    # num_iters = 1000
-    # sampler = SAINTSampler(
-    #             mode='node',                      # Can be 'node', 'edge' or 'walk'
-    #             budget=2000,
-    #             prefetch_ndata=['feat', 'label']  # optionally, specify data to prefetch
-    #         )
-    # dataloader = DataLoader(graph, torch.arange(num_iters), sampler, num_workers=1)
-    # for subgraph in epoch_iter:
+#     # num_iters = 1000
+#     # sampler = SAINTSampler(
+#     #             mode='node',                      # Can be 'node', 'edge' or 'walk'
+#     #             budget=2000,
+#     #             prefetch_ndata=['feat', 'label']  # optionally, specify data to prefetch
+#     #         )
+#     # dataloader = DataLoader(graph, torch.arange(num_iters), sampler, num_workers=1)
+#     # for subgraph in epoch_iter:
 
-    # sampler文件里的 SAINTSampler
-    train_nid = graph.ndata['train_mask'].nonzero().squeeze()
-    subg_iter = SAINTNodeSampler(6000, 'Reddit', graph,
-                                    train_nid, 50)
+#     # sampler文件里的 SAINTSampler
+#     train_nid = graph.ndata['train_mask'].nonzero().squeeze()
+#     subg_iter = SAINTNodeSampler(6000, 'Reddit', graph,
+#                                     train_nid, 50)
     
-    logging.info("start mini batch training..")
+#     logging.info("start mini batch training..")
 
-    total_epoch = tqdm(range(max_epoch))
-    for epoch in total_epoch:
+#     total_epoch = tqdm(range(max_epoch))
+#     for epoch in total_epoch:
+#         loss_list = []
+#         for _, subgraph in enumerate(subg_iter):
+#             subgraph = subgraph.to(device)
+#             model.train()
+#             loss, loss_dict = model(subgraph, subgraph.ndata["feat"])
+
+#             optimizer.zero_grad()
+#             loss.backward()
+#             optimizer.step()
+#             loss_list.append(loss.item())
+
+#             if scheduler is not None:
+#                 scheduler.step()
+
+#         train_loss = np.mean(loss_list)
+#         total_epoch.set_description(f"# Epoch {epoch} | train_loss: {train_loss:.4f}")
+#         if logger is not None:
+#             loss_dict["lr"] = get_current_lr(optimizer)
+#             logger.note(loss_dict, step=epoch)
+#     return model
+
+def pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, use_scheduler):
+    logging.info("start training SPMGAE mini batch node classification..")
+
+    model = model.to(device)
+
+    # dataloader
+    sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
+    dataloader = dgl.dataloading.NodeDataLoader(
+            graph,torch.arange(0, graph.num_nodes()), sampler,
+            batch_size=batch_size,
+            shuffle=True,
+            drop_last=False,
+            num_workers=1)
+
+    logging.info(f"After creating dataloader: Memory: {show_occupied_memory():.2f} MB")
+    if use_scheduler and max_epoch > 0:
+        logging.info("Use scheduler")
+        scheduler = lambda epoch :( 1 + np.cos((epoch) * np.pi / max_epoch) ) * 0.5
+        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=scheduler)
+    else:
+        scheduler = None
+
+    # train
+    for epoch in range(max_epoch):
+        epoch_iter = tqdm(dataloader)
         loss_list = []
-        for _, subgraph in enumerate(subg_iter):
-            subgraph = subgraph.to(device)
+        for input_nodes, output_nodes, _ in epoch_iter:
             model.train()
+            subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
+            subgraph = subgraph.to(device)
             loss, loss_dict = model(subgraph, subgraph.ndata["feat"])
-
             optimizer.zero_grad()
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 3)
             optimizer.step()
+            epoch_iter.set_description(f"train_loss: {loss.item():.4f}, Memory: {show_occupied_memory():.2f} MB")
             loss_list.append(loss.item())
+            
+        if scheduler is not None:
+            scheduler.step()
 
-            if scheduler is not None:
-                scheduler.step()
-
-        train_loss = np.mean(loss_list)
-        total_epoch.set_description(f"# Epoch {epoch} | train_loss: {train_loss:.4f}")
-        if logger is not None:
-            loss_dict["lr"] = get_current_lr(optimizer)
-            logger.note(loss_dict, step=epoch)
+        # torch.save(model.state_dict(), os.path.join(model_dir, model_name))
+        print(f"# Epoch {epoch} | train_loss: {np.mean(loss_list):.4f}, Memory: {show_occupied_memory():.2f} MB")
     return model
-
-
 
 
 
@@ -161,7 +204,7 @@ def Train_GraphMAE_nodecls(margs):
   
     dataset_name = margs.dataset
     if margs.mode in ['tranductive' , 'mini_batch']:
-        if dataset_name.split('-')[0] == 'Attack':
+        if dataset_name.split('-',1)[0] == 'Attack':
             # dataset_name = dataset_name.split('-')[1]
             DATASET = EasyDict()
             DATASET.ATTACK = {
@@ -178,17 +221,18 @@ def Train_GraphMAE_nodecls(margs):
             if dataset_name in ['Cora','Pubmed','Citeseer','Cora_ml']:
                 dataset  = load_data(dataset_name)
                 graph = dataset[0]
-            elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
-                multilabel_data = set(['ppi', 'yelp', 'amazon'])
-                multilabel = dataset_name in multilabel_data
-                if multilabel == True:
-                    raise Exception('not realise multilabel, loss should be BCE loss, will realise if use')
-                dataset  = load_GraphSAINT_data(dataset_name, multilabel)
-                graph = dataset.g
-
+            # elif dataset_name in ['ogbn-arxiv','ogbn-arxiv_undirected','reddit','ppi','yelp', 'amazon']:   
+            #     multilabel_data = set(['ppi', 'yelp', 'amazon'])
+            #     multilabel = dataset_name in multilabel_data
+            #     if multilabel == True:
+            #         raise Exception('not realise multilabel, loss should be BCE loss, will realise if use')
+            #     dataset  = load_GraphSAINT_data(dataset_name, multilabel)
+            #     graph = dataset.g
+            #     graph = dgl.to_bidirected(graph)
+            
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph)
-        
+
         num_classes = dataset.num_classes
         num_features = graph.ndata['feat'].shape[1]
     elif margs.mode in ['inductive']:
@@ -208,8 +252,8 @@ def Train_GraphMAE_nodecls(margs):
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dataset_name.split('-')[1].lower() if dataset_name.split('-')[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/GraphMAE/configs.yml")
-
+        param = load_best_configs(param, dataset_name.split('-',1)[1].lower() if dataset_name.split('-',1)[0] == 'Attack' else dataset_name.lower() , "./model_zoo/GAE/GraphMAE/configs.yml")
+    print(param)
 
     seeds         = param.seeds
     max_epoch     = param.max_epoch
@@ -232,7 +276,9 @@ def Train_GraphMAE_nodecls(margs):
     save_model     = param.save_model
     logs           = param.logging
     use_scheduler  = param.scheduler
-    batch_size     = param.batch_size
+    batch_size       = param.batch_size
+    batch_size_f     = param.batch_size_f
+
     param.num_features = num_features
 
     acc_list = []
@@ -267,9 +313,9 @@ def Train_GraphMAE_nodecls(margs):
             elif margs.mode == 'inductive':
                 model = pretrain_inductive(model, (train_dataloader, valid_dataloader, test_dataloader, eval_train_dataloader), optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
             elif margs.mode == 'mini_batch':
-                model = pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+                # model = pretrain_mini_batch(model, graph, optimizer, max_epoch, batch_size, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+                model = pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, use_scheduler)
          
-
 
 
         if load_model:
@@ -288,7 +334,8 @@ def Train_GraphMAE_nodecls(margs):
         elif margs.mode == 'inductive':
             final_acc, estp_acc = evaluete(model, (eval_train_dataloader, valid_dataloader, test_dataloader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
         elif margs.mode == 'mini_batch':
-            final_acc, estp_acc =  node_classification_evaluation(model, graph, graph.ndata['feat'], num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+            final_acc = evaluete_mini_batch(model, graph, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, device, batch_size=batch_size_f, shuffle=True)
+            estp_acc  = final_acc
 
         acc_list.append(final_acc)
         estp_acc_list.append(estp_acc)

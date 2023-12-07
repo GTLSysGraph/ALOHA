@@ -150,6 +150,7 @@ polblogs:
 
 
 ogbn-arxiv:
+  seeds: [1]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 1024
@@ -172,6 +173,18 @@ ogbn-arxiv:
   alpha_l: 3 # 2
   scheduler: True
   norm: layernorm
+
+  # mini batch
+  optimizer: adamw
+  batch_size: 512
+  batch_size_f: 256
+  max_epoch: 10
+  max_epoch_f: 500
+  
+
+
+
+
 ppi:
   lr: 0.0001 # 1e-4 for hidden=1024/2048, 2e-5 for hidden=8192, 5e-6 for hidden=16384
   lr_f: 0.005
@@ -387,7 +400,7 @@ chameleon:
   max_epoch_f: 300
   mask_rate: 0.5
   num_layers: 2
-  encoder: gat
+  encoder: gprgnn
   decoder: gat
   activation: prelu
   in_drop: 0.2

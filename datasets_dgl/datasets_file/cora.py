@@ -10,7 +10,7 @@ class CoraDGL(torch.utils.data.Dataset):
     def __init__(self,args):
         data_name = args.data.split('-')[1].lower()
 
-        data_dir = '/home/songsh/AutoGAE/datasets_dgl/all_data_attack/%s/%s/' % (args.attack, data_name)
+        data_dir = '/home/songsh/GCL/datasets_dgl/all_data_attack/%s/%s/' % (args.attack, data_name)
 
         adj = torch.load(data_dir + '%s_%s_%s.pt' % (args.attack, data_name, args.ptb_rate),map_location= 'cuda')
         g = dgl.from_scipy(to_scipy(adj))

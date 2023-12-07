@@ -12,6 +12,7 @@ from datasets_dgl.datasets_file.pubmed   import PubmedDataset
 from datasets_dgl.datasets_file.polblogs import PolblogsDataset
 from datasets_dgl.datasets_file.chameleon import ChameleonDataset
 from datasets_dgl.datasets_file.squirrel import SquirrelDataset
+from datasets_dgl.datasets_file.ogbnarxiv import OgbnArxivDataset
 # raw nodecls dataset 
 from dgl.data     import CoraGraphDataset
 from dgl.data     import CiteseerGraphDataset
@@ -39,6 +40,8 @@ def load_attack_data(args):
         return PolblogsDataset(args)
     elif args.data in ['Attack-Cora_ml']:
         return CoraMLDataset(args)
+    elif args.data in ['Attack-ogbn-arxiv']:
+        return OgbnArxivDataset(args)
     elif args.data in ['Attack-Chameleon']:
         return ChameleonDataset(args)
     elif args.data in ['Attack-Squirrel']:
