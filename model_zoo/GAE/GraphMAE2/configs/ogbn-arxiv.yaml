@@ -6,7 +6,7 @@ num_out_heads: 1
 num_layers: 4
 weight_decay: 0.06
 weight_decay_f: 1e-4
-max_epoch: 60 
+max_epoch: 10 
 max_epoch_f: 1000
 batch_size: 512
 batch_size_f: 256

@@ -3,6 +3,89 @@ from     easydict        import EasyDict
 from     datasets_dgl.data_dgl import *
 from     model_zoo.GAE.GraphMAE2.utils import *
 from     model_zoo.GAE.GraphMAE2.build_easydict import *
+from     model_zoo.GAE.GraphMAE2.evaluation_tranductive import *
+from     model_zoo.GAE.GraphMAE2.evaluation_mini_batch  import *
+from     model_zoo.GAE.GraphMAE2.models import build_model
+
+
+def pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, use_scheduler):
+    logging.info("start training GraphMAE2 mini batch node classification..")
+
+    model = model.to(device)
+
+    # dataloader
+    sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
+    dataloader = dgl.dataloading.NodeDataLoader(
+            graph,torch.arange(0, graph.num_nodes()), sampler,
+            batch_size=batch_size,
+            shuffle=True,
+            drop_last=False,
+            num_workers=1)
+
+    logging.info(f"After creating dataloader: Memory: {show_occupied_memory():.2f} MB")
+    if use_scheduler and max_epoch > 0:
+        logging.info("Use scheduler")
+        scheduler = lambda epoch :( 1 + np.cos((epoch) * np.pi / max_epoch) ) * 0.5
+        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=scheduler)
+    else:
+        scheduler = None
+
+    # train
+    for epoch in range(max_epoch):
+        epoch_iter = tqdm(dataloader)
+        loss_list = []
+        for input_nodes, output_nodes, _ in epoch_iter:
+            model.train()
+            subgraph = dgl.node_subgraph(graph, input_nodes).to(device)
+            subgraph = subgraph.to(device)
+            loss = model(subgraph, subgraph.ndata["feat"])
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 3)
+            optimizer.step()
+            epoch_iter.set_description(f"train_loss: {loss.item():.4f}, Memory: {show_occupied_memory():.2f} MB")
+            loss_list.append(loss.item())
+            
+        if scheduler is not None:
+            scheduler.step()
+
+        # torch.save(model.state_dict(), os.path.join(model_dir, model_name))
+        print(f"# Epoch {epoch} | train_loss: {np.mean(loss_list):.4f}, Memory: {show_occupied_memory():.2f} MB")
+    return model
+
+
+
+
+def pretrain_tranductive(model, graph, feat, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger=None):
+    logging.info("start training..")
+    graph = graph.to(device)
+    x = feat.to(device)
+
+    target_nodes = torch.arange(x.shape[0], device=x.device, dtype=torch.long)
+    epoch_iter = tqdm(range(max_epoch))
+
+    for epoch in epoch_iter:
+        model.train()
+
+        loss = model(graph, x, targets=target_nodes)
+
+        loss_dict = {"loss": loss.item()}
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        if scheduler is not None:
+            scheduler.step()
+
+        epoch_iter.set_description(f"# Epoch {epoch}: train_loss: {loss.item():.4f}")
+        if logger is not None:
+            loss_dict["lr"] = get_current_lr(optimizer)
+            logger.note(loss_dict, step=epoch)
+
+        if (epoch + 1) % 200 == 0:
+            node_classification_evaluation(model, graph, x, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob, mute=True)
+
+    return model
+
 
 
 def Train_GraphMAE2_nodecls(margs):
@@ -69,7 +152,6 @@ def Train_GraphMAE2_nodecls(margs):
     weight_decay_f = param.weight_decay_f
     linear_prob    = param.linear_prob
     load_model     = param.load_model
-    save_model     = param.save_model
     logs           = param.logging
 
     # mini batch use
@@ -90,7 +172,7 @@ def Train_GraphMAE2_nodecls(margs):
         else:
             logger = None
 
-        model = build_model(args)
+        model = build_model(param)
         model.to(device)
         optimizer = create_optimizer(optim_type, model, lr, weight_decay)
 
@@ -101,10 +183,12 @@ def Train_GraphMAE2_nodecls(margs):
         else:
             scheduler = None
             
-        x = graph.ndata["feat"]
         if not load_model:
-            model = pretrain(model, graph, x, optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
-            model = model.cpu()
+            if margs.mode == 'tranductive':
+                model = pretrain_tranductive(model, graph, graph.ndata["feat"], optimizer, max_epoch, device, scheduler, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, logger)
+            elif margs.mode == 'mini_batch':
+                model = pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, use_scheduler)
+
 
         if load_model:
             logging.info("Loading Model ... ")
@@ -113,7 +197,13 @@ def Train_GraphMAE2_nodecls(margs):
         model = model.to(device)
         model.eval()
 
-        final_acc, estp_acc = linear_probing_full_batch(model, graph, x, num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        if margs.mode == 'tranductive':
+            final_acc, estp_acc = node_classification_evaluation(model, graph, graph.ndata['feat'], num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
+        elif margs.mode == 'mini_batch':
+            final_acc = evaluete_mini_batch(model, graph, num_classes, lr_f, weight_decay_f, max_epoch_f, linear_prob, device, batch_size=batch_size_f, shuffle=True)
+            estp_acc  = final_acc
+
+
         acc_list.append(final_acc)
         estp_acc_list.append(estp_acc)
 

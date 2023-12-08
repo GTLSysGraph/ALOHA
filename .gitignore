@@ -5,7 +5,7 @@ model_zoo/GAE/S2GAE/weight
 model_zoo/GCL/MVGRL/graph/data
 *.pth
 subgraphs
-datasets_dgl
+datasets_dgl/all_data_attack
 datasets_graphsaint
 datasets_pyg
 events*
