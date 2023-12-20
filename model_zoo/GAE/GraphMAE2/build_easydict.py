@@ -5,7 +5,7 @@ def build_easydict():
     MDT.MODEL = EasyDict()
     MDT.MODEL.NAME = 'GraphMAE2'
     MDT.MODEL.PARAM = {
-        'seeds'         : [1,2,3,4], # 0.8367±0.0050
+        'seeds'         : [1], # 0.8367±0.0050
         "device": 0,
         "max_epoch":500,           
         "warmup_steps":-1,

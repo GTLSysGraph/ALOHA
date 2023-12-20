@@ -1,0 +1,26 @@
+[I] Loading dataset Attack-ogbn-arxiv...
+train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
+[I] Finished loading.
+[I] Data load time: 16.2295s
+{'seeds': [1], 'device': 0, 'max_epoch': 10, 'warmup_steps': -1, 'num_heads': 8, 'num_out_heads': 1, 'num_layers': 4, 'num_dec_layers': 1, 'num_remasking': 3, 'num_hidden': 1024, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': None, 'lr': 0.0025, 'weight_decay': 0.06, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'remask_rate': 0.5, 'remask_method': 'random', 'mask_type': 'mask', 'mask_method': 'random', 'drop_edge_rate': 0.5, 'drop_edge_rate_f': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 6, 'optimizer': 'adamw', 'max_epoch_f': 200, 'lr_f': 0.005, 'weight_decay_f': 0.0001, 'linear_prob': True, 'no_pretrain': False, 'load_model': False, 'checkpoint_path': None, 'use_cfg': True, 'logging': False, 'scheduler': True, 'batch_size': 512, 'batch_size_f': 256, 'sampling_method': 'saint', 'label_rate': 1.0, 'ego_graph_file_path': None, 'data_dir': 'data', 'lam': 10.0, 'full_graph_forward': False, 'delayed_ema_epoch': 40, 'replace_rate': 0.0, 'momentum': 0.996}
+####### Run 0 for seed 1
+=== Use sce_loss and alpha_l=6 ===
+num_encoder_params: 3289092, num_decoder_params: 131456, num_params_in_total: 6045446
+# Epoch 0 | train_loss: 2.0474, Memory: 3156.38 MB
+# Epoch 1 | train_loss: 1.6959, Memory: 3158.05 MB
+# Epoch 2 | train_loss: 1.6287, Memory: 3158.52 MB
+# Epoch 3 | train_loss: 1.5867, Memory: 3158.77 MB
+# Epoch 4 | train_loss: 1.5579, Memory: 3158.78 MB
+# Epoch 5 | train_loss: 1.5361, Memory: 3158.56 MB
+# Epoch 6 | train_loss: 1.5171, Memory: 3158.78 MB
+# Epoch 7 | train_loss: 1.4977, Memory: 3159.07 MB
+# Epoch 8 | train_loss: 1.4866, Memory: 3158.82 MB
+# Epoch 9 | train_loss: 1.4806, Memory: 3158.79 MB
+num_train: 169343, num_val: 169343, num_test: 169343
+######## Prepare All Embedding used...
+######## Run seed 0 for LinearProbing...
+training sample:90941
+--- TestAcc: 0.5790, Best ValAcc: 0.6715 in epoch 8 --- 
+# final_acc: 0.5790, std: 0.0000
+# final_acc: 0.5790±0.0000
+# early-stopping_acc: 0.5790±0.0000

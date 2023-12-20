@@ -176,10 +176,10 @@ ogbn-arxiv:
 
   # mini batch
   optimizer: adamw
-  batch_size: 512
+  batch_size: 256
   batch_size_f: 256
-  max_epoch: 10
-  max_epoch_f: 500
+  max_epoch: 5
+  max_epoch_f: 200
   
 
 

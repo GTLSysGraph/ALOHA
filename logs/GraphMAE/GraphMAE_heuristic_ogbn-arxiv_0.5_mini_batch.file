@@ -1,26 +1,26 @@
-attack type: DICE | ptb_rate: 0.3
+attack type: heuristic | ptb_rate: 0.5
 [I] Loading dataset Attack-ogbn-arxiv...
 train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
 [I] Finished loading.
-[I] Data load time: 19.0618s
+[I] Data load time: 33.7062s
 ------ Use best configs ------
 {'seeds': [1], 'device': -1, 'max_epoch': 10, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 3, 'num_hidden': 1024, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': 'layernorm', 'lr': 0.001, 'weight_decay': 0.0, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.5, 'replace_rate': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 3, 'optimizer': 'adamw', 'max_epoch_f': 200, 'lr_f': 0.01, 'weight_decay_f': 0.0005, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 512, 'batch_size_f': 256}
 ####### Run 1 for seed 1
-# Epoch 0 | train_loss: 0.4624, Memory: 3098.33 MB
-# Epoch 1 | train_loss: 0.4386, Memory: 3098.74 MB
-# Epoch 2 | train_loss: 0.4329, Memory: 3101.20 MB
-# Epoch 3 | train_loss: 0.4297, Memory: 3101.45 MB
-# Epoch 4 | train_loss: 0.4261, Memory: 3102.01 MB
-# Epoch 5 | train_loss: 0.4246, Memory: 3102.26 MB
-# Epoch 6 | train_loss: 0.4222, Memory: 3102.02 MB
-# Epoch 7 | train_loss: 0.4203, Memory: 3102.02 MB
-# Epoch 8 | train_loss: 0.4181, Memory: 3102.27 MB
-# Epoch 9 | train_loss: 0.4176, Memory: 3102.53 MB
+# Epoch 0 | train_loss: 0.5331, Memory: 3173.34 MB
+# Epoch 1 | train_loss: 0.5052, Memory: 3174.18 MB
+# Epoch 2 | train_loss: 0.4981, Memory: 3178.23 MB
+# Epoch 3 | train_loss: 0.4945, Memory: 3181.46 MB
+# Epoch 4 | train_loss: 0.4917, Memory: 3181.74 MB
+# Epoch 5 | train_loss: 0.4886, Memory: 3181.49 MB
+# Epoch 6 | train_loss: 0.4858, Memory: 3181.73 MB
+# Epoch 7 | train_loss: 0.4846, Memory: 3181.99 MB
+# Epoch 8 | train_loss: 0.4824, Memory: 3182.25 MB
+# Epoch 9 | train_loss: 0.4816, Memory: 3182.50 MB
 num_train: 169343, num_val: 169343, num_test: 169343
 ######## Prepare All Embedding used...
 ######## Run seed 0 for LinearProbing...
 training sample:90941
---- TestAcc: 0.6328, Best ValAcc: 0.6365 in epoch 10 --- 
-# final_acc: 0.6328, std: 0.0000
-# final_acc: 0.6328±0.0000
-# early-stopping_acc: 0.6328±0.0000
+--- TestAcc: 0.5578, Best ValAcc: 0.6916 in epoch 187 --- 
+# final_acc: 0.5578, std: 0.0000
+# final_acc: 0.5578±0.0000
+# early-stopping_acc: 0.5578±0.0000

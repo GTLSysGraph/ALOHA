@@ -80,7 +80,7 @@ logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=lo
 #     return model
 
 def pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, use_scheduler):
-    logging.info("start training SPMGAE mini batch node classification..")
+    logging.info("start training GraphMAE mini batch node classification..")
 
     model = model.to(device)
 
@@ -213,6 +213,7 @@ def Train_GraphMAE_nodecls(margs):
                 "ptb_rate":margs.attack.split('-')[1]
             }
             # now just attack use
+            print("attack type: " + margs.attack.split('-')[0] + ' | ' + "ptb_rate: " + margs.attack.split('-')[1])
             dataset  = load_attack_data(DATASET['ATTACK'])
             graph = dataset.graph    
             graph = dgl.remove_self_loop(graph)
@@ -246,6 +247,7 @@ def Train_GraphMAE_nodecls(margs):
             ) = load_inductive_dataset(dataset_name)
     else:
         raise Exception('Unknown mode!')
+
 
     ##########################
     

@@ -1,3 +1,4 @@
+seeds: [1]
 lr: 0.0025
 lr_f: 0.005
 num_hidden: 1024
@@ -6,9 +7,9 @@ num_out_heads: 1
 num_layers: 4
 weight_decay: 0.06
 weight_decay_f: 1e-4
-max_epoch: 10 
-max_epoch_f: 1000
-batch_size: 512
+max_epoch: 5 
+max_epoch_f: 200
+batch_size: 256
 batch_size_f: 256
 mask_rate: 0.5
 num_layers: 4
