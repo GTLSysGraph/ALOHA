@@ -10,3 +10,4 @@ datasets_graphsaint
 datasets_pyg
 events*
 test.py
+train.sh

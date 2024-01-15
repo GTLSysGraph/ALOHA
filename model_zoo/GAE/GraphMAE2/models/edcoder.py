@@ -322,8 +322,6 @@ class PreModel(nn.Module):
     
     def encoding_mask_noise(self, g, x, mask_rate=0.3):
         num_nodes = g.num_nodes()
-        perm = torch.randperm(num_nodes, device=x.device)
-        num_mask_nodes = int(mask_rate * num_nodes)
 
         # exclude isolated nodes
         # isolated_nodes = torch.where(g.in_degrees() <= 1)[0]
@@ -334,12 +332,38 @@ class PreModel(nn.Module):
         # mask_nodes = torch.where(mask_nodes)[0]
         # num_mask_nodes = mask_nodes.shape[0]
 
-        # random masking
+        ######## random masking
+        perm = torch.randperm(num_nodes, device=x.device)
+        num_mask_nodes = int(mask_rate * num_nodes)
         num_mask_nodes = int(mask_rate * num_nodes)
         mask_nodes = perm[: num_mask_nodes]
         keep_nodes = perm[num_mask_nodes: ]
 
+        ######## distribution masking (add ssh)
+        # num_mask_nodes = int(mask_rate * num_nodes)
+        # idx_val   = g.ndata['val_mask'].nonzero().squeeze()
+        # idx_test  = g.ndata['test_mask'].nonzero().squeeze()
+        # idx_train = g.ndata['train_mask'].nonzero().squeeze()
+        # # 确定keep和mask的分布范围
+        # idx_keep_dis = torch.cat((idx_test, idx_val))
+        # idx_mask_dis = idx_train  # 可以设计实验不断的减小有效信息的可见范围
+        # # 在各自的分布范围内进行随机选择
+        # perm_keep = torch.randperm(len(idx_keep_dis), device=x.device)
+        # perm_mask = torch.randperm(len(idx_mask_dis), device=x.device)
+        # # 挑选keep和mask的节点
+        # idx_keep = idx_keep_dis[perm_keep[:num_mask_nodes]]
+        # idx_mask = idx_mask_dis  # 可以设计实验不断的减小有效信息的可见范围
+
+        # keep_nodes = idx_keep.cuda()
+        # mask_nodes = idx_mask.cuda()
+        ######################################################################
+
+        # add by ssh
+        # out_x  = torch.zeros_like(x)
+        # out_x[keep_nodes] = x[keep_nodes]
+        # author
         out_x = x.clone()
+
         token_nodes = mask_nodes
         out_x[mask_nodes] = 0.0
 
@@ -349,7 +373,6 @@ class PreModel(nn.Module):
         return use_g, out_x, (mask_nodes, keep_nodes)
     
     def random_remask(self,g,rep,remask_rate=0.5):
-        
         num_nodes = g.num_nodes()
         perm = torch.randperm(num_nodes, device=rep.device)
         num_remask_nodes = int(remask_rate * num_nodes)

@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=0
 python Train_Runner.py \
---dataset  'Attack-ogbn-arxiv' \
---attack  'PRBCD-0.5' \
+--dataset  'Attack-Citeseer' \
+--attack  'Meta_Self-0.25' \
 --task 'nodecls' \
---mode 'mini_batch' \
---model_name 'GraphMAE'
+--mode 'tranductive' \
+--model_name 'GraphMAE2'
