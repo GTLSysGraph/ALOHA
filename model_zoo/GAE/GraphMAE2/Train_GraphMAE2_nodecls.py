@@ -15,7 +15,7 @@ def pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, 
 
     # dataloader
     sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
-    dataloader = dgl.dataloading.NodeDataLoader(
+    dataloader = dgl.dataloading.DataLoader(
             graph,torch.arange(0, graph.num_nodes()), sampler,
             batch_size=batch_size,
             shuffle=True,

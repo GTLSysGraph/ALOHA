@@ -44,20 +44,20 @@ def finetune(model, graph, labels, num_classes, lr_f, weight_decay_f, max_epoch_
     criterion = torch.nn.CrossEntropyLoss()
 
     sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
-    train_loader = dgl.dataloading.NodeDataLoader(
+    train_loader = dgl.dataloading.DataLoader(
             graph,train_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
             drop_last=False,
             num_workers=1)    
-    val_loader = dgl.dataloading.NodeDataLoader(
+    val_loader = dgl.dataloading.DataLoader(
             graph,val_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
             drop_last=False,
             num_workers=1)    
     
-    test_loader = dgl.dataloading.NodeDataLoader(
+    test_loader = dgl.dataloading.DataLoader(
             graph,test_nid, sampler,  # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
             batch_size=batch_size,
             shuffle=False, 
@@ -161,7 +161,7 @@ def linear_probing_minibatch(model, graph, mask, labels, lr_f, weight_decay_f, m
 
     sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
     # 这里用的是所有的 train val test 为了后面的linear probe和fineturn
-    train_eval_dataloader = dgl.dataloading.NodeDataLoader(
+    train_eval_dataloader = dgl.dataloading.DataLoader(
             graph, torch.arange(0, graph.num_nodes()), sampler,  
             batch_size=batch_size,
             shuffle=False, # 顺序不能变

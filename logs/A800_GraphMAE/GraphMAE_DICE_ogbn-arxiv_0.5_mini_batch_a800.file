@@ -1,0 +1,26 @@
+attack type: DICE | ptb_rate: 0.5
+[I] Loading dataset Attack-ogbn-arxiv...
+train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
+[I] Finished loading.
+[I] Data load time: 3.2878s
+------ Use best configs ------
+{'seeds': [1], 'device': -1, 'max_epoch': 10, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 3, 'num_hidden': 1024, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': 'layernorm', 'lr': 0.001, 'weight_decay': 0.0, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.5, 'replace_rate': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 3, 'optimizer': 'adamw', 'max_epoch_f': 200, 'lr_f': 0.01, 'weight_decay_f': 0.0005, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 512, 'batch_size_f': 256}
+####### Run 1 for seed 1
+# Epoch 0 | train_loss: 0.5318, Memory: 3169.31 MB
+# Epoch 1 | train_loss: 0.5090, Memory: 3169.35 MB
+# Epoch 2 | train_loss: 0.5026, Memory: 3169.35 MB
+# Epoch 3 | train_loss: 0.4986, Memory: 3170.87 MB
+# Epoch 4 | train_loss: 0.4961, Memory: 3170.87 MB
+# Epoch 5 | train_loss: 0.4933, Memory: 3170.90 MB
+# Epoch 6 | train_loss: 0.4901, Memory: 3170.89 MB
+# Epoch 7 | train_loss: 0.4885, Memory: 3170.89 MB
+# Epoch 8 | train_loss: 0.4867, Memory: 3170.90 MB
+# Epoch 9 | train_loss: 0.4875, Memory: 3170.91 MB
+num_train: 169343, num_val: 169343, num_test: 169343
+######## Prepare All Embedding used...
+######## Run seed 0 for LinearProbing...
+training sample:90941
+--- TestAcc: 0.5992, Best ValAcc: 0.5998 in epoch 12 --- 
+# final_acc: 0.5992, std: 0.0000
+# final_acc: 0.5992±0.0000
+# early-stopping_acc: 0.5992±0.0000

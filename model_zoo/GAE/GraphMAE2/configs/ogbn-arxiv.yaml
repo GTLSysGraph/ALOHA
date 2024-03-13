@@ -1,17 +1,17 @@
 seeds: [1]
 lr: 0.0025
 lr_f: 0.005
-num_hidden: 1024
+num_hidden: 512 #发现全图训练时512在攻击时效果更好，minibatch训练变化不大
 num_heads: 8
 num_out_heads: 1
 num_layers: 4
 weight_decay: 0.06
 weight_decay_f: 1e-4
-max_epoch: 5 
-max_epoch_f: 200
-batch_size: 256
-batch_size_f: 256
-mask_rate: 0.5
+# max_epoch: 60 
+# max_epoch_f: 1000
+# batch_size: 512
+# batch_size_f: 256
+mask_rate: 0.5 # 在攻击下改变mask影响不大
 num_layers: 4
 encoder: gat
 decoder: gat 
@@ -29,3 +29,9 @@ momentum: 0.996
 lam: 10.0
 delayed_ema_epoch: 40
 num_remasking: 3
+
+# mini batch
+max_epoch: 10 
+max_epoch_f: 200
+batch_size: 512 
+batch_size_f: 256 # 256

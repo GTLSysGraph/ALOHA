@@ -1,0 +1,17 @@
+attack type: random | ptb_rate: 0.0
+[I] Loading dataset Attack-ogbn-arxiv...
+train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
+[I] Finished loading.
+[I] Data load time: 2.2557s
+------ Use best configs ------
+{'seeds': [1], 'device': -1, 'max_epoch': 1000, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 3, 'num_hidden': 512, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': 'layernorm', 'lr': 0.001, 'weight_decay': 0.0, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.5, 'replace_rate': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 3, 'optimizer': 'adam', 'max_epoch_f': 600, 'lr_f': 0.01, 'weight_decay_f': 0.0005, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 32, 'batch_size_f': 256}
+####### Run 1 for seed 1
+# IGNORE: --- TestAcc: 0.7107, early-stopping-TestAcc: 0.7104, Best ValAcc: 0.7211 in epoch 577 --- 
+# IGNORE: --- TestAcc: 0.7123, early-stopping-TestAcc: 0.7129, Best ValAcc: 0.7227 in epoch 479 --- 
+# IGNORE: --- TestAcc: 0.7135, early-stopping-TestAcc: 0.7133, Best ValAcc: 0.7239 in epoch 562 --- 
+# IGNORE: --- TestAcc: 0.7141, early-stopping-TestAcc: 0.7137, Best ValAcc: 0.7236 in epoch 386 --- 
+# IGNORE: --- TestAcc: 0.7143, early-stopping-TestAcc: 0.7141, Best ValAcc: 0.7235 in epoch 462 --- 
+num parameters for finetuning: 20520
+--- TestAcc: 0.7137, early-stopping-TestAcc: 0.7139, Best ValAcc: 0.7237 in epoch 544 --- 
+# final_acc: 0.7137±0.0000
+# early-stopping_acc: 0.7139±0.0000

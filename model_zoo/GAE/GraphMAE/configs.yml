@@ -1,6 +1,7 @@
 cora:
   # nettack hidden 256
   # DICE random 256 
+  # heuristic 0.5 mask 0.8 71.79 0.59
 
   # 0.8407±0.0071
   seeds: [1,2,3,4]
@@ -176,9 +177,9 @@ ogbn-arxiv:
 
   # mini batch
   optimizer: adamw
-  batch_size: 256
+  batch_size: 512
   batch_size_f: 256
-  max_epoch: 5
+  max_epoch: 10
   max_epoch_f: 200
   
 

@@ -1,4 +1,4 @@
-seeds: [1]
+seeds: [1,2]
 lr: 0.0005 # 0.0005
 lr_f: 0.025
 num_hidden: 64

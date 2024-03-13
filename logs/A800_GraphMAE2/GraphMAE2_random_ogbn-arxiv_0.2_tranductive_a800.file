@@ -1,0 +1,12 @@
+[I] Loading dataset Attack-ogbn-arxiv...
+train_mask, test_mask, val_mask sizes : tensor(90941) tensor(29799) tensor(48603)
+[I] Finished loading.
+[I] Data load time: 2.3472s
+{'seeds': [1], 'device': 0, 'max_epoch': 60, 'warmup_steps': -1, 'num_heads': 8, 'num_out_heads': 1, 'num_layers': 4, 'num_dec_layers': 1, 'num_remasking': 3, 'num_hidden': 512, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': None, 'lr': 0.0025, 'weight_decay': 0.06, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'remask_rate': 0.5, 'remask_method': 'random', 'mask_type': 'mask', 'mask_method': 'random', 'drop_edge_rate': 0.5, 'drop_edge_rate_f': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 6, 'optimizer': 'adamw', 'max_epoch_f': 1000, 'lr_f': 0.005, 'weight_decay_f': 0.0001, 'linear_prob': True, 'no_pretrain': False, 'load_model': False, 'checkpoint_path': None, 'use_cfg': True, 'logging': False, 'scheduler': True, 'batch_size': 512, 'batch_size_f': 256, 'sampling_method': 'saint', 'label_rate': 1.0, 'ego_graph_file_path': None, 'data_dir': 'data', 'lam': 10.0, 'full_graph_forward': False, 'delayed_ema_epoch': 40, 'replace_rate': 0.0, 'momentum': 0.996}
+####### Run 0 for seed 1
+=== Use sce_loss and alpha_l=6 ===
+num_encoder_params: 858116, num_decoder_params: 65920, num_params_in_total: 1712390
+num parameters for finetuning: 20520
+--- TestAcc: 0.6386, early-stopping-TestAcc: 0.6385, Best ValAcc: 0.6378 in epoch 947 --- 
+# final_acc: 0.6386±0.0000
+# early-stopping_acc: 0.6385±0.0000

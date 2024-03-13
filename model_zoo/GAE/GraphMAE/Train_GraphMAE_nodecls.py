@@ -86,7 +86,7 @@ def pretrain_mini_batch(model, graph, optimizer, batch_size, max_epoch, device, 
 
     # dataloader
     sampler = dgl.dataloading.MultiLayerFullNeighborSampler(1)
-    dataloader = dgl.dataloading.NodeDataLoader(
+    dataloader = dgl.dataloading.DataLoader(
             graph,torch.arange(0, graph.num_nodes()), sampler,
             batch_size=batch_size,
             shuffle=True,
@@ -331,7 +331,7 @@ def Train_GraphMAE_nodecls(margs):
         model.eval()
 
 
-        if margs.mode == 'tranductive':
+        if margs.mode   == 'tranductive':
             final_acc, estp_acc = node_classification_evaluation(model, graph, graph.ndata['feat'], num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
         elif margs.mode == 'inductive':
             final_acc, estp_acc = evaluete(model, (eval_train_dataloader, valid_dataloader, test_dataloader), num_classes, lr_f, weight_decay_f, max_epoch_f, device, linear_prob)
