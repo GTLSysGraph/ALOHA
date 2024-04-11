@@ -107,6 +107,10 @@ def Train_GraphMAE2_nodecls(margs):
             graph = dataset.graph    
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
+        elif dataset_name.split('-',1)[0] == 'Unit':
+            print("Adaptive attack scenario: " + margs.scenario + ' | ' + "Adaptive attack model: " + margs.adaptive_attack_model)
+            dataset  = load_unit_test_data(margs)
+            graph = dataset.graph
         else:
             if dataset_name in ['Cora','Pubmed','Citeseer','Cora_ml']:
                 dataset  = load_data(dataset_name)
@@ -131,7 +135,7 @@ def Train_GraphMAE2_nodecls(margs):
     MDT = build_easydict()
     param         = MDT['MODEL']['PARAM']
     if param.use_cfg:
-        param = load_best_configs(param, dataset_name.split('-',1)[1].lower() if dataset_name.split('-',1)[0] == 'Attack' else dataset_name.lower())
+        param = load_best_configs(param, dataset_name.split('-',1)[1].lower() if dataset_name.split('-',1)[0] == 'Attack' or dataset_name.split('-',1)[0] == 'Unit' else dataset_name.lower())
     print(param)
 
     seeds         = param.seeds

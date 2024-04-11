@@ -4,10 +4,10 @@ cora:
   # heuristic 0.5 mask 0.8 71.79 0.59
 
   # 0.8407±0.0071
-  seeds: [1,2,3,4]
+  seeds: [1,3]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 512
+  num_hidden: 64
   num_heads: 4
   num_layers: 2
   weight_decay: 2e-4
@@ -31,10 +31,10 @@ cora:
 
 cora_ml:
   # 
-  seeds: [1,2,3,4]
+  seeds: [1,2]
   lr: 0.001
   lr_f: 0.01
-  num_hidden: 128
+  num_hidden: 64
   num_heads: 4
   num_layers: 2
   weight_decay: 2e-4
@@ -68,7 +68,7 @@ citeseer:
   # meta 0.25 hidden 64  0.6340±0.0062
 
   # nettack 0.0 hidden 64 
-  seeds  : [1,2,3,4]
+  seeds  : [1,2]
   lr: 0.001
   lr_f: 0.01
   num_hidden: 64
@@ -176,11 +176,11 @@ ogbn-arxiv:
   norm: layernorm
 
   # mini batch
-  optimizer: adamw
-  batch_size: 512
-  batch_size_f: 256
-  max_epoch: 10
-  max_epoch_f: 200
+  # optimizer: adamw
+  # batch_size: 512
+  # batch_size_f: 256
+  # max_epoch: 10
+  # max_epoch_f: 200
   
 
 

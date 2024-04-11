@@ -1,7 +1,7 @@
-seeds: [4]
+seeds: [1,3]
 lr: 0.001
 lr_f: 0.025
-num_hidden: 512
+num_hidden: 64
 num_heads: 8
 num_out_heads: 1
 num_layers: 2
@@ -23,6 +23,6 @@ optimizer: adam
 replace_rate: 0.15
 alpha_l: 3
 scheduler: True
-remask_method: random
+remask_method: fixed
 momentum: 0
 lam: 0.15

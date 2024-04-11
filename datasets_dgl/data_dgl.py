@@ -20,6 +20,10 @@ from dgl.data     import PubmedGraphDataset
 from dgl.data     import RedditDataset
 from dgl.data     import CoauthorCSDataset
 
+# attack unite test
+from datasets_dgl.datasets_unit_file.coraml import CoraMLUnitDataset
+from datasets_dgl.datasets_unit_file.citeseer import CiteseerUnitDataset
+
 
 # inductive 
 from ogb.nodeproppred import DglNodePropPredDataset
@@ -27,6 +31,15 @@ from dgl.data.ppi import PPIDataset
 
 # graph dataset
 from dgl.data import TUDataset
+
+
+def load_unit_test_data(args):
+    if args.dataset in ['Unit-Cora_ml']:
+        return CoraMLUnitDataset(args)
+    elif args.dataset in ['Unit-Citeseer']:
+        return CiteseerUnitDataset(args)
+    else:
+        raise Exception('Unknown dataset!')
 
 
 def load_attack_data(args):

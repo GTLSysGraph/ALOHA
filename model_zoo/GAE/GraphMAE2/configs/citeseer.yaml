@@ -23,6 +23,6 @@ optimizer: adam
 replace_rate: 0.0
 alpha_l: 1
 scheduler: True
-remask_method: random
+remask_method: fixed
 momentum: 1
 lam: 0.1

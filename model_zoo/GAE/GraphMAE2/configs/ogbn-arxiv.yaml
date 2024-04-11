@@ -7,8 +7,8 @@ num_out_heads: 1
 num_layers: 4
 weight_decay: 0.06
 weight_decay_f: 1e-4
-# max_epoch: 60 
-# max_epoch_f: 1000
+max_epoch: 60 
+max_epoch_f: 1000
 # batch_size: 512
 # batch_size_f: 256
 mask_rate: 0.5 # 在攻击下改变mask影响不大
@@ -31,7 +31,7 @@ delayed_ema_epoch: 40
 num_remasking: 3
 
 # mini batch
-max_epoch: 10 
-max_epoch_f: 200
-batch_size: 512 
-batch_size_f: 256 # 256
+# max_epoch: 10 
+# max_epoch_f: 200
+# batch_size: 512 
+# batch_size_f: 256 # 256

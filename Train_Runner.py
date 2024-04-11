@@ -8,7 +8,16 @@ if __name__ == '__main__':
     parser.add_argument('--model_name',     type = str,               default = 'MaskGAE')
     parser.add_argument('--task',           type = str,               default = 'nodecls') # 'linkcls' 'graphcls'
     parser.add_argument('--mode',           type = str,               default = 'tranductive') # inductive mini-batch
+    
+
+
+    # unit test data
+    parser.add_argument('--scenario',               type = str,                 default = 'poisoning')  #"evasion"
+    parser.add_argument('--adaptive_attack_model',  type = str,                 default = 'jaccard_gcn') # "clean, gcn", "jaccard_gcn", "svd_gcn", "rgcn", "pro_gnn", "gnn_guard", "grand", "soft_median_gdc"
+    parser.add_argument('--split',                  type = str,                 default = 0 )
     margs = parser.parse_args()
+
+
 
     Train_func = 'Train_' + margs.model_name + '_' + margs.task
     eval(Train_func)(margs)

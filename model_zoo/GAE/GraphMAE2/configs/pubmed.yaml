@@ -1,7 +1,7 @@
 seeds: [1,2,3,4]
 lr: 0.005
 lr_f: 0.025
-num_hidden: 1024
+num_hidden: 512
 num_heads: 2
 num_out_heads: 1
 num_layers: 2
@@ -9,7 +9,7 @@ weight_decay: 1e-5
 weight_decay_f: 5e-4
 max_epoch: 2000 
 max_epoch_f: 500
-mask_rate: 0.5
+mask_rate: 0.9
 num_layers: 2
 encoder: gat
 decoder: gat 
