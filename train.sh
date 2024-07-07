@@ -1,6 +1,6 @@
-CUDA_VISIBLE_DEVICES=1
+CUDA_VISIBLE_DEVICES=0
 python Train_Runner.py \
---dataset  'Attack-ogbn-arxiv' \
+--dataset  'Attack-Cora' \
 --attack   'DICE-0.0' \
 --task 'nodecls' \
 --mode 'tranductive' \
