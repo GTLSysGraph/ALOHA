@@ -28,7 +28,7 @@ class OgbnArxivDGL(torch.utils.data.Dataset):
         g.ndata['train_mask'] =   torch.tensor(self.train_mask)
         g.ndata['val_mask']   =   torch.tensor(self.val_mask)
         g.ndata['test_mask']  =   torch.tensor(self.test_mask)
-        g = dgl.add_self_loop(g)
+        # g = dgl.add_self_loop(g) 加载的文件中已经包含自环了，如果再加就两层自环了！还好自己的代码中对自环处理后再重加，惊险
 
         self.graph = g
 
