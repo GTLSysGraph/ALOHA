@@ -5,7 +5,7 @@ import scipy.sparse as sp
 import numpy as np
 import scipy
 from torch_geometric.data import Data
-from torch_geometric.utils import add_self_loops
+from torch_geometric.utils import add_self_loops, remove_self_loops
 
 class AttackDataset(InMemoryDataset):
     def __init__(self, root, name, attackmethod, ptb_rate, transform=None, pre_transform=None):  
@@ -55,7 +55,13 @@ class AttackDataset(InMemoryDataset):
         features = self.to_tensor_features(scipy.sparse.load_npz(osp.join(self.raw_dir, '{}_features.npz'.format(self.name)))).to_dense()
         self.labels   = torch.tensor(np.load(osp.join(self.raw_dir, '{}_labels.npy'.format(self.name))))
         adj = torch.load(osp.join(self.raw_dir, '{}.pt'.format(self.attack_file)),map_location= 'cuda') #注意这里需要map_location
-        edge_index, _ = add_self_loops(adj.coalesce().indices(), num_nodes=features.size(0))
+
+        # 有的文件有自环，有的文件没有，所以这里统一的处理一下
+        edge_index, _ = remove_self_loops(adj.coalesce().indices())
+        edge_index, _ = add_self_loops(edge_index, num_nodes=features.size(0))
+
+        # edge_index, _ = add_self_loops(adj.coalesce().indices(), num_nodes=features.size(0))
+
         data = Data(x=features, edge_index=edge_index, y=self.labels)
 
         self.idx_train = np.load(osp.join(self.raw_dir, '{}_idx_train.npy'.format(self.attack_file)))
