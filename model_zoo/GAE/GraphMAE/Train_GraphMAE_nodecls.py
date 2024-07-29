@@ -219,9 +219,13 @@ def Train_GraphMAE_nodecls(margs):
             graph = dgl.remove_self_loop(graph)
             graph = dgl.add_self_loop(graph) # graphmae + self loop这结果也太好了，分析一下，有点意思
         elif dataset_name.split('-',1)[0] == 'Unit':
-            print("Adaptive attack scenario: " + margs.scenario + ' | ' + "Adaptive attack model: " + margs.adaptive_attack_model)
+            print("GraphMAE Unit Test")
+            print("Adaptive attack scenario: " + margs.scenario + ' | ' + "Adaptive attack model: " + margs.adaptive_attack_model + ' | ' +  "Budget: " + margs.budget + ' | ' + "Unit Ptb: " + margs.unit_ptb)
             dataset  = load_unit_test_data(margs)
-            graph = dataset.graph
+            graph    = dataset.graph
+            graph = dgl.remove_self_loop(graph)
+            graph = dgl.add_self_loop(graph)
+            print(graph)
         else:
             if dataset_name in ['Cora','Pubmed','Citeseer','Cora_ml']:
                 dataset  = load_data(dataset_name)

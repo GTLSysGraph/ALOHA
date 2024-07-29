@@ -1,0 +1,33 @@
+GraphMAE Unit Test
+Adaptive attack scenario: poisoning | Adaptive attack model: jaccard_gcn | Budget: 755 | Unit Ptb: 0.1489
+[I] Loading dataset Unit-Cora_ml...
+train_mask, test_mask, val_mask sizes : tensor(248) tensor(249) tensor(1988)
+[I] Finished loading.
+[I] Data load time: 3.4463s
+Graph(num_nodes=2485, num_edges=14121,
+      ndata_schemes={'feat': Scheme(shape=(1433,), dtype=torch.float32), 'label': Scheme(shape=(), dtype=torch.int64), 'train_mask': Scheme(shape=(), dtype=torch.bool), 'val_mask': Scheme(shape=(), dtype=torch.bool), 'test_mask': Scheme(shape=(), dtype=torch.bool)}
+      edata_schemes={})
+------ Use best configs ------
+{'seeds': [1, 2], 'device': -1, 'max_epoch': 1500, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 2, 'num_hidden': 64, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': None, 'lr': 0.001, 'weight_decay': 0.0002, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.0, 'replace_rate': 0.05, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 3, 'optimizer': 'adam', 'max_epoch_f': 300, 'lr_f': 0.01, 'weight_decay_f': 0.0001, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 32, 'batch_size_f': 256}
+####### Run 1 for seed 1
+# IGNORE: --- TestAcc: 0.6660, early-stopping-TestAcc: 0.6952, Best ValAcc: 0.7751 in epoch 103 --- 
+# IGNORE: --- TestAcc: 0.6569, early-stopping-TestAcc: 0.6710, Best ValAcc: 0.7510 in epoch 173 --- 
+# IGNORE: --- TestAcc: 0.6444, early-stopping-TestAcc: 0.6454, Best ValAcc: 0.7510 in epoch 289 --- 
+# IGNORE: --- TestAcc: 0.6313, early-stopping-TestAcc: 0.6313, Best ValAcc: 0.7390 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.6298, early-stopping-TestAcc: 0.6358, Best ValAcc: 0.7309 in epoch 234 --- 
+# IGNORE: --- TestAcc: 0.6288, early-stopping-TestAcc: 0.6278, Best ValAcc: 0.7390 in epoch 265 --- 
+# IGNORE: --- TestAcc: 0.6303, early-stopping-TestAcc: 0.6328, Best ValAcc: 0.7470 in epoch 287 --- 
+num parameters for finetuning: 455
+--- TestAcc: 0.6323, early-stopping-TestAcc: 0.6323, Best ValAcc: 0.7430 in epoch 299 --- 
+####### Run 2 for seed 2
+# IGNORE: --- TestAcc: 0.6524, early-stopping-TestAcc: 0.6620, Best ValAcc: 0.7791 in epoch 243 --- 
+# IGNORE: --- TestAcc: 0.6635, early-stopping-TestAcc: 0.6650, Best ValAcc: 0.7269 in epoch 137 --- 
+# IGNORE: --- TestAcc: 0.6554, early-stopping-TestAcc: 0.6554, Best ValAcc: 0.7390 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.6605, early-stopping-TestAcc: 0.6605, Best ValAcc: 0.7189 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.6504, early-stopping-TestAcc: 0.6504, Best ValAcc: 0.7149 in epoch 299 --- 
+# IGNORE: --- TestAcc: 0.6464, early-stopping-TestAcc: 0.6469, Best ValAcc: 0.7068 in epoch 264 --- 
+# IGNORE: --- TestAcc: 0.6434, early-stopping-TestAcc: 0.6434, Best ValAcc: 0.7068 in epoch 249 --- 
+num parameters for finetuning: 455
+--- TestAcc: 0.6444, early-stopping-TestAcc: 0.6444, Best ValAcc: 0.7068 in epoch 241 --- 
+# final_acc: 0.6383±0.0060
+# early-stopping_acc: 0.6383±0.0060

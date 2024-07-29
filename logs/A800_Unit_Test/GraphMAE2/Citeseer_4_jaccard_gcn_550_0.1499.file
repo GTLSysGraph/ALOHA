@@ -1,0 +1,26 @@
+GraphMAE2 Unit Test
+Adaptive attack scenario: poisoning | Adaptive attack model: jaccard_gcn | Budget: 550 | Unit Ptb: 0.1499
+[I] Loading dataset Unit-Citeseer...
+train_mask, test_mask, val_mask sizes : tensor(211) tensor(211) tensor(1688)
+[I] Finished loading.
+[I] Data load time: 3.5419s
+Graph(num_nodes=2110, num_edges=10546,
+      ndata_schemes={'feat': Scheme(shape=(3703,), dtype=torch.float32), 'label': Scheme(shape=(), dtype=torch.int64), 'train_mask': Scheme(shape=(), dtype=torch.bool), 'val_mask': Scheme(shape=(), dtype=torch.bool), 'test_mask': Scheme(shape=(), dtype=torch.bool)}
+      edata_schemes={})
+{'seeds': [1, 2], 'device': 0, 'max_epoch': 500, 'warmup_steps': -1, 'num_heads': 4, 'num_out_heads': 1, 'num_layers': 2, 'num_dec_layers': 1, 'num_remasking': 3, 'num_hidden': 64, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': None, 'lr': 0.0005, 'weight_decay': 0.0001, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'remask_rate': 0.5, 'remask_method': 'fixed', 'mask_type': 'mask', 'mask_method': 'random', 'drop_edge_rate': 0.0, 'drop_edge_rate_f': 0.0, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 1, 'optimizer': 'adam', 'max_epoch_f': 500, 'lr_f': 0.025, 'weight_decay_f': 0.01, 'linear_prob': True, 'no_pretrain': False, 'load_model': False, 'checkpoint_path': None, 'use_cfg': True, 'logging': False, 'scheduler': True, 'batch_size': 256, 'batch_size_f': 128, 'sampling_method': 'saint', 'label_rate': 1.0, 'ego_graph_file_path': None, 'data_dir': 'data', 'lam': 0.1, 'full_graph_forward': False, 'delayed_ema_epoch': 0, 'replace_rate': 0.0, 'momentum': 1}
+####### Run 0 for seed 1
+=== Use sce_loss and alpha_l=1 ===
+num_encoder_params: 241474, num_decoder_params: 248101, num_params_in_total: 534688
+# IGNORE: --- TestAcc: 0.6582, early-stopping-TestAcc: 0.6540, Best ValAcc: 0.7441 in epoch 55 --- 
+# IGNORE: --- TestAcc: 0.6120, early-stopping-TestAcc: 0.6120, Best ValAcc: 0.7014 in epoch 39 --- 
+num parameters for finetuning: 390
+--- TestAcc: 0.6126, early-stopping-TestAcc: 0.6126, Best ValAcc: 0.6919 in epoch 499 --- 
+####### Run 1 for seed 2
+=== Use sce_loss and alpha_l=1 ===
+num_encoder_params: 241474, num_decoder_params: 248101, num_params_in_total: 534688
+# IGNORE: --- TestAcc: 0.6475, early-stopping-TestAcc: 0.6564, Best ValAcc: 0.7299 in epoch 27 --- 
+# IGNORE: --- TestAcc: 0.6445, early-stopping-TestAcc: 0.6445, Best ValAcc: 0.7251 in epoch 499 --- 
+num parameters for finetuning: 390
+--- TestAcc: 0.6440, early-stopping-TestAcc: 0.6445, Best ValAcc: 0.7299 in epoch 39 --- 
+# final_acc: 0.6283±0.0157
+# early-stopping_acc: 0.6286±0.0160

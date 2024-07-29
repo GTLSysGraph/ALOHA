@@ -1,0 +1,21 @@
+GraphMAE Unit Test
+Adaptive attack scenario: poisoning | Adaptive attack model: gnn_guard | Budget: 550 | Unit Ptb: 0.1499
+[I] Loading dataset Unit-Citeseer...
+train_mask, test_mask, val_mask sizes : tensor(211) tensor(211) tensor(1688)
+[I] Finished loading.
+[I] Data load time: 3.3528s
+Graph(num_nodes=2110, num_edges=10498,
+      ndata_schemes={'feat': Scheme(shape=(3703,), dtype=torch.float32), 'label': Scheme(shape=(), dtype=torch.int64), 'train_mask': Scheme(shape=(), dtype=torch.bool), 'val_mask': Scheme(shape=(), dtype=torch.bool), 'test_mask': Scheme(shape=(), dtype=torch.bool)}
+      edata_schemes={})
+------ Use best configs ------
+{'seeds': [1, 2], 'device': -1, 'max_epoch': 300, 'warmup_steps': -1, 'num_heads': 2, 'num_out_heads': 1, 'num_layers': 2, 'num_hidden': 64, 'residual': False, 'in_drop': 0.2, 'attn_drop': 0.1, 'norm': None, 'lr': 0.001, 'weight_decay': 2e-05, 'negative_slope': 0.2, 'activation': 'prelu', 'mask_rate': 0.5, 'drop_edge_rate': 0.0, 'replace_rate': 0.1, 'encoder': 'gat', 'decoder': 'gat', 'loss_fn': 'sce', 'alpha_l': 1, 'optimizer': 'adam', 'max_epoch_f': 300, 'lr_f': 0.01, 'weight_decay_f': 0.01, 'linear_prob': True, 'load_model': False, 'save_model': False, 'use_cfg': True, 'logging': False, 'scheduler': True, 'concat_hidden': False, 'pooling': 'mean', 'deg4feat': False, 'batch_size': 32, 'batch_size_f': 256}
+####### Run 1 for seed 1
+# IGNORE: --- TestAcc: 0.6647, early-stopping-TestAcc: 0.6617, Best ValAcc: 0.6777 in epoch 62 --- 
+num parameters for finetuning: 390
+--- TestAcc: 0.6682, early-stopping-TestAcc: 0.6677, Best ValAcc: 0.6682 in epoch 150 --- 
+####### Run 2 for seed 2
+# IGNORE: --- TestAcc: 0.6872, early-stopping-TestAcc: 0.6973, Best ValAcc: 0.6872 in epoch 63 --- 
+num parameters for finetuning: 390
+--- TestAcc: 0.6842, early-stopping-TestAcc: 0.6842, Best ValAcc: 0.6967 in epoch 299 --- 
+# final_acc: 0.6762±0.0080
+# early-stopping_acc: 0.6759±0.0083

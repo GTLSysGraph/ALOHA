@@ -12,7 +12,7 @@ class CiteseerUnitDGL(torch.utils.data.Dataset):  # Adaptive attack model
 
         data_dir = '/home/songsh/datasets_dgl/all_data_unit_test/%s/%s/' % (args.scenario, data_name)
 
-        adj = torch.load(data_dir + '%s/%s/A_perturbed.pt' % (args.split, args.adaptive_attack_model), map_location= 'cuda')
+        adj = torch.load(data_dir + '%s/%s/A_perturbed_budget_%s_ptb_%s.pt' % (args.split, args.adaptive_attack_model, args.budget, args.unit_ptb), map_location= 'cuda')
         g = dgl.from_scipy(to_scipy(adj))
         
         features = to_tensor_features(scipy.sparse.load_npz(data_dir + '%s_features.npz' % (data_name))).to_dense()

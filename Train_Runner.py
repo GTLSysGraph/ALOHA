@@ -15,6 +15,10 @@ if __name__ == '__main__':
     parser.add_argument('--scenario',               type = str,                 default = 'poisoning')  #"evasion"
     parser.add_argument('--adaptive_attack_model',  type = str,                 default = 'jaccard_gcn') # "clean, gcn", "jaccard_gcn", "svd_gcn", "rgcn", "pro_gnn", "gnn_guard", "grand", "soft_median_gdc"
     parser.add_argument('--split',                  type = str,                 default = 0 )
+        # 这两个值自己取文件夹中对应去看
+    parser.add_argument('--budget',                 type=  str,                 default=5)                
+    parser.add_argument('--unit_ptb',               type=  str,                 default= 0.0,    help='unit rate.')
+    
     margs = parser.parse_args()
 
 
